@@ -9,35 +9,78 @@
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
-      <h1 class="govuk-heading-xl">
-        The GOV.UK Prototype Kit
-        <span class="govuk-caption-xl">{{releaseVersion}}</span>
-      </h1>{{releaseVersion | log }}
-      <p>
-        This kit lets you rapidly create HTML prototypes of GOV.UK services.
-      </p>
-
-      <p>
-        It contains all you need to prototype anything from simple static pages to complex, data-driven transactions.
-      </p>
-
-      <h2 class="govuk-heading-m">About this page</h2>
-
-      <p>We recommend you add links to your prototype to this page, rather than delete it.
-        You'll find this page in the kit at '/app/views/index.html'.</p>
-
-      <p>You can change the service name by editing the file '/app/config.js'.</p>
-
-      <h2 class="govuk-heading-m">Examples and documentation</h2>
-
-      <ul class="govuk-list govuk-list--bullet">
-        <li>
-          <a href="/docs/tutorials-and-examples">Example pages and documentation</a>
-        </li>
-        <li>
-          <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
-        </li>
-      </ul>
+      
+      <span class="govuk-caption-xl">Continuous improvement</span>
+      <h1 class="govuk-heading-xl">Employer prototypes</h1>
+      
+           
+      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+	      
+	      <!-- START Cancellation -->
+		  <div class="govuk-accordion__section ">
+		    <div class="govuk-accordion__section-header">
+		      <h2 class="govuk-accordion__section-heading">
+		        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
+		          Saved Standards
+		        </span>
+		      </h2>
+		      <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+		      Employers can pick from their saved training providers and standards when reserving funds, creating vacancies or adding apprentices.<br>
+		      </div>
+		    </div>
+		    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+		      <ul class="govuk-list">
+			      <li><a href="saved-standards/advertise/index.html" class="govuk-link">Advertise: select a training provider</a></li>
+			      <li><a href="saved-standards/choose-provider.html" class="govuk-link">Choose training provider</a></li>
+			      <li><a href="saved-standards/choose-standard.html" class="govuk-link">Choose standard</a></li>
+			      	<ul>
+				      <li><a href="saved-standards/choose-standard-nosaved.html" class="govuk-link">No saved standards</a></li>
+			      	</ul>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		  <!-- START project X -->
+		  <div class="govuk-accordion__section ">
+		    <div class="govuk-accordion__section-header">
+		      <h2 class="govuk-accordion__section-heading">
+		        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
+		          Project X
+		        </span>
+		      </h2>
+		    </div>
+		    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+		      <ul class="govuk-list">
+			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		  <!-- START project Y -->
+		  <div class="govuk-accordion__section ">
+		    <div class="govuk-accordion__section-header">
+		      <h2 class="govuk-accordion__section-heading">
+		        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
+		          Project Y
+		        </span>
+		      </h2>
+		    </div>
+		    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+		      <ul class="govuk-list">
+			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
+			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
+			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
+		      </ul>
+		    </div>
+		  </div>
+		  
+		  <!-- END project -->
+ 
+ 
+  </div>
+</div>
+      
+      
     </div>
   </div>
 
