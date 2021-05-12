@@ -1,94 +1,108 @@
-
-{% extends "layout.html" %}
-
 {% block pageTitle %}
-  GOV.UK Prototype Kit
+  Saved standards - Employer
 {% endblock %}
+
+
+{% block main %}
+
+{% include "../includes/account-header+nav.html" %}
 
 {% block content %}
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-      
-      <span class="govuk-caption-xl">Continuous improvement</span>
-      <h1 class="govuk-heading-xl">Employer prototypes</h1>
-      
-           
-      <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
-	      
-	      <!-- START Cancellation -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-1">
-		          Saved Standards
-		        </span>
-		      </h2>
-		      <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-		      Employers can pick from their saved training providers and standards when reserving funds, creating vacancies or adding apprentices.<br>
-		      </div>
-		    </div>
-		    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
-		      <ul class="govuk-list">
-			      <li><a href="saved-standards/advertise/index.html" class="govuk-link">Advertise: select a training provider</a></li>
-			      <li><a href="saved-standards/choose-provider.html" class="govuk-link">Choose training provider</a></li>
-			      <ul>
-				      <li><a href="saved-standards/choose-provider-nosaved.html" class="govuk-link">No saved provider</a></li>
-			      	</ul>
-			      <li><a href="saved-standards/choose-standard.html" class="govuk-link">Choose standard</a></li>
-			      	<ul>
-				      <li><a href="saved-standards/choose-standard-nosaved.html" class="govuk-link">No saved standards</a></li>
-			      	</ul>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- START project X -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-2">
-		          Banners
-		        </span>
-		      </h2>
-		      <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
-		      Review banners on the Apprenticeship details page (Employer portal)
-		      </div>
-		    </div>
-		    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
-		      <ul class="govuk-list">
-			      <li><a href="banners/index.html" class="govuk-link">Banner rework (Employer)</a></li>
-			      <li><a href="banners/tp" class="govuk-link">Banner rework (Training Provider)</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- START project Y -->
-		  <div class="govuk-accordion__section ">
-		    <div class="govuk-accordion__section-header">
-		      <h2 class="govuk-accordion__section-heading">
-		        <span class="govuk-accordion__section-button" id="accordion-default-heading-3">
-		          Project Y
-		        </span>
-		      </h2>
-		    </div>
-		    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
-		      <ul class="govuk-list">
-			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
-			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
-			      <li><a href="#" class="govuk-link">Link to prototype</a></li>
-		      </ul>
-		    </div>
-		  </div>
-		  
-		  <!-- END project -->
- 
- 
-  </div>
-</div>
-      
-      
-    </div>
-  </div>
+<div class="govuk-grid-row">
+     <div class="govuk-grid-column-two-thirds">
 
+          <span class="govuk-caption-xl">Continuous improvement</span>
+          <h1 class="govuk-heading-xl">Employer prototypes</h1>
+
+          <div class="govuk-accordion" data-module="govuk-accordion" id="accordion-default">
+
+               <!-- START Mange apprenticeships -->
+               <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                         <h2 class="govuk-accordion__section-heading">
+                              <span class="govuk-accordion__section-button" id="accordion-default-heading-1">Manage apprenticeships</span>
+                         </h2>
+                         <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-1">
+                              Sorting on Manage your apprentices page
+                         </div>
+                    </div>
+                    <div id="accordion-default-content-1" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-1">
+                         <ul class="govuk-list">
+                              <li><a href="manage/index" class="govuk-link">Manage apprenticeships</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- END Mange apprenticeships -->
+
+               <!-- START Cancellation -->
+               <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                         <h2 class="govuk-accordion__section-heading">
+                              <span class="govuk-accordion__section-button" id="accordion-default-heading-2">Saved Standards</span>
+                         </h2>
+                         <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-2">
+                              Employers can pick from their saved training providers and standards when reserving funds, creating vacancies or adding apprentices.<br>
+                         </div>
+                    </div>
+                    <div id="accordion-default-content-2" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-2">
+                         <ul class="govuk-list">
+                              <li><a href="saved-standards/advertise/index.html" class="govuk-link">Advertise: select a training provider</a></li>
+                              <li><a href="saved-standards/choose-provider.html" class="govuk-link">Choose training provider</a></li>
+                              <ul>
+                                   <li><a href="saved-standards/choose-provider-nosaved.html" class="govuk-link">No saved provider</a></li>
+                              </ul>
+                              <li><a href="saved-standards/choose-standard.html" class="govuk-link">Choose standard</a></li>
+                              <ul>
+                                   <li><a href="saved-standards/choose-standard-nosaved.html" class="govuk-link">No saved standards</a></li>
+                              </ul>
+                         </ul>
+                    </div>
+               </div>
+               <!-- END Cancellation -->
+
+               <!-- START project X -->
+               <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                         <h2 class="govuk-accordion__section-heading">
+                              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Banners</span>
+                         </h2>
+                         <div class="govuk-accordion__section-summary govuk-body" id="accordion-with-summary-sections-summary-3">
+                              Review banners on the Apprenticeship details page (Employer portal)
+                         </div>
+                    </div>
+                    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                         <ul class="govuk-list">
+                              <li><a href="banners/index.html" class="govuk-link">NEW - Banner rework (Employer)</a></li>
+                              <li><a href="banners/employer.html" class="govuk-link">Banner rework (Employer)</a></li>
+                              <li><a href="banners/tp" class="govuk-link">Banner rework (Training Provider)</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- END project X -->
+
+               <!-- START project Y -->
+               <div class="govuk-accordion__section ">
+                    <div class="govuk-accordion__section-header">
+                         <h2 class="govuk-accordion__section-heading">
+                              <span class="govuk-accordion__section-button" id="accordion-default-heading-3">Project Y</span>
+                         </h2>
+                    </div>
+                    <div id="accordion-default-content-3" class="govuk-accordion__section-content" aria-labelledby="accordion-default-heading-3">
+                         <ul class="govuk-list">
+                              <li><a href="#" class="govuk-link">Link to prototype</a></li>
+                              <li><a href="#" class="govuk-link">Link to prototype</a></li>
+                              <li><a href="#" class="govuk-link">Link to prototype</a></li>
+                         </ul>
+                    </div>
+               </div>
+               <!-- END project Y -->
+
+
+          </div>
+
+     </div>
+
+
+</div>
 {% endblock %}
