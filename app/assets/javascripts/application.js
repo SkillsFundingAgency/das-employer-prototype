@@ -90,10 +90,7 @@ $('#selectedAlerts').on("change", function (e) {
      } else if ($(this).val() == 'changesRequested') {
           $('#manage-apprenticeships-table tbody tr').hide();
           $('#manage-apprenticeships-table tbody tr.changes-requested').show();
-     } else if ($(this).val() == 'ILRDataMismatch') {
-          $('#manage-apprenticeships-table tbody tr').hide();
-          $('#manage-apprenticeships-table tbody tr.ilr-data-mismatch').show();
-     } else if ($(this).val() == 'noAlerts') {
+     }else if ($(this).val() == 'noAlerts') {
           $('#manage-apprenticeships-table tbody tr').show();
           $('#manage-apprenticeships-table tbody tr.changes-pending, #manage-apprenticeships-table tbody tr.changes-for-review, #manage-apprenticeships-table tbody tr.changes-requested, #manage-apprenticeships-table tbody tr.ilr-data-mismatch').hide();
      }
