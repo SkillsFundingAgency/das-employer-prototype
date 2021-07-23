@@ -1,0 +1,62 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Terms and conditions
+{% endblock %}
+
+
+{% block main %}
+
+{% include "../includes/account-header+nav.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+	
+	
+		
+
+	
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+
+		<h1 class="govuk-heading-l">Sign in</h1>
+
+		<p class="govuk-body">
+			Sign in or <a href="#">create an account</a> to manage your apprenticeship funds.
+		<p>
+			{{ govukInput({
+				label: {
+				  text: "Email address",
+				  classes: "govuk-label--m",
+				  isPageHeading: false
+				},
+				id: "event-name",
+				name: "event-name",
+				type: "email"
+			  }) }}
+
+			  {{ govukInput({
+				label: {
+				  text: "Password",
+				  classes: "govuk-label--m",
+				  isPageHeading: false
+				},
+				id: "event-name",
+				name: "event-name",
+				type: "password"
+			  }) }}
+		
+			  {{ govukButton({
+				text: "Continue",
+				href: "terms-and-conditions-question"
+			  }) }}      
+		
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}

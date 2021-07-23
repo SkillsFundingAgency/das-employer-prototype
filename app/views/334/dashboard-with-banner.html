@@ -1,0 +1,139 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Terms and conditions
+{% endblock %}
+
+
+{% block main %}
+
+{% include "../includes/account-header+nav.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+	
+	
+		<a href="#" class="govuk-back-link" style="margin-top: 0">Back</a>
+	<br><br>
+
+	
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-whole">
+		<div class="das-notification">
+			<p class="govuk-notification-banner__heading">Coronavirus(COVID-19): to find out how we can support you, including changes we’re making to help your apprentices continue learning, <a href="#">read our updated guidance</a>.
+
+			</p>
+		</div>
+		{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+
+		{% set html %}
+		<p class="govuk-notification-banner__heading">
+			We've updated our terms of use. 
+			<a class="govuk-notification-banner__link" href="updated-terms-and-conditions">Read our updated terms of use</a>.
+		</p>
+		{% endset %}
+
+		{{ govukNotificationBanner({
+		html: html,
+		titleText: 'Action required'
+		}) }}
+		<span class="govuk-caption-xl">Account ID: JJNLKR</span>
+		<h1 class="govuk-heading-xl">Coventry City Council_Levy Payer</h1>
+		<hr class="dashboard-heading-separator">
+
+		
+		<div class="govuk-grid-row govuk-!-margin-bottom-6">
+			
+
+			
+				<div class="govuk-grid-column-one-third">
+				<h2 class="govuk-heading-l">Apprenticeships</h2>
+				<span class="govuk-caption-m">Manage your apprentices, advertise apprenticeships and set training provider permissions
+
+				</span>
+				</div>
+		</div>	
+		<div class="govuk-grid-row">
+			<div class="govuk-grid-column-one-third">
+				
+				<h3 class="govuk-heading-s">
+					<a class="govuk-link govuk-link--no-visited-state" href="#">Manage your apprentices</a>
+				</h3>
+
+				<p class="govuk-body">View and update approved apprentice records.</p>
+
+				
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				
+				<h3 class="govuk-heading-s">
+					<a class="govuk-link govuk-link--no-visited-state" href="recruit-apprentices">Recruit apprentices</a>
+				</h3>
+				<p class="govuk-body">Create a vacancy to recruit an apprentice and manage applications.</p>
+			</div>
+		
+
+		</div>
+		
+
+		
+
+		
+		<!--Row end-->
+
+
+		<!--Row start-->
+		<div class="govuk-grid-row">
+			
+
+			<div class="govuk-grid-column-full">
+				
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				
+				<h3 class="govuk-heading-s">
+					<a class="govuk-link govuk-link--no-visited-state" href="#">Manage your apprentices</a>
+				</h3>
+
+				<p class="govuk-body">View and update approved apprentice records.</p>
+
+				
+			</div>
+
+			<div class="govuk-grid-column-one-third">
+				
+				<h3 class="govuk-heading-s">
+					<a class="govuk-link govuk-link--no-visited-state" href="recruit-apprentices">Recruit apprentices</a>
+				</h3>
+				<p class="govuk-body">Create a vacancy to recruit an apprentice and manage applications.</p>
+			</div>
+		
+
+		</div>
+		
+
+		<hr class="govuk-grid-column-full  govuk-section-break--m govuk-section-break--visible govuk-!-margin-top-0 govuk-!-margin-bottom-7">
+
+		
+		<!--Row end-->
+
+
+
+
+		  	
+
+
+		
+      
+
+    </div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}
