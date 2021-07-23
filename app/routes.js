@@ -24,7 +24,7 @@ router.post(`/334/terms-of-use-branch`, function (req, res) {
        ) {
         res.redirect(`/334/updated-terms-and-conditions`);
     }
-   else res.redirect(`/334/dashboard-with-banner`);
+   else res.redirect(`/334/select-account-with-banner`);
 });
 
 //END TERMS OF USE
