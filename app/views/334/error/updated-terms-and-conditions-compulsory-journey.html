@@ -28,6 +28,19 @@
 			  }
 			]
 		  }) }}
+		{% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+
+		{% set html %}
+		<p class="govuk-notification-banner__heading">
+			We've updated our terms of use, you must accept them before you can continue to use this service.
+		</p>
+		{% endset %}
+
+		{{ govukNotificationBanner({
+		html: html,
+		titleText: 'Action required'
+		}) }}
 
 		<h1 class="govuk-heading-xl">Terms of use</h1>
 
@@ -131,8 +144,7 @@
 		  
 			
 		  <br>
-		  <a href="#" class="govuk-link govuk-!-margin-top-1 govuk-!-margin-bottom-9">Cancel</a>
-			<br><br>
+		 
 
     </div>
   </div>
