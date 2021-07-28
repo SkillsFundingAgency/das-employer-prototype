@@ -438,3 +438,11 @@ hr.dashboard-heading-separator {
     border-bottom: 5px solid #bfc1c3;
     margin: 10px 0;
 }
+.govuk-notification-banner__content > :last-child {
+    margin-bottom: 0;
+    max-width: 100%!important;
+}
+.govuk-notification-banner__content > * {
+    box-sizing: border-box;
+    max-width: 100%;
+}
