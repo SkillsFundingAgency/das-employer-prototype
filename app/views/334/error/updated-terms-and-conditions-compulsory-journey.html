@@ -23,7 +23,7 @@
 			titleText: "There is a problem",
 			errorList: [
 			  {
-				text: "Confirm you have read and accept the new terms and conditions",
+				text: "Confirm you have read and accept the new terms of use",
 				href: "#accept"
 			  }
 			]
@@ -33,7 +33,7 @@
 
 		{% set html %}
 		<p class="govuk-notification-banner__heading">
-			We've updated our terms of use, you must accept them before you can continue to use this service.
+			We've updated our terms of use, You need to read and accept them to continue to use this service.
 		</p>
 		{% endset %}
 
@@ -121,18 +121,18 @@
 						
 						fieldset: {
 						  legend: {
-							text: "Confirm you have read and accept the terms and conditions",
+							text: "Confirm you have read and accept the terms of use",
 							isPageHeading: false,
 							classes: "govuk-fieldset__legend--m"
 						  }
 						},
 						errorMessage: {
-							text: "Confirm you have read and accept the new terms and conditions"
+							text: "Confirm you have read and accept the terms of use"
 						},
 						items: [
 						  {
 							value: "accept",
-							text: "I have read and accept the terms and conditions"
+							text: "I have read and accept the terms of use"
 						  }
 						]
 					  }) }}
