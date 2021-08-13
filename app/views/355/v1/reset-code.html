@@ -1,0 +1,61 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+355 - Update UI after security update to employer sign in
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header+nav.html" %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+	
+	
+	<form action="reset-code" method="post">
+
+	
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+		{{ govukInsetText({
+			text: "If your email address is registered, we'll send you a reset code now."
+		  }) }}
+
+		<h1 class="govuk-heading-l">Enter your reset code</h1>
+
+		
+			{{ govukInput({
+				label: {
+				  text: "Enter code",
+				  classes: "govuk-label--s",
+				  isPageHeading: false
+				},
+				id: "reset-code",
+				name: "reset-code",
+				type: "text",
+				classes: "govuk-input--width-30"
+			  }) }}
+
+			  
+		
+			  {{ govukButton({
+				text: "Continue",
+				href: "select-account-with-banner"
+			  }) }}   
+			  <div class="govuk-grid-row govuk-!-margin-bottom-9">
+				<div class="govuk-grid-column-two-thirds">
+				
+				</div>
+			  </div>
+			  
+		
+    </div>
+  </div>
+  </form>
+</div>
+
+{% endblock %}
+
+{% endblock %}

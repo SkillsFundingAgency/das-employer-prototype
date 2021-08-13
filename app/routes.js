@@ -29,5 +29,21 @@ router.post(`/334/optional/terms-of-use-branch`, function (req, res) {
 
 //END TERMS OF USE
 
+
+
+//START password reset code
+
+router.post(`/355/v1/reset-code`, function (req, res) {
+    const correctPAssword = req.session.data['reset-code'];
+
+    if (correctPAssword === 'read-now'
+       ) {
+        res.redirect(`/334/optional/updated-terms-and-conditions`);
+    }
+   else res.redirect(`/334/optional/select-account-with-banner`);
+});
+
+//END password reset code
+
 module.exports = router
 
