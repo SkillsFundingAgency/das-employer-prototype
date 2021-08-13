@@ -36,14 +36,45 @@ router.post(`/334/optional/terms-of-use-branch`, function (req, res) {
 router.post(`/355/v1/reset-code`, function (req, res) {
     const correctPAssword = req.session.data['reset-code'];
 
-    if (correctPAssword === 'read-now'
+    if (correctPAssword === 'abc123'
        ) {
-        res.redirect(`/334/optional/updated-terms-and-conditions`);
+        res.redirect(`/355/v1/new-password`);
     }
-   else res.redirect(`/334/optional/select-account-with-banner`);
+   else res.redirect(`/355/v1/invalid-code`);
 });
 
 //END password reset code
+
+//START password reset code
+
+router.post(`/355/v1/invalid-code`, function (req, res) {
+    const correctPAssword = req.session.data['invalid-code'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v1/new-password`);
+    }
+   else res.redirect(`/355/v1/third-invalid-code`);
+});
+
+//END password reset code
+
+
+
+//START change password
+
+router.post(`/355/v1/change-password`, function (req, res) {
+    const correctPAssword = req.session.data['change-password'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v1/sign-in`);
+    }
+   else res.redirect(`/355/v1/password-error-screen`);
+});
+
+//END change password
+
 
 module.exports = router
 

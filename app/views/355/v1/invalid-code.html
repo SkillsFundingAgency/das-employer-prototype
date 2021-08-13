@@ -13,12 +13,25 @@
 
 <div class="govuk-width-container">
 	
-	
-	<form action="reset-code" method="post">
+	<form action="invalid-code" method="post">
 
 	
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+		<div class="govuk-grid-row">
+		  <div class="govuk-grid-column-two-thirds">
+
+	{{ govukErrorSummary({
+		titleText: "There is a problem",
+		errorList: [
+		  {
+			text: "Reset code is invalid",
+			href: "#invalid-code"
+		  }
+		]
+	  }) }}
+
+
+
+	
 		{{ govukInsetText({
 			text: "If your email address is registered, we'll send you a reset code now."
 		  }) }}
@@ -32,15 +45,18 @@
 				  classes: "govuk-label--s",
 				  isPageHeading: false
 				},
-				id: "reset-code",
-				name: "reset-code",
-				classes: "govuk-input--width-30",
-				hint:{
+				id: "invalid-code",
+				name: "invalid-code",
+				classes: "govuk-input--width-30",hint:{
 					text: "Try to copy and paste the code from your email"
-				}
+				},
+				errorMessage: {
+					text: "Reset code is invalid"
+				  }
 			  }) }}
 
 			  
+				
 		
 			  {{ govukButton({
 				text: "Continue"
