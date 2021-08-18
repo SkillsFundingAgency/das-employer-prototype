@@ -76,5 +76,50 @@ router.post(`/355/v1/change-password`, function (req, res) {
 //END change password
 
 
+//START password reset code
+
+router.post(`/355/v2/reset-code`, function (req, res) {
+    const correctPAssword = req.session.data['reset-code'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v2/new-password`);
+    }
+   else res.redirect(`/355/v2/invalid-code`);
+});
+
+//END password reset code
+
+//START password reset code
+
+router.post(`/355/v2/invalid-code`, function (req, res) {
+    const correctPAssword = req.session.data['invalid-code'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v2/new-password`);
+    }
+   else res.redirect(`/355/v2/third-invalid-code`);
+});
+
+//END password reset code
+
+
+
+//START change password
+
+router.post(`/355/v2/change-password`, function (req, res) {
+    const correctPAssword = req.session.data['change-password'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v2/sign-in`);
+    }
+   else res.redirect(`/355/v2/password-error-screen`);
+});
+
+//END change password
+
+
 module.exports = router
 

@@ -16,7 +16,7 @@
 		text: "Back",
 		href: "#"
 	  }) }}
-
+	<form action="invalid-code" method="post">
 
 	
 		<div class="govuk-grid-row">
@@ -26,7 +26,7 @@
 		titleText: "There is a problem",
 		errorList: [
 		  {
-			text: "You have entered the reset code incorrectly 3 times",
+			text: "Reset code is invalid",
 			href: "#invalid-code"
 		  }
 		]
@@ -35,38 +35,32 @@
 
 
 	
-		{{ govukInsetText({
-			text: "If your email address is registered, we'll send you a reset code now."
-		  }) }}
+		
 
 		<h1 class="govuk-heading-l">Enter your reset code</h1>
 
 		
 			{{ govukInput({
 				label: {
-				  text: "Enter code",
+				  text: " ",
 				  classes: "govuk-label--s",
 				  isPageHeading: false
-				},
-				hint:{
-					text: "Try to copy and paste the code from your email"
 				},
 				id: "invalid-code",
 				name: "invalid-code",
 				classes: "govuk-input--width-30",
 				errorMessage: {
-					text: "You have entered the reset code incorrectly 3 times"
+					text: "Reset code is invalid"
 				  }
 			  }) }}
 
 			  
+				
 		
 			  {{ govukButton({
 				text: "Continue"
 				
-			  }) }}  
-			  
-			  
+			  }) }}   
 			  <div class="govuk-grid-row govuk-!-margin-bottom-9">
 				<div class="govuk-grid-column-two-thirds">
 					<a href="reset-code" class="govuk-link">Request a new reset code</a>
@@ -76,7 +70,7 @@
 		
     </div>
   </div>
-  
+  </form>
 </div>
 
 {% endblock %}

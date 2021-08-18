@@ -35,22 +35,18 @@
 
 
 	
-		{{ govukInsetText({
-			text: "If your email address is registered, we'll send you a reset code now."
-		  }) }}
+		
 
 		<h1 class="govuk-heading-l">Enter your reset code</h1>
 
 		
 			{{ govukInput({
 				label: {
-				  text: "Enter code",
+				   
 				  classes: "govuk-label--s",
 				  isPageHeading: false
 				},
-				hint:{
-					text: "Try to copy and paste the code from your email"
-				},
+				 
 				id: "invalid-code",
 				name: "invalid-code",
 				classes: "govuk-input--width-30",
