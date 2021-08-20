@@ -7,72 +7,42 @@
 
 {% block main %}
 
-{% include "includes/account-header+nav.html" %}
+{% include "includes/login-head.html" %}
 
 {% block content %}
 
 <div class="govuk-width-container">
-	{{ govukBackLink({
-		text: "Back",
-		href: "#"
-	  }) }}
-
+	
+	
+	<form action="" method="post">
 
 	
-		<div class="govuk-grid-row">
-		  <div class="govuk-grid-column-two-thirds">
-
-	{{ govukErrorSummary({
-		titleText: "There is a problem",
-		errorList: [
-		  {
-			text: "You have entered the reset code incorrectly 3 times",
-			href: "#invalid-code"
-		  }
-		]
-	  }) }}
-
-
-
-	
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 		
 
-		<h1 class="govuk-heading-l">Enter your reset code</h1>
-
-		
-			{{ govukInput({
-				label: {
-				   
-				  classes: "govuk-label--s",
-				  isPageHeading: false
-				},
-				 
-				id: "invalid-code",
-				name: "invalid-code",
-				classes: "govuk-input--width-30",
-				errorMessage: {
-					text: "You have entered the reset code incorrectly 3 times"
-				  }
-			  }) }}
-
+		<h1 class="govuk-heading-l">You have entered the reset code incorrectly 3 times</h1>
+		<h2 class="govuk-heading-m">What happens next</h2>
+		<p class="govuk-body">
+			You will need to request a new reset code.
+		<p>
+			
 			  
 		
 			  {{ govukButton({
-				text: "Continue"
-				
-			  }) }}  
-			  
-			  
+				text: "Request a new reset code",
+				href: "forgotten-password"
+			  }) }}   
 			  <div class="govuk-grid-row govuk-!-margin-bottom-9">
 				<div class="govuk-grid-column-two-thirds">
-					<a href="reset-code" class="govuk-link">Request a new reset code</a>
+					<a href="https://help.apprenticeships.education.gov.uk/hc/en-gb#contact-us" class="govuk-link" target="_blank">Get help with the apprenticeship service <span class="govuk-visually-hidden">(opens in new tab)</span> </a>
 				</div>
 			  </div>
 			  
 		
     </div>
   </div>
-  
+  </form>
 </div>
 
 {% endblock %}

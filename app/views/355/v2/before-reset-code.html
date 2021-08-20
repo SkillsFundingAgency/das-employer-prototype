@@ -15,32 +15,39 @@
 <div class="govuk-width-container">
 	
 	
-	<form action="reset-code" method="post">
+	<form action="" method="post">
 
 	
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
 		
 
-		<h1 class="govuk-heading-l">Enter your reset code</h1>
-
+		<h1 class="govuk-heading-l">Reset code</h1>
 		
-			{{ govukInput({
-				label: {
-				  text: " ",
-				  classes: "govuk-label--s",
-				  isPageHeading: false
-				},
-				id: "reset-code",
-				name: "reset-code",
-				classes: "govuk-input--width-30"
-			  }) }}
+		<p class="govuk-body">
+			If your email address is registered, we'll send you a reset code.
+		<p>
+			<h2 class="govuk-heading-m">How it works</h2>
 
+			<ul class="govuk-list govuk-list--bullet">
+				<li>
+					enter the email address registered for this service
+				</li>
+				<li>
+					we'll send a reset code to  your registered email address
+				</li>
+				<li>
+					enter the code from the email
+				</li>
+				<li>
+					enter a new password
+				</li>
+			</ul>
 			  
 		
 			  {{ govukButton({
-				text: "Continue"
-				
+				text: "Continue",
+				href: "reset-code"
 			  }) }}   
 			  <div class="govuk-grid-row govuk-!-margin-bottom-9">
 				<div class="govuk-grid-column-two-thirds">
