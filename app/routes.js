@@ -75,6 +75,10 @@ router.post(`/355/v1/change-password`, function (req, res) {
 
 //END change password
 
+//V1 ends
+
+
+//V2 starts
 
 //START password reset code
 
@@ -116,6 +120,54 @@ router.post(`/355/v2/change-password`, function (req, res) {
         res.redirect(`/355/v2/sign-in`);
     }
    else res.redirect(`/355/v2/password-error-screen`);
+});
+
+//END change password
+
+//V2 ends
+
+//V3 starts
+
+//START password reset code
+
+router.post(`/355/v3/reset-code`, function (req, res) {
+    const correctPAssword = req.session.data['reset-code'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v3/new-password`);
+    }
+   else res.redirect(`/355/v3/invalid-code`);
+});
+
+//END password reset code
+
+//START password reset code
+
+router.post(`/355/v3/invalid-code`, function (req, res) {
+    const correctPAssword = req.session.data['invalid-code'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v3/new-password`);
+    }
+   else res.redirect(`/355/v3/third-invalid-code`);
+});
+
+//END password reset code
+
+
+
+//START change password
+
+router.post(`/355/v3/change-password`, function (req, res) {
+    const correctPAssword = req.session.data['change-password'];
+
+    if (correctPAssword === 'abc123'
+       ) {
+        res.redirect(`/355/v3/sign-in`);
+    }
+   else res.redirect(`/355/v3/password-error-screen`);
 });
 
 //END change password
