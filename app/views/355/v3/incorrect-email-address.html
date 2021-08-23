@@ -13,7 +13,15 @@
 
 <div class="govuk-width-container">
 	
-	
+	{{ govukErrorSummary({
+		titleText: "There is a problem",
+		errorList: [
+		  {
+			text: "The email address must be registered with this service",
+			href: "#event-name"
+		  }
+		]
+	  }) }}
 		
 
 	
@@ -28,12 +36,15 @@
 		<p>
 			{{ govukInput({
 				label: {
-				  text: " ",
+				  text: "Email",
 				  classes: "govuk-label--s",
 				  isPageHeading: false
 				},
 				id: "event-name",
 				name: "event-name",
+				errorMessage: {
+					text: "The email address must be registered with this address"
+				  },
 				type: "email",
 				classes: "govuk-input--width-30"
 			  }) }}
