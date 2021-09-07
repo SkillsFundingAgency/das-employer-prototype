@@ -21,33 +21,17 @@
 <div class="govuk-grid-row">
 <div class="govuk-grid-column-two-thirds">
 
-
-
-	    <!-- ACTION REQUIRED -->
-	    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-		  <div class="govuk-notification-banner__header">
-		    <h1 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-		      Action required
-		    </h1>
-		  </div>
-		  <div class="govuk-notification-banner__content">
-		    <p class="govuk-notification-banner__heading">
-		      There are changes to this apprentice's details that you need to review.
-		      <a class="govuk-notification-banner__link" href="#">Review changes</a>.
-		    </p>
-		  </div>
-		</div>
 		
-		
+    <a href="#" class="govuk-back-link">Back</a>
+
 		<!-- OTHER -->
 		
-		<h2 class="govuk-heading-m">Changes to this apprenticeship</h2>
-		
+        <h2 class="govuk-heading-m govuk-!-margin-top-6">Changes to this apprenticeship</h2>
+
 		{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
 
 		<div class="govuk-inset-text">
-		  <p>There are changes to this apprentice's details that are waiting for approval by the employer.</p>
-		  <a href="#">View changes</a>
+		  <p><b>Change request pending:</b> Payment for [apprentice] can't be made until this is resolved.</p>
 		</div>
 		
 		<br><br>
