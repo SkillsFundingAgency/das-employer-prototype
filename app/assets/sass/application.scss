@@ -448,3 +448,15 @@ hr.dashboard-heading-separator {
 }
 .eighteen{width:18%;}
 .twentyFive{width:27%;}
+.finance-figure {
+    border: 1px solid #bfc1c3;
+    border-left-color: #0b0c0c;
+    border-left-width: 10px;
+    line-height: 1;
+    padding: 17px 10px 13px;
+    font-size: 30px;
+}
+
+.finance_funds .finance-figure {
+    font-size: 24px;
+}
