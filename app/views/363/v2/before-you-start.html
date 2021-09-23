@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Funding projection tool - before you start
+  Funding projection tool - before you start
 {% endblock %}
 
 
@@ -12,8 +12,11 @@ Funding projection tool - before you start
 {% block content %}
 
 <div class="govuk-width-container">
+	<div class="govuk-grid-row">
+		
 	
-	
+	<div class="govuk-grid-column-two-thirds">
+		
 		<a href="#" class="govuk-back-link" style="margin-top: 0">Back</a>
 	<br><br>
 
@@ -64,7 +67,9 @@ Funding projection tool - before you start
 			</li>
 		</ul>
 
-		
+		{{ govukInsetText({
+			text: "Further disclaimer here to highlight the difference between the estimated and actual figures."
+		}) }}
 
 
 		<div class="govuk-button-group">
@@ -75,11 +80,10 @@ Funding projection tool - before you start
 			
 		  </div>
 		
-      
+		</div>
 
     </div>
   </div>
-</div>
 
 {% endblock %}
 
