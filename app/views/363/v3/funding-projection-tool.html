@@ -178,15 +178,26 @@
 						<div class="govuk-grid-row govuk-!-margin-top-1">
 							<div class="govuk-grid-column-two-thirds">
 								{{ govukInsetText({
-									text: "If you have a negative levy declaration and any month, we base your four year projection on the last positive declaration made."
+									text: "If you have a negative levy funds and any month, we base your four year projection on the last positive figure."
 								}) }}
 							</div>
 						</div>
 						
 
 						<p class="govuk-body">
-							This projection was last updated on 22 September 2021.
+							The balance showing in your account can change 3 times in every month: 
 						<p>
+							<ul class="govuk-list govuk-list--bullet">
+								<li>
+									Payments - usually leave the account in the second week of the month
+								</li>
+								<li>
+									Levy funds - show in the account around 23rd day of each month
+								</li>
+								<li>
+									Expired funds - is calculated on 28th day of each month
+								</li>
+							</ul>
 
 							{{ govukDetails({
 								summaryText: "Help with this table",
