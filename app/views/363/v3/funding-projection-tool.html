@@ -141,9 +141,16 @@
 								Your account projection chart
 							</h2>
 							
-							<p class="govuk-body">
+							<p class="govuk-body govuk-!-margin-bottom-1">
 								The information below is a month by month projection of your account balance.
 							</p>
+							<div class="govuk-grid-row govuk-!-margin-top-1">
+								<div class="govuk-grid-column-two-thirds">
+									{{ govukInsetText({
+										text: "If you have a negative levy declaration and any month, we base your four year projection on the last positive declaration made."
+									}) }}
+								</div>
+							</div>
 							<p class="govuk-body">
 								This projection was last updated on 22 September 2021.
 							<p>
@@ -165,9 +172,18 @@
 							<h2 class="govuk-heading-l">
 								Your account projection in detail
 							</h2>
-						  <p class="govuk-body">
+						  <p class="govuk-body govuk-!-margin-bottom-1">
 							The information below is a month by month projection of your account balance.
 						</p>
+						<div class="govuk-grid-row govuk-!-margin-top-1">
+							<div class="govuk-grid-column-two-thirds">
+								{{ govukInsetText({
+									text: "If you have a negative levy declaration and any month, we base your four year projection on the last positive declaration made."
+								}) }}
+							</div>
+						</div>
+						
+
 						<p class="govuk-body">
 							This projection was last updated on 22 September 2021.
 						<p>
