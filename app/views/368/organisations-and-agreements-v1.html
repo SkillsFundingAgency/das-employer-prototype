@@ -13,15 +13,18 @@
 
 <div class="govuk-width-container">
 	
-	<a href="#" class="govuk-back-link">Back</a>
+	<a href="homepage-v2" class="govuk-back-link">Back</a>
 	
 	<div class="govuk-grid-row">
 	    <div class="govuk-grid-column-two-thirds">
 
 		    <h1 class="govuk-heading-xl">Your organisations and agreements</h1>		 
 
-			<p class="govuk-body">You must add each organisation that will contract with your training providers.</p>
-			<p class="govuk-body">You can add as many connected organisations as you need to.</p>
+			<p class="govuk-body">Add organisiation(s) that employ apprentices.</p>
+			{{ govukInsetText({
+				text: "To add apprentices, you need to tell us which organisation (employer) they will be working for. Each organisation will need an agreement with the ESFA."
+			}) }}
+			<p class="govuk-body">You can add as many <a href="#">connected organisations</a> as you need to.</p>
 			<p class="govuk-body">Transfers status:  enabled.</p>
 
 			<button class="govuk-button" data-module="govuk-button">
