@@ -25,56 +25,111 @@
 
 
 <h1 class="govuk-heading-xl">
-	component to show connection type
+	Transfers
 </h1>
-		
+	<p class="govuk-body">
+		Employers who pay the apprenticeship levy can connect with other employers and transfer up to 25% of their previous year's annual funds.
+	<p>	
+		<p class="govuk-body">
+			Before starting a connection, both sending and receiving employers need to read and understand the <a href="#" class="govuk-link">rules for sending and receiving transfers</a>.
+		<p>
+<p class="govuk-body">
+	Only the sending employer can start a connection.
+<p>
 
-<br><br><br><br><br><br><br>
+	{{ govukButton({
+		text: "Connect to a receiving employer"
+	}) }}
 
-
-<h3 class="govuk-heading-l">
-	Connection type
-</h3>
-{{ govukInsetText({
-	html: "You are set up as a 
-	<strong class='govuk-tag'>
-		Transfer receiver
-	  </strong> 
-	  <strong class='govuk-tag govuk-tag--blue'>
-		Transfer sender
-	  </strong> 
-	 "
-}) }}
-
-<br><br><br><br>
+	<h2 class="govuk-heading-m">
+		Connection requests
+</h2>
 
 {{ govukTable({
-	
-	firstCellIsHeader: true,
-	
+	firstCellIsHeader: false,
+	head: [
+		{
+			text: "Employer"
+		},
+		{
+			text: "Connection type"
+		},
+		{
+			text: "Status"
+		},
+		{
+			text: ""
+		}
+	],
 	rows: [
 		[
 			{
-				text: "Connection type"
+				text: "ONA Consulting"
+			},
+			{
+				text: "Sender"
+			},
+			{
+				text: "Pending"
 			},
 			{
 				html: 
 				"
-				<strong class='govuk-tag'>
-					Transfer receiver
-				  </strong> 
-				  <strong class='govuk-tag govuk-tag--blue'>
-					Transfer sender
-				  </strong> 
+				<a href='#' class='govuk-link'>Details</a>
 				"
 			}
 		]
 	]
 }) }}
 
+<h2 class="govuk-heading-m govuk-!-margin-top-9">
+	Transfer requests
+</h2>
 
+{{ govukTable({
+	firstCellIsHeader: false,
+	head: [
+		{
+			text: "Employer"
+		},
+		{
+			text: "Connection type"
+		},
+		{
+			text: "Status"
+		},
+		{
+			html: "Total<br>cost"
+		},
+		{
+			text: ""
+		}
+	],
+	rows: [
+		
+		[
+			{
+				text: "Bob's Business"
+			},
+			{
+				text: "Receiver"
+			},
+			{
+				text: "Pending"
+			},
+			{
+				text: "£2100"
+			},
+			{
+				html: 
+				"
+				<a href='#' class='govuk-link'>Details</a>
+				"
+			}
+		]
+	]
+}) }}
 
-<br><br><br><br><br><br><br>
       
 	</div>
 </div>
