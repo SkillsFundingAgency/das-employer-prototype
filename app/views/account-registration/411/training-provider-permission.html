@@ -11,41 +11,30 @@
 
 {% block content %}
 
-<div class="govuk-width-container">
-	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
-	  <div class="govuk-grid-row">
-		<div class="govuk-grid-column-two-thirds">
-		  <div class="govuk-panel govuk-panel--confirmation">
-			<h1 class="govuk-panel__title">
-			  You've accepted the employer agreement
-			</h1>
-		  </div>
 		  
+<div class="govuk-width-container">
+	<div class="govuk-grid-row">
+	
+	<div class="govuk-grid-column-two-thirds">
+	
+  
+		  <h1 class="govuk-heading-l">Do you want to give your training provider any permissions to do on your behalf?</h1>
   
 		  <p class="govuk-body">
-			<a href="#" class="govuk-link">Download your accepted agreement</a> (PDF, 225KB)
-		  </p>
-  
-		  <h2 class="govuk-heading-m">What happens next</h2>
-  
-		  <p class="govuk-body">
-			KAREN'S GLASS LIMITED can now get funding for apprenticeship training.
-		  </p>
-		  <p class="govuk-body">
-			If you've already stated using your account, you can:
+			Your training provider will not be able to access your account. You can add them, then give them choose to give them permission to: 
 		  </p>
 		  <ul class="govuk-list govuk-list--bullet">
 			  <li>
-				  submit any adverts you've created
+				add apprentice records
 			  </li>
 			  <li>
-				  approve any apprentice details you've added
+				recruit apprentices  
+			  </li>
+			  <li>
+				create job adverts
 			  </li>
 		  </ul>
   
-
-		  <h2 class="govuk-heading-m govuk-!-margin-top-6">Continue setting up your account</h2>
-
 
 		  <div class="govuk-form-group">
 			<fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
@@ -53,16 +42,19 @@
 				<div class="govuk-radios__item">
 				  <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
 				  <label class="govuk-label govuk-radios__label" for="sign-in">
-					Setup training provider permissions
+					Yes, I want to add my training provider and setup their permissions now
 				  </label>
-				  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
-					You can add a training provider, then give them permission to add apprentice records, recruit apprentices and create job adverts on your behalf.
-				  </div>
 				</div>
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+					<label class="govuk-label govuk-radios__label" for="sign-in">
+					  Yes, but I want to add my training provider and setup their permissions later
+					</label>
+				  </div>  
 				<div class="govuk-radios__item">
 				  <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
 				  <label class="govuk-label govuk-radios__label" for="sign-in-2">
-					Go to your account
+					No I don't want to give my training provider any permissions, go straight to my account 
 				  </label>
 				</div>
 			  </div>
@@ -76,8 +68,7 @@
 
 		</div>
 	  </div>
-	</main>
-  </div>
+</div>
   
 {% endblock %}
 
