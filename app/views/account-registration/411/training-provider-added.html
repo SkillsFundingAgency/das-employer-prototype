@@ -44,57 +44,42 @@
                 </tr>
             </tbody>
         </table>
-  
-		  <h2 class="govuk-heading-m">What happens next</h2>
-  
-		  <p class="govuk-body">
-			KAREN'S GLASS LIMITED can now get funding for apprenticeship training.
-		  </p>
-		  <p class="govuk-body">
-			If you've already stated using your account, you can:
-		  </p>
-		  <ul class="govuk-list govuk-list--bullet">
-			  <li>
-				  submit any adverts you've created
-			  </li>
-			  <li>
-				  approve any apprentice details you've added
-			  </li>
-		  </ul>
-  
+    
 
-		  <ol class="app-task-list">
-			<li>
-			  <h2 class="app-task-list__section">
-				<span class="app-task-list__section-number">1. </span> What do you want to do next?
-			  </h2>
-			  <ul class="app-task-list__items">
-				<li class="app-task-list__item">
-				  <span class="app-task-list__task-name">
-					<a href="#" aria-describedby="eligibility-status">
-					  View and accept the employer agreement
-					</a>
-				  </span>
-				  <strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
-				</li>
-				<li class="app-task-list__item">
-				  <span class="app-task-list__task-name">
-					<a href="#" aria-describedby="read-declaration-status">
-					  Add another training provider and set their permissions
-					</a>
-				  </span>
-				  <strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Not started</strong>
-				</li>
-				<li class="app-task-list__item">
-					<span class="app-task-list__task-name">
-						Go to my account
-					</span>
-					<strong class="govuk-tag govuk-tag--grey app-task-list__tag" id="read-declaration-status">Cannot start</strong>
-				  </li>
-  
-			  </ul>
-			</li>
+		  <h2 class="govuk-heading-m govuk-!-margin-top-6">What do you want to do next?</h2>
+
+
+		  <div class="govuk-form-group">
+			<fieldset class="govuk-fieldset" aria-describedby="sign-in-hint">
+			  <div class="govuk-radios" data-module="govuk-radios">
+				<div class="govuk-radios__item">
+				  <input class="govuk-radios__input" id="sign-in" name="sign-in" type="radio" value="government-gateway" aria-describedby="sign-in-item-hint">
+				  <label class="govuk-label govuk-radios__label" for="sign-in">
+					Add another training provider and setup their permissions
+				  </label>
+				  <div id="sign-in-item-hint" class="govuk-hint govuk-radios__hint">
+					You can add a training provider, then give them permission to add apprentice records, recruit apprentices and create job adverts on your behalf.
+				  </div>
+				</div>
+				<div class="govuk-radios__item">
+					<input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+					<label class="govuk-label govuk-radios__label" for="sign-in-2">
+					  View and accept your employer agreement with the ESFA
+					</label>
+				  </div>  
+				<div class="govuk-radios__item">
+				  <input class="govuk-radios__input" id="sign-in-2" name="sign-in" type="radio" value="govuk-verify" aria-describedby="sign-in-2-item-hint">
+				  <label class="govuk-label govuk-radios__label" for="sign-in-2">
+					Go to your account
+				  </label>
+				</div>
+			  </div>
+			</fieldset>
+		  </div>
 	
+		  <button class="govuk-button" data-module="govuk-button">
+			Continue
+		  </button>
 
 
 
