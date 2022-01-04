@@ -173,5 +173,18 @@ router.post(`/355/v3/change-password`, function (req, res) {
 //END change password
 
 
+//START 411 - employer add PAYE scheme
+
+router.post('/account-registration/411/add-paye', (req, res) => {
+    if(req.session.data['add-paye'] == 'government-gateway'){
+        res.redirect('government-gateway')
+	} else if(req.session.data['add-paye'] == 'aorn'){
+        res.redirect('enter-your-PAYE-scheme-details')
+    }
+})
+
+//END 411 - employer add PAYE scheme
+
+
 module.exports = router
 
