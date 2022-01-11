@@ -1,0 +1,65 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home - Manage apprentices
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav.html" %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+				
+
+	<h1 class="govuk-heading-xl">Check your details</h1>
+	
+	<table class="govuk-table govuk-!-margin-bottom-8">
+		<tbody class="govuk-table__body">
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Organisation</th>
+				<td class="govuk-table__cell">KAREN'S GLASS LIMITED</td>
+				<td class="govuk-table__cell"></td>
+			</tr>
+				<tr class="govuk-table__row">
+					<th scope="row" class="govuk-table__header">Address</th>
+					<td class="govuk-table__cell">ApprenticeAccount_05Aug21_040638_27142@mailinator.com</td>
+					<td class="govuk-table__cell"></td>
+				</tr>
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">Companies House number</th>
+				<td class="govuk-table__cell">2911102990</td>
+				<td class="govuk-table__cell"></td>
+			</tr>
+			<tr class="govuk-table__row">
+				<th scope="row" class="govuk-table__header">PAYE scheme</th>
+				<td class="govuk-table__cell">22 Mar 1999 </td>
+				<td class="govuk-table__cell"><a href="#">Change</a></td>
+
+			</tr>
+
+		</tbody>
+	</table>
+
+
+		{{ govukButton({
+		  text: "Continue",
+		  href: "government-gateway-sign-in"
+		}) }}
+
+
+<br><br><br><br>
+
+	</div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}
