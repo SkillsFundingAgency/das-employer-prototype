@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Home - Manage apprentices
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav.html" %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+				
+
+	<h1 class="govuk-heading-xl">Do you want your account name on the apprenticeship service to show as something else?</h1>
+	
+	<p class="govuk-body">
+		This is the name that your training provider will see. If you need to rename it to your trading name then you can. This will not rename your organsation with HMRC/Pension regulator, just the name of your apprenticeship account so your training provider can easily identify your organisation.
+	</p>	
+	
+	<div class="govuk-form-group">
+		<label class="govuk-label" for="two-thirds">
+		  Account name
+		</label>
+		<input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text" value="KAREN'S GLASS LIMITED"></div>
+
+
+
+		{{ govukButton({
+		  text: "Rename apprenticeship service account",
+		  href: "#"
+		}) }}
+
+
+<br><br><br><br>
+
+	</div>
+  </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}
