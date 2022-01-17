@@ -7,36 +7,67 @@
 
 {% block main %}
 
-{% include "includes/account-header-no-nav.html" %}
+{% include "includes/account-header+nav.html" %}
 
 {% block content %}
 
 
+
 <div class="govuk-width-container">
+
+	<!-- breadcrumb -->
+	<div class="govuk-breadcrumbs">
+		<ol class="govuk-breadcrumbs__list">
+		  <li class="govuk-breadcrumbs__list-item">
+			<a class="govuk-breadcrumbs__link" href="#">Home</a>
+		  </li>
+		  <li class="govuk-breadcrumbs__list-item">
+			Rename account
+		  </li>
+		</ol>
+	  </div>
+	  <!-- end breadcrumb -->
+
 <div class="govuk-grid-row">
 
+	
+	
 <div class="govuk-grid-column-two-thirds">
 				
 
-	<h1 class="govuk-heading-xl">Do you want your account name on the apprenticeship service to show as something else?</h1>
+	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Rename account</h1>
 	
-	<p class="govuk-body">
-		This is the name that your training provider will see. If you need to rename it to your trading name then you can. This will not rename your organsation with HMRC/Pension regulator, just the name of your apprenticeship account so your training provider can easily identify your organisation.
+	<p class="govuk-body govuk-!-margin-bottom-6">
+		This is the name the your training provider will see. This is not your legal entity name that is registered with the pension regulator.
 	</p>	
-	
+
+	<p class="govuk-body govuk-!-margin-bottom-6">
+		<b>Organisation name</b><br>
+		KAREN'S GLASS LIMITED
+	</p>	
+
+<form action="account-name-confirmation" method="post">
+
 	<div class="govuk-form-group">
 		<label class="govuk-label" for="two-thirds">
-		  Account name
+		  <b>Apprenticeship Service account name</b>
 		</label>
-		<input class="govuk-input govuk-!-width-two-thirds" id="two-thirds" name="two-thirds" type="text" value="KAREN'S GLASS LIMITED"></div>
+		<div id="event-name-hint" class="govuk-hint">
+			This may be the organisation name that your training provider knows you by.
+		  </div>
+		<input class="govuk-input govuk-!-width-two-thirds" id="as-account-name" name="as-account-name" type="text" value="KAREN'S GLASS LIMITED"></div>
+
+
+
+
 
 
 
 		{{ govukButton({
-		  text: "Rename apprenticeship service account",
-		  href: "#"
+		  text: "Save apprenticeship service account name"
 		}) }}
 
+	</form> 
 
 <br><br><br><br>
 
