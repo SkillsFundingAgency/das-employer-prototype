@@ -24,7 +24,7 @@
 <div class="govuk-grid-column-two-thirds">
 				
 
-	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Rename account</h1>
+	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Do you want to change your apprenticeship service account name?</h1>
 	
 	<p class="govuk-body govuk-!-margin-bottom-6">
 		This may be the organisation name that your training provider knows you by. This is not your legal entity name that is registered with your Pensions Regulator.
@@ -40,22 +40,34 @@
 		KAREN'S GLASS LIMITED
 	</p>	
 
-<form action="account-name-confirmation" method="post">
+	<p class="govuk-body govuk-!-margin-bottom-6">
+		<b>Account name</b><br>
+		KAREN'S GLASS LIMITED
+	</p>	
 
-	<div class="govuk-form-group">
-		<label class="govuk-label" for="two-thirds">
-		  <b>Apprenticeship service account name</b>
-		</label>
-		<input class="govuk-input govuk-!-width-two-thirds" id="as-account-name" name="as-account-name" type="text"></div>
 
+<form action="account-name" method="post">
+
+
+	{{ govukRadios({
+	  idPrefix: "where-do-you-live",
+	  name: "where-do-you-live",
+
+	  items: [
+		{
+		  value: "yes",
+		  text: "Yes, I want to change my account name"
+		},
+		{
+		  value: "no",
+		  text: "No, my organisation name is what my training provider knows me by"
+		}
+	  ]
+	}) }}
 
 		{{ govukButton({
-		  text: "Save apprenticeship service account name"
+		  text: "Continue"
 		}) }}
-
-		<p class="govuk-body">
-			<a href="#">Cancel</a>
-		</p>
 
 	</form> 
 
