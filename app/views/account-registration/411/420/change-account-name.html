@@ -27,7 +27,7 @@
 	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Do you want to change your apprenticeship service account name?</h1>
 	
 	<p class="govuk-body govuk-!-margin-bottom-6">
-		This may be the organisation name that your training provider knows you by. This is not your legal entity name that is registered with your Pensions Regulator.
+		This may be the organisation name that your training provider knows you by. This is not your legal entity name that is registered with the Pensions Regulator.
 	</p>	
 
 	<p class="govuk-body govuk-!-margin-bottom-6">
@@ -50,8 +50,8 @@
 
 
 	{{ govukRadios({
-	  idPrefix: "where-do-you-live",
-	  name: "where-do-you-live",
+	  idPrefix: "account-name",
+	  name: "account-name",
 
 	  items: [
 		{
@@ -60,7 +60,7 @@
 		},
 		{
 		  value: "no",
-		  text: "No, my organisation name is what my training provider knows me by"
+		  text: "No, I don't need to change my account name"
 		}
 	  ]
 	}) }}
