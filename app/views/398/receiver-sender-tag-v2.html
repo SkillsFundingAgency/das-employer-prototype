@@ -41,16 +41,52 @@
 		text: "Connect to a receiving employer"
 	}) }}
 
-	<h2 class="govuk-heading-l">
-		Connection requests
-</h2>
+	
 
 
 
 <h3 class="govuk-heading-m govuk-!-margin-top-9">
-	Receiving employers
+	Connection requests
 </h3>
 
+{{ govukTable({
+	firstCellIsHeader: false,
+	head: [
+		{
+			text: "Employer"
+		},
+		
+		{
+			text: "Status"
+		},
+		
+		{
+			text: ""
+		}
+	],
+	rows: [
+		
+		[
+			{
+				text: "Bob's Business"
+			},
+			
+			{
+				text: "Pending"
+			},
+			
+			{
+				html: 
+				"
+				<a href='#' class='govuk-link'>Details</a>
+				"
+			}
+		]
+	]
+}) }}
+<h3 class="govuk-heading-m govuk-!-margin-top-9">
+	Transfer requests
+</h3>
 {{ govukTable({
 	firstCellIsHeader: false,
 	head: [
@@ -69,45 +105,6 @@
 		}
 	],
 	rows: [
-		
-		[
-			{
-				text: "Bob's Business"
-			},
-			
-			{
-				text: "Pending"
-			},
-			{
-				text: "£2100"
-			},
-			{
-				html: 
-				"
-				<a href='#' class='govuk-link'>Details</a>
-				"
-			}
-		]
-	]
-}) }}
-<h3 class="govuk-heading-m govuk-!-margin-top-9">
-	Sending employers
-</h3>
-{{ govukTable({
-	firstCellIsHeader: false,
-	head: [
-		{
-			text: "Employer"
-		},
-		
-		{
-			text: "Status"
-		},
-		{
-			text: ""
-		}
-	],
-	rows: [
 		[
 			{
 				text: "ONA Consulting"
@@ -115,6 +112,9 @@
 			
 			{
 				text: "Pending"
+			},
+			{
+				text: "£2100"
 			},
 			{
 				html: 
