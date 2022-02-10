@@ -33,27 +33,40 @@
 		<p class="govuk-body">
 			Before starting a connection, both sending and receiving employers need to read and understand the <a href="#" class="govuk-link">rules for sending and receiving transfers</a>.
 		<p>
-<p class="govuk-body">
-	Only the sending employer can start a connection.
-<p>
+			{{ govukInsetText({
+				text: "Only the sending employer can start a connection."
+			}) }}
+
 
 	{{ govukButton({
 		text: "Connect to a receiving employer"
 	}) }}
 
-	
+{{ govukInsetText({
+	html: "<h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+		Sending employers
+	</h3>Employers who have agreed to send funds to pay for your apprentice's training.<br><br>
+	<h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
+		Receiving employers
+	</h3>Employers for who you have agreed to send funds to pay for their apprentices training"
+}) }}	
 
 
 
-<h3 class="govuk-heading-m govuk-!-margin-top-9">
+<h3 class="govuk-heading-l govuk-!-margin-top-9">
 	Connection requests
 </h3>
 
 {{ govukTable({
+	
 	firstCellIsHeader: false,
 	head: [
 		{
 			text: "Employer"
+		},
+
+		{
+			text: "Connection type"
 		},
 		
 		{
@@ -70,6 +83,10 @@
 			{
 				text: "Bob's Business"
 			},
+
+			{
+				text: "Sender"
+			},
 			
 			{
 				text: "Pending"
@@ -84,10 +101,11 @@
 		]
 	]
 }) }}
-<h3 class="govuk-heading-m govuk-!-margin-top-9">
+<h3 class="govuk-heading-l govuk-!-margin-top-9">
 	Transfer requests
 </h3>
 {{ govukTable({
+	caption: "Transfer funds you are sending to other employers",
 	firstCellIsHeader: false,
 	head: [
 		{
@@ -127,6 +145,47 @@
 }) }}
 
       
+{{ govukTable({
+	caption: "Transfer funds you are receiving from other employers",
+	firstCellIsHeader: false,
+	head: [
+		{
+			text: "Employer"
+		},
+		
+		{
+			text: "Status"
+		},
+		{
+			html: "Total<br>cost"
+		},
+		{
+			text: ""
+		}
+	],
+	rows: [
+		[
+			{
+				text: "Coventry Council"
+			},
+			
+			{
+				text: "Pending"
+			},
+			{
+				text: "£2100"
+			},
+			{
+				html: 
+				"
+				<a href='#' class='govuk-link'>Details</a>
+				"
+			}
+		]
+	]
+}) }}
+
+
 	</div>
 </div>
     </div>
