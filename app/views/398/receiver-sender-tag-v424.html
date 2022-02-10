@@ -42,14 +42,7 @@
 		text: "Connect to a receiving employer"
 	}) }}
 
-{{ govukInsetText({
-	html: "<h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-		Sending employers
-	</h3>Employers who have agreed to send funds to pay for your apprentice's training.<br><br>
-	<h3 class='govuk-heading-m govuk-!-margin-bottom-1'>
-		Receiving employers
-	</h3>Employers to who you have agreed to send funds to pay for their apprentice's training"
-}) }}	
+
 
 
 
@@ -58,7 +51,7 @@
 </h3>
 
 {{ govukTable({
-	
+	caption: "Employers you are connecting with to send funds to",
 	firstCellIsHeader: false,
 	head: [
 		{
@@ -66,8 +59,48 @@
 		},
 
 		{
-			text: "Connection type"
+			text: "Status"
 		},
+		
+		{
+			text: ""
+		}
+	],
+	rows: [
+		
+		
+		[
+			{
+				text: "Coventry Council"
+			},
+
+			
+			
+			{
+				text: "Approved"
+			},
+			
+			{
+				html: 
+				"
+				<a href='#' class='govuk-link'>Details</a>
+				"
+			}
+		]
+	]
+}) }}
+
+
+
+{{ govukTable({
+	caption: "Employers you are connecting with to receive funds from",
+	firstCellIsHeader: false,
+	head: [
+		{
+			text: "Employer"
+		},
+
+		
 		
 		{
 			text: "Status"
@@ -84,9 +117,7 @@
 				text: "ONA Consulting"
 			},
 
-			{
-				text: "Sending employer"
-			},
+			
 			
 			{
 				text: "Pending"
@@ -98,29 +129,12 @@
 				<a href='#' class='govuk-link'>Details</a>
 				"
 			}
-		],
-		[
-			{
-				text: "Coventry Cpuncil"
-			},
-
-			{
-				text: "Receiving employer"
-			},
-			
-			{
-				text: "Approved"
-			},
-			
-			{
-				html: 
-				"
-				<a href='#' class='govuk-link'>Details</a>
-				"
-			}
 		]
+		
 	]
 }) }}
+
+
 <h3 class="govuk-heading-l govuk-!-margin-top-9">
 	Transfer requests
 </h3>
