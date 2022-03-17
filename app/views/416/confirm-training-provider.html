@@ -1,0 +1,76 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm training provider
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav.html" %}
+
+{% block beforeContent %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <a class="govuk-back-link" onclick="history.back()" href="#">Back</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+   
+	  <div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Confirm training provider</h1>
+
+      <p>The details you entered are for EDUC8 TRAINING (ENGLAND) LIMITED. (10005310)</p>
+		 
+      {{ govukRadios({
+        idPrefix: "add-training-provider",
+        name: "add-training-provider",
+        fieldset: {
+          legend: {
+            text: "Do you want to add this training provider?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        items: [
+          {
+            value: "yes",
+            text: "Yes, add EDUC8 TRAINING (ENGLAND) LIMITED"
+          },
+          {
+            value: "no",
+            text: "No, change training provider"
+          }
+        ]
+      }) }}
+  
+		  
+      {{ govukButton({
+        text: "Continue",
+        href: "select-permissions"
+      }) }}
+		  
+
+
+
+		</div>
+	  </div>
+	</main>
+  </div>
+  
+{% endblock %}
+
+{% endblock %}
