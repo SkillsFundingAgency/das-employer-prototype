@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Do you accept the employer agreement
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav.html" %}
+
+{% block beforeContent %}
+<div class="govuk-width-container">
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-half">
+      <a class="govuk-back-link" onclick="history.back()" href="#">Back</a>
+    </div>
+    <div class="govuk-grid-column-one-half">
+        
+    </div>
+  </div>
+</div>
+{% endblock %}
+{% block content %}
+
+
+<div class="govuk-width-container">
+  
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+   
+	  <div class="govuk-grid-row">
+		<div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-l">Do you accept the employer agreement on behalf of KAREN'S GLASS LIMITED?</h1>
+
+      <p>The points to note and guidance notes are not part of the agreement.</p>
+
+
+      {{ govukRadios({
+        idPrefix: "add-apprentice-records",
+        name: "add-apprentice-records",
+        fieldset: {
+          legend: {
+            text: "Do you accept the employer agreement on behalf of KAREN'S GLASS LIMITED?",
+            isPageHeading: true,
+            classes: "govuk-fieldset__legend--m"
+          }
+        },
+        hint: {
+          text: "By accepting you confirm that KAREN'S GLASS LIMITED agrees to the terms and conditions and is entering into a legally binding agreement with ESFA."
+        },
+        items: [
+          {
+            value: "allow",
+            text: "Yes, I accept the agreement"
+          },
+          {
+            value: "do not allow",
+            text: "No, not yet"
+          }
+        ]
+      }) }}
+    
+  
+		  
+      {{ govukButton({
+        text: "Continue",
+        href: "agreement-accepted-no-task-list"
+      }) }}
+		  
+
+
+
+		</div>
+	  </div>
+	</main>
+  </div>
+  
+{% endblock %}
+
+{% endblock %}
