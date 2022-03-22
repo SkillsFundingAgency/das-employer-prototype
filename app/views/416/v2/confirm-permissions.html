@@ -48,7 +48,7 @@
         rows: [
           {
             key: {
-              text: "Add apprentice records"
+              text: "Add apprentices"
             },
             value: {
               text: "Do not allow"
@@ -84,11 +84,11 @@
       }) }}
 
 
-
+      <form action="confirm-permissions" method="post">
 
       {{ govukRadios({
-        idPrefix: "recruit-apprentices",
-        name: "recruit-apprentices",
+        idPrefix: "confirm-permissions-check",
+        name: "confirm-permissions-check",
         fieldset: {
           legend: {
             text: "Are you sure you want to change the permissions EDUC8 TRAINING (ENGLAND) LIMITED",
@@ -114,9 +114,10 @@
   
 		  
       {{ govukButton({
-        text: "Continue",
-        href: "training-provider-permissions-granted"
+        text: "Continue"
       }) }}
+
+    </form>
 		  
 
 
