@@ -1560,48 +1560,46 @@
                   The agreement is legally binding. If KAREN'S GLASS LIMITED breaches the terms, we could stop them hiring apprentices, claim back funding or close their account.
               </strong>
           </div>
-          <form method="post" action="/accounts/BB8W4N/agreements/4DGDBK/sign">
-              <input name="__RequestVerificationToken" type="hidden" value="6Uw43-0sWOS2d_uefcHkGOMoPm1NH4NiZ0_KSe83AEsXflVnrNuzIldFuLbUTpNoTCEOSIuqDwlFNptK2vYffN-WKMOlhvQrQCaipzovnTubKKu82wJXclIfyk9KjsWZHBCjgaRaZzxIOzCOe0b9GQ2" />
+          
+          <form action="employer-agreement" method="post">
+              
 
-              <div>
-                  <div class="govuk-form-group ">
-                      <fieldset class="govuk-fieldset" aria-describedby="accept-hint no-choice-selected">
-
-                          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
-                              <h1 class="govuk-fieldset__heading">
-                                  Do you accept the employer agreement on behalf of KAREN'S GLASS LIMITED?
-                              </h1>
-                          </legend>
-
-                          <span id="accept-hint" class="govuk-hint">
-                              By accepting, you confirm that KAREN'S GLASS LIMITED agrees to the terms and conditions and is entering into a legally binding agreement with <abbr>ESFA</abbr>.
-                          </span>
-
-
-                          <div class="govuk-radios">
-                              <div class="govuk-radios__item">
-                                  <input class="govuk-radios__input" id="want-to-sign" name="choice" type="radio" value="2">
-                                  <label class="govuk-label govuk-radios__label" for="want-to-sign">
-                                      Yes, I accept the agreement
-                                  </label>
-                              </div>
-                              <div class="govuk-radios__item">
-                                  <input class="govuk-radios__input" id="do-not-want-to-sign" name="choice" type="radio" value="1">
-                                  <label class="govuk-label govuk-radios__label" for="do-not-want-to-sign">
-                                      Not yet
-                                  </label>
-                              </div>
-                          </div>
-                      </fieldset>
-                  </div>
-                  
-                  {{ govukButton({
-                    text: "Continue",
-                    href: "agreement-accepted"
-                  }) }}
+            {{ govukRadios({
+              idPrefix: "employer-agreement-check",
+              name: "employer-agreement-check",
+              fieldset: {
+                legend: {
+                  text: "Do you accept the employer agreement on behalf of KAREN'S GLASS LIMITED?",
+                  isPageHeading: true,
+                  classes: "govuk-fieldset__legend--l"
+                }
+              },
+              hint: {
+                html: "By accepting, you confirm that KAREN'S GLASS LIMITED agrees to the terms and conditions and is entering into a legally binding agreement with <abbr>ESFA</abbr>."
+              },
+              items: [
+                {
+                  value: "yes",
+                  text: "Yes, I accept the agreement"
+                },
+                {
+                  value: "no",
+                  text: "Not yet"
+                }
+              ]
+            }) }}
+            
+            {{ govukButton({
+              text: "Continue"
+            }) }}
+            
+      
+        
+    
+              
                   
             
-              </div>
+            
           </form>
   </div>
 </div>

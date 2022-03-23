@@ -188,6 +188,17 @@ router.post('/account-registration/411/add-paye', (req, res) => {
 
 /* 416 starts */
 
+router.post('/416/employer-agreement', function (req, res) {
+  const editChoice = req.session.data['employer-agreement-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('agreement-accepted')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list')
+  }
+});
+
+
 router.post('/416/v2/employer-agreement', function (req, res) {
     const editChoice = req.session.data['employer-agreement-check']
   
@@ -195,6 +206,17 @@ router.post('/416/v2/employer-agreement', function (req, res) {
       res.redirect('agreement-accepted-no-task-list')
     } else if (editChoice === 'no') {
       res.redirect('task-list')
+    }
+  });
+
+
+  router.post('/416/confirm-training-provider', function (req, res) {
+    const editChoice = req.session.data['confirm-training-provider-check']
+  
+    if (editChoice === 'yes') {
+      res.redirect('select-permissions')
+    } else if (editChoice === 'no') {
+      res.redirect('enter-ukprn')
     }
   });
 
@@ -209,6 +231,16 @@ router.post('/416/v2/employer-agreement', function (req, res) {
     }
   });
 
+
+  router.post('/416/confirm-permissions', function (req, res) {
+    const editChoice = req.session.data['confirm-permissions-check']
+  
+    if (editChoice === 'yes') {
+      res.redirect('training-provider-permissions-granted')
+    } else if (editChoice === 'no') {
+      res.redirect('select-permissions')
+    }
+  });
 
   router.post('/416/v2/confirm-permissions', function (req, res) {
     const editChoice = req.session.data['confirm-permissions-check']

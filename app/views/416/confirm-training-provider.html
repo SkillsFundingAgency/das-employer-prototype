@@ -34,10 +34,12 @@
       <h1 class="govuk-heading-xl">Confirm training provider</h1>
 
       <p>The details you entered are for EDUC8 TRAINING (ENGLAND) LIMITED. (10005310)</p>
+
+      <form action="confirm-training-provider" method="post">
 		 
       {{ govukRadios({
-        idPrefix: "add-training-provider",
-        name: "add-training-provider",
+        idPrefix: "confirm-training-provider-check",
+        name: "confirm-training-provider-check",
         fieldset: {
           legend: {
             text: "Do you want to add this training provider?",
@@ -59,11 +61,10 @@
   
 		  
       {{ govukButton({
-        text: "Continue",
-        href: "select-permissions"
+        text: "Continue"
       }) }}
 		  
-
+    </form>
 
 
 		</div>

@@ -48,7 +48,7 @@
         rows: [
           {
             key: {
-              text: "Add apprentice records"
+              text: "Add apprentices"
             },
             value: {
               text: "Do not allow"
@@ -86,38 +86,40 @@
 
 
 
-      {{ govukRadios({
-        idPrefix: "recruit-apprentices",
-        name: "recruit-apprentices",
-        fieldset: {
-          legend: {
-            text: "Are you sure you want to change the permissions EDUC8 TRAINING (ENGLAND) LIMITED",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        
-        items: [
-          {
-            value: "yes",
-            text: "Yes, change the permissions"
+      <form action="confirm-permissions" method="post">
+
+        {{ govukRadios({
+          idPrefix: "confirm-permissions-check",
+          name: "confirm-permissions-check",
+          fieldset: {
+            legend: {
+              text: "Are you sure you want to change the permissions EDUC8 TRAINING (ENGLAND) LIMITED",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
           },
-          {
-            value: "no",
-            text: "No"
-          }
-        ]
-      }) }}
-
-
-    
+          
+          items: [
+            {
+              value: "yes",
+              text: "Yes, change the permissions"
+            },
+            {
+              value: "no",
+              text: "No"
+            }
+          ]
+        }) }}
   
-		  
-      {{ govukButton({
-        text: "Continue",
-        href: "training-provider-permissions-granted"
-      }) }}
-		  
+  
+      
+    
+        
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+  
+      </form>
 
 
 
