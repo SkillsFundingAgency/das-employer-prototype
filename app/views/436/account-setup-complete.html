@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Employer account setup complete
+	Employer account setup complete
 {% endblock %}
 
 
@@ -43,6 +43,10 @@ Employer account setup complete
 			  </li>
 		  </ul>
 
+      {{ govukButton({
+        text: "Sign in to your account",
+        href: "task-list-2"
+      }) }}
  
   
 
