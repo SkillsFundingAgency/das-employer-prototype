@@ -272,7 +272,7 @@ router.post('/436/confirm-training-provider', function (req, res) {
   const editChoice = req.session.data['confirm-training-provider-check']
 
   if (editChoice === 'yes') {
-    res.redirect('task-list-4')
+    res.redirect('select-permissions')
   } else if (editChoice === 'no') {
     res.redirect('enter-ukprn')
   }
@@ -282,7 +282,7 @@ router.post('/436/confirm-permissions', function (req, res) {
   const editChoice = req.session.data['confirm-permissions-check']
 
   if (editChoice === 'yes') {
-    res.redirect('task-list-5')
+    res.redirect('task-list-4')
   } else if (editChoice === 'no') {
     res.redirect('select-permissions')
   }
