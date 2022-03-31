@@ -282,9 +282,9 @@ router.post('/436/confirm-permissions', function (req, res) {
   const editChoice = req.session.data['confirm-permissions-check']
 
   if (editChoice === 'yes') {
-    res.redirect('task-list-4')
+    res.redirect('account-setup-complete')
   } else if (editChoice === 'no') {
-    res.redirect('select-permissions')
+    res.redirect('account-setup-complete')
   }
 });
 
@@ -293,9 +293,9 @@ router.post('/436/employer-agreement', function (req, res) {
   const editChoice = req.session.data['employer-agreement-check']
 
   if (editChoice === 'yes') {
-    res.redirect('account-setup-complete')
+    res.redirect('task-list-4')
   } else if (editChoice === 'no') {
-    res.redirect('task-list-5')
+    res.redirect('task-list-3')
   }
 });
 
