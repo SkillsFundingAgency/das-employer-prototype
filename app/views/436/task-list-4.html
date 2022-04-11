@@ -87,8 +87,9 @@ Create your employer account
 
 					<li>
 						<h2 class="app-task-list__section">
-							<span class="app-task-list__section-number">4. </span> Add a training provider
+							<span class="app-task-list__section-number">4. </span> Add a training provider (optional)
 						</h2>
+						<p>You can either add a training provider now, or finish creating your account and add a training provider later.</p>
 						<ul class="app-task-list__items" style="padding-left:0">
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
@@ -113,6 +114,11 @@ Create your employer account
 						
 				</ol>
   
+
+				{{ govukButton({
+					text: "Create my account now",
+					href: "account-setup-complete"
+				}) }}
 		  
 
 		  <!--<ol class="app-task-list">

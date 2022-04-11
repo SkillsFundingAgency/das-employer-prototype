@@ -28,10 +28,10 @@
 		  Organisation
 		</dt>
 		<dd class="govuk-summary-list__value">
-		  KAREN'S GLASS LIMITED
+		  {{ data['as-account-name'] }}
 		</dd>
 		<dd class="govuk-summary-list__actions">
-			<td class="govuk-table__cell"><a href="#">Change</a></td>
+			<td class="govuk-table__cell"><a href="account-name">Change</a></td>
 		</dd>
 	  </div>
 	  <div class="govuk-summary-list__row">
@@ -83,7 +83,7 @@
 
 		{{ govukButton({
 		  text: "These details are corect",
-		  href: "change-account-name"
+		  href: "task-list-3"
 		}) }}
 
 		

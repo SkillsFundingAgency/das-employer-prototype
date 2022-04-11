@@ -300,6 +300,17 @@ router.post('/436/employer-agreement', function (req, res) {
 });
 
 
+router.post('/436/change-account-name', function (req, res) {
+  const editChoice = req.session.data['change-account-name-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('account-name')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-3')
+  }
+});
+
+
  /* 436 ends */
 
 
