@@ -380,6 +380,17 @@ router.post('/436/v2/account-name-confirm', function (req, res) {
 });
 
 
+router.post('/436/v2/training-provider-choice', function (req, res) {
+  const editChoice = req.session.data['training-provider-choice-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('enter-ukprn')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
+
+
  /* 436 v2 ends */
 
 
