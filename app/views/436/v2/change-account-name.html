@@ -23,7 +23,7 @@ Do you want to change your apprenticeship service account name?
 <div class="govuk-grid-column-two-thirds">
 				
 
-	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Do you want to change your apprenticeship service account name?</h1>
+	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Apprenticeship service account name</h1>
 	
 	<p class="govuk-body">
 		You can change your apprenticeship service account name if there is another name (such as a trading name) that you are known by. Your account name is visible to training providers and helps them to find you in the service.</p> 
@@ -32,7 +32,7 @@ Do you want to change your apprenticeship service account name?
 	</p>	
 
 	<p class="govuk-body">
-		You can rename your account at any time.
+		You can change your account at any time.
 	</p>	
 
 
@@ -49,6 +49,8 @@ Do you want to change your apprenticeship service account name?
 
 <form action="change-account-name" method="post">
 
+	
+
 	{% set accountnameHtml %}
 		{{ govukInput({
 			id: "as-account-name",
@@ -63,7 +65,12 @@ Do you want to change your apprenticeship service account name?
 	{{ govukRadios({
 	  idPrefix: "change-account-name-check",
 	  name: "change-account-name-check",
-
+		fieldset: {
+			legend: {
+				text: "Do you want to change your apprenticeship service account name?",
+				classes: "govuk-fieldset__legend--m"
+			}
+		},
 	  items: [
 		{
 		  value: "yes",
