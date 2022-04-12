@@ -363,7 +363,17 @@ router.post('/436/v2/change-account-name', function (req, res) {
   const editChoice = req.session.data['change-account-name-check']
 
   if (editChoice === 'yes') {
-    res.redirect('account-name')
+    res.redirect('account-name-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-4')
+  }
+});
+
+router.post('/436/v2/account-name-confirm', function (req, res) {
+  const editChoice = req.session.data['account-name-confirm-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('task-list-4')
   } else if (editChoice === 'no') {
     res.redirect('task-list-4')
   }

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Home - Manage apprentices
+Rename your apprenticeship service account
 {% endblock %}
 
 
@@ -15,7 +15,7 @@
 
 <div class="govuk-width-container">
 
-	<a href="#" class="govuk-back-link">Back</a>
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 <div class="govuk-grid-row">
 
@@ -24,7 +24,7 @@
 <div class="govuk-grid-column-two-thirds">
 				
 
-	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Rename account</h1>
+	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Rename your apprenticeship service account</h1>
 	
 	<p class="govuk-body govuk-!-margin-bottom-6">
 		This may be the organisation name that your training provider knows you by. This is not your legal entity name that is registered with the Pensions Regulator.
@@ -40,7 +40,7 @@
 		KAREN'S GLASS LIMITED
 	</p>	
 
-<form action="task-list-4" method="post">
+<form action="account-name-confirm" method="post">
 
 	<div class="govuk-form-group">
 		<label class="govuk-label" for="two-thirds">
@@ -54,7 +54,7 @@
 
 		<div class="govuk-button-group">
 			<button class="govuk-button" data-module="govuk-button">
-				Save apprenticeship service account name
+				Save and continue
 			</button>
 		  <div style="clear:both"></div>
 			<a class="govuk-link" href="change-account-name">Cancel</a>
