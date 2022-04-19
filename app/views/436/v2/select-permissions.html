@@ -22,6 +22,8 @@
 
       <p>These permissions are on behalf of KAREN'S GLASS LIMITED</p>
 		 
+
+        <form class="form" action="confirm-permissions" method="post">
       {{ govukRadios({
         idPrefix: "add-apprentice-records",
         name: "add-apprentice-records",
@@ -37,16 +39,21 @@
         },
         items: [
           {
-            value: "allow",
+            value: "Allow",
             text: "Allow"
           },
           {
-            value: "do not allow",
+            value: "Do not allow",
             text: "Do not allow"
           }
         ]
       }) }}
 
+
+
+ 
+
+      
 
 
       {{ govukRadios({
@@ -64,15 +71,15 @@
         },
         items: [
           {
-            value: "allow",
+            value: "Allow",
             text: "Allow"
           },
           {
-            value: "allow but review",
+            value: "Allow, but I want to review job adverts before they're advertised",
             text: "Allow, but I want to review job adverts before they're advertised"
           },
           {
-            value: "do not allow",
+            value: "Do not allow",
             text: "Do not allow"
           }
         ]
@@ -83,10 +90,11 @@
   
 		  
       {{ govukButton({
-        text: "Continue",
-        href: "confirm-permissions"
+        text: "Continue"
       }) }}
 		  
+
+    </form>
 
 
 

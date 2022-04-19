@@ -337,7 +337,7 @@ router.post('/436/v2/confirm-training-provider', function (req, res) {
   }
 });
 
-router.post('/436/v2/confirm-permissions', function (req, res) {
+/* router.post('/436/v2/confirm-permissions', function (req, res) {
   const editChoice = req.session.data['confirm-permissions-check']
 
   if (editChoice === 'yes') {
@@ -345,8 +345,15 @@ router.post('/436/v2/confirm-permissions', function (req, res) {
   } else if (editChoice === 'no') {
     res.redirect('account-setup-complete')
   }
-});
+}); */
 
+router.post('/436/v2/confirm-permissions-check', (req, res) => {
+  if(req.session.data['confirm-permissions-check'] == 'yes'){
+      res.redirect('account-setup-complete')
+} else if(req.session.data['confirm-permissions-check'] == 'no'){
+      res.redirect('account-setup-complete')
+  }
+})
 
 router.post('/436/v2/employer-agreement', function (req, res) {
   const editChoice = req.session.data['employer-agreement-check']

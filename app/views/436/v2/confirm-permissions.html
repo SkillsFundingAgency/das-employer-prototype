@@ -30,6 +30,7 @@
       
       <h2 class="govuk-heading-m">Permissions</h2>
 
+
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
         rows: [
@@ -38,7 +39,7 @@
               text: "Add apprentices"
             },
             value: {
-              text: "Do not allow"
+              text: data["add-apprentice-records"]
             },
             actions: {
               items: [
@@ -55,7 +56,7 @@
               text: "Recruit apprentices"
             },
             value: {
-              text: "Do not allow"
+              text: data["recruit-apprentices"]
             },
             actions: {
               items: [
@@ -73,7 +74,7 @@
 
 
 
-      <form action="confirm-permissions" method="post">
+      <form action="confirm-permissions-check" method="post">
 
         {{ govukRadios({
           idPrefix: "confirm-permissions-check",
