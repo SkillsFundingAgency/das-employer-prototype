@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Your progress has been saved
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav-sign-out.html" %}
+
+{% block content %}
+<div class="govuk-width-container">
+	
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+
+    <h1 class="govuk-heading-xl">
+      Your progress has been saved
+    </h1>
+
+    <p>You can:
+      <ul class="govuk-list govuk-list--bullet">
+        <li><a href="#" onclick="history.back()">continue creating your account</a></li>
+        <li><a href="#" onclick="history.back()">view the areas of your account you have enabled</a></li>
+        <li><a href="signed-out">sign out</a></li>
+      </ul>
+
+    <p>If you sign out you can return to finish creating your account at any time.</p>
+   
+    
+
+  
+
+
+
+    
+
+
+
+
+    </div>
+  </div>
+  </main>
+  </div>
+
+  {% endblock %}
+
+  {% endblock %}

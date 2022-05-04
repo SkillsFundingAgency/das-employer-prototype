@@ -470,3 +470,25 @@ hr.dashboard-heading-separator {
     padding: 20px 15px 15px;
     border: 5px solid #28a197;
 }
+
+
+.das-govuk-list-forms li{
+    margin-bottom: 25px;
+    padding-top: 10px;
+    border-top: 1px solid #b1b4b6;
+    list-style: none;
+}
+
+.das-govuk-list-forms button {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+    display: inline-block;
+    color: #1d70b8;
+    background-color: #fff;
+    border:none;
+}
