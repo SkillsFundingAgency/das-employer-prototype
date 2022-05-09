@@ -447,7 +447,7 @@ router.post('/436/v3/employer-agreement', function (req, res) {
   if (editChoice === 'yes') {
     res.redirect('employer-agreement-accepted')
   } else if (editChoice === 'no') {
-    res.redirect('task-list-4')
+    res.redirect('task-list-5-in-progress-step-4')
   }
 });
 
@@ -456,7 +456,7 @@ router.post('/436/v3/change-account-name', function (req, res) {
   const editChoice = req.session.data['change-account-name-check']
 
   if (editChoice === 'yes') {
-    res.redirect('account-name-confirm')
+    res.redirect('account-name-changed')
   } else if (editChoice === 'no') {
     res.redirect('task-list-4')
   }

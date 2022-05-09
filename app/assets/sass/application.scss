@@ -492,3 +492,14 @@ hr.dashboard-heading-separator {
     background-color: #fff;
     border:none;
 }
+
+dl.das-inline-def-list dt{
+    display:block;
+    font-weight:bold;
+}
+
+dl.das-inline-def-list dd {
+    display: block;
+    margin-inline-start: 80px;
+    margin-top:-25px;
+}
