@@ -30,9 +30,11 @@ Training provider permissions
 	</p>	
 	
 	<ul class="govuk-list govuk-list--bullet">
+		<li>create and manange adverts</li>
+		<li>recruit apprentices</li>
     <li>add apprentices to your account, including reserving funds</li>
-    <li>recruit apprentices</li>
-    <li>create and manange adverts</li>
+    
+    
   </ul>
 
   <p>You can adjust your training provider permissions at any time.</p>
@@ -44,7 +46,7 @@ Training provider permissions
 			name: "training-provider-access",
 			fieldset: {
 				legend: {
-					text: "Do you want to give EDUC8 TRAINING (ENGLAND) LIMITED access to your account?",
+					text: "Do you want to give your training provider permission to act on your behalf?",
 					isPageHeading: true,
 					classes: "govuk-fieldset__legend--m"
 				}
@@ -52,11 +54,11 @@ Training provider permissions
 			items: [
 				{
 					value: "yes",
-					text: "Yes, give my training provider access to my account"
+					text: "Yes, I want to let my training provider to act on my behalf"
 				},
 				{
 					value: "no",
-					html: "No, do not give my training provider access to my account"
+					html: "No, I want to do this myself"
 				}
 			]
 		}) }}
