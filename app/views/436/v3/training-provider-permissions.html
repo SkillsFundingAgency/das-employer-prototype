@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Training provider permissions
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav.html" %}
+
+{% block content %}
+
+
+
+
+<div class="govuk-width-container">
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
+	
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+			
+
+	<h1 class="govuk-heading-xl">Training provider permissions</h1>
+	
+	<p class="govuk-body">
+    EDUC8 TRAINING (ENGLAND) LIMITED can do the following on your behalf:
+	</p>	
+	
+	<ul class="govuk-list govuk-list--bullet">
+    <li>add apprentices to your account, including reserving funds</li>
+    <li>recruit apprentices</li>
+    <li>create and manange adverts</li>
+  </ul>
+
+  <p>You can adjust your training provider permissions at any time.</p>
+
+
+  <form action="training-provider-permissions" method="post">
+		{{ govukRadios({
+			idPrefix: "training-provider-access",
+			name: "training-provider-access",
+			fieldset: {
+				legend: {
+					text: "Do you want to give EDUC8 TRAINING (ENGLAND) LIMITED access to your account?",
+					isPageHeading: true,
+					classes: "govuk-fieldset__legend--m"
+				}
+			},
+			items: [
+				{
+					value: "yes",
+					text: "Yes, give my training provider access to my account"
+				},
+				{
+					value: "no",
+					html: "No, do not give my training provider access to my account"
+				}
+			]
+		}) }}
+
+
+
+		{{ govukButton({
+			text: "Continue"
+		  }) }}
+  </form>
+
+
+
+	</div>
+  </div>
+</main>
+</div>
+
+{% endblock %}
+
+{% endblock %}

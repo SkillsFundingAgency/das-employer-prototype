@@ -417,7 +417,7 @@ router.post('/436/v3/confirm-training-provider', function (req, res) {
   const editChoice = req.session.data['confirm-training-provider-check']
 
   if (editChoice === 'yes') {
-    res.redirect('select-permissions')
+    res.redirect('training-provider-permissions')
   } else if (editChoice === 'no') {
     res.redirect('enter-ukprn')
   }
@@ -488,7 +488,7 @@ router.post('/436/v3/confirm-training-provider-invited', function (req, res) {
   const editChoice = req.session.data['confirm-invited-training-provider-check']
 
   if (editChoice === 'yes') {
-    res.redirect('select-permissions')
+    res.redirect('training-provider-permissions')
   } else if (editChoice === 'no') {
     res.redirect('enter-ukprn')
   }
@@ -514,6 +514,17 @@ router.post('/436/v3/check-details', function (req, res) {
     res.redirect('paye-scheme-added')
   } else if (editChoice === 'no') {
     res.redirect('search-for-org')
+  }
+});
+
+
+router.post('/436/v3/training-provider-permissions', function (req, res) {
+  const editChoice = req.session.data['training-provider-access']
+
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
   }
 });
 

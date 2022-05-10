@@ -30,6 +30,8 @@
       
       <h2 class="govuk-heading-m">Permissions</h2>
 
+      <p>You can update your training provider permissions at any time within your account.</p>
+
 
       {{ govukSummaryList({
         classes: 'govuk-!-margin-bottom-9',
@@ -74,7 +76,7 @@
 
 
 
-      <form action="confirm-permissions-check" method="post">
+     <!-- <form action="confirm-permissions-check" method="post">
 
         {{ govukRadios({
           idPrefix: "confirm-permissions-check",
@@ -103,13 +105,18 @@
       
     
         
-        {{ govukButton({
-          text: "Continue"
-        }) }}
+        
   
-      </form>
+      </form>-->
+
+     
 
 
+
+      {{ govukButton({
+        text: "Continue",
+        href: "account-setup-complete"
+      }) }}
 
 		</div>
 	  </div>
