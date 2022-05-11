@@ -479,7 +479,7 @@ router.post('/436/v3/training-provider-choice', function (req, res) {
   if (editChoice === 'yes') {
     res.redirect('confirm-training-provider-invited')
   } else if (editChoice === 'no') {
-    res.redirect('account-setup-complete')
+    res.redirect('account-setup-complete-no-tp')
   }
 });
 
