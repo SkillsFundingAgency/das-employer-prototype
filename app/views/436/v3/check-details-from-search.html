@@ -82,7 +82,7 @@ Check your details
 	  </div>
 	</dl>
 
-
+	<form action="details-correct" method="post">
 	{{ govukRadios({
 		idPrefix: "details-correct",
 		name: "details-correct",
@@ -109,9 +109,9 @@ Check your details
 
 
 		{{ govukButton({
-		  text: "Continue",
-      href: "paye-scheme-added"
+		  text: "Continue"
 		}) }}
+		</form>
 
 
 

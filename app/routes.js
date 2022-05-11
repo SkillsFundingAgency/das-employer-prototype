@@ -439,7 +439,7 @@ router.post('/436/v3/confirm-permissions-check', (req, res) => {
 } else if(req.session.data['confirm-permissions-check'] == 'no'){
       res.redirect('account-setup-complete')
   }
-})
+});
 
 router.post('/436/v3/employer-agreement', function (req, res) {
   const editChoice = req.session.data['employer-agreement-check']
@@ -516,6 +516,18 @@ router.post('/436/v3/check-details', function (req, res) {
     res.redirect('search-for-org')
   }
 });
+
+
+
+router.post('/436/v3/details-correct', (req, res) => {
+  if(req.session.data['details-correct'] == 'yes'){
+      res.redirect('paye-scheme-added')
+} else if(req.session.data['details-correct'] == 'no'){
+      res.redirect('search-for-org')
+  }
+});
+
+
 
 
 router.post('/436/v3/training-provider-permissions', function (req, res) {
