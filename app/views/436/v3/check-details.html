@@ -11,6 +11,18 @@ Check your details
 
 {% block content %}
 
+{% if data['aorn'] == '123' %}
+<script>
+    window.location.href = 'select-your-org-radios'
+</script>
+{% endif %}
+
+{% if data['aorn'] == '456' %}
+<script>
+    window.location.href = 'search-for-org'
+</script>
+{% endif %}
+
 <div class="govuk-width-container">
 	
 	<a href="javascript:history.back()" class="govuk-back-link">Back</a>

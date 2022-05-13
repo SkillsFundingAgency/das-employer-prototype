@@ -507,15 +507,6 @@ router.post('/436/v3/add-paye-knockout', function (req, res) {
 });
 
 
-router.post('/436/v3/check-details', function (req, res) {
-  const editChoice = req.session.data['details-correct']
-
-  if (editChoice === 'yes') {
-    res.redirect('paye-scheme-added')
-  } else if (editChoice === 'no') {
-    res.redirect('search-for-org')
-  }
-});
 
 
 

@@ -26,6 +26,9 @@
 	<p class="govuk-body">
 		Enter your accounts office reference number and employer PAYE scheme reference. These details will be checked against the Pensions Regulator.
 	</p>	
+
+
+		<form class="form" action="check-details" method="post">
 	
 	<div class="govuk-form-group">
 		<label class="govuk-label" for="three-quarters">
@@ -34,7 +37,7 @@
 		<div id="event-name-hint" class="govuk-hint">
 			For example, 123PA12345678
 		  </div>
-		<input class="govuk-input govuk-!-width-three-quarters" id="three-quarters" name="three-quarters" type="text"></div>
+		<input class="govuk-input govuk-!-width-three-quarters" id="aorn" name="aorn" type="text"></div>
 
 		<div class="govuk-form-group">
 			<label class="govuk-label" for="three-quarters">
@@ -48,12 +51,11 @@
 
 
 		{{ govukButton({
-		  text: "Continue",
-		  href: "check-details"
+		  text: "Continue"
 		}) }}
 
 
-<br><br><br><br>
+		</form>
 
 	</div>
   </div>
