@@ -531,6 +531,19 @@ router.post('/436/v3/training-provider-permissions', function (req, res) {
   }
 });
 
+
+router.post('/436/v3/paye-uhp', function (req, res) {
+  const editChoice = req.session.data['paye-uhp-what-next']
+
+  if (editChoice === 'paye') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  } else if (editChoice === 'search') {
+    res.redirect('search-for-org')
+  } else if (editChoice === 'helpdesk') {
+    res.redirect('paye-uhp-help-desk')
+  }
+});
+
  /* 436 v3 ends */
 
 

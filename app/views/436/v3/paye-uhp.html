@@ -35,38 +35,42 @@ Something went wrong
   </ul>
 
 
+      <form class="form" action="paye-uhp" method="post">
+
+        {{ govukRadios({
+          idPrefix: "paye-uhp-what-next",
+          name: "paye-uhp-what-next",
+          fieldset: {
+            legend: {
+              text: "What do you want to do?",
+              isPageHeading: true,
+              classes: "govuk-fieldset__legend--m"
+            }
+          },
+          items: [
+            {
+              value: "paye",
+              text: "Enter your PAYE scheme details again"
+            },
+            {
+              value: "search",
+              text: "Search for your organisation within the Pensions Regulator database"
+            },
+            {
+              value: "helpdesk",
+              text: "Contact the Apprenticeship service helpdesk"
+            }
+          ]
+        }) }}
 
 
-{{ govukRadios({
-  idPrefix: "paye-uhp-what-next",
-  name: "paye-uhp-what-next",
-  fieldset: {
-    legend: {
-      text: "What do you want to do?",
-      isPageHeading: true,
-      classes: "govuk-fieldset__legend--m"
-    }
-  },
-  items: [
-    {
-      value: "paye",
-      text: "Enter your PAYE scheme details again"
-    },
-    {
-      value: "search",
-      text: "Search for your organisation within the Pensions Regulator database"
-    },
-    {
-      value: "helpdesk",
-      text: "Contact the Apprenticeship service helpdesk"
-    }
-  ]
-}) }}
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+
+      </form>
 
 
-{{ govukButton({
-  text: "Continue"
-}) }}
 	</div>
   </div>
 </main>
