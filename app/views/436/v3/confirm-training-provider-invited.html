@@ -7,6 +7,12 @@
 
 {% block main %}
 
+    {% if data['user-type'] == 'elsewhere' %}
+      <script>
+          window.location.href = 'enter-ukprn'
+      </script>
+    {% endif %}
+
 {% include "includes/account-header-no-nav-sign-out.html" %}
 
 <div class="govuk-width-container">

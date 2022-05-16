@@ -25,14 +25,29 @@ Do you want to change your apprenticeship service account name?
 
 	<h1 class="govuk-heading-xl">Add a training provider</h1>
 	
-	<p class="govuk-body">
-		You can either add a training provider now, or finish creating your account and add a training provider later.</p> 
+	
 
-		<p>You will not be able to add apprentices or reserve funds until you've added a training provider.</p>
+		{% if data['user-type'] == 'elsewhere' %}
 
-   <!-- <p>You will need to know the UKPRN for your training provider.</p>
-    
-    <p class="govuk-!-margin-bottom-7">A UKPRN is the unique, 8 digit number we use to identify a training provider. Ask your training provider if you do not know it.</p>-->
+			<p>You can either add a training provider now, or finish creating your account and add a training provider later.</p> 
+
+			<p>You will not be able to add apprentices or reserve funds until you've added a training provider.</p>
+
+			<p>You will need to know the UKPRN for your training provider.</p>
+			
+			<p>A UKPRN is the unique, 8 digit number we use to identify a training provider. Ask your training provider if you do not know it.</p>
+      
+
+		{% else %}
+
+			<p>You can either add a training provider now, or finish creating your account and add a training provider later.</p> 
+
+			<p>You will not be able to add apprentices or reserve funds until you've added a training provider.</p>
+
+    {% endif %}
+
+
+		
 		
 
 
