@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-  Enter your training provider's name or reference number (UKPRN) 
+  Enter your training provider's name 
 {% endblock %}
 
 
@@ -24,7 +24,7 @@
 <div class="govuk-grid-column-two-thirds">
 	 
 		 
-      {{ govukInput({
+      <!--{{ govukInput({
         label: {
           text: "Enter your training provider's name or reference number (UKPRN)",
           classes: "govuk-label--xl",
@@ -40,10 +40,26 @@
       {{ govukButton({
         text: "Continue",
         href: "confirm-training-provider"
+      }) }}-->
+
+
+      {{ govukInput({
+        label: {
+          text: "Enter your training provider's name",
+          classes: "govuk-label--xl",
+          isPageHeading: true
+        },
+        id: "UKPRN",
+        name: "UKPRN"
+      }) }}
+
+      {{ govukButton({
+        text: "Continue",
+        href: "confirm-training-provider"
       }) }}
 		  
   
-		  
+		  <p><a href="enter-ukprn-prn.html">My training provider is not listed</a></p>
 
 
 
