@@ -544,6 +544,17 @@ router.post('/436/v3/paye-uhp', function (req, res) {
   }
 });
 
+
+router.post('/436/v3/select-your-org-radios', function (req, res) {
+  const editChoice = req.session.data['choose-org']
+
+  if (editChoice === 'biscuit') {
+    res.redirect('check-details-from-search')
+  } else if (editChoice === 'not-listed') {
+    res.redirect('paye-uhp')
+  } 
+});
+
  /* 436 v3 ends */
 
 

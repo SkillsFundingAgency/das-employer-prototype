@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Select your organisation
+Choose your organisation
 {% endblock %}
 
 
@@ -20,12 +20,13 @@ Select your organisation
 			<div class="govuk-grid-column-two-thirds">
 				
 
+      <form action="select-your-org-radios" method="post">
         {{ govukRadios({
-          idPrefix: "sign-in",
-          name: "sign-in",
+          idPrefix: "choose-org",
+          name: "choose-org",
           fieldset: {
             legend: {
-              text: "Select your organisation",
+              text: "Choose your organisation",
               isPageHeading: true,
               classes: "govuk-fieldset__legend--xl"
             }
@@ -33,7 +34,7 @@ Select your organisation
           
           items: [
             {
-              value: "BISCUIT LIMITED",
+              value: "biscuit",
               text: "BISCUIT LIMITED",
               hint: {
                 text: "2, High Street, Burnham On Crouch, Essex, CM0 8AA"
@@ -73,17 +74,23 @@ Select your organisation
               hint: {
                 text: "3, Brocco Bank, Sheffield, S11 8RQ"
               }
+            },
+            {
+              divider: "or"
+            },
+            {
+              value: "not-listed",
+              text: "My organisation is not listed"
             }
           ]
         }) }}
 				
         {{ govukButton({
-          text: "Continue",
-          href: "check-details-from-search"
+          text: "Continue"
         }) }}
-	
+      </form>
 
-        <p><a href="paye-uhp">My organisation does not appear in this list</a></p>
+
 	
 	
 	
