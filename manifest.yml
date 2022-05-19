@@ -1,0 +1,7 @@
+---
+applications:
+- name: prototypename
+  command: prototypename
+  memory: 256M
+  buildpacks:
+  - nodejs_buildpack
