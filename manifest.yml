@@ -4,4 +4,4 @@ applications:
   command: das-employer-prototype
   memory: 512M
   buildpacks:
-  - nodejs_buildpack 
+  - nodejs_buildpack
