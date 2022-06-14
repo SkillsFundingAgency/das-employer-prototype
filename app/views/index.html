@@ -34,37 +34,81 @@
 
                               <p class="govuk-body">
                                    <b>Ticket 436 - Build end-to-end prototype for sub-journeys in scope for College feedback </b>
-                                   <li> <a href="436/email-to-employer" class="govuk-link">436 - Employer account setup with task list pattern - end-to-end prototype</a>  </li>
-                                   <li> <a href="436/v2/email-to-employer" class="govuk-link">436 v2 - Employer account setup with task list pattern - added step for change account name and made add training provider step optional</a>  </li>
+                                   </p>
+
+                                   <details class="govuk-details" data-module="govuk-details">
+                                        <summary class="govuk-details__summary">
+                                          <span class="govuk-details__summary-text">
+                                            Previous versions 
+                                          </span>
+                                        </summary>
+                                        <div class="govuk-details__text">
+                                          
+                                             <p> <a href="436/email-to-employer" class="govuk-link">436 - Employer account setup with task list pattern - end-to-end prototype</a>  </p>
+                                             <p> <a href="436/v2/email-to-employer" class="govuk-link">436 v2 - Employer account setup with task list pattern - added step for change account name and made add training provider step optional</a>  </p>
+
+                                             <p><strong>Ticket 436 v3</strong></p>
+                                             <form action="436/v3/email-to-employer" id="form" method="post">
+                                                  {{ govukSelect({
+                                                    id: "user-type",
+                                                    name: "user-type",
+                                                    label: {
+                                                      text: "Choose user type"
+                                                    },
+                                                    items: [
+                                                      {
+                                                        value: "email",
+                                                        text: "Invited by email from training provider",
+                                                        selected: true
+                                                      },
+                                                      {
+                                                        value: "elsewhere",
+                                                        text: "Arrives from elsewhere"
+                                                      }
+                                                      
+                                                    ]
+                                                  }) }}
+                                    
+                                                  {{ govukButton({
+                                                    text: "View prototype"
+                                                  }) }}
+                                                </form>
+
+                                        </div>
+                                      </details>
                                    
-                              </p>
+                                   
+                              
                              
-                              <p><strong>Ticket 436 v3</strong></p>
-                              <form action="436/v3/email-to-employer" id="form" method="post">
-                                   {{ govukSelect({
-                                     id: "user-type",
-                                     name: "user-type",
-                                     label: {
-                                       text: "Choose user type"
-                                     },
-                                     items: [
-                                       {
-                                         value: "email",
-                                         text: "Invited by email from training provider",
-                                         selected: true
-                                       },
-                                       {
-                                         value: "elsewhere",
-                                         text: "Arrives from elsewhere"
-                                       }
-                                       
-                                     ]
-                                   }) }}
-                     
-                                   {{ govukButton({
-                                     text: "View prototype"
-                                   }) }}
-                                 </form>
+                             
+
+
+                                 <p><strong>Ticket 436 v4</strong></p>
+                                 <form action="436/v4/email-to-employer" id="form" method="post">
+                                      {{ govukSelect({
+                                        id: "user-type",
+                                        name: "user-type",
+                                        label: {
+                                          text: "Choose user type"
+                                        },
+                                        items: [
+                                          {
+                                            value: "email",
+                                            text: "Invited by email from training provider",
+                                            selected: true
+                                          },
+                                          {
+                                            value: "elsewhere",
+                                            text: "Arrives from elsewhere"
+                                          }
+                                          
+                                        ]
+                                      }) }}
+                        
+                                      {{ govukButton({
+                                        text: "View prototype"
+                                      }) }}
+                                    </form>
                                
                               <p class="govuk-body">
                                    <b>Ticket 416 - Improvements to provider permissions </b>
