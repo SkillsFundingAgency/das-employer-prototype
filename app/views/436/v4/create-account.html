@@ -20,12 +20,19 @@
 <div class="govuk-grid-column-two-thirds">
 			
 	<h1 class="govuk-heading-xl">Create an account to manage apprenticeships</h1>
-	
-	<p class="govuk-body">
-		You need to create or <a href="#">sign in </a>to an apprenticeship account, then you'll be able to get funding to pay for apprenticeship training and assessment costs.
-	</p>		
 
-	<p class="govuk-body">There are 5 sections to be completed. You do not have to do this all at once; each section will be saved for you to finish at a later date.</p>
+		
+	<p class="govuk-body">
+	 There are 5 sections to be completed. You do not have to do this all at once; each section will be saved for you to finish at a later date.</p>
+
+	{{ govukButton({
+		text: "Create account",
+		href: "task-list",
+		isStartButton: true
+	}) }}
+
+<p>If you already have an apprenticeship service account you can
+	<a href="#">sign in</a>.</p>
 
 <!--
 	<p class="govuk-body">
@@ -71,11 +78,12 @@
 						<li>the Government Gateway login for your organisation</li>	
 				</ul>
 
+			
 
 				<details class="govuk-details" data-module="govuk-details">
 					<summary class="govuk-details__summary">
 						<span class="govuk-details__summary-text">
-						Find your Government Gateway details
+							How to find your Government Gateway details
 						</span>
 					</summary>
 					<div class="govuk-details__text">
@@ -86,7 +94,7 @@
 					<details class="govuk-details" data-module="govuk-details">
 					<summary class="govuk-details__summary">
 						<span class="govuk-details__summary-text">
-						Find your accounts office and PAYE scheme reference numbers
+							How to find your accounts office and PAYE scheme reference numbers
 						</span>
 					</summary>
 					<div class="govuk-details__text">
@@ -106,13 +114,6 @@
 					</div>-->
 					</details>
 		
-
-
-		{{ govukButton({
-		  text: "Create account",
-		  href: "task-list",
-		  isStartButton: true
-		}) }}
 
 		<hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 

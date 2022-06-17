@@ -54,11 +54,20 @@ Check your details
 		  Address
 		</dt>
 		<dd class="govuk-summary-list__value">
-		  112-114<br>
+		  <p>112-114<br>
 		  Witton<br>
 		  Northwich<br>
 		  Cheshire<br>
-		  CW8 4RF
+		  CW8 4RF</p>
+			
+			{{ govukDetails({
+				summaryText: "My address is wrong",
+				html: "
+				
+				<p>Content required...</p>
+				
+				"
+			}) }}
 		</dd>
 		<dd class="govuk-summary-list__actions">
 		  <!--<a class="govuk-link" href="#">
@@ -95,27 +104,27 @@ Check your details
 	</dl>
 
 	<form action="details-correct" method="post">
-	{{ govukRadios({
-		idPrefix: "details-correct",
-		name: "details-correct",
-		fieldset: {
-			legend: {
-				text: "Is this the correct PAYE scheme?",
-				isPageHeading: true,
-				classes: "govuk-fieldset__legend--m"
-			}
-		},
-		items: [
-			{
-				value: "yes",
-				text: "Yes, these details are correct"
+		{{ govukRadios({
+			idPrefix: "details-correct",
+			name: "details-correct",
+			fieldset: {
+				legend: {
+					text: "Is this your organisation?",
+					isPageHeading: true,
+					classes: "govuk-fieldset__legend--m"
+				}
 			},
-			{
-				value: "no",
-				text: "No, these details are wrong"
-			}
-		]
-	}) }}
+			items: [
+				{
+					value: "yes",
+					text: "Yes, this is my organisation"
+				},
+				{
+					value: "no",
+					text: "No, those details are wrong"
+				}
+			]
+		}) }}
 
 
 
