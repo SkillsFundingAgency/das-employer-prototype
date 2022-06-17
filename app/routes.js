@@ -576,7 +576,7 @@ router.post('/436/v4/confirm-training-provider', function (req, res) {
   const editChoice = req.session.data['confirm-training-provider-check']
 
   if (editChoice === 'yes') {
-    res.redirect('training-provider-permissions')
+    res.redirect('select-permissions')
   } else if (editChoice === 'no') {
     res.redirect('enter-ukprn')
   }
@@ -642,7 +642,23 @@ router.post('/436/v4/account-name-confirm', function (req, res) {
 });
 
 
-router.post('/436/v4/training-provider-choice', function (req, res) {
+
+
+
+router.post('/436/v4/training-provider-invited-choice-check', (req, res) => {
+  if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
+      res.redirect('select-permissions')
+  } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
+      res.redirect('enter-ukprn')
+  } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
+      res.redirect('account-setup-complete-no-tp')
+  }
+});
+
+
+
+
+router.post('/436/v4/training-provider-choice-check', function (req, res) {
   const editChoice = req.session.data['training-provider-choice-check']
 
   if (editChoice === 'yes') {
