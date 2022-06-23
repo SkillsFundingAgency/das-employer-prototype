@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Check your details
+Check your organisation details
 {% endblock %}
 
 
@@ -32,7 +32,7 @@ Check your details
 
 <div class="govuk-grid-column-two-thirds">
 			
-	<h1 class="govuk-heading-xl">Check your details</h1>
+	<h1 class="govuk-heading-xl">Check your organisation details</h1>
 	
 	
 	
@@ -60,14 +60,6 @@ Check your details
 		  Cheshire<br>
 		  CW8 4RF</p>
 			
-			{{ govukDetails({
-				summaryText: "My address is wrong",
-				html: "
-				
-				<p>Content required...</p>
-				
-				"
-			}) }}
 		</dd>
 		<dd class="govuk-summary-list__actions">
 		  <!--<a class="govuk-link" href="#">
@@ -118,6 +110,10 @@ Check your details
 				{
 					value: "yes",
 					text: "Yes, this is my organisation"
+				},
+				{
+					value: "address",
+					text: "Yes, this is my organisation but the address is wrong"
 				},
 				{
 					value: "no",

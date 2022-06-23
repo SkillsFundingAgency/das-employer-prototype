@@ -698,7 +698,9 @@ router.post('/436/v4/add-paye-knockout', function (req, res) {
 router.post('/436/v4/details-correct', (req, res) => {
   if(req.session.data['details-correct'] == 'yes'){
       res.redirect('paye-scheme-added')
-} else if(req.session.data['details-correct'] == 'no'){
+  } else if(req.session.data['details-correct'] == 'address'){
+      res.redirect('address-wrong')
+  } else if(req.session.data['details-correct'] == 'no'){
       res.redirect('search-for-org')
   }
 });
