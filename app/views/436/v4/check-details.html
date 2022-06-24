@@ -23,6 +23,18 @@ Check your organisation details
 </script>
 {% endif %}
 
+{% if data['gg-id'] == 'ABC' %}
+<script>
+    window.location.href = 'select-your-org-radios'
+</script>
+{% endif %}
+
+{% if data['gg-id'] == 'DEF' %}
+<script>
+    window.location.href = 'search-for-org'
+</script>
+{% endif %}
+
 <div class="govuk-width-container">
 	
 	{% include "includes/back-link-save-return.html" %}

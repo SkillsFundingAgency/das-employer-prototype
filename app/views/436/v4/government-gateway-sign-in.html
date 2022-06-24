@@ -22,25 +22,27 @@
 		Enter your Government Gateway credentials to sign in. You received these when you created your HMRC online account.
 	</p>		
 
+	<form class="form" action="check-details" method="post">
+
 	<div class="govuk-form-group">
 		<label class="govuk-label" for="three-quarters">
 		  User ID
-		<input class="govuk-input govuk-!-width-one-third govuk-!-margin-left-7" id="three-quarters" name="three-quarters" type="text"></div>
+		<input class="govuk-input govuk-!-width-one-third govuk-!-margin-left-7" id="gg-id" name="gg-id" type="text"></div>
 		</label>
 
-	
 		<div class="govuk-form-group">
 			<label class="govuk-label" for="three-quarters">
 				Password
-			<input class="govuk-input govuk-!-width-one-third govuk-!-margin-left-4" id="three-quarters" name="three-quarters" type="text"></div>
+			<input class="govuk-input govuk-!-width-one-third govuk-!-margin-left-4" id="gg-pwds" name="three-quarters" type="text"></div>
 		</label>
 
+		{{ govukButton({
+			text: "Sign in"
+		}) }}
+
+	</form>
 
 
-{{ govukButton({
-	text: "Sign in",
-	href: "search-for-org"
-}) }}
 
 	</div>
   </div>
