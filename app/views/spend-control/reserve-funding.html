@@ -25,49 +25,20 @@ Reserve funding to train and assess an apprentice
 
 	<h1 class="govuk-heading-xl">Reserve funding to train and assess an apprentice  </h1>
 	
-	<p>...</p>
+	<p>To reserve funding, you will need to know:</p>
 
+	<ul class="govuk-list govuk-list--bullet">
+		<li>the month you expect the apprenticehship training to start</li>
+		<li>the <a href="">apprenticeship training course</a> the apprentice will take, which can be changed later</li>
+	</ul>
 
-		
-		
-
-
-	
-
-
-<form action="training-provider-choice" method="post">
-
-	
-
-
-
-
-	{{ govukRadios({
-	  idPrefix: "training-provider-choice-check",
-	  name: "training-provider-choice-check",
-		fieldset: {
-			legend: {
-				text: "What do you want to do next?",
-				classes: "govuk-fieldset__legend--m"
-			}
-		},
-	  items: [
-		{
-		  value: "yes",
-		  text: "Choose another course"
-		},
-		{
-		  value: "no",
-		  text: "Return to my account"
-		}
-	  ]
-	}) }}
 
 		{{ govukButton({
-		  text: "Continue"
+		  text: "Continue",
+			href: "which-course"
 		}) }}
 
-	</form> 
+
 
 
 
