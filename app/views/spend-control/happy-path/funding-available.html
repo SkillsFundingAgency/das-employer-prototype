@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Funding is available within this apprenticeship category to train and assess your apprentice
+Apprenticeship funding is available to train and assess your apprentice 
 {% endblock %}
 
 
@@ -23,7 +23,7 @@ Funding is available within this apprenticeship category to train and assess you
 <div class="govuk-grid-column-two-thirds">
 				
   <div class="success-summary govuk-!-margin-bottom-9">
-    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Funding is available within this apprenticeship category to train and assess your apprentice </h1>
+    <h1 class="govuk-heading-xl govuk-!-margin-bottom-2">Apprenticeship funding is available to train and assess your apprentice </h1>
   </div>
 
   
@@ -96,10 +96,17 @@ Funding is available within this apprenticeship category to train and assess you
 
 
 		
-		
+  {{ govukWarningText({
+    html: "<p>If you need to change the training course you can only select another course within the Construction and the built environment training category. You are not able to change the funding for this apprenticeship.</p>
+    
+    ",
+    iconFallbackText: "Warning"
+  }) }}
 
 
 	
+
+
 
 
 <form action="funding-reserved" method="post">
@@ -121,7 +128,7 @@ Funding is available within this apprenticeship category to train and assess you
 	  items: [
 		{
 		  value: "yes",
-		  text: "Yes, reserve this funding in Construction and the built environment"
+		  text: "Yes, reserve this funding in the Construction and the built environment training category"
 		},
 		{
 		  value: "no",
