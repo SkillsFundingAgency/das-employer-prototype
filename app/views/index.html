@@ -68,6 +68,7 @@
                               <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
 
                               <p class="govuk-body">
+                                   <h2 class="govuk-heading-m">New employer account registration</h2>
                                    <b>Ticket 436 - Build end-to-end prototype for sub-journeys in scope for College feedback </b>
                                    </p>
 
@@ -81,6 +82,8 @@
                                           
                                              <p> <a href="436/email-to-employer" class="govuk-link govuk-link--no-visited-state">436 - Employer account setup with task list pattern - end-to-end prototype</a>  </p>
                                              <p> <a href="436/v2/email-to-employer" class="govuk-link govuk-link--no-visited-state">436 v2 - Employer account setup with task list pattern - added step for change account name and made add training provider step optional</a>  </p>
+
+                                             
 
                                              <p><strong>Ticket 436 v3</strong></p>
                                              <form action="436/v3/email-to-employer" id="form" method="post">
@@ -111,6 +114,34 @@
 
                                                 <p><a href="https://docs.google.com/presentation/d/1QslzjwWwquULqGorrhJlCFxQWvm0_NN4f8iaEZQN8Gw/edit#slide=id.g11b061cb8ab_0_0" target="_blank"  class="govuk-link govuk-link--no-visited-state">UR playback for round of testing on v3</a></p>
 
+                                                <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                                
+                                                <p><strong>Ticket 436 v4</strong></p>
+                                                <form action="436/v4/email-to-employer" id="form" method="post">
+                                                     {{ govukSelect({
+                                                       id: "user-type",
+                                                       name: "user-type",
+                                                       label: {
+                                                         text: "Choose user type"
+                                                       },
+                                                       items: [
+                                                         {
+                                                           value: "email",
+                                                           text: "Invited by email from training provider",
+                                                           selected: true
+                                                         },
+                                                         {
+                                                           value: "elsewhere",
+                                                           text: "Arrives from elsewhere"
+                                                         }
+                                                         
+                                                       ]
+                                                     }) }}
+                                       
+                                                     {{ govukButton({
+                                                       text: "View prototype"
+                                                     }) }}
+                                                   </form>
                                         </div>
                                       </details>
                                    
@@ -120,8 +151,8 @@
                              
 
 
-                                 <p><strong>Ticket 436 v4</strong></p>
-                                 <form action="436/v4/email-to-employer" id="form" method="post">
+                                 <p><strong>Ticket 436 v5</strong></p>
+                                 <form action="436/v5/email-to-employer" id="form" method="post">
                                       {{ govukSelect({
                                         id: "user-type",
                                         name: "user-type",
