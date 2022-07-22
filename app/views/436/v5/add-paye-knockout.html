@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Is your company pay bill more than £3 million?
+How much is your organisation's annual pay bill?
 {% endblock %}
 
 
@@ -28,7 +28,7 @@ Is your company pay bill more than £3 million?
 			name: "pay-bill-check",
 			fieldset: {
 				legend: {
-					text: "Is your company pay bill more than £3 million?",
+					text: "How much is your organisation's annual pay bill?",
 					isPageHeading: true,
 					classes: "govuk-fieldset__legend--xl"
 				}
@@ -39,18 +39,18 @@ Is your company pay bill more than £3 million?
 			items: [
 				{
 					value: "yes",
-					text: "Yes, my pay bill is more than £3 million "
+					text: "Over £3 million "
 				},
         {
 					value: "not-yet",
-					text: "It is close to £3 million",
+					text: "Close to £3 million",
 					hint: {
-						text: "Choose this option if your pay bill is likely to exceed £3 million in the near future"
+						text: "Choose this option if your pay bill is likely to exceed £3 million in the near future to access levy funds"
 					}
 				},
 				{
 					value: "no",
-					text: "No, my company pay bill is less than £3 million"
+					text: "Less than £3 million"
 				}
 			]
 		}) }}
