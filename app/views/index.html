@@ -145,6 +145,38 @@
                                                    </form>
 
                                                    <p><a href="https://docs.google.com/presentation/d/1YElm19prdVYj5tfnYhJwhrfnXKufDviZGGmSJJpPOOQ/edit#slide=id.g11b061cb8ab_0_0" target="_blank"  class="govuk-link govuk-link--no-visited-state">UR playback for round of testing on v4</a></p>
+
+                                                   <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+                                                
+                                                <p><strong>Ticket 436 v5</strong></p>
+
+                                                <form action="436/v5/email-to-employer" id="form" method="post">
+                                                     {{ govukSelect({
+                                                       id: "user-type",
+                                                       name: "user-type",
+                                                       label: {
+                                                         text: "Choose user type"
+                                                       },
+                                                       items: [
+                                                         {
+                                                           value: "email",
+                                                           text: "Invited by email from training provider",
+                                                           selected: true
+                                                         },
+                                                         {
+                                                           value: "elsewhere",
+                                                           text: "Arrives from elsewhere"
+                                                         }
+                                                         
+                                                       ]
+                                                     }) }}
+                                       
+                                                     {{ govukButton({
+                                                       text: "View prototype"
+                                                     }) }}
+                                                   </form>
+
+                                                   <p><a href="#" target="_blank"  class="govuk-link govuk-link--no-visited-state">UR playback for round of testing on v5</a></p>
                                         </div>
                                       </details>
                                    
@@ -154,8 +186,8 @@
                              
 
 
-                                 <p><strong>Ticket 436 v5</strong></p>
-                                 <form action="436/v5/email-to-employer" id="form" method="post">
+                                 <p><strong>Ticket 436 v6</strong></p>
+                                 <form action="436/v6/email-to-employer" id="form" method="post">
                                       {{ govukSelect({
                                         id: "user-type",
                                         name: "user-type",
@@ -182,7 +214,7 @@
                                     </form>
 
                                     <p><strong>Notification emails</strong></p>
-                                    <p><a href="436/v5/welcome-email">Thank you for setting up an account</a></p>
+                                    <p><a href="436/v6/welcome-email">Thank you for setting up an account</a></p>
 
 
                                     <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
