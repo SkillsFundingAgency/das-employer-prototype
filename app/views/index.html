@@ -187,9 +187,11 @@
 
 
                                  <p><strong>Ticket 436 v6</strong></p>
-                                 {{ govukInsetText({
-                                   text: "Changes made to include Gov.uk Sign in"
-                                 }) }}
+
+                                 <div class="govuk-inset-text">
+                                   Changes made to include <a href="https://www.sign-in.service.gov.uk/" class="govuk-link govuk-link--no-visited-state" rel="noreferrer noopener" target="_blank">GOV.UK Sign in (opens in new tab)</a>.
+                                 </div>
+
                                  <form action="436/v6/email-to-employer" id="form" method="post">
                                       {{ govukSelect({
                                         id: "user-type",
