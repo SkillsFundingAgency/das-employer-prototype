@@ -923,7 +923,15 @@ router.post('/436/v5/select-your-org-radios', function (req, res) {
 
  /* 436 v5 ends */
 
- /* 436 v5 starts */
+ /* 436 v6 starts */
+
+ router.post('/436/v6/select-security-code', (req, res, next) => {
+	if(req.session.data['security-code'] == 'text'){
+		res.redirect('/436/v6/1e-enter-number')
+	} else {
+		res.redirect('/436/v6/1e-app')
+	}
+})
 
 router.post('/436/v6/add-paye-scheme', function (req, res) {
   const editChoice = req.session.data['add-paye-scheme-check']

@@ -41,7 +41,7 @@ Check your phone
 	</div>
 
 	<p>
-		It might take a few minutes to arrive. The code will expire after 15 minutes.
+		It might take a few minutes to arrive. The code will expire after 2 hours.
 	</p>
 
 
@@ -49,27 +49,23 @@ Check your phone
 		<label class="govuk-label" for="width-5">
 			Enter the 6 digit security code
 		</label>
-		<input class="govuk-input govuk-input--width-5" id="event-name" name="event-name" type="text">
+		<input class="govuk-input govuk-input--width-10" id="event-name" name="event-name" type="text">
 	</div>
 
 	  <details class="govuk-details" data-module="govuk-details">
 		<summary class="govuk-details__summary">
 		  <span class="govuk-details__summary-text">
-			Problems receiving the code
+			Problems with the code?
 		  </span>
 		</summary>
 		<div class="govuk-details__text">
-			<p class="govuk-body"><a href="" class="govuk-link govuk-link--no-visited-state">Request a new code</a> if:</p>
-				<ul class="govuk-list govuk-list--bullet">
-					<li>the code is not working or has expired, or you did not receive one</li>
-					<li>your want to use a different phone number</li>
-				</ul>
+			<p class="govuk-body">We can <a href="#" class="govuk-link govuk-link--no-visited-state">send the code again</a> or you can <a href="1e-enter-number" class="govuk-link govuk-link--no-visited-state">use a different phone number</a>.</p>
 		</div>
 	  </details>
 
 {{ govukButton({
 	text: "Continue",
-	href: "1f-account-created"
+	href: "1g-account-created"
 }) }}
 
 
