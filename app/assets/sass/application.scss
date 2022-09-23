@@ -20,9 +20,18 @@ $govuk-assets-path: '/govuk/assets/';
 @import "components/cookie-banner";
 @import "components/accessible-autocomplete";
 
+// MA Floating menu styles
+@import "components/_ma-menu";
+
+@import "components/_login-nav"; // login nav styles
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
+.hidden,
+.js-enabled .js-hidden {
+  display: none;
+  visibility: hidden;
+}
 
 //DAS Nav and header
 
