@@ -1,4 +1,4 @@
-{% extends "ma-layout.html" %}
+{% extends "layout.html" %}
 
 {% block pageTitle %}
   Home - Manage apprentices
@@ -7,12 +7,12 @@
 
 {% block main %}
 
+{% include "includes/account-header+nav-settings.html" %}
+
 {% block content %}
 
 <div class="govuk-width-container">
 
-	<br><br>
-	
 	<div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
 		<div class="govuk-notification-banner__header">
 		  <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
