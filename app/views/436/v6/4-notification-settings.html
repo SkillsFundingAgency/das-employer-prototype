@@ -1,0 +1,77 @@
+{% extends "ma-layout.html" %}
+
+{% block pageTitle %}
+Notification Settings
+{% endblock %}
+
+
+{% block main %}
+
+
+{% block content %}
+
+
+
+<div class="govuk-width-container">
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+			
+	<h1 class="govuk-heading-xl">Notification Settings</h1>
+
+		
+	<p class="govuk-body">
+		Choose which accounts you want to receive cohort and apprentice updates from. 
+		The updates will be sent to the email address for <a href="5-govuk-account" class="govuk-link" rel="noreferrer noopener" target="_blank">your GOV.UK account (opens in new tab)</a>.
+
+	</p>
+
+	<p class="govuk-body">
+		Changes to these settings won't affect service emails, such as password resets.
+	</p>
+
+
+	<table class="govuk-table">
+		<thead class="govuk-table__head">
+		  <tr class="govuk-table__row">
+			<th scope="col" class="govuk-table__header">Account name</th>
+			<th scope="col" class="govuk-table__header govuk-table__header--numeric">Emails</th>
+			<th scope="col" class="govuk-table__header govuk-table__header--numeric">No emails</th>
+		  </tr>
+		</thead>
+		<tbody class="govuk-table__body">
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header">January</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
+					  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+						
+					  </label>
+					</div>
+			</td>
+			<td class="govuk-table__cell govuk-table__cell--numeric">£95</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header">February</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">£75</td>
+			<td class="govuk-table__cell govuk-table__cell--numeric">£55</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header">March</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
+			<td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
+		  </tr>
+		</tbody>
+	  </table>
+
+	</div>
+  </div>
+</main>
+</div>
+
+{% endblock %}
+
+{% endblock %}
