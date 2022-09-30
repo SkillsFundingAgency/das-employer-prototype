@@ -1,4 +1,4 @@
-{% extends "ma-layout.html" %}
+{% extends "ma-layout-v2.html" %}
 
 {% block pageTitle %}
 Notification Settings
@@ -35,34 +35,68 @@ Notification Settings
 	<table class="govuk-table">
 		<thead class="govuk-table__head">
 		  <tr class="govuk-table__row">
-			<th scope="col" class="govuk-table__header">Account name</th>
-			<th scope="col" class="govuk-table__header govuk-table__header--numeric">Emails</th>
-			<th scope="col" class="govuk-table__header govuk-table__header--numeric">No emails</th>
+			<th scope="col" class="govuk-table__header govuk-!-width-two-thirds">Account name</th>
+			<th scope="col" class="govuk-table__header">Emails</th>
+			<th scope="col" class="govuk-table__header">No emails</th>
 		  </tr>
 		</thead>
 		<tbody class="govuk-table__body">
 		  <tr class="govuk-table__row">
-			<th scope="row" class="govuk-table__header">January</th>
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">Coventry City Council</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="cov-city" name="cov-city" type="radio" value="email" checked="checked">
+					  <label class="govuk-label govuk-radios__label" for="cov-city">
+					  </label>
+					</div>
+			</td>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="cov-city-no" name="cov-city" type="radio" value="no">
+					  <label class="govuk-label govuk-radios__label" for="cov-city-no">
+					  </label>
+					</div>
+			</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">BARBERRY COVENTRY LIMITED</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="barb-cov" name="barb-cov" type="radio" value="email" checked="checked">
+					  <label class="govuk-label govuk-radios__label" for="barb-cov">
+					  </label>
+					</div>
+			</td>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="barb-cov" name="barb-cov" type="radio" value="no" >
+					  <label class="govuk-label govuk-radios__label" for="barb-cov">
+					  </label>
+					</div>
+			</td>
+		  </tr>
+		  <tr class="govuk-table__row">
+			<th scope="row" class="govuk-table__header govuk-!-font-weight-regular">COVENTRY ACCOUNTANTS LTD</th>
+			<td class="govuk-table__cell govuk-table__cell--numeric">
+				<div class="govuk-radios" data-module="govuk-radios">
+					<div class="govuk-radios__item">
+					  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england" checked="checked">
+					  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
+					  </label>
+					</div>
+			</td>
 			<td class="govuk-table__cell govuk-table__cell--numeric">
 				<div class="govuk-radios" data-module="govuk-radios">
 					<div class="govuk-radios__item">
 					  <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio" value="england">
 					  <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-						
 					  </label>
 					</div>
 			</td>
-			<td class="govuk-table__cell govuk-table__cell--numeric">£95</td>
-		  </tr>
-		  <tr class="govuk-table__row">
-			<th scope="row" class="govuk-table__header">February</th>
-			<td class="govuk-table__cell govuk-table__cell--numeric">£75</td>
-			<td class="govuk-table__cell govuk-table__cell--numeric">£55</td>
-		  </tr>
-		  <tr class="govuk-table__row">
-			<th scope="row" class="govuk-table__header">March</th>
-			<td class="govuk-table__cell govuk-table__cell--numeric">£165</td>
-			<td class="govuk-table__cell govuk-table__cell--numeric">£125</td>
 		  </tr>
 		</tbody>
 	  </table>
