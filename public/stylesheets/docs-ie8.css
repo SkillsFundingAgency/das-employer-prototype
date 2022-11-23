@@ -867,17 +867,17 @@
 }
 @media screen and (forced-colors: active) {
   .js-enabled .govuk-accordion__show-all:hover .govuk-accordion-nav__chevron,
-.js-enabled .govuk-accordion__section-button:hover .govuk-accordion-nav__chevron {
+  .js-enabled .govuk-accordion__section-button:hover .govuk-accordion-nav__chevron {
     background-color: transparent;
   }
   .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-toggle-focus,
-.js-enabled .govuk-accordion__show-all:focus .govuk-accordion-nav__chevron,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-heading-text-focus,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-summary-focus,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus,
-.js-enabled .govuk-accordion__section-button:focus .govuk-accordion-nav__chevron {
+  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-summary-focus,
+  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion__section-toggle-focus,
+  .js-enabled .govuk-accordion__show-all:focus .govuk-accordion-nav__chevron,
+  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-heading-text-focus,
+  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-summary-focus,
+  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion__section-toggle-focus,
+  .js-enabled .govuk-accordion__section-button:focus .govuk-accordion-nav__chevron {
     background: transparent;
     background-color: transparent;
   }
@@ -1248,7 +1248,7 @@
 
 @supports not (caret-color: auto) {
   .govuk-fieldset,
-x:-moz-any-link {
+  x:-moz-any-link {
     display: table-cell;
   }
 }
@@ -1660,6 +1660,9 @@ x:-moz-any-link {
     font-feature-settings: normal;
     font-variant-numeric: tabular-nums;
   }
+}
+.govuk-character-count__message:after {
+  content: "​";
 }
 
 .govuk-character-count__message--disabled {
@@ -2893,13 +2896,15 @@ x:-moz-any-link {
   display: block;
   min-width: 15px;
 }
-.govuk-pagination__link:after {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  left: 0;
+@media screen {
+  .govuk-pagination__link:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+  }
 }
 .govuk-pagination__link:hover .govuk-pagination__link-title--decorated, .govuk-pagination__link:active .govuk-pagination__link-title--decorated {
   text-decoration: underline;
