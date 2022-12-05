@@ -12,14 +12,14 @@ How much is your organisation's annual pay bill?
 {% block content %}
 
 <div class="govuk-width-container">
-	
+
 	{% include "includes/back-link-save-return.html" %}
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
 
 <div class="govuk-grid-column-two-thirds">
-		
+
 
 
 <form action="add-paye-knockout" method="post">
@@ -73,7 +73,7 @@ How much is your organisation's annual pay bill?
 {{ govukDetails({
   summaryText: "What does annual pay bill mean?",
   html: "
-	
+
 	<p>Your annual pay bill is all payments to employees that are subject to employer <a href='https://www.gov.uk/national-insurance-rates-letters' class='govuk-link'>Class 1 secondary National Insurance contributions</a> such as wages, bonuses and commissions.</p>
 
 <p>Your pay bill must include payments to:</p>
@@ -92,7 +92,7 @@ How much is your organisation's annual pay bill?
   <li>of employees who are not subject to UK National Insurance contributions legislation</li>
   <li>on which Class 1A National Insurance contributions are payable, such as benefits in kind</li>
 </ul>
-	
+
 	"
 }) }}
 

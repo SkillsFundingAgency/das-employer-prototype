@@ -27,7 +27,7 @@
       Account name changed
     </p>
   {% endset %}
-  
+
   {{ govukNotificationBanner({
     html: html,
     type: 'success'
@@ -38,7 +38,7 @@
   <p>You can change your account name at any time.</p>
 
   <p>Before you can add apprentices or reserve funds, you still need to:</p>
-  
+
   <ul class="govuk-list govuk-list--bullet">
     <li>accept your employer agreement</li>
     <li>add a training provider</li>
@@ -52,7 +52,7 @@
 
 {{ govukButton({
 	text: "Continue",
-	href: "task-list-4"
+	href: "account-setup-complete"
 }) }}
 
 <p><a href="/progress-saved">I'll finish creating my account later</a></p>

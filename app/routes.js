@@ -1344,7 +1344,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
    if (editChoice === 'yes') {
      res.redirect('account-name-change-confirm')
    } else if (editChoice === 'no') {
-     res.redirect('task-list-4')
+     res.redirect('account-setup-complete')
    }
  });
 
