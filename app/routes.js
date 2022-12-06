@@ -1470,14 +1470,14 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
  });
 
   /* 436 v7 ends */
-	
+
 	/* 436 v8 starts */
 
   router.post('/436/v8/select-security-code', (req, res, next) => {
  	if(req.session.data['security-code'] == 'app'){
- 		res.redirect('/436/v6/1e-app')
+ 		res.redirect('/436/v8/1e-app')
  	} else {
- 		res.redirect('/436/v6/1e-enter-number')
+ 		res.redirect('/436/v8/1e-enter-number')
  	}
  })
 
