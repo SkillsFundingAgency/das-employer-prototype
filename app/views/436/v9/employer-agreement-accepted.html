@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-You've added a PAYE schem
+Employer agreement accepted
 {% endblock %}
 
 
@@ -24,24 +24,16 @@ You've added a PAYE schem
 
   {% set html %}
     <p class="govuk-notification-banner__heading">
-      Organisation and PAYE scheme added
+      Employer agreement accepted
     </p>
   {% endset %}
-
+  
   {{ govukNotificationBanner({
     html: html,
     type: 'success'
   }) }}
 
-	<h1 class="govuk-heading-xl">You've added your organisation and PAYE scheme</h1>
-
-  <p>Before you can add apprentices or reserve funds, you still need to:</p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>set your account name</li>
-    <li>accept the employer agreement</li>
-    <li>add a training provider</li>
-  </ul>
+	<h1 class="govuk-heading-xl">You've accepted your employer agreement</h1>  
 
   <p>You can continue creating your account now or at a later date.</p>
 
@@ -51,7 +43,7 @@ You've added a PAYE schem
 
 {{ govukButton({
 	text: "Continue",
-	href: "task-list-3"
+	href: "task-list-5"
 }) }}
 
 <p><a href="/progress-saved">I'll finish creating my account later</a></p>
