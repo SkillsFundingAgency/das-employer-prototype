@@ -1507,7 +1507,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
    if(req.session.data['confirm-permissions-check'] == 'yes'){
        res.redirect('account-setup-complete')
  } else if(req.session.data['confirm-permissions-check'] == 'no'){
-       res.redirect('account-setup-complete')
+       res.redirect('account-setup-complete-no-tp')
    }
  });
 
@@ -1528,7 +1528,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
    if (editChoice === 'yes') {
      res.redirect('account-name-change-confirm')
    } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete')
+     res.redirect('account-setup-complete-no-tp')
    }
  });
 
