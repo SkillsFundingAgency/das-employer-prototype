@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Do you want to change your apprenticeship service account name?
+Set your employer account name
 {% endblock %}
 
 
@@ -14,42 +14,42 @@ Do you want to change your apprenticeship service account name?
 
 
 <div class="govuk-width-container">
-	
+
 	{% include "includes/back-link-save-return.html" %}
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
 
 <div class="govuk-grid-column-two-thirds">
-				
 
-	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Set your account name</h1>
-	
+
+	<h1 class="govuk-heading-xl govuk-!-margin-top-6">Set your employer account name</h1>
+
 	<p class="govuk-body">
-		You can change your apprenticeship service account name if there is another name (such as a trading name) that you are known by. Your account name is visible to training providers and helps them to find you in the service.</p> 
-		
+You can change the employer name you use in the apprenticeship service if there is another organisation name (such as a trading name) that you are known by. Your employer account name is visible to training providers and helps them to find you in the service</p>
+
 		<p class="govuk-body">This is not the legal entity name that is registered with the Pensions regulator.
-	</p>	
+	</p>
 
 	<p class="govuk-body">
-		You can change your account name at any time.
-	</p>	
+You can change your employer account name at any time
+	</p>
 
 
 	<p class="govuk-body govuk-!-margin-bottom-6">
 		<b>Organisation name (legal entity)</b><br>
 		KAREN'S GLASS LIMITED
-	</p>	
+	</p>
 
 	<p class="govuk-body govuk-!-margin-bottom-6">
-		<b>Account name</b><br>
+		<b>Employer account name [in the apprenticeship service]</b><br>
 		KAREN'S GLASS LIMITED
-	</p>	
+	</p>
 
 
 <form action="change-account-name" method="post">
 
-	
+
 
 	{% set accountnameHtml %}
 		{{ govukInput({
@@ -67,21 +67,21 @@ Do you want to change your apprenticeship service account name?
 	  name: "change-account-name-check",
 		fieldset: {
 			legend: {
-				text: "Do you want to change your apprenticeship service account name?",
+				text: "Do you want to change your employer account name?",
 				classes: "govuk-fieldset__legend--m"
 			}
 		},
 	  items: [
 		{
 		  value: "yes",
-		  text: "Yes, I want to change my account name",
+		  text: "Yes, I want to change my employer account name",
 			conditional: {
         html: accountnameHtml
       }
 		},
 		{
 		  value: "no",
-		  text: "No, I don't need to change my account name"
+		  text: "No, I want to use my organisation name as my employer account name"
 		}
 	  ]
 	}) }}
@@ -90,7 +90,7 @@ Do you want to change your apprenticeship service account name?
 		  text: "Continue"
 		}) }}
 
-	</form> 
+	</form>
 
 	{% include "includes/save-return-bottom.html" %}
 
