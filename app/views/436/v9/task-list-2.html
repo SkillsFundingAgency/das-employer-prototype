@@ -14,14 +14,14 @@ Set up your employer account
 		<div class="govuk-grid-column-one-half">
 		<!--	<a class="govuk-back-link" onclick="history.back()" href="#">Back</a>--> &nbsp;
 		</div>
-		<div class="govuk-grid-column-one-half">
+		<!--<div class="govuk-grid-column-one-half">
 				<div class="govuk-!-margin-top-3 right-aligned right-aligned--reset-on-mobile" style="text-align: right;">
 					<a href="/progress-saved" class="govuk-!-font-size-19"
 						data-ga-track-link="task list header"
 						data-ga-track-link-category="Internal link"
 						data-ga-track-link-action="save application">Save and return later</a>
 				</div>
-		</div>
+		</div>-->
 	</div>
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 	  <div class="govuk-grid-row">
@@ -140,9 +140,15 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 
 				</ol>
 
+				
+					{{ govukButton({
+					  text: "Save and come back later",
+					  classes: "govuk-button--secondary",
+					  href: "/progress-saved"
+					}) }}
+				
 
-
-				{% include "includes/save-return-bottom.html" %}
+				<!--{% include "includes/save-return-bottom.html" %}-->
 
 
 		  <!--<ol class="app-task-list">

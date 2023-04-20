@@ -13,7 +13,7 @@ How much is your organisation's annual pay bill?
 
 <div class="govuk-width-container">
 
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -45,7 +45,7 @@ How much is your organisation's annual pay bill?
 					value: "not-yet",
 					text: "Close to £3 million",
 					hint: {
-						text: "To access levy funds choose this option if your annual pay bill is likely to exceed £3 million in the near future "
+						text: "To access levy funds, choose this option if you think your annual pay bill could be more than £3 million in the future "
 					}
 				},
 				{
@@ -55,49 +55,43 @@ How much is your organisation's annual pay bill?
 			]
 		}) }}
 
-		<!--{{ govukDetails({
-			summaryText: "Why are we asking this?",
-			text: "We need to know your nationality so we can work out which elections you’re entitled to vote in. If you cannot provide your nationality, you’ll have to send copies of identity documents through the post."
-		}) }}-->
-
-
-		<!--hint: {
-			html: "If you think your pay bill may exceed £3 million in the near future, choose 'It is close to £3 million'. You will then be able to spend your levy on apprenticeship training without having to reserve funds.</p>"
-		},-->
-
-		{{ govukButton({
-			text: "Continue"
+		{{ govukDetails({
+			summaryText: "What does annual pay bill mean?",
+			html: "
+		  
+			  <p>Your annual pay bill is all payments to employees that are subject to employer <a href='https://www.gov.uk/national-insurance-rates-letters' class='govuk-link'>Class 1 secondary National Insurance contributions</a> such as wages, bonuses and commissions.</p>
+		  
+		  <p>Your pay bill must include payments to:</p>
+		  
+		  <ul>
+			<li>all employees earning below the <a href='https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2021-to-2022#class-1-national-insurance-threshold' class='govuk-link'>Lower Earnings Limit and the Secondary Threshold</a>
+		  </li>
+			<li>employees under the age of 21</li>
+			<li>apprentices under the age of 25</li>
+		  </ul>
+		  
+		  <p>Your pay bill must not include earnings:</p>
+		  
+		  <ul>
+			<li>of employees under the age of 16</li>
+			<li>of employees who are not subject to UK National Insurance contributions legislation</li>
+			<li>on which Class 1A National Insurance contributions are payable, such as benefits in kind</li>
+		  </ul>
+		  
+			  "
 		  }) }}
+
+		  {{ govukButton({
+			text: "Save and continue"
+		  }) }}
+			
+			{{ govukButton({
+			  text: "Save and come back later",
+			  classes: "govuk-button--secondary",
+			  href: "/progress-saved"
+			}) }}
 </form>
 
-{{ govukDetails({
-  summaryText: "What does annual pay bill mean?",
-  html: "
-
-	<p>Your annual pay bill is all payments to employees that are subject to employer <a href='https://www.gov.uk/national-insurance-rates-letters' class='govuk-link'>Class 1 secondary National Insurance contributions</a> such as wages, bonuses and commissions.</p>
-
-<p>Your pay bill must include payments to:</p>
-
-<ul>
-  <li>all employees earning below the <a href='https://www.gov.uk/guidance/rates-and-thresholds-for-employers-2021-to-2022#class-1-national-insurance-threshold' class='govuk-link'>Lower Earnings Limit and the Secondary Threshold</a>
-</li>
-  <li>employees under the age of 21</li>
-  <li>apprentices under the age of 25</li>
-</ul>
-
-<p>Your pay bill must not include earnings:</p>
-
-<ul>
-  <li>of employees under the age of 16</li>
-  <li>of employees who are not subject to UK National Insurance contributions legislation</li>
-  <li>on which Class 1A National Insurance contributions are payable, such as benefits in kind</li>
-</ul>
-
-	"
-}) }}
-
-
-{% include "includes/save-return-bottom.html" %}
 
 	</div>
   </div>

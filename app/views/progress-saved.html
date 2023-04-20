@@ -23,13 +23,32 @@ Your progress has been saved
       Your progress has been saved
     </h1>
 
-    <p>You can:
-      <ul class="govuk-list govuk-list--bullet">
+    <p>You can return at anytime to continue setting up your employer account.</p>
+      
+     <p>An email has been sent to your registered email address with a link for you to be able to continue at a later date.</p>
+
+<br>
+
+     <div class="govuk-button-group">
+      {{ govukButton({
+        text: "Continue creating your account",
+        href: ""
+      }) }}
+      
+      {{ govukButton({
+        text: "Sign out",
+        href: "signed-out",
+        classes: "govuk-button--secondary"
+      }) }}
+      </div>
+     
+
+     <!---- <ul class="govuk-list govuk-list--bullet">
         <li><a href="#" onclick="history.back()">continue creating your account</a></li>
         <li><a href="signed-out">sign out</a></li>
-      </ul>
+      </ul></p>
 
-    <p>If you sign out you can return to finish creating your account at any time.</p>
+    <p>If you sign out you can return to finish creating your account at any time.</p>-->
    
     
 

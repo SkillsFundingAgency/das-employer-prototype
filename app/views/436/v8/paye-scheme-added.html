@@ -13,8 +13,6 @@ You've added a PAYE schem
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
-
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
 
@@ -50,12 +48,16 @@ You've added a PAYE schem
 
 
 {{ govukButton({
-	text: "Continue",
+	text: "Save and continue",
 	href: "task-list-3"
 }) }}
 
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
 
+{{ govukButton({
+  text: "Save and come back later",
+  classes: "govuk-button--secondary",
+  href: "/progress-saved"
+}) }}
 
 	</div>
   </div>

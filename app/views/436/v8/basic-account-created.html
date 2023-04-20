@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-User details created
+User details added
 {% endblock %}
 
 
@@ -13,7 +13,6 @@ User details created
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -48,16 +47,19 @@ User details created
   <p>You can continue to do this now or at a later date.</p>
 
 
+ 
+  {{ govukButton({
+    text: "Continue",
+    href: "task-list-2"
+  }) }}
+  
+  {{ govukButton({
+    text: "Save and come back later",
+    classes: "govuk-button--secondary",
+    href: "/progress-saved"
+  }) }}
 
-
-
-
-{{ govukButton({
-	text: "Continue",
-	href: "task-list-2"
-}) }}
-
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
+<!--<p><a href="/progress-saved">I'll finish creating my account later</a></p>-->
 
 
 	</div>

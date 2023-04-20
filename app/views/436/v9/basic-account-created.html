@@ -13,7 +13,7 @@ User details added
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
+<!--{% include "includes/save-return.html" %}-->
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -50,14 +50,20 @@ User details added
 
 
 
+ 
+    {{ govukButton({
+      text: "Continue",
+      href: "task-list-2"
+    }) }}
+    
+    {{ govukButton({
+      text: "Save and come back later",
+      classes: "govuk-button--secondary",
+      href: "/progress-saved"
+    }) }}
 
 
-{{ govukButton({
-	text: "Continue",
-	href: "task-list-2"
-}) }}
 
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
 
 
 	</div>

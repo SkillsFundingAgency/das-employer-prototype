@@ -41,10 +41,19 @@ Create user details
 }) }}
 
 
-{{ govukButton({
-	text: "Continue",
-	href: "basic-account-created"
-}) }}
+
+<div class="govuk-button-group">
+	{{ govukButton({
+	  text: "Save and continue",
+	  href: "basic-account-created"
+	}) }}
+  
+	{{ govukButton({
+	  text: "Save and come back later",
+	  href: "/progress-saved",
+	  classes: "govuk-button--secondary"
+	}) }}
+  </div>
 
 	</div>
   </div>
