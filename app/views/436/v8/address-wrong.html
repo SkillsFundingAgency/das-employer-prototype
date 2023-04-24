@@ -13,7 +13,7 @@ My organisation address is wrong
 
 <div class="govuk-width-container">
 
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -31,12 +31,18 @@ My organisation address is wrong
 
 
 		{{ govukButton({
-		  text: "Continue",
+		  text: "Save and continue",
       href: "paye-scheme-added"
 		}) }}
+
+		{{ govukButton({
+			text: "Save and come back later",
+			classes: "govuk-button--secondary",
+			href: "/progress-saved"
+		  }) }}
 	</form>
 
-	{% include "includes/save-return-bottom.html" %}
+	
 	</div>
   </div>
 </main>

@@ -15,7 +15,7 @@ Do you want to change your apprenticeship service account name?
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -56,14 +56,20 @@ Do you want to change your apprenticeship service account name?
     
 
         {{ govukButton({
-          text: "Continue",
+          text: "Save and continue",
           href: "account-name-changed"
         }) }}
+
+        {{ govukButton({
+          text: "Save and come back later",
+          classes: "govuk-button--secondary",
+          href: "/progress-saved"
+          }) }}
 
  
         
 
-        {% include "includes/save-return-bottom.html" %}
+        
 
 <!--<form action="account-name-change-confirm" method="post">
 

@@ -13,7 +13,7 @@ Check your organisation details
 
 <div class="govuk-width-container">
 
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -107,7 +107,7 @@ Check your organisation details
 				text: "Yes, this is my organisation"
 			},
 			{
-				value: "yes",
+				value: "address",
 				text: "Yes, this is my organisation but the address is wrong"
 			},
 			{
@@ -118,13 +118,17 @@ Check your organisation details
 	}) }}
 
 	{{ govukButton({
-		text: "Continue"
+		text: "Save and continue"
 	}) }}
+	{{ govukButton({
+		text: "Save and come back later",
+		classes: "govuk-button--secondary",
+		href: "/progress-saved"
+	  }) }}
 
 </form>
 
 
-{% include "includes/save-return-bottom.html" %}
 
 	</div>
   </div>

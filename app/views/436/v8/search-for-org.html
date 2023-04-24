@@ -13,7 +13,7 @@ Search for your organisation
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -38,9 +38,13 @@ Search for your organisation
       href: "select-your-org"
 		  }) }}
 
+<p></p>
 
-
-      {% include "includes/save-return-bottom.html" %}
+      {{ govukButton({
+			  text: "Save and come back later",
+			  classes: "govuk-button--secondary",
+			  href: "/progress-saved"
+			}) }}
 
 	</div>
   </div>

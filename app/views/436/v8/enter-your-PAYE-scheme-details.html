@@ -14,7 +14,7 @@
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -51,11 +51,15 @@
 
 
 		{{ govukButton({
-		  text: "Continue"
+		  text: "Save and continue"
 		}) }}
 
 
-		{% include "includes/save-return-bottom.html" %}
+		{{ govukButton({
+			text: "Save and come back later",
+			classes: "govuk-button--secondary",
+			href: "/progress-saved"
+		  }) }}
 
 		</form>
 

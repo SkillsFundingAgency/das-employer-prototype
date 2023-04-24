@@ -13,7 +13,7 @@
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -55,7 +55,11 @@
 	href: "account-setup-complete-no-tp"
 }) }}
 
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
+{{ govukButton({
+  text: "Save and come back later",
+  classes: "govuk-button--secondary",
+  href: "/progress-saved"
+  }) }}
 
 
 	</div>

@@ -99,10 +99,14 @@ Add PAYE scheme
 }) }}
 
 		{{ govukButton({
-			text: "Continue"
+			text: "Save and continue"
 		  }) }}
 
-
+		  {{ govukButton({
+			text: "Save and come back later",
+			classes: "govuk-button--secondary",
+			href: "/progress-saved"
+		  }) }}
 
 	</div>
   </div>
