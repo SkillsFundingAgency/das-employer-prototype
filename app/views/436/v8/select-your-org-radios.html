@@ -13,8 +13,7 @@ Choose your organisation
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
-
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 		<div class="govuk-grid-row">
 			<div class="govuk-grid-column-two-thirds">
@@ -74,19 +73,18 @@ Choose your organisation
               hint: {
                 text: "3, Brocco Bank, Sheffield, S11 8RQ"
               }
-            },
-            {
-              divider: "or"
-            },
-            {
-              value: "not-listed",
-              text: "My organisation is not listed"
             }
           ]
         }) }}
 				
         {{ govukButton({
           text: "Continue"
+        }) }}
+        
+        {{ govukButton({
+          text: "Save and come back later",
+          classes: "govuk-button--secondary",
+          href: "/progress-saved"
         }) }}
       </form>
 
@@ -95,8 +93,7 @@ Choose your organisation
 	
 	
 					
-      {% include "includes/save-return-bottom.html" %}
-
+      
 
 
 
