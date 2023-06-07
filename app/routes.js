@@ -1636,7 +1636,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
    if (editChoice === 'paye') {
      res.redirect('enter-your-PAYE-scheme-details')
    } else if (editChoice === 'search') {
-     res.redirect('search-for-org')
+     res.redirect('check-details')
    } else if (editChoice === 'helpdesk') {
      res.redirect('paye-uhp-help-desk')
    }
