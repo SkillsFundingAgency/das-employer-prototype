@@ -77,15 +77,13 @@ Choose your organisation
           ]
         }) }}
 				
-        {{ govukButton({
+        <div class="govuk-button-group">
+          {{ govukButton({
           text: "Continue"
-        }) }}
-        
-        {{ govukButton({
-          text: "Save and come back later",
-          classes: "govuk-button--secondary",
-          href: "/progress-saved"
-        }) }}
+          }) }}
+          
+          <a class="govuk-link" href="task-list-2">Cancel</a>
+          </div>
       </form>
 
 

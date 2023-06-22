@@ -32,19 +32,15 @@ Search for your organisation
     name: "org-search"
   }) }}
 
+  <div class="govuk-button-group">
+    {{ govukButton({
+    text: "Search",
+    href: "select-your-org"
+    }) }}
+    
+    <a class="govuk-link" href="task-list-2">Cancel</a>
+    </div>
 
-		{{ govukButton({
-			text: "Search",
-      href: "select-your-org"
-		  }) }}
-
-<p></p>
-
-      {{ govukButton({
-			  text: "Save and come back later",
-			  classes: "govuk-button--secondary",
-			  href: "/progress-saved"
-			}) }}
 
 	</div>
   </div>

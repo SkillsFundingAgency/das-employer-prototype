@@ -28,18 +28,15 @@ My organisation address is wrong
 	<p>You can continue to create your account and update your address later. We do not send any correspondence to your postal address.</p>
 
 
-
-
+	<div class="govuk-button-group">
 		{{ govukButton({
-		  text: "Save and continue",
-      href: "paye-scheme-added"
+		  text: "Continue",
+		  href: "paye-scheme-added"
 		}) }}
+		  
+		<a class="govuk-link" href="task-list-2">Cancel</a>
+		</div>
 
-		{{ govukButton({
-			text: "Save and come back later",
-			classes: "govuk-button--secondary",
-			href: "/progress-saved"
-		  }) }}
 	</form>
 
 	

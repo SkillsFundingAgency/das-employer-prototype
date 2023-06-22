@@ -84,12 +84,42 @@ Check your organisation details
 	  </div>
 	</dl>
 
+	<form action="details-correct" method="post">
+	{{ govukRadios({
+		idPrefix: "details-correct",
+		name: "details-correct",
+		fieldset: {
+			legend: {
+				text: "Is this your organisation?",
+				isPageHeading: true,
+				classes: "govuk-fieldset__legend--m"
+			}
+		},
+		items: [
+			{
+				value: "yes",
+				text: "Yes, this is my organisation"
+			},
+			{
+				value: "address",
+				text: "Yes, this is my organisation but the address is wrong"
+			}
+		]
+	}) }}
+
+	  <div class="govuk-button-group">
+		{{ govukButton({
+		  text: "Continue"
+		}) }}
+		  
+		<a class="govuk-link" href="task-list-2">Cancel</a>
+		</div>
+
+</form>
 
 
 
-
-
-
+<!--
 	<form action="details-correct" method="post">
 	{{ govukRadios({
 		idPrefix: "details-correct",
@@ -113,7 +143,7 @@ Check your organisation details
 			{
 				value: "no",
 				text: "No, those details are wrong"
-			}
+			} 
 		]
 	}) }}
 
@@ -126,7 +156,7 @@ Check your organisation details
 		href: "/progress-saved"
 	  }) }}
 
-</form>
+</form> -->
 
 
 
