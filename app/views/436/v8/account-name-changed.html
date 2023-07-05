@@ -24,7 +24,7 @@
 
   {% set html %}
     <p class="govuk-notification-banner__heading">
-      Account name changed
+      You have set your account name
     </p>
   {% endset %}
 
@@ -33,7 +33,7 @@
     type: 'success'
   }) }}
 
-	<h1 class="govuk-heading-xl">Your account name has been changed to {{ data["as-account-name"] }}</h1>
+	<h1 class="govuk-heading-xl">Your account name has been set to ({{ data["as-account-name"] }})</h1>
 
   <p>You can change your account name at any time.</p>
 
