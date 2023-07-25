@@ -11,11 +11,11 @@ Set your training provider permissions
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
-
+  
 <div class="govuk-grid-column-two-thirds">
 
   <h1 class="govuk-heading-xl">Set your training provider permissions</h1>
@@ -38,6 +38,35 @@ Set your training provider permissions
 		 
 
         <form class="form" action="confirm-permissions" method="post">
+
+          {{ govukRadios({
+            idPrefix: "recruit-apprentices",
+            name: "recruit-apprentices",
+            fieldset: {
+              legend: {
+                text: "Advertise apprenticeships and recruit apprentices",
+                isPageHeading: true,
+                classes: "govuk-fieldset__legend--m"
+              }
+            },
+            hint: {
+              text: "This allows your training provider to create and manage adverts. It also allows them to receive and manage applications."
+            },
+            items: [
+              {
+                value: "Allow",
+                text: "Allow"
+              },
+              {
+                value: "Allow, but I want to review adverts before they're advertised",
+                text: "Allow, but I want to review adverts before they're advertised"
+              },
+              {
+                value: "Do not allow",
+                text: "Do not allow"
+              }
+            ]
+          }) }}
       {{ govukRadios({
         idPrefix: "add-apprentice-records",
         name: "add-apprentice-records",
@@ -54,7 +83,7 @@ Set your training provider permissions
         items: [
           {
             value: "Allow, but I have to approve them",
-            text: "Allow, but I have to approve them"
+            text: "Allow, but I have to approve apprentices"
           },
           {
             value: "Do not allow",
@@ -70,47 +99,24 @@ Set your training provider permissions
       
 
 
-      {{ govukRadios({
-        idPrefix: "recruit-apprentices",
-        name: "recruit-apprentices",
-        fieldset: {
-          legend: {
-            text: "Recruit apprentices and trainees",
-            isPageHeading: true,
-            classes: "govuk-fieldset__legend--m"
-          }
-        },
-        hint: {
-          text: "This allows your training provider to create and manage adverts. It also allows them to receive and manage applications."
-        },
-        items: [
-          {
-            value: "Allow",
-            text: "Allow"
-          },
-          {
-            value: "Allow, but I want to review adverts before they're advertised",
-            text: "Allow, but I want to review adverts before they're advertised"
-          },
-          {
-            value: "Do not allow",
-            text: "Do not allow"
-          }
-        ]
-      }) }}
+     
 
 
     
   
 		  
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+          
+        <a class="govuk-link" href="task-list-5">Cancel</a>
+        </div>
 		  
 
     </form>
 
-    {% include "includes/save-return-bottom.html" %}
+    
 
 		</div>
 	  </div>

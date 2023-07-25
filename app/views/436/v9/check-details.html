@@ -37,7 +37,7 @@ Check your organisation details
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -58,7 +58,7 @@ Check your organisation details
 		  KAREN'S GLASS LIMITED
 		</dd>
 		<dd class="govuk-summary-list__actions">
-			<!--<td class="govuk-table__cell"><a href="#">Change</a></td>-->
+			<td class="govuk-table__cell"><a href="#">Change</a></td>
 		</dd>
 	  </div>
 	  <div class="govuk-summary-list__row">
@@ -81,7 +81,7 @@ Check your organisation details
 	  </div>
 	  <div class="govuk-summary-list__row">
 		<dt class="govuk-summary-list__key">
-		  Account office reference number
+		  Account Office reference
 		</dt>
 		<dd class="govuk-summary-list__value">
 			AORNAUT000001
@@ -94,7 +94,7 @@ Check your organisation details
 	  </div>
 	  <div class="govuk-summary-list__row">
 		<dt class="govuk-summary-list__key">
-		  Employer PAYE scheme reference
+		  Employer PAYE reference
 		</dt>
 		<dd class="govuk-summary-list__value">
 		  102/LE85668
@@ -126,10 +126,6 @@ Check your organisation details
 				{
 					value: "address",
 					text: "Yes, this is my organisation but the address is wrong"
-				},
-				{
-					value: "no",
-					text: "No, those details are wrong"
 				}
 			]
 		}) }}
@@ -137,13 +133,16 @@ Check your organisation details
 
 
 
-		{{ govukButton({
-		  text: "Continue"
-		}) }}
+		<div class="govuk-button-group">
+			{{ govukButton({
+			  text: "Continue"
+			}) }}
+			  
+			<a class="govuk-link" href="task-list-2">Cancel</a>
+			</div>
 	</form>
 
 	
-	{% include "includes/save-return-bottom.html" %}
 
 
 	</div>

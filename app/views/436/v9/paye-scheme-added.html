@@ -13,7 +13,6 @@ You've added a PAYE schem
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -38,7 +37,7 @@ You've added a PAYE schem
   <p>Before you can add apprentices or reserve funds, you still need to:</p>
   
   <ul class="govuk-list govuk-list--bullet">
-    <li>set your account name</li>
+    <li>confirm your account name</li>
     <li>accept the employer agreement</li>
     <li>add a training provider</li>
   </ul>
@@ -47,14 +46,17 @@ You've added a PAYE schem
 
 
 
-
-
-{{ govukButton({
-	text: "Continue",
-	href: "task-list-3"
-}) }}
-
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
+  {{ govukButton({
+    text: "Continue",
+    href: "task-list-3"
+  }) }}
+  
+  
+  {{ govukButton({
+    text: "Save and come back later",
+    classes: "govuk-button--secondary",
+    href: "/progress-saved"
+  }) }}
 
 
 	</div>

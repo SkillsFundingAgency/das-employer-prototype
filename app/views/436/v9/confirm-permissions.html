@@ -11,7 +11,7 @@
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -38,35 +38,36 @@
         rows: [
           {
             key: {
-              text: "Add apprentices"
-            },
-            value: {
-              text: data["add-apprentice-records"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "name"
-                }
+            text: "Advertise apprenticeships and recruit apprentices"
+          },
+          value: {
+            text: data["recruit-apprentices"]
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "date of birth"
+              }
+            
               ]
             }
           },
-          {
-            key: {
-              text: "Recruit apprentices"
-            },
-            value: {
-              text: data["recruit-apprentices"]
-            },
-            actions: {
-              items: [
-                {
-                  href: "#",
-                  text: "Change",
-                  visuallyHiddenText: "date of birth"
-                }
+          {key: {
+            text: "Add apprentices"
+          },
+          value: {
+            text: data["add-apprentice-records"]
+          },
+          actions: {
+            items: [
+              {
+                href: "#",
+                text: "Change",
+                visuallyHiddenText: "name"
+              }
+            
               ]
             }
           }
@@ -113,12 +114,14 @@
 
       <p>You can update your training provider permissions at any time within your account.</p>
 
-      {{ govukButton({
-        text: "Continue",
-        href: "account-setup-complete"
-      }) }}
-
-      {% include "includes/save-return-bottom.html" %}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "account-setup-complete"
+        }) }}
+          
+        <a class="govuk-link" href="task-list-5">Cancel</a>
+        </div>
 		</div>
 	  </div>
 	</main>

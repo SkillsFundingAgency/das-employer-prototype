@@ -47,7 +47,7 @@ How much is your organisation's annual pay bill?
 					value: "not-yet",
 					text: "Close to £3 million",
 					hint: {
-						text: "To access levy funds, choose this option if you think your annual pay bill  could be more than £3 million in the future "
+						text: "To be able to access any future levy funds, choose this option if you think your annual pay bill could be more than £3 million in the future"
 					}
 				},
 				{
@@ -84,17 +84,14 @@ How much is your organisation's annual pay bill?
 		  }) }}
 
 	
-		
-		{{ govukButton({
-			text: "Save and continue"
-		  }) }}
-			
+		  <div class="govuk-button-group">
 			{{ govukButton({
-			  text: "Save and come back later",
-			  classes: "govuk-button--secondary",
-			  href: "/progress-saved"
+			  text: "Continue"
 			}) }}
-			
+			  
+			<a class="govuk-link" href="task-list-2">Cancel</a>
+			</div>
+		
 		  
 </form>
 

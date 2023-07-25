@@ -14,14 +14,7 @@ Set up your employer account
 		<div class="govuk-grid-column-one-half">
 		<!--	<a class="govuk-back-link" onclick="history.back()" href="#">Back</a>--> &nbsp;
 		</div>
-		<div class="govuk-grid-column-one-half">
-				<div class="govuk-!-margin-top-3 right-aligned right-aligned--reset-on-mobile" style="text-align: right;">
-					<a href="/progress-saved" class="govuk-!-font-size-19"
-						data-ga-track-link="task list header"
-						data-ga-track-link-category="Internal link"
-						data-ga-track-link-action="save application">Save and return later</a>
-				</div>
-		</div>
+		
 	</div>
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 	  <div class="govuk-grid-row">
@@ -48,7 +41,7 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 									<a href="set-up-as-a-user" aria-describedby="eligibility-status">
-										Add your user details
+										Your user details
 									</a>
 								</span>
 								<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
@@ -64,7 +57,7 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 									<a href="add-paye-scheme" aria-describedby="eligibility-status">
-										Add a PAYE scheme
+										PAYE scheme
 									</a>
 								</span>
 								<strong class="govuk-tag app-task-list__tag " id="eligibility-status">Completed</strong>
@@ -74,13 +67,13 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 
 					<li>
 						<h2 class="app-task-list__section">
-							<span class="app-task-list__section-number">3. </span> Set your account name
+							<span class="app-task-list__section-number">3. </span> Confirm your account name
 						</h2>
 						<ul class="app-task-list__items" style="padding-left:0">
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 									<a href="change-account-name">
-										Set your account name
+										Your account name
 									</a>
 								</span>
 								<strong class="govuk-tag app-task-list__tag " id="eligibility-status">Completed</strong>
@@ -96,7 +89,7 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 									<a href="employer-agreement" aria-describedby="eligibility-status">
-										Read and accept your employer agreement
+										Your employer agreement
 									</a>
 								</span>
 								<strong class="govuk-tag app-task-list__tag" id="eligibility-status">Completed</strong>
@@ -114,18 +107,18 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 									<a href="training-provider-choice" aria-describedby="eligibility-status">
-										Add a training provider
+										Training provider
 									</a>
 								</span>
-								<strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="eligibility-status">Not started</strong>
+								<strong class="govuk-tag app-task-list__tag " id="eligibility-status">Completed</strong>
 							</li>
 							<li class="app-task-list__item">
 								<span class="app-task-list__task-name">
 
-										Set your training provider permissions
+									<a href="training-provider-choice" aria-describedby="eligibility-status">Training provider permissions</a>
 
 								</span>
-								<strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="eligibility-status">Cannot start yet</strong>
+								<strong class="govuk-tag app-task-list__tag govuk-tag--grey" id="eligibility-status">Not started yet</strong>
 							</li>
 						</ul>
 					</li>
@@ -228,7 +221,12 @@ You do not have to complete all sections at once.<br/> Those labelled 'completed
 			</p>-->
 
 
-			<p><a href="/progress-saved" >Save and return later</a></p>
+			
+			{{ govukButton({
+				text: "Save and come back later",
+				classes: "govuk-button--secondary",
+				href: "/progress-saved"
+			  }) }}
 
 		</div>
 	  </div>
