@@ -11,7 +11,7 @@
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -22,7 +22,7 @@
 
       <p>The details you entered are for EDUC8 TRAINING (ENGLAND) LIMITED. (10005310)</p>
 
-      <form action="confirm-training-provider" method="post">
+      <form action="training-provider-success" method="post">
 		 
       {{ govukRadios({
         idPrefix: "confirm-training-provider-check",
@@ -46,14 +46,17 @@
         ]
       }) }}
   
-		  
-      {{ govukButton({
-        text: "Continue"
-      }) }}
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue"
+        }) }}
+          
+        <a class="govuk-link" href="#">Cancel</a>
+        </div>
+   
 		  
     </form>
 
-    {% include "includes/save-return-bottom.html" %}
 		</div>
 	  </div>
 	</main>

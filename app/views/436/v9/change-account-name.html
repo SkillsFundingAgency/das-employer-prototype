@@ -15,7 +15,8 @@ Set your employer account name
 
 <div class="govuk-width-container">
 
-	{% include "includes/back-link-save-return.html" %}
+
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -50,49 +51,65 @@ Set your employer account name
 <form action="change-account-name" method="post">
 
 
-
 	{% set accountnameHtml %}
-		{{ govukInput({
-			id: "as-account-name",
-			name: "as-account-name",
-			label: {
-				text: "Enter new employer account name"
-			}
-		}) }}
+	{{ govukInput({
+		id: "as-account-name",
+		name: "as-account-name",
+		label: {
+			text: "Enter new employer account name"
+		}
+	}) }}
 {% endset -%}
 
+{% set accountnamesameHtml %}
+	{{ govukInput({
+		id: "as-account-name-org",
+		name: "as-account-name-org",
+		label: {
+			text: "Your organisation name"
+		},
+		value: "KAREN'S GLASS LIMITED"
+	}) }}
+{% endset -%}
 
-	{{ govukRadios({
-	  idPrefix: "change-account-name-check",
-	  name: "change-account-name-check",
-		fieldset: {
-			legend: {
-				text: "Do you want to change your employer account name?",
-				classes: "govuk-fieldset__legend--m"
+{{ govukRadios({
+	idPrefix: "change-account-name-check",
+	name: "change-account-name-check",
+	fieldset: {
+		legend: {
+			text: "Do you want to use your organisation name as your employer account name?",
+			classes: "govuk-fieldset__legend--m"
+		}
+	},
+	items: [
+		{
+			value: "yes",
+			text: "Yes, I want to use my organisation name as my employer account name",
+			conditional: {
+				html: accountnamesameHtml
 			}
 		},
-	  items: [
 		{
-		  value: "yes",
-		  text: "Yes, I want to change my employer account name",
+			value: "no",
+			text: "No, I want to change my employer account name",
 			conditional: {
-        html: accountnameHtml
-      }
-		},
-		{
-		  value: "no",
-		  text: "No, I want to use my organisation name as my employer account name"
+				html: accountnameHtml
+			}
 		}
-	  ]
-	}) }}
+	]
+}) }}
 
+
+	<div class="govuk-button-group">
 		{{ govukButton({
 		  text: "Continue"
 		}) }}
+		  
+		<a class="govuk-link" href="task-list-2">Cancel</a>
+		</div>
 
 	</form>
 
-	{% include "includes/save-return-bottom.html" %}
 
 	</div>
   </div>

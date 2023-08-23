@@ -23,7 +23,7 @@ Do you want to change your apprenticeship service account name?
 <div class="govuk-grid-column-two-thirds">
 				
 
-      <h1 class="govuk-heading-xl">Confirm your new account name</h1>
+      <h1 class="govuk-heading-xl">Confirm your account name</h1>
 
       <p>You can change your account name at any time.      </p>
 
@@ -32,7 +32,7 @@ Do you want to change your apprenticeship service account name?
         rows: [
           {
             key: {
-              text: "New account name"
+              text: "Account name"
             },
             value: {
               html: data['as-account-name']
@@ -56,46 +56,13 @@ Do you want to change your apprenticeship service account name?
       <div class="govuk-button-group">
         {{ govukButton({
           text: "Continue",
-          href: "account-name-changed"
+          href: "account-name-org-success"
         }) }}
           
         <a class="govuk-link" href="task-list-2">Cancel</a>
         </div>
 
-<!--<form action="account-name-change-confirm" method="post">
 
-	
-
-	{{ govukRadios({
-	  idPrefix: "change-account-name-confirm-check",
-	  name: "change-account-name-confirm-check",
-		fieldset: {
-			legend: {
-				text: "Are you sure you want to change your account name to " + data["as-account-name"] + "?",
-        isPageHeading: true,
-        classes: "govuk-fieldset__legend--xl"
-			}
-		},
-	  items: [
-		{
-		  value: "yes",
-		  text: "Yes, I want to change my account name to " + data["as-account-name"],
-			conditional: {
-        html: accountnameHtml
-      }
-		},
-		{
-		  value: "no",
-		  text: "No, I need to change my account name again"
-		}
-	  ]
-	}) }}
-
-		{{ govukButton({
-		  text: "Continue"
-		}) }}
-
-	</form> -->
 
 
 

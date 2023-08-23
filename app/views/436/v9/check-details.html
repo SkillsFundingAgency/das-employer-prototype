@@ -107,7 +107,7 @@ Check your organisation details
 	  </div>
 	</dl>
 
-	<form action="details-correct" method="post">
+	<!--<form action="details-correct" method="post">
 		{{ govukRadios({
 			idPrefix: "details-correct",
 			name: "details-correct",
@@ -131,18 +131,31 @@ Check your organisation details
 		}) }}
 
 
+</form>-->
+<details class="govuk-details" data-module="govuk-details">
+	<summary class="govuk-details__summary">
+	  <span class="govuk-details__summary-text">
+		What if my organisation address is wrong?
+	  </span>
+	</summary>
+	<div class="govuk-details__text">
+		If the address for your organisation is wrong, you will need to contact the relevant authority (Companies House, HMRC or the Charities Commission) to update.
 
+		You can continue to create your account and update your address later. We do not send any correspondence to your postal address.
+	</div>
+  </details>
 
 		<div class="govuk-button-group">
 			{{ govukButton({
-			  text: "Continue"
+			  text: "Continue",
+			  href: "paye-scheme-added"
 			}) }}
 			  
 			<a class="govuk-link" href="task-list-2">Cancel</a>
 			</div>
-	</form>
-
 	
+
+
 
 
 	</div>

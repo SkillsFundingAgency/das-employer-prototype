@@ -1,0 +1,88 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+  Confirm user details
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header-no-nav-sign-out.html" %}
+
+<div class="govuk-width-container">
+	
+  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+
+	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+<div class="govuk-grid-row">
+
+<div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">Confirm user details</h1>
+		 
+      
+      <!--<h2 class="govuk-heading-m">You can change your details at any time</h2>-->
+
+
+      {{ govukSummaryList({
+        classes: 'govuk-!-margin-bottom-9',
+        rows: [
+          {
+            key: {
+            text: "First name"
+          },
+          value: {
+            text: data["first-name"]
+          },
+          actions: {
+            items: [
+              {
+                href: "check-user-details",
+                text: "Change",
+                visuallyHiddenText: "first name"
+              }
+            
+              ]
+            }
+          },
+          {key: {
+            text: "Second name"
+          },
+          value: {
+            text: data["second-name"]
+          },
+          actions: {
+            items: [
+              {
+                href: "check-user-details",
+                text: "Change",
+                visuallyHiddenText: "second name"
+              }
+            
+              ]
+            }
+          }
+        ]
+      }) }}
+
+
+     
+
+      <p>You can change your details at any time.</p>
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "basic-account-created"
+        }) }}
+          
+        <a class="govuk-link" href="task-list">Cancel</a>
+        </div>
+		</div>
+	  </div>
+	</main>
+  </div>
+  
+{% endblock %}
+
+

@@ -1669,7 +1669,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 	 const editChoice = req.session.data['add-paye-scheme-check']
 
 	 if (editChoice === 'government-gateway') {
-		 res.redirect('government-gateway')
+		 res.redirect('government-gateway-sign-in')
 	 } else if (editChoice === 'aorn') {
 		 res.redirect('enter-your-PAYE-scheme-details')
 	 }
@@ -1710,9 +1710,9 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 	 const editChoice = req.session.data['change-account-name-check']
 
 	 if (editChoice === 'yes') {
-		 res.redirect('account-name-change-confirm')
+		 res.redirect('account-name-org')
 	 } else if (editChoice === 'no') {
-		 res.redirect('task-list-4')
+		 res.redirect('account-name-change-confirm')
 	 }
  });
 
@@ -1742,7 +1742,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 
  router.post('/436/v9/training-provider-invited-choice-check', (req, res) => {
 	 if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-			 res.redirect('select-permissions')
+			 res.redirect('training-provider-success')
 	 } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
 			 res.redirect('enter-ukprn')
 	 } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){

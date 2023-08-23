@@ -13,7 +13,7 @@
 
 <div class="govuk-width-container">
 
-  {% include "includes/save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -33,29 +33,25 @@
     type: 'success'
   }) }}
 
-	<h1 class="govuk-heading-xl">Your account name has been changed to {{ data["as-account-name"] }}</h1>
+	<h1 class="govuk-heading-xl">You have confirmed your account name as {{ data["as-account-name"] }}</h1>
 
   <p>You can change your account name at any time.</p>
 
-  <p>Before you can add apprentices or reserve funds, you still need to:</p>
-
-  <ul class="govuk-list govuk-list--bullet">
-    <li>accept your employer agreement</li>
-    <li>add a training provider</li>
-  </ul>
-
-  <p>You can continue creating your account now or at a later date.</p>
+  <p>Continue creating your account </p>
 
 
+  {{ govukButton({
+    text: "Continue",
+    href: "task-list-4"
+  }) }}
+  
+  
+  {{ govukButton({
+    text: "Save and come back later",
+    classes: "govuk-button--secondary",
+    href: "/progress-saved"
+  }) }}
 
-
-
-{{ govukButton({
-	text: "Continue",
-	href: "account-setup-complete"
-}) }}
-
-<p><a href="/progress-saved">I'll finish creating my account later</a></p>
 
 
 	</div>

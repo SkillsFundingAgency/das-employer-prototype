@@ -15,7 +15,7 @@ Add a training provider
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -39,11 +39,11 @@ Add a training provider
 					
 					<p>A UKPRN is the unique, 8 digit number we use to identify a training provider. Ask your training provider if you do not know it.</p>-->
 
-					<form action="training-provider-choice-check" method="post">
+					<form action="training-provider-info" method="post">
 
 						{{ govukRadios({
-							idPrefix: "training-provider-choice-check",
-							name: "training-provider-choice-check",
+							idPrefix: "training-provider-info",
+							name: "training-provider-info",
 							fieldset: {
 								legend: {
 									text: "Do you want to add a training provider now?",
@@ -127,8 +127,6 @@ Add a training provider
 
 		
 		
-
-		{% include "includes/save-return-bottom.html" %}
 	
 
 

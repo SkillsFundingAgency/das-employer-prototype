@@ -13,7 +13,7 @@ Check your organisation details
 
 <div class="govuk-width-container">
 
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -34,7 +34,7 @@ Check your organisation details
 		  BISCUIT LIMITED
 		</dd>
 		<dd class="govuk-summary-list__actions">
-			<!--<td class="govuk-table__cell"><a href="#">Change</a></td>-->
+			<td class="govuk-table__cell"><a href="#">Change</a></td>
 		</dd>
 	  </div>
 	  <div class="govuk-summary-list__row">
@@ -90,7 +90,7 @@ Check your organisation details
 
 
 
-	<form action="details-correct" method="post">
+<!---	<form action="details-correct" method="post">
 	{{ govukRadios({
 		idPrefix: "details-correct",
 		name: "details-correct",
@@ -121,10 +121,30 @@ Check your organisation details
 		text: "Continue"
 	}) }}
 
-</form>
+</form>-->
+<details class="govuk-details" data-module="govuk-details">
+	<summary class="govuk-details__summary">
+	  <span class="govuk-details__summary-text">
+		What if my organisation address is wrong?
+	  </span>
+	</summary>
+	<div class="govuk-details__text">
+		If the address for your organisation is wrong, you will need to contact the relevant authority (Companies House, HMRC or the Charities Commission) to update.
+
+		You can continue to create your account and update your address later. We do not send any correspondence to your postal address.
+	</div>
+  </details>
+
+		<div class="govuk-button-group">
+			{{ govukButton({
+			  text: "Continue",
+			  href: "paye-scheme-added"
+			}) }}
+			  
+			<a class="govuk-link" href="task-list-2">Cancel</a>
+			</div>
 
 
-{% include "includes/save-return-bottom.html" %}
 
 	</div>
   </div>

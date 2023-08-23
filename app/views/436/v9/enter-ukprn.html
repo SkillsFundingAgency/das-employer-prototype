@@ -16,7 +16,7 @@
 
 <div class="govuk-width-container">
 	
-	{% include "includes/back-link-save-return.html" %}
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -24,7 +24,7 @@
 <div class="govuk-grid-column-two-thirds">
 	 
 		 
-      <!--{{ govukInput({
+      {{ govukInput({
         label: {
           text: "Enter your training provider's name or reference number (UKPRN)",
           classes: "govuk-label--xl",
@@ -40,10 +40,11 @@
       {{ govukButton({
         text: "Continue",
         href: "confirm-training-provider"
-      }) }}-->
+      }) }}
+      
 
 
-      {{ govukInput({
+     <!-- {{ govukInput({
         label: {
           text: "Enter your training provider's name",
           classes: "govuk-label--xl",
@@ -53,16 +54,21 @@
         name: "UKPRN"
       }) }}
 
-      {{ govukButton({
-        text: "Continue",
-        href: "confirm-training-provider"
-      }) }}
 		  
-  
-		  <p><a href="enter-ukprn-prn.html">My training provider is not listed</a></p>
+      {% from "govuk/components/button/macro.njk" import govukButton %}
+
+      <div class="govuk-button-group">
+        {{ govukButton({
+          text: "Continue",
+          href: "confirm-training-provider"
+        }) }}
+      
+        <a class="govuk-link" href="#">Cancel</a>
+      </div>-->
+		  <!--<p><a href="enter-ukprn-prn.html">My training provider is not listed</a></p>-->
 
 
-      {% include "includes/save-return-bottom.html" %}
+
 
 		</div>
 	  </div>

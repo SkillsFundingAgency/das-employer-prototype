@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Employer agreement accepted
+	Training provider added
 {% endblock %}
 
 
@@ -13,7 +13,7 @@ Employer agreement accepted
 
 <div class="govuk-width-container">
 
-  <a href="javascript:history.back()" class="govuk-back-link">Back</a>
+	<a href="javascript:history.back()" class="govuk-back-link">Back</a>
 
 	<main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
 <div class="govuk-grid-row">
@@ -24,26 +24,29 @@ Employer agreement accepted
 
   {% set html %}
     <p class="govuk-notification-banner__heading">
-      Employer agreement accepted
+      Training provider added
     </p>
   {% endset %}
-  
+
   {{ govukNotificationBanner({
     html: html,
     type: 'success'
   }) }}
 
-	<h1 class="govuk-heading-xl">You've accepted your employer agreement</h1>  
+	<h1 class="govuk-heading-xl">You've successfully added xxx </h1>
+  <h2 class="govuk-heading-m">What happens next</h1>
 
-  <p>You can continue creating your account now or at a later date.</p>
+  <p>You need to set permissions for xxx so that they can act on your behalf.</p>
+
+  <p>You can set permissions in the 'your training providers' section of your account at a later date.</p>
 
 
 
 
 
   {{ govukButton({
-    text: "Continue",
-    href: "account-setup-complete-no-tp-s4"
+    text: "Continue to set permissions",
+    href: "select-permissions"
   }) }}
   
   
