@@ -1744,7 +1744,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 	 if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
 			 res.redirect('training-provider-success')
 	 } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-			 res.redirect('enter-ukprn')
+			 res.redirect('training-provider-info')
 	 } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
 			 res.redirect('account-setup-complete-no-tp')
 	 }
