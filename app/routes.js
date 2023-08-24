@@ -1679,7 +1679,7 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 	 const editChoice = req.session.data['confirm-training-provider-check']
 
 	 if (editChoice === 'yes') {
-		 res.redirect('select-permissions')
+		 res.redirect('training-provider-success')
 	 } else if (editChoice === 'no') {
 		 res.redirect('enter-ukprn')
 	 }
