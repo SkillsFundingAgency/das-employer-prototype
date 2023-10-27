@@ -3,7 +3,6 @@ const router = express.Router()
 
 // Add your routes here - above the module.exports line
 
-
 //SAVED STANDARDS
 
 router.post('/saved-standards/choose-provider', (req, res, next) => {
@@ -1841,6 +1840,95 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
 
 
 
+  // Added additional routes to manage the training provider folder
+router.post('/training-provider/v1/approvals/add/action/entry-method', function (req, res) {
+    var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+    if (addApprenticeDetails == "csv-file") {
+        res.redirect('/training-provider/v1/approvals/add/file-upload')
+    }
+    else if (addApprenticeDetails == "manually") {
+        res.redirect('/training-provider/v1/approvals/add/select-journey')
+    }
+})
+
+router.post('/training-provider/v1/approvals/add/action/select-journey', function (req, res) {
+    var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+    if (addApprenticeDetails2 == "existing-cohort") {
+        res.redirect('/training-provider/v1/approvals/choose-cohort')
+    }
+    else if (addApprenticeDetails2 == "new-cohort") {
+        res.redirect('/training-provider/v1/approvals/add/select-employer')
+    }
+})
+
+router.post('/training-provider/v1/approvals/add/action/confirm-employer', function (req, res) {
+    var confirmEmployer = req.session.data['confirm-employer']
+
+    if (confirmEmployer == "yes") {
+        res.redirect('/training-provider/v1/approvals/add/select-course')
+    }
+    else {
+        res.redirect('/training-provider/v1/approvals/add/select-employer')
+    }
+})
+
+router.post('/training-provider/v1/approvals/action/recognise-prior-learning', function (req, res) {
+    var priorLearning = req.session.data['prior-learning']
+    var pilotProgram = req.session.data['pilot-program']
+    var deliveryMethod = req.session.data['delivery-method']
+
+    if (priorLearning == "yes") {
+        res.redirect('/training-provider/v1/approvals/recognise-prior-learning-details')
+    }
+    else if (priorLearning == "no") {
+        if (pilotProgram == "No") {
+            res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
+        }
+        else {
+            if (deliveryMethod == "portable-flexi-job") {
+                res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
+            }
+            else {
+                res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
+            }
+        }
+    }
+})
+router.post('/training-provider/v1/approvals/action/recognise-prior-learning-details', function (req, res) {
+    var pilotProgram = req.session.data['pilot-program']
+    var deliveryMethod = req.session.data['delivery-method']
+
+    if (pilotProgram == "No") {
+        res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
+    }
+    else {
+        if (deliveryMethod == "portable-flexi-job") {
+            res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
+        }
+        else {
+            res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
+        }
+    }
+})
+
+router.post('/training-provider/v1/approvals/add/action/personal-details', function (req, res) {
+    var pilotProgram = req.session.data['pilot-program']
+    var deliveryMethod = req.session.data['delivery-method']
+
+    if (pilotProgram == "No") {
+        res.redirect('/training-provider/v1/approvals/add/training-details-non-pilot')
+    }
+    else {
+        if (deliveryMethod == "portable-flexi-job") {
+            res.redirect('/training-provider/v1/approvals/add/training-details-pilot-pfj')
+        }
+        else {
+            res.redirect('/training-provider/v1/approvals/add/training-details-pilot-non-pfj')
+        }
+    }
+})
 
 
 

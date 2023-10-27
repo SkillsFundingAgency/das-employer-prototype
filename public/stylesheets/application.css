@@ -8543,10 +8543,6 @@ body {
   font-family: nta, Arial, sans-serif;
 }
 
-.govuk-header {
-  border-bottom: 0;
-}
-
 .govuk-header__container {
   position: relative;
   margin-bottom: 0;
@@ -9453,4 +9449,188 @@ dl.das-inline-def-list dd {
   display: block;
   margin-inline-start: 80px;
   margin-top: -25px;
+}
+
+@media (min-width: 641px) {
+  .boxes {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 -15px;
+  }
+  .box {
+    margin: 15px;
+    padding-bottom: 15px;
+    width: calc(50% - 30px);
+  }
+}
+.box {
+  box-sizing: border-box;
+  border-bottom: 1px solid #bfc1c3;
+}
+
+.das-definition-list {
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.25;
+  color: #0b0c0c;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+@media print {
+  .das-definition-list {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .das-definition-list {
+    font-size: 19px;
+    font-size: 1.1875rem;
+    line-height: 1.31579;
+  }
+}
+@media print {
+  .das-definition-list {
+    font-size: 14pt;
+    line-height: 1.15;
+  }
+}
+@media print {
+  .das-definition-list {
+    color: #000;
+  }
+}
+@media (min-width: 40.0625em) {
+  .das-definition-list {
+    margin-bottom: 20px;
+  }
+}
+.das-definition-list__title {
+  font-weight: 700;
+}
+
+.das-definition-list__definition {
+  margin: 0;
+}
+
+.das-definition-list--inline {
+  overflow: hidden;
+}
+
+.das-definition-list--inline .das-definition-list__title {
+  clear: both;
+  float: left;
+  margin-right: 10px;
+}
+
+.das-definition-list--inline .das-definition-list__title:after {
+  content: ":";
+}
+
+.das-definition-list--inline .das-definition-list__definition {
+  float: left;
+}
+
+.das-definition-list--meta {
+  overflow: hidden;
+  font-family: "GDS Transport", arial, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-weight: 400;
+  font-size: 14px;
+  font-size: 0.875rem;
+  line-height: 1.14286;
+}
+
+@media print {
+  .das-definition-list--meta {
+    font-family: sans-serif;
+  }
+}
+@media (min-width: 40.0625em) {
+  .das-definition-list--meta {
+    font-size: 16px;
+    font-size: 1rem;
+    line-height: 1.25;
+  }
+}
+@media print {
+  .das-definition-list--meta {
+    font-size: 14pt;
+    line-height: 1.2;
+  }
+}
+.das-definition-list--meta .das-definition-list__title {
+  clear: both;
+  float: left;
+  font-weight: normal;
+  color: #505a5f;
+  margin-right: 0.3em;
+}
+
+.das-definition-list--meta .das-definition-list__title:after {
+  content: ":";
+}
+
+.das-definition-list--meta .das-definition-list__definition {
+  float: left;
+}
+
+@media (min-width: 40.0625em) {
+  .das-definition-list--table {
+    display: flex;
+    flex-flow: row wrap;
+  }
+}
+.das-definition-list--table .das-definition-list__title {
+  font-weight: 700;
+  flex-basis: 35%;
+  padding-right: 5%;
+}
+
+@media (min-width: 40.0625em) {
+  .das-definition-list--table .das-definition-list__title {
+    margin-bottom: 5px;
+  }
+  .das-definition-list--table .das-definition-list__title.das-definition-list__title--spacer {
+    margin-bottom: 10px;
+  }
+}
+.das-definition-list--table .das-definition-list__title:after {
+  content: ":";
+}
+
+.das-definition-list--table .das-definition-list__definition {
+  flex-basis: 60%;
+  flex-grow: 1;
+  margin-bottom: 5px;
+}
+
+.das-definition-list--table .das-definition-list__definition.das-definition-list__definition--spacer {
+  margin-bottom: 10px;
+}
+
+.das-definition-list--muted {
+  color: #505a5f;
+}
+
+.das-definition-list--muted .das-definition-list__title {
+  font-weight: normal;
+}
+
+@media (min-width: 40.0625em) {
+  .das-definition-list__title--spacer {
+    margin-bottom: 10px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #b1b4b6;
+  }
+}
+.das-definition-list__definition--spacer {
+  margin-bottom: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #b1b4b6;
 }
