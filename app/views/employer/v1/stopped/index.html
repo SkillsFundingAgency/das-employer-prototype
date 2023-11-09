@@ -1,0 +1,39 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Stopped index page
+{% endblock %}
+
+
+{% block main %}
+
+{% include "includes/account-header+nav.html" %}
+
+{% block content %}
+
+
+<div class="govuk-width-container">
+
+    {% include "includes/back-link.html" %}
+
+    <main class="govuk-main-wrapper govuk-main-wrapper--l" id="main-content" role="main">
+        <div class="govuk-grid-row">
+
+            <div class="govuk-grid-column-two-thirds">
+
+
+                <h1 class="govuk-heading-xl">Stopped index page</h1>
+
+
+                <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+                    Text button
+                    </a>
+
+
+            </div>
+        </div>
+</div>
+
+{% endblock %}
+
+{% endblock %}
