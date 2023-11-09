@@ -12,15 +12,17 @@
         <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current"
-          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+        <a class="das-navigation__link" href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice
+          requests</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
           funding</a>
       </li>
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/manage/index">Manage
+          your apprentices</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
@@ -29,7 +31,8 @@
           href="/training-provider/{{version}}/#">More</a>
         <ul class="das-navigation__priority-list govuk-visually-hidden">
           <li class="das-navigation__list-item">
-            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and
+              agreements</a>
           </li>
         </ul>
       </li>
@@ -54,7 +57,7 @@ href: "javascript:window.history.go(-1);"
 
     <h1 class="govuk-heading-xl">Confirm dates before sending your request</h1>
     <p class="govuk-body">Check you have entered the correct training dates and the correct
-    apprentice details.</p>
+      apprentice details.</p>
     <div class="govuk-!-padding-bottom-4"></div>
 
 
@@ -120,8 +123,8 @@ href: "javascript:window.history.go(-1);"
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state"
-            href="/training-provider/{{version}}/approvals/add/select-course">
-            Change<span class="govuk-visually-hidden"> training course</span>
+            href="/training-provider/v1/change-employer/new-training-start-date-live">
+            Change<span class="govuk-visually-hidden"> date</span>
           </a>
         </dd>
       </div>
@@ -134,8 +137,8 @@ href: "javascript:window.history.go(-1);"
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state"
-            href="/training-provider/{{version}}/approvals/add/portable-flexi-job">
-            Change<span class="govuk-visually-hidden"> delivery model</span>
+            href="/training-provider/v1/change-employer/new-training-end-date-live">
+            Change<span class="govuk-visually-hidden"> date</span>
           </a>
         </dd>
       </div>
@@ -148,24 +151,25 @@ href: "javascript:window.history.go(-1);"
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state"
-            href="/training-provider/{{version}}/approvals/add/portable-flexi-job">
-            Change<span class="govuk-visually-hidden"> delivery model</span>
+            href="/training-provider/v1/change-employer/new-apprenticeship-price">
+            Change<span class="govuk-visually-hidden"> price</span>
           </a>
         </dd>
       </div>
     </dl>
 
-    <a href="select-employer" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
+    <a href="/training-provider/v1/change-employer/overlapping-training" role="button" draggable="false"
+      class="govuk-button" data-module="govuk-button">
       Save and continue
     </a>
 
     <div class="govuk-!-padding-bottom-5"></div>
 
 
-  </fieldset>
-</div>
+    </fieldset>
+  </div>
 
 
 
 
-{% endblock %}
+  {% endblock %}

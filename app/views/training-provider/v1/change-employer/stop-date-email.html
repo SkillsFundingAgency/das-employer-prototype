@@ -55,13 +55,25 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">Planned start date overlaps with existing training</h1>
-    <p class="govuk-body">The planned start date overlaps with existing training for the same apprentice.</p>
-    <p class="govuk-body">This may be because:</p>
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">
+        Stop date email has been sent
+      </h1>
+    </div>
+    <div class="govuk-!-padding-bottom-5"></div>
+
+
+    <p class="govuk-body">You have chosen a stop date email to be sent to the previous employer.</p>
+    <h2 class="govuk-heading-m">What happens next</h2>
+
     <ul class="govuk-list govuk-list--bullet">
-      <li>this apprentice has an existing apprenticeship record that is still live
+      <li>an email has been sent to the previous employer requesting they update their records for this apprentice; they are given
+      2 weeks to action this</li>
+      <li>we will send a reminder to the previous employer in 1 week and you will be notified once the employer has amended or
+      rejected changes for this apprentice
       </li>
-      <li>the previous employer has not updated the stop date</li>
+      <li>you cannot approve this apprentice request until the overlapping date has been resolved
+      </li>
     </ul>
     <div class="govuk-!-padding-bottom-5"></div>
 
@@ -71,7 +83,7 @@ href: "javascript:window.history.go(-1);"
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              To update a stop date:
+              What do you want to do next?
             </h1>
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
@@ -79,32 +91,17 @@ href: "javascript:window.history.go(-1);"
               <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
                 aria-describedby="signIn-item-hint">
               <label class="govuk-label govuk-radios__label" for="signIn">
-                Send a stop request email from the service
+                Go to manage my apprentices
               </label>
-              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                This can take up to 2 weeks for the previous employer to action.
-              </div>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
                 aria-describedby="signIn-2-item-hint">
               <label class="govuk-label govuk-radios__label" for="signIn-2">
-                Contact the previous employer myself
+                Return to dashboard
               </label>
-              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                If you know the previous employer details you can contact them directly to agree the stop date.
-              </div>
             </div>
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                aria-describedby="signIn-2-item-hint">
-              <label class="govuk-label govuk-radios__label" for="signIn-2">
-                I'll change the employer later
-              </label>
-              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                The details entered for this apprentice will not be saved.
-              </div>
-            </div>
+            
           </div>
 
         </fieldset>
