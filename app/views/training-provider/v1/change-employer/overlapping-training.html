@@ -63,9 +63,9 @@ href: "javascript:window.history.go(-1);"
       </li>
       <li>the previous employer has not updated the stop date</li>
     </ul>
-    <div class="govuk-!-padding-bottom-5"></div>
 
-    <form class="form" action="/training-provider/{{version}}/approvals/add/action/confirm-employer" method="post">
+<form class="form govuk-!-padding-top-5"
+  action="/training-provider/{{version}}/change-employer/action/overlapping-training/" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -76,32 +76,32 @@ href: "javascript:window.history.go(-1);"
           </legend>
           <div class="govuk-radios" data-module="govuk-radios">
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-                aria-describedby="signIn-item-hint">
-              <label class="govuk-label govuk-radios__label" for="signIn">
+              <input class="govuk-radios__input" id="stop-date-action" name="stop-date-action" type="radio" value="stop-request"
+                aria-describedby="stop-date-action-hint">
+              <label class="govuk-label govuk-radios__label" for="stop-date-action">
                 Send a stop request email from the service
               </label>
-              <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+              <div id="stop-date-action-hint" class="govuk-hint govuk-radios__hint">
                 This can take up to 2 weeks for the previous employer to action.
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                aria-describedby="signIn-2-item-hint">
-              <label class="govuk-label govuk-radios__label" for="signIn-2">
+              <input class="govuk-radios__input" id="stop-date-action-2" name="stop-date-action" type="radio"
+                value="contact-prev-employer" aria-describedby="stop-date-action-2-hint">
+              <label class="govuk-label govuk-radios__label" for="stop-date-action-2">
                 Contact the previous employer myself
               </label>
-              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              <div id="stop-date-action-2-hint" class="govuk-hint govuk-radios__hint">
                 If you know the previous employer details you can contact them directly to agree the stop date.
               </div>
             </div>
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                aria-describedby="signIn-2-item-hint">
-              <label class="govuk-label govuk-radios__label" for="signIn-2">
+              <input class="govuk-radios__input" id="stop-date-action-3" name="stop-date-action" type="radio" value="change-later"
+                aria-describedby="stop-date-action-3-hint">
+              <label class="govuk-label govuk-radios__label" for="stop-date-action-3">
                 I'll change the employer later
               </label>
-              <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
+              <div id="stop-date-action-3-hint" class="govuk-hint govuk-radios__hint">
                 The details entered for this apprentice will not be saved.
               </div>
             </div>

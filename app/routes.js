@@ -1930,6 +1930,20 @@ router.post('/training-provider/v1/approvals/add/action/personal-details', funct
     }
 })
 
+  
+router.post('/training-provider/v1/change-employer/action/overlapping-training', function (req, res) {
+    var stopDateAction = req.session.data['stop-date-action']
+
+    if (stopDateAction == "stop-request") {
+        res.redirect('/training-provider/v1/change-employer/stop-date-email')
+    }
+    else if (stopDateAction == "contact-prev-employer") {
+        res.redirect('/training-provider/v1/change-employer/contact-employer')
+    }
+    else if (stopDateAction == "change-later") {
+        res.redirect('/training-provider/v1/change-employer/manage-apprentices')
+    }
+})
 
 
 module.exports = router
