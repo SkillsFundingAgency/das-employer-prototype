@@ -22,7 +22,7 @@ Live index page
             <div class="govuk-grid-column-two-thirds">
 
 
-                <h1 class="govuk-heading-xl">Has this apprenticeship stopped?</h1>
+                <h1 class="govuk-heading-xl">Confirm apprenticeship stop</h1>
                 <p class="govuk-body">We have received notification of a new apprenticeship for a learner.
                 </p>
                 <p class="govuk-body">For their training to continue, you need to confirm the date when the
@@ -55,44 +55,46 @@ Live index page
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
-                            <td class="govuk-table__cell">Able seafarer (deck), Level 2 (standard)</td>
+                            <td class="govuk-table__cell">Digital engineering technician, Level: 3</td>
                         </tr>
                     </tbody>
 
                 </table>
-                <div class="govuk-!-padding-bottom-5"></div>
+                <div class="govuk-!-padding-bottom-1"></div>
 
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                            <h1 class="govuk-fieldset__heading">
-                                Has this apprenticeship stopped?
-                            </h1>
-                        </legend>
-                        <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-                                    aria-describedby="signIn-item-hint">
-                                <label class="govuk-label govuk-radios__label" for="signIn">
-                                    Yes, this apprenticeship has stopped
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                                    aria-describedby="signIn-2-item-hint">
-                                <label class="govuk-label govuk-radios__label" for="signIn-2">
-                                    No, this apprenticeship has not stopped
-                                </label>
+                <form class="form govuk-!-padding-top-5"
+                    action="/employer/v1/live/action/has-apprenticeship-stopped/" method="post">
+                
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h1 class="govuk-fieldset__heading">
+                                    Has this apprenticeship stopped?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="stop-action" name="stop-action" type="radio"
+                                        value="yes-apprenticeship-stopped" aria-describedby="stop-action-hint">
+                                    <label class="govuk-label govuk-radios__label" for="stop-action">
+                                        Yes, this apprenticesip has stopped
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="stop-action-2" name="stop-action" type="radio"
+                                        value="no-apprenticeship-not-stopped" aria-describedby="stop-action-2-hint">
+                                    <label class="govuk-label govuk-radios__label" for="stop-action-2">
+                                        No, this apprenticeship has not stopped
+                                    </label>
+                                </div>
                             </div>
                 
-                        </div>
+                        </fieldset>
+                    </div>
                 
-                    </fieldset>
-                </div>
-
-                <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-                    Continue
-                </a>
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                
+                </form>
 
 
             </div>

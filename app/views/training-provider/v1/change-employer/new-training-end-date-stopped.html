@@ -55,28 +55,39 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">New training start date</h1>
-    <p class="govuk-body">The date training started with the new employer must be on or after the stop date.</p>
+    <h1 class="govuk-heading-xl">New training end date</h1>
+    <p class="govuk-body">The new training end date must be after the new training start date.</p>
     <div class="govuk-!-padding-bottom-4"></div>
 
     <table class="govuk-table">
-      <thead class="govuk-table__head">
-        <tr class="govuk-table__row">
-          <th scope="col" class="govuk-table__header">Status with previous employer</th>
-          <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--blue">
-              Live
-            </strong></th>
-        </tr>
-      </thead>
-
+    <thead class="govuk-table__head">
+    <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <th scope="row" class="govuk-table__header">Current stop date with previous employer</th>
+      <td class="govuk-table__cell">October 2023</td>
+    </tr>
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header">Status with previous employer</th>
+      <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--red">
+          Stopped
+        </strong></th>
+    </tr>
+    <tbody class="govuk-table__body">
+      <tr class="govuk-table__row">
+        <th scope="row" class="govuk-table__header">New training start date</th>
+        <td class="govuk-table__cell">August 2023</td>
+      </tr>
+    </thead>
     </table>
+    
+
     <div class="govuk-!-padding-bottom-5"></div>
 
     <div class="govuk-form-group">
       <fieldset class="govuk-fieldset" role="group" aria-describedby="dob-hint">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
           <h3 class="govuk-fieldset__heading">
-            Enter the new training date
+            Enter the new training end date
           </h3>
         </legend>
         <div id="dob-hint" class="govuk-hint">
@@ -106,7 +117,7 @@ href: "javascript:window.history.go(-1);"
       </fieldset>
     </div>
 
-    <form class="form" action="/training-provider/v1/change-employer/new-training-end-date-live" method="post">
+    <form class="form" action="/training-provider/v1/change-employer/new-apprenticeship-price-stopped" method="post">
 
 
   </div>

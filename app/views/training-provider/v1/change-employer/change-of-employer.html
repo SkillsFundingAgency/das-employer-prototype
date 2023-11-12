@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Change of employer" %}
+{% set pageTitle = "Moving to a new employer" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -57,21 +57,17 @@ href: "javascript:window.history.go(-1);"
 	<div class="govuk-grid-column-two-thirds">
 
 		<h1 class="govuk-heading-xl">{{pageTitle}}</h1>
+		<p class="govuk-body">If an apprentice you are training has moved to a new employer you should:</p>
+		<ul class="govuk-list govuk-list--bullet">
+			<li>speak to the new employer to agree new training dates and price</li>
+			<li>ask the new employer to give you permissions to move the apprentice to their apprenticeship service account
+			</li>
+		</ul>
+		<p class="govuk-body">Once you have agreed these details you can continue to change the employer. </p>
 		<p class="govuk-body">It is important that you check that the apprentices’ details are correct before this
 			action is taken.</p>
-		<p class="govuk-body">Contact the new employer to:</p>
-		<ul class="govuk-list govuk-list--bullet">
-			<li>get permissions so you can create a cohort to move the apprentice to their apprenticeship service
-				account</li>
-			<li>agree the new training start date, new training planned end date and the remaining costs of training
-			</li>
-			<li>create a change of employer request, so the new employer can approve it</li>
-		</ul>
-		<p class="govuk-body">Employers that do not pay the apprenticeship levy, will not need to reserve funding when
-			they
-			approve a training
-			providers request to move an apprentice.</p>
 		<div class="govuk-!-padding-bottom-5"></div>
+		
 		<a href="/training-provider/v1/change-employer/select-employer" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
 			Continue
 		</a>

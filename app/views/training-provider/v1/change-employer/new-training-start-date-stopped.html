@@ -61,15 +61,20 @@ href: "javascript:window.history.go(-1);"
 
     <table class="govuk-table">
       <thead class="govuk-table__head">
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <th scope="row" class="govuk-table__header">Current stop date with previous employer</th>
+          <td class="govuk-table__cell">October 2023</td>
+        </tr>
         <tr class="govuk-table__row">
           <th scope="col" class="govuk-table__header">Status with previous employer</th>
-          <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--blue">
-              Live
+          <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--red">
+              Stopped
             </strong></th>
         </tr>
-      </thead>
-
+        </thead>
     </table>
+
     <div class="govuk-!-padding-bottom-5"></div>
 
     <div class="govuk-form-group">
@@ -106,7 +111,7 @@ href: "javascript:window.history.go(-1);"
       </fieldset>
     </div>
 
-    <form class="form" action="/training-provider/v1/change-employer/new-training-end-date-live" method="post">
+    <form class="form" action="/training-provider/v1/change-employer/new-training-end-date-stopped" method="post">
 
 
   </div>

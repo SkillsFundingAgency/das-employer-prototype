@@ -55,33 +55,50 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-panel govuk-panel--confirmation">
-      <h1 class="govuk-panel__title">
-        We have informed the previous employer you will contact them
-      </h1>
-    </div>
-    <div class="govuk-!-padding-bottom-5"></div>
+    <h1 class="govuk-heading-xl">Confirm employer</h1>
+    <h2 class="govuk-heading-l">COVENTRY LTD</h2>
+    <dl class="das-definition-list das-definition-list--inline das-definition-list--muted govuk-!-font-size-19">
+      <dt class="das-definition-list__title">Account name</dt>
+      <dd class="das-definition-list__definition">COVENTRY LTD</dd>
+      <dt class="das-definition-list__title">Agreement ID</dt>
+      <dd class="das-definition-list__definition">3GV5RY</dd>
+    </dl>
+    <div class="govuk-!-padding-bottom-7"></div>
 
+    <form class="form" action="/training-provider/{{version}}/approvals/add/action/confirm-employer" method="post">
 
-    <p class="govuk-body">We have sent an email to inform the previous employer that you will be contacting them to
-      amend a previous stop date.</p>
-    <h2 class="govuk-heading-m">What happens next</h2>
+      <div class="govuk-form-group">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h1 class="govuk-fieldset__heading">
+              Is this the new employer you’d like to move the apprentice record to?
+            </h1>
+          </legend>
+          <div class="govuk-radios" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirm-employer" name="confirm-employer" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="confirm-employer">
+                Yes, confirm COVENTRY LTD
+              </label>
+            </div>
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="confirm-employer-2" name="confirm-employer" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="confirm-employer-2">
+                No, choose a different employer
+              </label>
+            </div>
+          </div>
 
-    <p class="govuk-body">You cannot approve this apprentice request until the overlapping date has been resolved. It is
-      important that you check
-      that the apprentices’ details are correct before this action is taken.</p>
+        </fieldset>
+      </div>
 
-    <div class="govuk-!-padding-bottom-5"></div>
+      <a href="/training-provider/v1/change-employer/new-training-start-date-stopped" role="button" draggable="false" class="govuk-button"
+        data-module="govuk-button">
+        Continue
+      </a>
 
-    <a href="/training-provider/v1/change-employer/apprentice-details-live-changes" role="button" draggable="false"
-      class="govuk-button govuk-button--secondary" data-module="govuk-button">
-      View apprentice details
-    </a>
-    
-    <p class="govuk-body">
-      <a href="/training-provider/v1/change-employer/index" class="govuk-link govuk-link--no-visited-state">Return to
-        dashboard</a>
-    </p>
+    </form>
 
   </div>
 </div>

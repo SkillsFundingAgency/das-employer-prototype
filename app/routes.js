@@ -6,24 +6,24 @@ const router = express.Router()
 //SAVED STANDARDS
 
 router.post('/saved-standards/choose-provider', (req, res, next) => {
-	if(req.session.data['foundProvider'] == 'true'){
-		res.redirect('/saved-standards/choose-provider')
-	} else {
-		res.redirect('/saved-standards/advertise/selected-no')
-	}
+  if (req.session.data['foundProvider'] == 'true') {
+    res.redirect('/saved-standards/choose-provider')
+  } else {
+    res.redirect('/saved-standards/advertise/selected-no')
+  }
 })
 
 
 //START TERMS OF USE
 
 router.post(`/334/optional/terms-of-use-branch`, function (req, res) {
-    const termsOfUse = req.session.data['terms-of-use'];
+  const termsOfUse = req.session.data['terms-of-use'];
 
-    if (termsOfUse === 'read-now'
-       ) {
-        res.redirect(`/334/optional/updated-terms-and-conditions`);
-    }
-   else res.redirect(`/334/optional/select-account-with-banner`);
+  if (termsOfUse === 'read-now'
+  ) {
+    res.redirect(`/334/optional/updated-terms-and-conditions`);
+  }
+  else res.redirect(`/334/optional/select-account-with-banner`);
 });
 
 //END TERMS OF USE
@@ -33,13 +33,13 @@ router.post(`/334/optional/terms-of-use-branch`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v1/reset-code`, function (req, res) {
-    const correctPAssword = req.session.data['reset-code'];
+  const correctPAssword = req.session.data['reset-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v1/new-password`);
-    }
-   else res.redirect(`/355/v1/invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v1/new-password`);
+  }
+  else res.redirect(`/355/v1/invalid-code`);
 });
 
 //END password reset code
@@ -47,13 +47,13 @@ router.post(`/355/v1/reset-code`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v1/invalid-code`, function (req, res) {
-    const correctPAssword = req.session.data['invalid-code'];
+  const correctPAssword = req.session.data['invalid-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v1/new-password`);
-    }
-   else res.redirect(`/355/v1/third-invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v1/new-password`);
+  }
+  else res.redirect(`/355/v1/third-invalid-code`);
 });
 
 //END password reset code
@@ -63,13 +63,13 @@ router.post(`/355/v1/invalid-code`, function (req, res) {
 //START change password
 
 router.post(`/355/v1/change-password`, function (req, res) {
-    const correctPAssword = req.session.data['change-password'];
+  const correctPAssword = req.session.data['change-password'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v1/sign-in`);
-    }
-   else res.redirect(`/355/v1/password-error-screen`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v1/sign-in`);
+  }
+  else res.redirect(`/355/v1/password-error-screen`);
 });
 
 //END change password
@@ -82,13 +82,13 @@ router.post(`/355/v1/change-password`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v2/reset-code`, function (req, res) {
-    const correctPAssword = req.session.data['reset-code'];
+  const correctPAssword = req.session.data['reset-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v2/new-password`);
-    }
-   else res.redirect(`/355/v2/invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v2/new-password`);
+  }
+  else res.redirect(`/355/v2/invalid-code`);
 });
 
 //END password reset code
@@ -96,13 +96,13 @@ router.post(`/355/v2/reset-code`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v2/invalid-code`, function (req, res) {
-    const correctPAssword = req.session.data['invalid-code'];
+  const correctPAssword = req.session.data['invalid-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v2/new-password`);
-    }
-   else res.redirect(`/355/v2/third-invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v2/new-password`);
+  }
+  else res.redirect(`/355/v2/third-invalid-code`);
 });
 
 //END password reset code
@@ -112,13 +112,13 @@ router.post(`/355/v2/invalid-code`, function (req, res) {
 //START change password
 
 router.post(`/355/v2/change-password`, function (req, res) {
-    const correctPAssword = req.session.data['change-password'];
+  const correctPAssword = req.session.data['change-password'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v2/sign-in`);
-    }
-   else res.redirect(`/355/v2/password-error-screen`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v2/sign-in`);
+  }
+  else res.redirect(`/355/v2/password-error-screen`);
 });
 
 //END change password
@@ -130,13 +130,13 @@ router.post(`/355/v2/change-password`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v3/reset-code`, function (req, res) {
-    const correctPAssword = req.session.data['reset-code'];
+  const correctPAssword = req.session.data['reset-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v3/new-password`);
-    }
-   else res.redirect(`/355/v3/invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v3/new-password`);
+  }
+  else res.redirect(`/355/v3/invalid-code`);
 });
 
 //END password reset code
@@ -144,13 +144,13 @@ router.post(`/355/v3/reset-code`, function (req, res) {
 //START password reset code
 
 router.post(`/355/v3/invalid-code`, function (req, res) {
-    const correctPAssword = req.session.data['invalid-code'];
+  const correctPAssword = req.session.data['invalid-code'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v3/new-password`);
-    }
-   else res.redirect(`/355/v3/third-invalid-code`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v3/new-password`);
+  }
+  else res.redirect(`/355/v3/third-invalid-code`);
 });
 
 //END password reset code
@@ -160,13 +160,13 @@ router.post(`/355/v3/invalid-code`, function (req, res) {
 //START change password
 
 router.post(`/355/v3/change-password`, function (req, res) {
-    const correctPAssword = req.session.data['change-password'];
+  const correctPAssword = req.session.data['change-password'];
 
-    if (correctPAssword === 'abc123'
-       ) {
-        res.redirect(`/355/v3/sign-in`);
-    }
-   else res.redirect(`/355/v3/password-error-screen`);
+  if (correctPAssword === 'abc123'
+  ) {
+    res.redirect(`/355/v3/sign-in`);
+  }
+  else res.redirect(`/355/v3/password-error-screen`);
 });
 
 //END change password
@@ -175,11 +175,11 @@ router.post(`/355/v3/change-password`, function (req, res) {
 //START 411 - employer add PAYE scheme
 
 router.post('/account-registration/411/add-paye', (req, res) => {
-    if(req.session.data['add-paye'] == 'government-gateway'){
-        res.redirect('government-gateway')
-	} else if(req.session.data['add-paye'] == 'aorn'){
-        res.redirect('enter-your-PAYE-scheme-details')
-    }
+  if (req.session.data['add-paye'] == 'government-gateway') {
+    res.redirect('government-gateway')
+  } else if (req.session.data['add-paye'] == 'aorn') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  }
 })
 
 //END 411 - employer add PAYE scheme
@@ -199,63 +199,63 @@ router.post('/416/employer-agreement', function (req, res) {
 
 
 router.post('/416/v2/employer-agreement', function (req, res) {
-    const editChoice = req.session.data['employer-agreement-check']
+  const editChoice = req.session.data['employer-agreement-check']
 
-    if (editChoice === 'yes') {
-      res.redirect('agreement-accepted-no-task-list')
-    } else if (editChoice === 'no') {
-      res.redirect('task-list')
-    }
-  });
-
-
-  router.post('/416/confirm-training-provider', function (req, res) {
-    const editChoice = req.session.data['confirm-training-provider-check']
-
-    if (editChoice === 'yes') {
-      res.redirect('select-permissions')
-    } else if (editChoice === 'no') {
-      res.redirect('enter-ukprn')
-    }
-  });
+  if (editChoice === 'yes') {
+    res.redirect('agreement-accepted-no-task-list')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list')
+  }
+});
 
 
-  router.post('/416/v2/confirm-training-provider', function (req, res) {
-    const editChoice = req.session.data['confirm-training-provider-check']
+router.post('/416/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-    if (editChoice === 'yes') {
-      res.redirect('select-permissions')
-    } else if (editChoice === 'no') {
-      res.redirect('enter-ukprn')
-    }
-  });
-
-
-  router.post('/416/confirm-permissions', function (req, res) {
-    const editChoice = req.session.data['confirm-permissions-check']
-
-    if (editChoice === 'yes') {
-      res.redirect('training-provider-permissions-granted')
-    } else if (editChoice === 'no') {
-      res.redirect('select-permissions')
-    }
-  });
-
-  router.post('/416/v2/confirm-permissions', function (req, res) {
-    const editChoice = req.session.data['confirm-permissions-check']
-
-    if (editChoice === 'yes') {
-      res.redirect('training-provider-permissions-granted')
-    } else if (editChoice === 'no') {
-      res.redirect('select-permissions')
-    }
-  });
-
-  /* 416 ends */
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
 
+router.post('/416/v2/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-  /* 436 starts */
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
+
+
+router.post('/416/confirm-permissions', function (req, res) {
+  const editChoice = req.session.data['confirm-permissions-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions-granted')
+  } else if (editChoice === 'no') {
+    res.redirect('select-permissions')
+  }
+});
+
+router.post('/416/v2/confirm-permissions', function (req, res) {
+  const editChoice = req.session.data['confirm-permissions-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions-granted')
+  } else if (editChoice === 'no') {
+    res.redirect('select-permissions')
+  }
+});
+
+/* 416 ends */
+
+
+
+/* 436 starts */
 
 router.post('/436/add-paye-scheme', function (req, res) {
   const editChoice = req.session.data['add-paye-scheme-check']
@@ -310,11 +310,11 @@ router.post('/436/change-account-name', function (req, res) {
 });
 
 
- /* 436 ends */
+/* 436 ends */
 
 
 
-   /* 436 v2 starts */
+/* 436 v2 starts */
 
 router.post('/436/v2/add-paye-scheme', function (req, res) {
   const editChoice = req.session.data['add-paye-scheme-check']
@@ -347,10 +347,10 @@ router.post('/436/v2/confirm-training-provider', function (req, res) {
 }); */
 
 router.post('/436/v2/confirm-permissions-check', (req, res) => {
-  if(req.session.data['confirm-permissions-check'] == 'yes'){
-      res.redirect('account-setup-complete')
-} else if(req.session.data['confirm-permissions-check'] == 'no'){
-      res.redirect('account-setup-complete')
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
   }
 })
 
@@ -397,10 +397,10 @@ router.post('/436/v2/training-provider-choice', function (req, res) {
 });
 
 
- /* 436 v2 ends */
+/* 436 v2 ends */
 
 
-  /* 436 v3 starts */
+/* 436 v3 starts */
 
 router.post('/436/v3/add-paye-scheme', function (req, res) {
   const editChoice = req.session.data['add-paye-scheme-check']
@@ -433,10 +433,10 @@ router.post('/436/v3/confirm-training-provider', function (req, res) {
 }); */
 
 router.post('/436/v3/confirm-permissions-check', (req, res) => {
-  if(req.session.data['confirm-permissions-check'] == 'yes'){
-      res.redirect('account-setup-complete')
-} else if(req.session.data['confirm-permissions-check'] == 'no'){
-      res.redirect('account-setup-complete')
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
   }
 });
 
@@ -510,10 +510,10 @@ router.post('/436/v3/add-paye-knockout', function (req, res) {
 
 
 router.post('/436/v3/details-correct', (req, res) => {
-  if(req.session.data['details-correct'] == 'yes'){
-      res.redirect('paye-scheme-added')
-} else if(req.session.data['details-correct'] == 'no'){
-      res.redirect('search-for-org')
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
   }
 });
 
@@ -554,7 +554,7 @@ router.post('/436/v3/select-your-org-radios', function (req, res) {
   }
 });
 
- /* 436 v3 ends */
+/* 436 v3 ends */
 
 
 
@@ -592,10 +592,10 @@ router.post('/436/v4/confirm-training-provider', function (req, res) {
 }); */
 
 router.post('/436/v4/confirm-permissions-check', (req, res) => {
-  if(req.session.data['confirm-permissions-check'] == 'yes'){
-      res.redirect('account-setup-complete')
-} else if(req.session.data['confirm-permissions-check'] == 'no'){
-      res.redirect('account-setup-complete')
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
   }
 });
 
@@ -645,12 +645,12 @@ router.post('/436/v4/account-name-confirm', function (req, res) {
 
 
 router.post('/436/v4/training-provider-invited-choice-check', (req, res) => {
-  if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-      res.redirect('select-permissions')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-      res.redirect('enter-ukprn')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-      res.redirect('account-setup-complete-no-tp')
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
   }
 });
 
@@ -695,12 +695,12 @@ router.post('/436/v4/add-paye-knockout', function (req, res) {
 
 
 router.post('/436/v4/details-correct', (req, res) => {
-  if(req.session.data['details-correct'] == 'yes'){
-      res.redirect('paye-scheme-added')
-  } else if(req.session.data['details-correct'] == 'address'){
-      res.redirect('address-wrong')
-  } else if(req.session.data['details-correct'] == 'no'){
-      res.redirect('search-for-org')
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
   }
 });
 
@@ -741,12 +741,12 @@ router.post('/436/v4/select-your-org-radios', function (req, res) {
   }
 });
 
- /* 436 v4 ends */
+/* 436 v4 ends */
 
 
 
 
- /* 436 v5 starts */
+/* 436 v5 starts */
 
 router.post('/436/v5/add-paye-scheme', function (req, res) {
   const editChoice = req.session.data['add-paye-scheme-check']
@@ -771,10 +771,10 @@ router.post('/436/v5/confirm-training-provider', function (req, res) {
 
 
 router.post('/436/v5/confirm-permissions-check', (req, res) => {
-  if(req.session.data['confirm-permissions-check'] == 'yes'){
-      res.redirect('account-setup-complete')
-} else if(req.session.data['confirm-permissions-check'] == 'no'){
-      res.redirect('account-setup-complete')
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
   }
 });
 
@@ -824,12 +824,12 @@ router.post('/436/v5/account-name-confirm', function (req, res) {
 
 
 router.post('/436/v5/training-provider-invited-choice-check', (req, res) => {
-  if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-      res.redirect('select-permissions')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-      res.redirect('enter-ukprn')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-      res.redirect('account-setup-complete-no-tp')
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
   }
 });
 
@@ -874,12 +874,12 @@ router.post('/436/v5/add-paye-knockout', function (req, res) {
 
 
 router.post('/436/v5/details-correct', (req, res) => {
-  if(req.session.data['details-correct'] == 'yes'){
-      res.redirect('paye-scheme-added')
-  } else if(req.session.data['details-correct'] == 'address'){
-      res.redirect('address-wrong')
-  } else if(req.session.data['details-correct'] == 'no'){
-      res.redirect('search-for-org')
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
   }
 });
 
@@ -920,195 +920,195 @@ router.post('/436/v5/select-your-org-radios', function (req, res) {
   }
 });
 
- /* 436 v5 ends */
+/* 436 v5 ends */
 
 
-  /* 436 v5b starts */
+/* 436 v5b starts */
 
- router.post('/436/v5b/add-paye-scheme', function (req, res) {
-   const editChoice = req.session.data['add-paye-scheme-check']
+router.post('/436/v5b/add-paye-scheme', function (req, res) {
+  const editChoice = req.session.data['add-paye-scheme-check']
 
-   if (editChoice === 'government-gateway') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'aorn') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   }
- });
+  if (editChoice === 'government-gateway') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'aorn') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  }
+});
 
- router.post('/436/v5b/confirm-training-provider', function (req, res) {
-   const editChoice = req.session.data['confirm-training-provider-check']
+router.post('/436/v5b/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
-
-
-
- router.post('/436/v5b/confirm-permissions-check', (req, res) => {
-   if(req.session.data['confirm-permissions-check'] == 'yes'){
-       res.redirect('account-setup-complete')
- } else if(req.session.data['confirm-permissions-check'] == 'no'){
-       res.redirect('account-setup-complete')
-   }
- });
-
- router.post('/436/v5b/employer-agreement', function (req, res) {
-   const editChoice = req.session.data['employer-agreement-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('employer-agreement-accepted')
-   } else if (editChoice === 'no') {
-     res.redirect('task-list-5-in-progress-step-4')
-   }
- });
-
-
- router.post('/436/v5b/change-account-name', function (req, res) {
-   const editChoice = req.session.data['change-account-name-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('account-name-change-confirm')
-   } else if (editChoice === 'no') {
-     res.redirect('change-confirm')
-   }
- });
-
- router.post('/436/v5b/account-name-change-confirm', function (req, res) {
-   const editChoice = req.session.data['change-account-name-confirm-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('account-name-changed')
-   } else if (editChoice === 'no') {
-     res.redirect('change-account-name')
-   }
- });
-
- router.post('/436/v5b/account-name-confirm', function (req, res) {
-   const editChoice = req.session.data['account-name-confirm-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('change-confirm')
-   } else if (editChoice === 'no') {
-     res.redirect('change-confirm')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
 
 
+router.post('/436/v5b/confirm-permissions-check', (req, res) => {
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
+
+router.post('/436/v5b/employer-agreement', function (req, res) {
+  const editChoice = req.session.data['employer-agreement-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('employer-agreement-accepted')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-5-in-progress-step-4')
+  }
+});
 
 
- router.post('/436/v5b/training-provider-invited-choice-check', (req, res) => {
-   if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-       res.redirect('select-permissions')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-       res.redirect('enter-ukprn')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-       res.redirect('account-setup-complete-no-tp')
-   }
- });
+router.post('/436/v5b/change-account-name', function (req, res) {
+  const editChoice = req.session.data['change-account-name-check']
 
+  if (editChoice === 'yes') {
+    res.redirect('account-name-change-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('change-confirm')
+  }
+});
 
+router.post('/436/v5b/account-name-change-confirm', function (req, res) {
+  const editChoice = req.session.data['change-account-name-confirm-check']
 
+  if (editChoice === 'yes') {
+    res.redirect('account-name-changed')
+  } else if (editChoice === 'no') {
+    res.redirect('change-account-name')
+  }
+});
 
- router.post('/436/v5b/training-provider-choice-check', function (req, res) {
-   const editChoice = req.session.data['training-provider-choice-check']
+router.post('/436/v5b/account-name-confirm', function (req, res) {
+  const editChoice = req.session.data['account-name-confirm-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('confirm-training-provider-invited')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete-no-tp')
-   }
- });
-
-
- router.post('/436/v5b/confirm-training-provider-invited', function (req, res) {
-   const editChoice = req.session.data['confirm-invited-training-provider-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('training-provider-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
-
- router.post('/436/v5b/add-paye-knockout', function (req, res) {
-   const editChoice = req.session.data['pay-bill-check']
-
-   if (editChoice === 'yes') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'not-yet') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'no') {
-     res.redirect('add-paye-scheme-aorn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('change-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('change-confirm')
+  }
+});
 
 
 
 
 
- router.post('/436/v5b/details-correct', (req, res) => {
-   if(req.session.data['details-correct'] == 'yes'){
-       res.redirect('paye-scheme-added')
-   } else if(req.session.data['details-correct'] == 'address'){
-       res.redirect('address-wrong')
-   } else if(req.session.data['details-correct'] == 'no'){
-       res.redirect('search-for-org')
-   }
- });
+router.post('/436/v5b/training-provider-invited-choice-check', (req, res) => {
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
 
 
- router.post('/436/v5b/training-provider-permissions', function (req, res) {
-   const editChoice = req.session.data['training-provider-access']
+router.post('/436/v5b/training-provider-choice-check', function (req, res) {
+  const editChoice = req.session.data['training-provider-choice-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete')
-   }
- });
-
-
- router.post('/436/v5b/paye-uhp', function (req, res) {
-   const editChoice = req.session.data['paye-uhp-what-next']
-
-   if (editChoice === 'paye') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   } else if (editChoice === 'search') {
-     res.redirect('search-for-org')
-   } else if (editChoice === 'helpdesk') {
-     res.redirect('paye-uhp-help-desk')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('confirm-training-provider-invited')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
- router.post('/436/v5b/select-your-org-radios', function (req, res) {
-   const editChoice = req.session.data['choose-org']
+router.post('/436/v5b/confirm-training-provider-invited', function (req, res) {
+  const editChoice = req.session.data['confirm-invited-training-provider-check']
 
-   if (editChoice === 'biscuit') {
-     res.redirect('check-details-from-search')
-   } else if (editChoice === 'not-listed') {
-     res.redirect('paye-uhp')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
-  /* 436 v5b ends */
+router.post('/436/v5b/add-paye-knockout', function (req, res) {
+  const editChoice = req.session.data['pay-bill-check']
+
+  if (editChoice === 'yes') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'not-yet') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'no') {
+    res.redirect('add-paye-scheme-aorn')
+  }
+});
 
 
 
- /* 436 v6 starts */
 
- router.post('/436/v6/select-security-code', (req, res, next) => {
-	if(req.session.data['security-code'] == 'app'){
-		res.redirect('/436/v6/1e-app')
-	} else {
-		res.redirect('/436/v6/1e-enter-number')
-	}
+
+router.post('/436/v5b/details-correct', (req, res) => {
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
+  }
+});
+
+
+
+
+router.post('/436/v5b/training-provider-permissions', function (req, res) {
+  const editChoice = req.session.data['training-provider-access']
+
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
+
+
+router.post('/436/v5b/paye-uhp', function (req, res) {
+  const editChoice = req.session.data['paye-uhp-what-next']
+
+  if (editChoice === 'paye') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  } else if (editChoice === 'search') {
+    res.redirect('search-for-org')
+  } else if (editChoice === 'helpdesk') {
+    res.redirect('paye-uhp-help-desk')
+  }
+});
+
+
+router.post('/436/v5b/select-your-org-radios', function (req, res) {
+  const editChoice = req.session.data['choose-org']
+
+  if (editChoice === 'biscuit') {
+    res.redirect('check-details-from-search')
+  } else if (editChoice === 'not-listed') {
+    res.redirect('paye-uhp')
+  }
+});
+
+/* 436 v5b ends */
+
+
+
+/* 436 v6 starts */
+
+router.post('/436/v6/select-security-code', (req, res, next) => {
+  if (req.session.data['security-code'] == 'app') {
+    res.redirect('/436/v6/1e-app')
+  } else {
+    res.redirect('/436/v6/1e-enter-number')
+  }
 })
 
 router.post('/436/v6/add-paye-scheme', function (req, res) {
@@ -1134,10 +1134,10 @@ router.post('/436/v6/confirm-training-provider', function (req, res) {
 
 
 router.post('/436/v6/confirm-permissions-check', (req, res) => {
-  if(req.session.data['confirm-permissions-check'] == 'yes'){
-      res.redirect('account-setup-complete')
-} else if(req.session.data['confirm-permissions-check'] == 'no'){
-      res.redirect('account-setup-complete')
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
   }
 });
 
@@ -1187,12 +1187,12 @@ router.post('/436/v6/account-name-confirm', function (req, res) {
 
 
 router.post('/436/v6/training-provider-invited-choice-check', (req, res) => {
-  if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-      res.redirect('select-permissions')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-      res.redirect('enter-ukprn')
-  } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-      res.redirect('account-setup-complete-no-tp')
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
   }
 });
 
@@ -1237,12 +1237,12 @@ router.post('/436/v6/add-paye-knockout', function (req, res) {
 
 
 router.post('/436/v6/details-correct', (req, res) => {
-  if(req.session.data['details-correct'] == 'yes'){
-      res.redirect('paye-scheme-added')
-  } else if(req.session.data['details-correct'] == 'address'){
-      res.redirect('address-wrong')
-  } else if(req.session.data['details-correct'] == 'no'){
-      res.redirect('search-for-org')
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
   }
 });
 
@@ -1283,667 +1283,713 @@ router.post('/436/v6/select-your-org-radios', function (req, res) {
   }
 });
 
- /* 436 v6 ends */
+/* 436 v6 ends */
 
 
-  /* 436 v7 starts */
+/* 436 v7 starts */
 
-  router.post('/436/v7/select-security-code', (req, res, next) => {
- 	if(req.session.data['security-code'] == 'app'){
- 		res.redirect('/436/v7/1e-app')
- 	} else {
- 		res.redirect('/436/v7/1e-enter-number')
- 	}
- })
+router.post('/436/v7/select-security-code', (req, res, next) => {
+  if (req.session.data['security-code'] == 'app') {
+    res.redirect('/436/v7/1e-app')
+  } else {
+    res.redirect('/436/v7/1e-enter-number')
+  }
+})
 
- router.post('/436/v7/add-paye-scheme', function (req, res) {
-   const editChoice = req.session.data['add-paye-scheme-check']
+router.post('/436/v7/add-paye-scheme', function (req, res) {
+  const editChoice = req.session.data['add-paye-scheme-check']
 
-   if (editChoice === 'government-gateway') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'aorn') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   }
- });
+  if (editChoice === 'government-gateway') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'aorn') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  }
+});
 
- router.post('/436/v7/confirm-training-provider', function (req, res) {
-   const editChoice = req.session.data['confirm-training-provider-check']
+router.post('/436/v7/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
 
 
- router.post('/436/v7/confirm-permissions-check', (req, res) => {
-   if(req.session.data['confirm-permissions-check'] == 'yes'){
-       res.redirect('account-setup-complete')
- } else if(req.session.data['confirm-permissions-check'] == 'no'){
-       res.redirect('account-setup-complete')
-   }
- });
+router.post('/436/v7/confirm-permissions-check', (req, res) => {
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
- router.post('/436/v7/employer-agreement', function (req, res) {
-   const editChoice = req.session.data['employer-agreement-check']
+router.post('/436/v7/employer-agreement', function (req, res) {
+  const editChoice = req.session.data['employer-agreement-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('employer-agreement-accepted')
-   } else if (editChoice === 'no') {
-     res.redirect('task-list-5-in-progress-step-4')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('employer-agreement-accepted')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-5-in-progress-step-4')
+  }
+});
 
 
- router.post('/436/v7/change-account-name', function (req, res) {
-   const editChoice = req.session.data['change-account-name-check']
+router.post('/436/v7/change-account-name', function (req, res) {
+  const editChoice = req.session.data['change-account-name-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('account-name-change-confirm')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-change-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
- router.post('/436/v7/account-name-change-confirm', function (req, res) {
-   const editChoice = req.session.data['change-account-name-confirm-check']
+router.post('/436/v7/account-name-change-confirm', function (req, res) {
+  const editChoice = req.session.data['change-account-name-confirm-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('account-name-changed')
-   } else if (editChoice === 'no') {
-     res.redirect('change-account-name')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-changed')
+  } else if (editChoice === 'no') {
+    res.redirect('change-account-name')
+  }
+});
 
- router.post('/436/v7/account-name-confirm', function (req, res) {
-   const editChoice = req.session.data['account-name-confirm-check']
+router.post('/436/v7/account-name-confirm', function (req, res) {
+  const editChoice = req.session.data['account-name-confirm-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('task-list-4')
-   } else if (editChoice === 'no') {
-     res.redirect('task-list-4')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('task-list-4')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-4')
+  }
+});
 
 
 
 
 
- router.post('/436/v7/training-provider-invited-choice-check', (req, res) => {
-   if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-       res.redirect('select-permissions')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-       res.redirect('enter-ukprn')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-       res.redirect('account-setup-complete-no-tp')
-   }
- });
+router.post('/436/v7/training-provider-invited-choice-check', (req, res) => {
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
 
 
- router.post('/436/v7/training-provider-choice-check', function (req, res) {
-   const editChoice = req.session.data['training-provider-choice-check']
+router.post('/436/v7/training-provider-choice-check', function (req, res) {
+  const editChoice = req.session.data['training-provider-choice-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('confirm-training-provider-invited')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete-no-tp')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('confirm-training-provider-invited')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
- router.post('/436/v7/confirm-training-provider-invited', function (req, res) {
-   const editChoice = req.session.data['confirm-invited-training-provider-check']
+router.post('/436/v7/confirm-training-provider-invited', function (req, res) {
+  const editChoice = req.session.data['confirm-invited-training-provider-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('training-provider-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
- router.post('/436/v7/add-paye-knockout', function (req, res) {
-   const editChoice = req.session.data['pay-bill-check']
+router.post('/436/v7/add-paye-knockout', function (req, res) {
+  const editChoice = req.session.data['pay-bill-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'not-yet') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'no') {
-     res.redirect('add-paye-scheme-aorn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'not-yet') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'no') {
+    res.redirect('add-paye-scheme-aorn')
+  }
+});
 
 
 
 
 
- router.post('/436/v7/details-correct', (req, res) => {
-   if(req.session.data['details-correct'] == 'yes'){
-       res.redirect('paye-scheme-added')
-   } else if(req.session.data['details-correct'] == 'address'){
-       res.redirect('address-wrong')
-   } else if(req.session.data['details-correct'] == 'no'){
-       res.redirect('search-for-org')
-   }
- });
+router.post('/436/v7/details-correct', (req, res) => {
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
+  }
+});
 
 
 
 
- router.post('/436/v7/training-provider-permissions', function (req, res) {
-   const editChoice = req.session.data['training-provider-access']
+router.post('/436/v7/training-provider-permissions', function (req, res) {
+  const editChoice = req.session.data['training-provider-access']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
 
- router.post('/436/v7/paye-uhp', function (req, res) {
-   const editChoice = req.session.data['paye-uhp-what-next']
+router.post('/436/v7/paye-uhp', function (req, res) {
+  const editChoice = req.session.data['paye-uhp-what-next']
 
-   if (editChoice === 'paye') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   } else if (editChoice === 'search') {
-     res.redirect('search-for-org')
-   } else if (editChoice === 'helpdesk') {
-     res.redirect('paye-uhp-help-desk')
-   }
- });
+  if (editChoice === 'paye') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  } else if (editChoice === 'search') {
+    res.redirect('search-for-org')
+  } else if (editChoice === 'helpdesk') {
+    res.redirect('paye-uhp-help-desk')
+  }
+});
 
 
- router.post('/436/v7/select-your-org-radios', function (req, res) {
-   const editChoice = req.session.data['choose-org']
+router.post('/436/v7/select-your-org-radios', function (req, res) {
+  const editChoice = req.session.data['choose-org']
 
-   if (editChoice === 'biscuit') {
-     res.redirect('check-details-from-search')
-   } else if (editChoice === 'not-listed') {
-     res.redirect('paye-uhp')
-   }
- });
+  if (editChoice === 'biscuit') {
+    res.redirect('check-details-from-search')
+  } else if (editChoice === 'not-listed') {
+    res.redirect('paye-uhp')
+  }
+});
 
-  /* 436 v7 ends */
+/* 436 v7 ends */
 
-	/* 436 v8 starts */
+/* 436 v8 starts */
 
-  router.post('/436/v8/select-security-code', (req, res, next) => {
- 	if(req.session.data['security-code'] == 'app'){
- 		res.redirect('/436/v8/1e-app')
- 	} else {
- 		res.redirect('/436/v8/1e-enter-number')
- 	}
- })
+router.post('/436/v8/select-security-code', (req, res, next) => {
+  if (req.session.data['security-code'] == 'app') {
+    res.redirect('/436/v8/1e-app')
+  } else {
+    res.redirect('/436/v8/1e-enter-number')
+  }
+})
 
- router.post('/436/v8/add-paye-scheme', function (req, res) {
-   const editChoice = req.session.data['add-paye-scheme-check']
+router.post('/436/v8/add-paye-scheme', function (req, res) {
+  const editChoice = req.session.data['add-paye-scheme-check']
 
-   if (editChoice === 'government-gateway') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'aorn') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   }
- });
+  if (editChoice === 'government-gateway') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'aorn') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  }
+});
 
- router.post('/436/v8/confirm-training-provider', function (req, res) {
-   const editChoice = req.session.data['confirm-training-provider-check']
+router.post('/436/v8/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
 
 
- router.post('/436/v8/confirm-permissions-check', (req, res) => {
-   if(req.session.data['confirm-permissions-check'] == 'yes'){
-       res.redirect('account-setup-complete')
- } else if(req.session.data['confirm-permissions-check'] == 'no'){
-       res.redirect('account-setup-complete-no-tp')
-   }
- });
+router.post('/436/v8/confirm-permissions-check', (req, res) => {
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
- router.post('/436/v8/employer-agreement', function (req, res) {
-   const editChoice = req.session.data['employer-agreement-check']
+router.post('/436/v8/employer-agreement', function (req, res) {
+  const editChoice = req.session.data['employer-agreement-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('employer-agreement-accepted')
-   } else if (editChoice === 'no') {
-     res.redirect('task-list-5-in-progress-step-4')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('employer-agreement-accepted')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-5-in-progress-step-4')
+  }
+});
 
 
- router.post('/436/v8/change-account-name', function (req, res) {
-   const editChoice = req.session.data['change-account-name-check']
+router.post('/436/v8/change-account-name', function (req, res) {
+  const editChoice = req.session.data['change-account-name-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('account-name-change-confirm')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete-no-tp')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-change-confirm')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
- router.post('/436/v8/account-name-change-confirm', function (req, res) {
-   const editChoice = req.session.data['change-account-name-confirm-check']
+router.post('/436/v8/account-name-change-confirm', function (req, res) {
+  const editChoice = req.session.data['change-account-name-confirm-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('account-name-changed')
-   } else if (editChoice === 'no') {
-     res.redirect('change-account-name')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-changed')
+  } else if (editChoice === 'no') {
+    res.redirect('change-account-name')
+  }
+});
 
- router.post('/436/v8/account-name-confirm', function (req, res) {
-   const editChoice = req.session.data['account-name-confirm-check']
+router.post('/436/v8/account-name-confirm', function (req, res) {
+  const editChoice = req.session.data['account-name-confirm-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('task-list-4')
-   } else if (editChoice === 'no') {
-     res.redirect('task-list-4')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('task-list-4')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-4')
+  }
+});
 
 
 
 
 
- router.post('/436/v8/training-provider-invited-choice-check', (req, res) => {
-   if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-       res.redirect('select-permissions')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-       res.redirect('enter-ukprn')
-   } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-       res.redirect('account-setup-complete-no-tp')
-   }
- });
+router.post('/436/v8/training-provider-invited-choice-check', (req, res) => {
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('select-permissions')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('enter-ukprn')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
 
 
- router.post('/436/v8/training-provider-choice-check', function (req, res) {
-   const editChoice = req.session.data['training-provider-choice-check']
+router.post('/436/v8/training-provider-choice-check', function (req, res) {
+  const editChoice = req.session.data['training-provider-choice-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('confirm-training-provider-invited')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete-no-tp')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('confirm-training-provider-invited')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
- router.post('/436/v8/confirm-training-provider-invited', function (req, res) {
-   const editChoice = req.session.data['confirm-invited-training-provider-check']
+router.post('/436/v8/confirm-training-provider-invited', function (req, res) {
+  const editChoice = req.session.data['confirm-invited-training-provider-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('training-provider-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('enter-ukprn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
- router.post('/436/v8/add-paye-knockout', function (req, res) {
-   const editChoice = req.session.data['pay-bill-check']
+router.post('/436/v8/add-paye-knockout', function (req, res) {
+  const editChoice = req.session.data['pay-bill-check']
 
-   if (editChoice === 'yes') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'not-yet') {
-     res.redirect('government-gateway')
-   } else if (editChoice === 'no') {
-     res.redirect('add-paye-scheme-aorn')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'not-yet') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'no') {
+    res.redirect('add-paye-scheme-aorn')
+  }
+});
 
 
 
 
 
- router.post('/436/v8/details-correct', (req, res) => {
-   if(req.session.data['details-correct'] == 'yes'){
-       res.redirect('paye-scheme-added')
-   } else if(req.session.data['details-correct'] == 'address'){
-       res.redirect('address-wrong')
-   } else if(req.session.data['details-correct'] == 'no'){
-       res.redirect('search-for-org')
-   }
- });
+router.post('/436/v8/details-correct', (req, res) => {
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
+  }
+});
 
 
 
 
- router.post('/436/v8/training-provider-permissions', function (req, res) {
-   const editChoice = req.session.data['training-provider-access']
+router.post('/436/v8/training-provider-permissions', function (req, res) {
+  const editChoice = req.session.data['training-provider-access']
 
-   if (editChoice === 'yes') {
-     res.redirect('select-permissions')
-   } else if (editChoice === 'no') {
-     res.redirect('account-setup-complete')
-   }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
 
- router.post('/436/v8/paye-uhp', function (req, res) {
-   const editChoice = req.session.data['paye-uhp-what-next']
+router.post('/436/v8/paye-uhp', function (req, res) {
+  const editChoice = req.session.data['paye-uhp-what-next']
 
-   if (editChoice === 'paye') {
-     res.redirect('enter-your-PAYE-scheme-details')
-   } else if (editChoice === 'search') {
-     res.redirect('check-details')
-   } else if (editChoice === 'helpdesk') {
-     res.redirect('paye-uhp-help-desk')
-   }
- });
+  if (editChoice === 'paye') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  } else if (editChoice === 'search') {
+    res.redirect('check-details')
+  } else if (editChoice === 'helpdesk') {
+    res.redirect('paye-uhp-help-desk')
+  }
+});
 
 
- router.post('/436/v8/select-your-org-radios', function (req, res) {
-   const editChoice = req.session.data['choose-org']
+router.post('/436/v8/select-your-org-radios', function (req, res) {
+  const editChoice = req.session.data['choose-org']
 
-   if (editChoice === 'biscuit') {
-     res.redirect('check-details-from-search')
-   } else if (editChoice === 'not-listed') {
-     res.redirect('paye-uhp')
-   }
- });
+  if (editChoice === 'biscuit') {
+    res.redirect('check-details-from-search')
+  } else if (editChoice === 'not-listed') {
+    res.redirect('paye-uhp')
+  }
+});
 
-  /* 436 v8 ends */
+/* 436 v8 ends */
 
-	/* 436 v9 starts */
+/* 436 v9 starts */
 
-	router.post('/436/v9/select-security-code', (req, res, next) => {
-	if(req.session.data['security-code'] == 'app'){
-		res.redirect('/436/v9/1e-app')
-	} else {
-		res.redirect('/436/v9/1e-enter-number')
-	}
- })
+router.post('/436/v9/select-security-code', (req, res, next) => {
+  if (req.session.data['security-code'] == 'app') {
+    res.redirect('/436/v9/1e-app')
+  } else {
+    res.redirect('/436/v9/1e-enter-number')
+  }
+})
 
- router.post('/436/v9/add-paye-scheme', function (req, res) {
-	 const editChoice = req.session.data['add-paye-scheme-check']
+router.post('/436/v9/add-paye-scheme', function (req, res) {
+  const editChoice = req.session.data['add-paye-scheme-check']
 
-	 if (editChoice === 'government-gateway') {
-		 res.redirect('government-gateway-sign-in')
-	 } else if (editChoice === 'aorn') {
-		 res.redirect('enter-your-PAYE-scheme-details')
-	 }
- });
+  if (editChoice === 'government-gateway') {
+    res.redirect('government-gateway-sign-in')
+  } else if (editChoice === 'aorn') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  }
+});
 
- router.post('/436/v9/confirm-training-provider', function (req, res) {
-	 const editChoice = req.session.data['confirm-training-provider-check']
+router.post('/436/v9/confirm-training-provider', function (req, res) {
+  const editChoice = req.session.data['confirm-training-provider-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('training-provider-success')
-	 } else if (editChoice === 'no') {
-		 res.redirect('enter-ukprn')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-success')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
 
 
- router.post('/436/v9/confirm-permissions-check', (req, res) => {
-	 if(req.session.data['confirm-permissions-check'] == 'yes'){
-			 res.redirect('account-setup-complete')
- } else if(req.session.data['confirm-permissions-check'] == 'no'){
-			 res.redirect('account-setup-complete')
-	 }
- });
+router.post('/436/v9/confirm-permissions-check', (req, res) => {
+  if (req.session.data['confirm-permissions-check'] == 'yes') {
+    res.redirect('account-setup-complete')
+  } else if (req.session.data['confirm-permissions-check'] == 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
- router.post('/436/v9/employer-agreement', function (req, res) {
-	 const editChoice = req.session.data['employer-agreement-check']
+router.post('/436/v9/employer-agreement', function (req, res) {
+  const editChoice = req.session.data['employer-agreement-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('employer-agreement-accepted')
-	 } else if (editChoice === 'no') {
-		 res.redirect('task-list-5-in-progress-step-4')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('employer-agreement-accepted')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-5-in-progress-step-4')
+  }
+});
 
 
- router.post('/436/v9/change-account-name', function (req, res) {
-	 const editChoice = req.session.data['change-account-name-check']
+router.post('/436/v9/change-account-name', function (req, res) {
+  const editChoice = req.session.data['change-account-name-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('account-name-org')
-	 } else if (editChoice === 'no') {
-		 res.redirect('account-name-change-confirm')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-org')
+  } else if (editChoice === 'no') {
+    res.redirect('account-name-change-confirm')
+  }
+});
 
- router.post('/436/v9/account-name-change-confirm', function (req, res) {
-	 const editChoice = req.session.data['change-account-name-confirm-check']
+router.post('/436/v9/account-name-change-confirm', function (req, res) {
+  const editChoice = req.session.data['change-account-name-confirm-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('account-name-changed')
-	 } else if (editChoice === 'no') {
-		 res.redirect('change-account-name')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('account-name-changed')
+  } else if (editChoice === 'no') {
+    res.redirect('change-account-name')
+  }
+});
 
- router.post('/436/v9/account-name-confirm', function (req, res) {
-	 const editChoice = req.session.data['account-name-confirm-check']
+router.post('/436/v9/account-name-confirm', function (req, res) {
+  const editChoice = req.session.data['account-name-confirm-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('task-list-4')
-	 } else if (editChoice === 'no') {
-		 res.redirect('task-list-4')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('task-list-4')
+  } else if (editChoice === 'no') {
+    res.redirect('task-list-4')
+  }
+});
 
 
 
 
 
- router.post('/436/v9/training-provider-invited-choice-check', (req, res) => {
-	 if(req.session.data['training-provider-invited-choice-check'] == 'yes'){
-			 res.redirect('training-provider-success')
-	 } else if(req.session.data['training-provider-invited-choice-check'] == 'different'){
-			 res.redirect('training-provider-info')
-	 } else if(req.session.data['training-provider-invited-choice-check'] == 'no'){
-			 res.redirect('account-setup-complete-no-tp')
-	 }
- });
+router.post('/436/v9/training-provider-invited-choice-check', (req, res) => {
+  if (req.session.data['training-provider-invited-choice-check'] == 'yes') {
+    res.redirect('training-provider-success')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'different') {
+    res.redirect('training-provider-info')
+  } else if (req.session.data['training-provider-invited-choice-check'] == 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
 
 
- router.post('/436/v9/training-provider-choice-check', function (req, res) {
-	 const editChoice = req.session.data['training-provider-choice-check']
+router.post('/436/v9/training-provider-choice-check', function (req, res) {
+  const editChoice = req.session.data['training-provider-choice-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('confirm-training-provider-invited')
-	 } else if (editChoice === 'no') {
-		 res.redirect('account-setup-complete-no-tp')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('confirm-training-provider-invited')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete-no-tp')
+  }
+});
 
 
- router.post('/436/v9/confirm-training-provider-invited', function (req, res) {
-	 const editChoice = req.session.data['confirm-invited-training-provider-check']
+router.post('/436/v9/confirm-training-provider-invited', function (req, res) {
+  const editChoice = req.session.data['confirm-invited-training-provider-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('training-provider-permissions')
-	 } else if (editChoice === 'no') {
-		 res.redirect('enter-ukprn')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('training-provider-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('enter-ukprn')
+  }
+});
 
- router.post('/436/v9/add-paye-knockout', function (req, res) {
-	 const editChoice = req.session.data['pay-bill-check']
+router.post('/436/v9/add-paye-knockout', function (req, res) {
+  const editChoice = req.session.data['pay-bill-check']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('government-gateway')
-	 } else if (editChoice === 'not-yet') {
-		 res.redirect('government-gateway')
-	 } else if (editChoice === 'no') {
-		 res.redirect('add-paye-scheme-aorn')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'not-yet') {
+    res.redirect('government-gateway')
+  } else if (editChoice === 'no') {
+    res.redirect('add-paye-scheme-aorn')
+  }
+});
 
 
 
 
 
- router.post('/436/v9/details-correct', (req, res) => {
-	 if(req.session.data['details-correct'] == 'yes'){
-			 res.redirect('paye-scheme-added')
-	 } else if(req.session.data['details-correct'] == 'address'){
-			 res.redirect('address-wrong')
-	 } else if(req.session.data['details-correct'] == 'no'){
-			 res.redirect('search-for-org')
-	 }
- });
+router.post('/436/v9/details-correct', (req, res) => {
+  if (req.session.data['details-correct'] == 'yes') {
+    res.redirect('paye-scheme-added')
+  } else if (req.session.data['details-correct'] == 'address') {
+    res.redirect('address-wrong')
+  } else if (req.session.data['details-correct'] == 'no') {
+    res.redirect('search-for-org')
+  }
+});
 
 
 
 
- router.post('/436/v9/training-provider-permissions', function (req, res) {
-	 const editChoice = req.session.data['training-provider-access']
+router.post('/436/v9/training-provider-permissions', function (req, res) {
+  const editChoice = req.session.data['training-provider-access']
 
-	 if (editChoice === 'yes') {
-		 res.redirect('select-permissions')
-	 } else if (editChoice === 'no') {
-		 res.redirect('account-setup-complete')
-	 }
- });
+  if (editChoice === 'yes') {
+    res.redirect('select-permissions')
+  } else if (editChoice === 'no') {
+    res.redirect('account-setup-complete')
+  }
+});
 
 
- router.post('/436/v9/paye-uhp', function (req, res) {
-	 const editChoice = req.session.data['paye-uhp-what-next']
+router.post('/436/v9/paye-uhp', function (req, res) {
+  const editChoice = req.session.data['paye-uhp-what-next']
 
-	 if (editChoice === 'paye') {
-		 res.redirect('enter-your-PAYE-scheme-details')
-	 } else if (editChoice === 'search') {
-		 res.redirect('search-for-org')
-	 } else if (editChoice === 'helpdesk') {
-		 res.redirect('paye-uhp-help-desk')
-	 }
- });
+  if (editChoice === 'paye') {
+    res.redirect('enter-your-PAYE-scheme-details')
+  } else if (editChoice === 'search') {
+    res.redirect('search-for-org')
+  } else if (editChoice === 'helpdesk') {
+    res.redirect('paye-uhp-help-desk')
+  }
+});
 
 
- router.post('/436/v9/select-your-org-radios', function (req, res) {
-	 const editChoice = req.session.data['choose-org']
+router.post('/436/v9/select-your-org-radios', function (req, res) {
+  const editChoice = req.session.data['choose-org']
 
-	 if (editChoice === 'biscuit') {
-		 res.redirect('check-details-from-search')
-	 } else if (editChoice === 'not-listed') {
-		 res.redirect('paye-uhp')
-	 }
- });
+  if (editChoice === 'biscuit') {
+    res.redirect('check-details-from-search')
+  } else if (editChoice === 'not-listed') {
+    res.redirect('paye-uhp')
+  }
+});
 
-	/* 436 v9 ends */
+/* 436 v9 ends */
 
 
 
-  // Added additional routes to manage the training provider folder
+// Added additional routes to manage the training provider folder
 router.post('/training-provider/v1/approvals/add/action/entry-method', function (req, res) {
-    var addApprenticeDetails = req.session.data['add-apprentice-details']
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
 
-    if (addApprenticeDetails == "csv-file") {
-        res.redirect('/training-provider/v1/approvals/add/file-upload')
-    }
-    else if (addApprenticeDetails == "manually") {
-        res.redirect('/training-provider/v1/approvals/add/select-journey')
-    }
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v1/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v1/approvals/add/select-journey')
+  }
 })
 
 router.post('/training-provider/v1/approvals/add/action/select-journey', function (req, res) {
-    var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
 
-    if (addApprenticeDetails2 == "existing-cohort") {
-        res.redirect('/training-provider/v1/approvals/choose-cohort')
-    }
-    else if (addApprenticeDetails2 == "new-cohort") {
-        res.redirect('/training-provider/v1/approvals/add/select-employer')
-    }
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v1/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v1/approvals/add/select-employer')
+  }
 })
 
 router.post('/training-provider/v1/approvals/add/action/confirm-employer', function (req, res) {
-    var confirmEmployer = req.session.data['confirm-employer']
+  var confirmEmployer = req.session.data['confirm-employer']
 
-    if (confirmEmployer == "yes") {
-        res.redirect('/training-provider/v1/approvals/add/select-course')
-    }
-    else {
-        res.redirect('/training-provider/v1/approvals/add/select-employer')
-    }
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v1/approvals/add/select-course')
+  }
+  else {
+    res.redirect('/training-provider/v1/approvals/add/select-employer')
+  }
 })
 
 router.post('/training-provider/v1/approvals/action/recognise-prior-learning', function (req, res) {
-    var priorLearning = req.session.data['prior-learning']
-    var pilotProgram = req.session.data['pilot-program']
-    var deliveryMethod = req.session.data['delivery-method']
+  var priorLearning = req.session.data['prior-learning']
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
 
-    if (priorLearning == "yes") {
-        res.redirect('/training-provider/v1/approvals/recognise-prior-learning-details')
-    }
-    else if (priorLearning == "no") {
-        if (pilotProgram == "No") {
-            res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
-        }
-        else {
-            if (deliveryMethod == "portable-flexi-job") {
-                res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
-            }
-            else {
-                res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
-            }
-        }
-    }
-})
-router.post('/training-provider/v1/approvals/action/recognise-prior-learning-details', function (req, res) {
-    var pilotProgram = req.session.data['pilot-program']
-    var deliveryMethod = req.session.data['delivery-method']
-
+  if (priorLearning == "yes") {
+    res.redirect('/training-provider/v1/approvals/recognise-prior-learning-details')
+  }
+  else if (priorLearning == "no") {
     if (pilotProgram == "No") {
-        res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
+      res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
     }
     else {
-        if (deliveryMethod == "portable-flexi-job") {
-            res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
-        }
-        else {
-            res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
-        }
+      if (deliveryMethod == "portable-flexi-job") {
+        res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
+      }
+      else {
+        res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
+      }
     }
+  }
+})
+router.post('/training-provider/v1/approvals/action/recognise-prior-learning-details', function (req, res) {
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
+
+  if (pilotProgram == "No") {
+    res.redirect('/training-provider/v1/approvals/approve-details-non-pilot')
+  }
+  else {
+    if (deliveryMethod == "portable-flexi-job") {
+      res.redirect('/training-provider/v1/approvals/approve-details-pilot-pjf')
+    }
+    else {
+      res.redirect('/training-provider/v1/approvals/approve-details-pilot-non-pjf')
+    }
+  }
 })
 
 router.post('/training-provider/v1/approvals/add/action/personal-details', function (req, res) {
-    var pilotProgram = req.session.data['pilot-program']
-    var deliveryMethod = req.session.data['delivery-method']
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
 
-    if (pilotProgram == "No") {
-        res.redirect('/training-provider/v1/approvals/add/training-details-non-pilot')
+  if (pilotProgram == "No") {
+    res.redirect('/training-provider/v1/approvals/add/training-details-non-pilot')
+  }
+  else {
+    if (deliveryMethod == "portable-flexi-job") {
+      res.redirect('/training-provider/v1/approvals/add/training-details-pilot-pfj')
     }
     else {
-        if (deliveryMethod == "portable-flexi-job") {
-            res.redirect('/training-provider/v1/approvals/add/training-details-pilot-pfj')
-        }
-        else {
-            res.redirect('/training-provider/v1/approvals/add/training-details-pilot-non-pfj')
-        }
+      res.redirect('/training-provider/v1/approvals/add/training-details-pilot-non-pfj')
     }
+  }
 })
 
-  
+
 router.post('/training-provider/v1/change-employer/action/overlapping-training', function (req, res) {
-    var stopDateAction = req.session.data['stop-date-action']
+  var stopDateAction = req.session.data['stop-date-action']
 
-    if (stopDateAction == "stop-request") {
-        res.redirect('/training-provider/v1/change-employer/stop-date-email')
-    }
-    else if (stopDateAction == "contact-prev-employer") {
-        res.redirect('/training-provider/v1/change-employer/contact-employer')
-    }
-    else if (stopDateAction == "change-later") {
-        res.redirect('/training-provider/v1/change-employer/manage-apprentices')
-    }
+  if (stopDateAction == "stop-request") {
+    res.redirect('/training-provider/v1/change-employer/stop-date-email')
+  }
+  else if (stopDateAction == "contact-prev-employer") {
+    res.redirect('/training-provider/v1/change-employer/contact-employer')
+  }
+  else if (stopDateAction == "change-later") {
+    res.redirect('/training-provider/v1/change-employer/manage-apprentices')
+  }
 })
 
+router.post('/employer/v1/live/action/has-apprenticeship-stopped', function (req, res) {
+  var stopAction = req.session.data['stop-action']
+
+  if (stopAction == "yes-apprenticeship-stopped") {
+    res.redirect('/employer/v1/live/date-apprenticeship-stopped')
+  }
+  else if (stopAction == "no-apprenticeship-not-stopped") {
+    res.redirect('/employer/v1/live/confirm-apprenticeship-ongoing')
+  }
+})
+
+router.post('/training-provider/v1/change-employer/action/overlapping-training-stopped', function (req, res) {
+  var stopDateAction = req.session.data['stop-date-action-stopped']
+
+  if (stopDateAction == "stop-request") {
+    res.redirect('/training-provider/v1/change-employer/stop-date-email-stopped')
+  }
+  else if (stopDateAction == "contact-prev-employer") {
+    res.redirect('/training-provider/v1/change-employer/contact-employer-stopped')
+  }
+  else if (stopDateAction == "change-later") {
+    res.redirect('/training-provider/v1/change-employer/manage-apprentices')
+  }
+})
+
+router.post('/employer/v1/live/action/made-redundant', function (req, res) {
+  var stopAction = req.session.data['redundant']
+
+  if (stopAction == "yes-redundant") {
+    res.redirect('/employer/v1/live/confirm-stop-date-redundant')
+  }
+  else if (stopAction == "no-redundant") {
+    res.redirect('/employer/v1/live/confirm-stop-date')
+  }
+})
+
+router.post('/employer/v1/live/action/confirm-stop-date', function (req, res) {
+  var stopAction = req.session.data['stop-apprentice-action']
+
+  if (stopAction == "yes-apprentice-stopped") {
+    res.redirect('/employer/v1/live/new-stop-date-confirmed')
+  }
+  else if (stopAction == "no-apprentice-not-stopped") {
+    res.redirect('/employer/v1/live/index')
+  }
+})
 
 module.exports = router
