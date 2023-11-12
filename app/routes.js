@@ -1988,7 +1988,7 @@ router.post('/employer/v1/live/action/confirm-stop-date', function (req, res) {
     res.redirect('/employer/v1/live/new-stop-date-confirmed')
   }
   else if (stopAction == "no-apprentice-not-stopped") {
-    res.redirect('/employer/v1/live/index')
+    res.redirect('/employer/v1/live/apprentice-page')
   }
 })
 
@@ -2000,6 +2000,17 @@ router.post('/employer/v1/stopped/action/confirm-apprentice-stop-date', function
   }
   else if (stopAction == "no-stop-date-incorrect") {
     res.redirect('/employer/v1/stopped/date-apprenticeship-stopped')
+  }
+})
+
+router.post('/employer/v1/live/action/confirm-stop-date-redundant', function (req, res) {
+  var stopAction = req.session.data['stop-apprentice-2-action']
+
+  if (stopAction == "yes-apprentice-stopped") {
+    res.redirect('/employer/v1/live/new-stop-date-confirmed-redundant')
+  }
+  else if (stopAction == "no-apprentice-not-stopped") {
+    res.redirect('/employer/v1/live/apprentice-page')
   }
 })
 
