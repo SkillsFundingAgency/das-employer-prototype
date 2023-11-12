@@ -52,52 +52,53 @@ Live index page
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Unique learner number</th>
-                            <td class="govuk-table__cell">8353543612</td>
+                            <td class="govuk-table__cell">9900008102</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Name</th>
-                            <td class="govuk-table__cell">Faizal Dawood</td>
+                            <td class="govuk-table__cell">Gwen Adams</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
-                            <td class="govuk-table__cell">Able seafarer (deck), Level 2 (standard)</td>
+                            <td class="govuk-table__cell">Actuarial technician, Level: 4 (Standard)</td>
                         </tr>
                     </tbody>
 
                 </table>
                 <div class="govuk-!-padding-bottom-5"></div>
 
-                <div class="govuk-form-group">
-                    <fieldset class="govuk-fieldset">
-                        <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                            <h1 class="govuk-fieldset__heading">
-                                Has this apprenticeship stopped?
-                            </h1>
-                        </legend>
-                        <div class="govuk-radios" data-module="govuk-radios">
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-                                    aria-describedby="signIn-item-hint">
-                                <label class="govuk-label govuk-radios__label" for="signIn">
-                                    Yes, this apprenticeship has stopped
-                                </label>
-                            </div>
-                            <div class="govuk-radios__item">
-                                <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                                    aria-describedby="signIn-2-item-hint">
-                                <label class="govuk-label govuk-radios__label" for="signIn-2">
-                                    No, this apprenticeship has not stopped
-                                </label>
+                <form class="form govuk-!-padding-top-5" action="/employer/v1/stopped/action/confirm-apprentice-stop-date/" method="post">
+                
+                    <div class="govuk-form-group">
+                        <fieldset class="govuk-fieldset">
+                            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                                <h1 class="govuk-fieldset__heading">
+                                    Is this stop date correct?
+                                </h1>
+                            </legend>
+                            <div class="govuk-radios" data-module="govuk-radios">
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="stop-date-action" name="stop-date-action" type="radio"
+                                        value="yes-stop-date-correct" aria-describedby="stop-action-hint">
+                                    <label class="govuk-label govuk-radios__label" for="stop-date-action">
+                                        Yes, stop date is correct
+                                    </label>
+                                </div>
+                                <div class="govuk-radios__item">
+                                    <input class="govuk-radios__input" id="stop-date-action-2" name="stop-date-action" type="radio"
+                                        value="no-stop-date-incorrect" aria-describedby="stop-date-action-2-hint">
+                                    <label class="govuk-label govuk-radios__label" for="stop-date-action-2">
+                                        No, stop date is incorrect
+                                    </label>
+                                </div>
                             </div>
                 
-                        </div>
+                        </fieldset>
+                    </div>
                 
-                    </fieldset>
-                </div>
-
-                <a href="#" role="button" draggable="false" class="govuk-button" data-module="govuk-button">
-                    Continue
-                </a>
+                    <button class="govuk-button" data-module="govuk-button">Continue</button>
+                
+                </form>
 
 
             </div>

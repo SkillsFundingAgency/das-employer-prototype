@@ -1992,4 +1992,15 @@ router.post('/employer/v1/live/action/confirm-stop-date', function (req, res) {
   }
 })
 
+router.post('/employer/v1/stopped/action/confirm-apprentice-stop-date', function (req, res) {
+  var stopAction = req.session.data['stop-date-action']
+
+  if (stopAction == "yes-stop-date-correct") {
+    res.redirect('/employer/v1/stopped/stop-date-confirmed')
+  }
+  else if (stopAction == "no-stop-date-incorrect") {
+    res.redirect('/employer/v1/stopped/date-apprenticeship-stopped')
+  }
+})
+
 module.exports = router

@@ -1,7 +1,7 @@
 {% extends "layout.html" %}
 
 {% block pageTitle %}
-Live index page
+Stopped index page
 {% endblock %}
 
 
@@ -21,18 +21,35 @@ Live index page
 
             <div class="govuk-grid-column-two-thirds">
 
-                <h1 class="govuk-heading-xl">Faizal Dawood</h1>
+                <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+                    data-module="govuk-notification-banner">
+                    <div class="govuk-notification-banner__header">
+                        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+                            Action required
+                        </h2>
+                    </div>
+                    <div class="govuk-notification-banner__content">
+                        <p class="govuk-notification-banner__heading">
+                            You have an outstanding request that needs to be reviewed.
+                            <a class="govuk-notification-banner__link"
+                                href="/employer/v1/stopped/confirm-apprentice-stop-date">View changes</a>.
+                        </p>
+                    </div>
+                </div>
+
+
+                <h1 class="govuk-heading-xl">Gwen Adams</h1>
                 <dl class="govuk-summary-list">
                     <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Stop date
                         </dt>
                         <dd class="govuk-summary-list__value">
-                                August 2023
+                            August 2023
                         </dd>
                         <dd class="govuk-summary-list__actions">
-                            <a class="govuk-link" href="/employer/v1/live/date-apprenticeship-stopped">
-                                Edit<span class="govuk-visually-hidden"> version</span>
+                            <a class="govuk-link" href="/employer/v1/stopped/apprentice-page-updated-stop-date">
+                                Change<span class="govuk-visually-hidden"> version</span>
                             </a>
                         </dd>
                     </div>
@@ -44,6 +61,11 @@ Live index page
                             <strong class="govuk-tag govuk-tag--red">
                                 Stopped
                             </strong>
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Edit status<span class="govuk-visually-hidden"> version</span>
+                            </a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -62,12 +84,17 @@ Live index page
                             N/A
                         </dd>
                     </div>
-                    <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
+                    <div class="govuk-summary-list__row">
                         <dt class="govuk-summary-list__key">
                             Training provider
                         </dt>
                         <dd class="govuk-summary-list__value">
                             EDUC8 TRAINING (ENGLAND) LIMITED
+                        </dd>
+                        <dd class="govuk-summary-list__actions">
+                            <a class="govuk-link" href="#">
+                                Change<span class="govuk-visually-hidden"> version</span>
+                            </a>
                         </dd>
                     </div>
                     <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
@@ -75,7 +102,7 @@ Live index page
                             Cohort reference
                         </dt>
                         <dd class="govuk-summary-list__value">
-                            VK6D68
+                            7GXEKP
                         </dd>
                     </div>
                 </dl>
@@ -88,19 +115,19 @@ Live index page
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Name</th>
-                            <td class="govuk-table__cell">Faizal Dawood</td>
+                            <td class="govuk-table__cell">Gwen Adams</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Email address</th>
-                            <td class="govuk-table__cell">dawoodf@gmail.com</td>
+                            <td class="govuk-table__cell">gwenadams@gmail.com</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Unique learner number</th>
-                            <td class="govuk-table__cell">8353543612</td>
+                            <td class="govuk-table__cell">9900008102</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Date of birth</th>
-                            <td class="govuk-table__cell">1 Jan 1992</td>
+                            <td class="govuk-table__cell">1 Jan 1990</td>
                         </tr>
                     </tbody>
                 </table>
@@ -113,7 +140,7 @@ Live index page
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Apprenticeship training course</th>
-                            <td class="govuk-table__cell">Digital engineering technician, Level: 3</td>
+                            <td class="govuk-table__cell">Actuarial technician, Level: 4 (Standard)</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Version</th>
@@ -125,11 +152,11 @@ Live index page
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Planned training end date</th>
-                            <td class="govuk-table__cell">December 2023</td>
+                            <td class="govuk-table__cell">Jan 2022</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Total agreed apprenticeship price</th>
-                            <td class="govuk-table__cell">£2,000</td>
+                            <td class="govuk-table__cell">£6,000</td>
                         </tr>
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Your reference</th>
