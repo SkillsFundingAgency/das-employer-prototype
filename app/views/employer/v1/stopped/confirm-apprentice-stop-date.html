@@ -39,16 +39,16 @@ Live index page
                     <thead class="govuk-table__head">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Current stop date</th>
-                            <td class="govuk-table__cell">September 2023</td>
+                            <td class="govuk-table__cell">October 2023</td>
                         </tr>
                         <thead class="govuk-table__head">
-                        <tr class="govuk-table__row">
-                            <th scope="col" class="govuk-table__header">Apprentice record status</th>
-                            <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--red">
-                                Stopped
-                            </strong>
-                        </tr>
-                    </thead>
+                            <tr class="govuk-table__row">
+                                <th scope="col" class="govuk-table__header">Apprentice record status</th>
+                                <th scope="col" class="govuk-table__header"><strong class="govuk-tag govuk-tag--red">
+                                        Stopped
+                                    </strong>
+                            </tr>
+                        </thead>
                     <tbody class="govuk-table__body">
                         <tr class="govuk-table__row">
                             <th scope="row" class="govuk-table__header">Unique learner number</th>
@@ -67,8 +67,9 @@ Live index page
                 </table>
                 <div class="govuk-!-padding-bottom-5"></div>
 
-                <form class="form govuk-!-padding-top-5" action="/employer/v1/stopped/action/confirm-apprentice-stop-date/" method="post">
-                
+                <form class="form govuk-!-padding-top-5"
+                    action="/employer/v1/stopped/action/confirm-apprentice-stop-date/" method="post">
+
                     <div class="govuk-form-group">
                         <fieldset class="govuk-fieldset">
                             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -78,26 +79,27 @@ Live index page
                             </legend>
                             <div class="govuk-radios" data-module="govuk-radios">
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="stop-date-action" name="stop-date-action" type="radio"
-                                        value="yes-stop-date-correct" aria-describedby="stop-action-hint">
+                                    <input class="govuk-radios__input" id="stop-date-action" name="stop-date-action"
+                                        type="radio" value="yes-stop-date-correct" aria-describedby="stop-action-hint">
                                     <label class="govuk-label govuk-radios__label" for="stop-date-action">
                                         Yes, stop date is correct
                                     </label>
                                 </div>
                                 <div class="govuk-radios__item">
-                                    <input class="govuk-radios__input" id="stop-date-action-2" name="stop-date-action" type="radio"
-                                        value="no-stop-date-incorrect" aria-describedby="stop-date-action-2-hint">
+                                    <input class="govuk-radios__input" id="stop-date-action-2" name="stop-date-action"
+                                        type="radio" value="no-stop-date-incorrect"
+                                        aria-describedby="stop-date-action-2-hint">
                                     <label class="govuk-label govuk-radios__label" for="stop-date-action-2">
                                         No, stop date is incorrect
                                     </label>
                                 </div>
                             </div>
-                
+
                         </fieldset>
                     </div>
-                
+
                     <button class="govuk-button" data-module="govuk-button">Continue</button>
-                
+
                 </form>
 
 
