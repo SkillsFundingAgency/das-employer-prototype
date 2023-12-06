@@ -2014,4 +2014,41 @@ router.post('/employer/v1/live/action/confirm-stop-date-redundant', function (re
   }
 })
 
+
+// Employer V1 Add Routes
+
+router.post('/employer/v1/add/action/confirm-provider-details', function (req, res) {
+    var useProvider = req.session.data['use-provider']
+
+    if (useProvider == "No") {
+        res.redirect('/employer/v1/add/provider-details')
+    }
+    else {
+        res.redirect('/employer/v1/add/start-adding-apprentices')
+    }
+})
+
+router.post('/employer/v1/add/action/start-adding-apprentices', function (req, res) {
+    var whoIsAddingApprentices = req.session.data['WhoIsAddingApprentices']
+
+    if (whoIsAddingApprentices == "Provider") {
+        res.redirect('/employer/v1/add/message-for-training-provider')
+    }
+    else {
+        res.redirect('/employer/v1/add/select-standard')
+    }
+})
+
+router.post('/employer/v1/add/action/approve-details', function (req, res) {
+    var selection = req.session.data['selection']
+
+    if (selection == "Send") {
+        res.redirect('/employer/v1/add/notify-training-provider')
+    }
+    else {
+        res.redirect('/employer/v1/add/approved')
+    }
+})
+
+
 module.exports = router
