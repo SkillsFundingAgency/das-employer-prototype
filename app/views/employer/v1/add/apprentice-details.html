@@ -85,7 +85,7 @@ href: "javascript:window.history.go(-1);"
           </a>
         </dd>
       </div>
-      <div class="govuk-summary-list__row">
+      {# <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Delivery model
         </dt>
@@ -97,23 +97,20 @@ href: "javascript:window.history.go(-1);"
             Change<span class="govuk-visually-hidden"> delivery model</span>
           </a>
         </dd>
-      </div>
+      </div> #}
     </dl>
 
     <form id="addApprenticeship" action="/employer/{{version}}/add/approve-details" method="post">
       <h2 class="govuk-heading-l">
         Apprentice personal details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Unique learner number
-          </dt>
-          <dd class="govuk-summary-list__value">
-            9359233306
-          </dd>
-        </div>
-      </dl>
+      <div class="govuk-form-group ">
+        <label class="govuk-label govuk-!-font-weight-bold" for="Uln">Unique learner number</label>
+        <span id="uln-hint" class="govuk-hint">
+          <span id="uln">This will be added by your training provider.</span>
+          <input id="Uln" name="Uln" type="hidden" value="">
+        </span>
+      </div>
       <div class="govuk-form-group govuk-!-margin-bottom-0">
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
@@ -187,7 +184,7 @@ href: "javascript:window.history.go(-1);"
       <h2 class="govuk-heading-l govuk-!-margin-top-9">
         Apprentice training details
       </h2>
-      <dl class="govuk-summary-list govuk-summary-list--no-border">
+      {# <dl class="govuk-summary-list govuk-summary-list--no-border">
         <div class="govuk-summary-list__row">
           <dt class="govuk-summary-list__key">
             Actual training start date
@@ -196,7 +193,7 @@ href: "javascript:window.history.go(-1);"
             14 November 2022
           </dd>
         </div>
-      </dl>
+      </dl> #}
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" role="group" id="planned-start-date">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
@@ -210,14 +207,14 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="StartMonth" name="StartMonth" value="">
+                  id="StartMonth" name="StartMonth" value="12">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="StartYear" name="StartYear" value="">
+                  id="StartYear" name="StartYear" value="2024">
               </div>
             </div>
           </div>
@@ -316,7 +313,7 @@ href: "javascript:window.history.go(-1);"
       </div>
 
 
-      <button type="submit" class="govuk-button">Add</button>
+      <button type="submit" class="govuk-button">Save and continue</button>
 
     </form>
 

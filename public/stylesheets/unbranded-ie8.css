@@ -7319,3 +7319,7 @@ dl.das-inline-def-list dd {
 .das-highlight--information * {
   color: inherit;
 }
+
+.das-float-right {
+  float: right;
+}

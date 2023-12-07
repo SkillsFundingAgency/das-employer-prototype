@@ -2050,5 +2050,16 @@ router.post('/employer/v1/add/action/approve-details', function (req, res) {
     }
 })
 
+router.post('/employer/v1/add/action/apprenticeship-funding-avilable', function (req, res) {
+    var reserveFunding = req.session.data['reserveFunding']
+
+    if (reserveFunding == "no") {
+        res.redirect('/employer/v1/add/')
+    }
+    else {
+        res.redirect('/employer/v1/add/apprenticeship-funding-successful')
+    }
+})
+
 
 module.exports = router

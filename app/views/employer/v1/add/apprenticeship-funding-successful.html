@@ -55,9 +55,11 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="das-notification das-notification--success govuk-heading-xl">
-          Apprenticeship funding is available to train
-          and assess your apprentice</h1>
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            You have successfully reserved funding for apprenticeship training
+          </h1>
+        </div>
 
         <dl class="govuk-summary-list">
           <div class="govuk-summary-list__row">
@@ -67,8 +69,6 @@
             <dd class="govuk-summary-list__value">
               Bambinos Day Nursery
             </dd>
-            <dd class="govuk-summary-list__actions">
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
@@ -77,52 +77,87 @@
             <dd class="govuk-summary-list__value">
               {{data['start-month'] or 'Dec 2024 - Feb 2024'}}
             </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/employer/v1/live/date-apprenticeship-stopped">
-                Change<span class="govuk-visually-hidden"> training start date</span>
-              </a>
-            </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
               Apprenticeship training course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['apprenticeship-course'] or 'Children and Young Peoples Workforce: Residential Childcare, Level: 3'}}
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="apprenticeship-training">
-                Change<span class="govuk-visually-hidden"> training course</span>
-              </a>
+              {{data['apprenticeship-course'] or 'Children and Young Peoples Workforce: Residential Childcare, Level:
+              3'}}<br>
+              <details class="govuk-details" data-module="govuk-details">
+                <summary class="govuk-details__summary">
+                  <span class="govuk-details__summary-text">
+                    Can I change the course?
+                  </span>
+                </summary>
+                <div class="govuk-details__text">
+                  You can change the course when you add an apprentice's details.
+                </div>
+              </details>
+
             </dd>
           </div>
         </dl>
 
-        <form action="/employer/{{version}}/add/action/apprenticeship-funding-avilable" method="post" novalidate>
-          <div class="govuk-form-group">
+        <h2 class="govuk-heading-l">
+          Making changes
+        </h2>
+        <p>
+          You can add or change the apprenticeship training when you add an apprentice's details.
+        </p>
+        <p>
+          You will need to reserve new funding to change the apprenticeship training start date to outside of the
+          3-month window
+          you originally selected.
+        </p>
+        <form method="post"
+          action="select-standard">
+
+          <div class="govuk-form-group ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Do you want to reserve funding now?
+                What's next?
               </legend>
-              <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="reserveFunding" name="reserveFunding" type="radio" value="yes">
-                  <label class="govuk-label govuk-radios__label" for="reserveFunding">
-                    Yes, reserve funding now
+                  <input class="govuk-radios__input" id="WhatsNext" name="WhatsNext" type="radio"
+                    value="RecruitAnApprentice">
+                  <label class="govuk-label govuk-radios__label" for="WhatsNext">
+                    Recruit an apprentice
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="reserveFunding-2" name="reserveFunding" type="radio" value="no">
-                  <label class="govuk-label govuk-radios__label" for="reserveFunding-2">
-                    No, return to account
+                  <input class="govuk-radios__input" id="WhatsNext-training" name="WhatsNext" type="radio"
+                    value="FindApprenticeshipTraining">
+                  <label class="govuk-label govuk-radios__label" for="WhatsNext-training">
+                    Find a training provider
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="WhatsNext-add" name="WhatsNext" type="radio"
+                    value="AddAnApprentice">
+                  <label class="govuk-label govuk-radios__label" for="WhatsNext-add">
+                    Add apprentice's details
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="WhatsNext-home" name="WhatsNext" type="radio" value="Homepage">
+                  <label class="govuk-label govuk-radios__label" for="WhatsNext-home">
+                    Go to homepage
                   </label>
                 </div>
               </div>
             </fieldset>
           </div>
-          <button class="govuk-button" data-module="govuk-button">
-            Continue
-          </button>
+          <p>
+
+            <button type="submit" draggable="false" class="govuk-button">
+              Continue
+            </button>
+
+          </p>
+         
         </form>
 
       </div>
