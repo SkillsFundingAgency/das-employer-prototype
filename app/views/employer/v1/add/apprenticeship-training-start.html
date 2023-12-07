@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Reservations" %}
+{% set pageTitle = "Apprenticeship training" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -55,43 +55,57 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">Choose a Reservation</h1>
+        <h1 class="govuk-heading-xl">When will the apprentice start their apprenticeship training?</h1>
 
-        <form novalidate="" method="post" action="/employer/{{version}}/add/apprentice-details">
-        </form>
-        <div class="govuk-form-group ">
+        <div class="govuk-form-group">
           <fieldset class="govuk-fieldset">
-            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-              Which reservation would you like to use?
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+              <div id="changedName-hint" class="govuk-hint">
+                Apprenticeship already started.
+              </div>
             </legend>
-            <div class="govuk-radios">
+            <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="SelectedReservation" name="SelectedReservation" type="radio">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="SelectedReservation">
-                  Animal care and welfare assistant - Level 2 starting between Dec 2023 to Feb 2024
-                </label>
-                <span class="govuk-hint govuk-radios__hint">
-                  Created in December 2023
-                </span>
-              </div>
-
-              <div class="govuk-radios__divider">or</div>
-
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="CreateNew" name="SelectedReservation" type="radio">
-                <label class="govuk-label govuk-radios__label govuk-label--s" for="CreateNew">
-                  Create a new reservation
+                <input class="govuk-radios__input" id="whereDoYouLive" name="whereDoYouLive" type="radio"
+                  value="england">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive">
+                  December 2023
                 </label>
               </div>
-
+              <div class="govuk-!-padding-bottom-5"></div>
+              <div id="changedName-hint" class="govuk-hint">
+                Planned start date of the apprenticeship.
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+                  value="scotland">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
+                  January 2024
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-3" name="whereDoYouLive" type="radio"
+                  value="wales">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-3">
+                  February 2024
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="whereDoYouLive-4" name="whereDoYouLive" type="radio"
+                  value="northern-ireland">
+                <label class="govuk-label govuk-radios__label" for="whereDoYouLive-4">
+                  March 2024
+                </label>
+              </div>
             </div>
           </fieldset>
         </div>
 
+        <a href="/employer/v1/add/apprenticeship-funding-available" role="button" draggable="false" class="govuk-button"
+          data-module="govuk-button">
+          Save and continue
+        </a>
 
-
-
-        <button type="submit" id="continue-button" class="govuk-button">Save and continue</button>
         </form>
       </div>
     </div>
