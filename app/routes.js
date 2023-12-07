@@ -2035,7 +2035,7 @@ router.post('/employer/v1/add/action/start-adding-apprentices', function (req, r
         res.redirect('/employer/v1/add/message-for-training-provider')
     }
     else {
-        res.redirect('/employer/v1/add/reservations')
+        res.redirect('/employer/v1/add/apprenticeship-training')
     }
 })
 

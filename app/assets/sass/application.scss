@@ -16,6 +16,8 @@ $govuk-assets-path: '/govuk/assets/';
 @import "patterns/task-list";
 @import "components/ma-menu";
 
+@import "components/accessible-autocomplete";
+
 
 // Add extra styles here, or re-organise the Sass files in whichever way makes most sense to you
 
@@ -435,6 +437,9 @@ a.das-navigation__priority-button {
     padding: 15px;
     margin-bottom: 30px;
     border: 5px solid #4c2c92;
+}
+.das-notification--success {
+    border-color: #28a197;
 }
 hr.dashboard-heading-separator {
     border-bottom: 5px solid #bfc1c3;
