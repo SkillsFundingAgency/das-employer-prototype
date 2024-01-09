@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Start adding apprentices" %}
+{% set pageTitle = "Set up an apprenticeship for a new employee" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -49,7 +49,7 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back",
+  text: "Back to Apprentices",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -58,36 +58,26 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-body-l">You can start adding details of your apprentices or ask your training provider to add
-          them for you.</p>
-        <p class="govuk-body-l">If you ask your training provider to add them, you need to check and agree the details
-          before any payments are made.</p>
+        <h2 class="govuk-heading-m">What you need to do:</h2>
 
-        <form method="post" action="/employer/v1/add/action/start-adding-apprentices" novalidate>
-          <div class="govuk-form-group  ">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices" name="WhoIsAddingApprentices"
-                    type="radio" value="Employer">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices">
-                    I will add apprentices
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices-Provider" name="WhoIsAddingApprentices"
-                    type="radio" value="Provider">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices-Provider">
-                    I would like my provider to add apprentices
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+        <ol class="govuk-list govuk-list--number">
+          <li>Reserve funding for apprenticeship training and assessment.</li>
+          <li>Create an advert (if you want to advertise your apprenticeship).</li>
+          <li>Decide which apprentice you want to take on.</li>
+          <li>Sign in to your account and add the apprentice's details.</li>
+        </ol>
 
-          <button id="continue-button" type="submit" class="govuk-button">Continue</button>
+        <div class="govuk-inset-text">
+          You do not have to set up an apprenticeship in one go. You can complete each section when you're ready.
+        </div>
+
+        <a id="continue-button" role="button" draggable="false" class="govuk-button"
+          href="/employer/v1/add-2/reserve-funding">
+          Continue to reserve funding
+        </a>
       </div>
     </div>
+
   </main>
 </div>
 

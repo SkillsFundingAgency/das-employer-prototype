@@ -2058,5 +2058,77 @@ router.post('/employer/v1/add/action/apprenticeship-funding-avilable', function 
   }
 })
 
+router.post('/employer/v1/add/action/start-adding-apprentices', function (req, res) {
+  var whoIsAddingApprentices = req.session.data['WhoIsAddingApprentices']
+
+  if (whoIsAddingApprentices == "Provider") {
+    res.redirect('/employer/v1/add/message-for-training-provider')
+  }
+  else {
+    res.redirect('/employer/v1/add/apprenticeship-training')
+  }
+})
+
+// Employer V1 Add Journey 2 Routes
+
+
+router.post('/employer/v1/add-2/action/apprenticeship-training', function (req, res) {
+  var apprenticeshipTraining = req.session.data['apprenticeship-training']
+
+  if (apprenticeshipTraining == "yes") {
+    res.redirect('/employer/v1/add-2/chosen-training-provider')
+  }
+  else if (apprenticeshipTraining == "no") {
+    res.redirect('/employer/v1/add-2/FAT-page')
+  }
+})
+
+router.post('/employer/v1/add-2/action/chosen-training-provider', function (req, res) {
+  var trainingProvider = req.session.data['training-provider']
+
+  if (trainingProvider == "yes") {
+    res.redirect('/employer/v1/add-2/apprenticeship-start')
+  }
+  else if (trainingProvider == "no") {
+    res.redirect('/employer/v1/add-2/FAT-page-training-provider')
+  }
+})
+
+router.post('/employer/v1/add-2/action/apprenticeship-start', function (req, res) {
+  var trainingStart = req.session.data['training-start']
+
+  if (trainingStart == "yes") {
+    res.redirect('/employer/v1/add-2/apprenticeship-existing')
+  }
+  if (trainingStart == "no") {
+    res.redirect('/employer/v1/add-2/apprenticeship-start-no')
+  }
+  else if (trainingStart == "unknown") {
+    res.redirect('/employer/v1/add-2/apprenticeship-start-unknown')
+  }
+})
+
+router.post('/employer/v1/add-2/action/apprenticeship-existing', function (req, res) {
+  var existingEmployee = req.session.data['existing-employee']
+
+  if (existingEmployee == "yes") {
+    res.redirect('/employer/v1/add-2/set-up-existing-employee')
+  }
+  else if (existingEmployee == "no") {
+    res.redirect('/employer/v1/add-2/set-up-new-employee')
+  }
+})
+
+router.post('/employer/v1/add-2/action/apprenticeship-funding-available', function (req, res) {
+  var reserveFunding = req.session.data['reserveFunding']
+
+  if (reserveFunding == "yes") {
+    res.redirect('/employer/v1/add-2/apprenticeship-funding-successful')
+  }
+  else if (reserveFunding == "no") {
+    res.redirect('/employer/v1/add-2/index')
+  }
+})
+
 
 module.exports = router

@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Start adding apprentices" %}
+{% set pageTitle = "Apprenticeship training" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -53,44 +53,55 @@
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-body-l">You can start adding details of your apprentices or ask your training provider to add
-          them for you.</p>
-        <p class="govuk-body-l">If you ask your training provider to add them, you need to check and agree the details
-          before any payments are made.</p>
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--xl">
+              <h1 class="govuk-fieldset__heading">
+                Have you chosen a training provider to deliver the apprenticeship training?
+              </h1>
+            </legend>
 
-        <form method="post" action="/employer/v1/add/action/start-adding-apprentices" novalidate>
-          <div class="govuk-form-group  ">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices" name="WhoIsAddingApprentices"
-                    type="radio" value="Employer">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices">
-                    I will add apprentices
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices-Provider" name="WhoIsAddingApprentices"
-                    type="radio" value="Provider">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices-Provider">
-                    I would like my provider to add apprentices
-                  </label>
-                </div>
+            <form class="form govuk-!-padding-top-5" action="/employer/v1/add-2/action/chosen-training-provider"
+              method="post">
+
+              <div class="govuk-form-group">
+                <fieldset class="govuk-fieldset">
+                  <div class="govuk-radios" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="training-provider" name="training-provider" type="radio"
+                        value="yes" aria-describedby="training-provider-hint">
+                      <label class="govuk-label govuk-radios__label" for="training-provider">
+                        Yes
+                      </label>
+                    </div>
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="training-provider-2" name="training-provider" type="radio"
+                        value="no" aria-describedby="training-provider-2-hint">
+                      <label class="govuk-label govuk-radios__label" for="training-provider-2">
+                        No
+                      </label>
+                    </div>
+                  </div>
+
+                </fieldset>
               </div>
-            </fieldset>
-          </div>
 
-          <button id="continue-button" type="submit" class="govuk-button">Continue</button>
+              <div class="govuk-!-padding-bottom-1"></div>
+
+              <button class="govuk-button" data-module="govuk-button">Continue</button>
+
+            </form>
+
+
+
+        </div>
       </div>
-    </div>
+
   </main>
 </div>
 
 {% endblock %}
-
 {% endblock %}

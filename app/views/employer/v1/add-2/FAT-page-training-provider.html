@@ -1,6 +1,6 @@
 {% extends "layout.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Start adding apprentices" %}
+{% set pageTitle = "You cannot set up an apprenticeship yet" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -49,7 +49,7 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back",
+  text: "Back to Apprentices",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -58,36 +58,19 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-body-l">You can start adding details of your apprentices or ask your training provider to add
-          them for you.</p>
-        <p class="govuk-body-l">If you ask your training provider to add them, you need to check and agree the details
-          before any payments are made.</p>
+        <p class="govuk-body"><p class="govuk-body">
+          Before you can set up an apprenticeship, you need to <a href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link">choose a training provider</a>.</p>
 
-        <form method="post" action="/employer/v1/add/action/start-adding-apprentices" novalidate>
-          <div class="govuk-form-group  ">
-            <fieldset class="govuk-fieldset">
-              <div class="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices" name="WhoIsAddingApprentices"
-                    type="radio" value="Employer">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices">
-                    I will add apprentices
-                  </label>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="WhoIsAddingApprentices-Provider" name="WhoIsAddingApprentices"
-                    type="radio" value="Provider">
-                  <label class="govuk-label govuk-radios__label" for="WhoIsAddingApprentices-Provider">
-                    I would like my provider to add apprentices
-                  </label>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+        <p class="govuk-body">Try again once you've found a training provider to deliver the course.</p>
 
-          <button id="continue-button" type="submit" class="govuk-button">Continue</button>
+        <div class="govuk-!-padding-bottom-3"></div>
+
+        <a id="continue-button" role="button" draggable="false" class="govuk-button" href="/employer/v1/add/index">
+          Return to your account
+        </a>
       </div>
     </div>
+
   </main>
 </div>
 
