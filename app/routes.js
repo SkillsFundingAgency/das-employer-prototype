@@ -2069,6 +2069,17 @@ router.post('/employer/v1/add/action/start-adding-apprentices', function (req, r
   }
 })
 
+router.post('/employer/v1/live/action/apprenticeship-training', function (req, res) {
+  var apprenticeCourse = req.session.data['apprentice-course']
+
+  if (apprenticeCourse == "yes") {
+    res.redirect('/employer/v1/add/apprentice-training-start')
+  }
+  else if (apprenticeCourse == "no") {
+    res.redirect('/employer/v1/add/FAT-page')
+  }
+})
+
 // Employer V1 Add Journey 2 Routes
 
 
