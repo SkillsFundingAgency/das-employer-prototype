@@ -2073,7 +2073,7 @@ router.post('/employer/v1/live/action/apprenticeship-training', function (req, r
   var apprenticeCourse = req.session.data['apprentice-course']
 
   if (apprenticeCourse == "yes") {
-    res.redirect('/employer/v1/add/apprentice-training-start')
+    res.redirect('/employer/v1/add/apprenticeship-training-start')
   }
   else if (apprenticeCourse == "no") {
     res.redirect('/employer/v1/add/FAT-page')
