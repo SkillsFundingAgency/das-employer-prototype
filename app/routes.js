@@ -2141,5 +2141,37 @@ router.post('/employer/v1/add-2/action/apprenticeship-funding-available', functi
   }
 })
 
+router.post('/employer/v1/add-2/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider']
+
+  if (useProvider == "No") {
+    res.redirect('/employer/v1/add-2/provider-details')
+  }
+  else {
+    res.redirect('/employer/v1/add-2/start-adding-apprentices')
+  }
+})
+
+router.post('/employer/v1/add-2/action/start-adding-apprentices', function (req, res) {
+  var whoIsAddingApprentices = req.session.data['WhoIsAddingApprentices']
+
+  if (whoIsAddingApprentices == "Provider") {
+    res.redirect('/employer/v1/add-2/message-for-training-provider')
+  }
+  else {
+    res.redirect('/employer/v1/add-2/select-standard')
+  }
+})
+
+router.post('/employer/v1/add-2/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v1/add-2/notify-training-provider')
+  }
+  else {
+    res.redirect('/employer/v1/add-2/approved')
+  }
+})
 
 module.exports = router
