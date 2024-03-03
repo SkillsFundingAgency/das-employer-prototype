@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Apprentice's email address" %}
+{% set pageTitle = "Edit apprentice's name" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -58,46 +58,28 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-hint">We need the apprentice’s email address so that they can confirm their apprenticeship
-          details.</p>
-        <p class="govuk-hint">This should not be an email address that you give them as an employee.</p>
-
         <div class="govuk-form-group">
-          <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
-            <div class="govuk-radios" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact" name="contact" type="radio" value="email"
-                  data-aria-controls="conditional-contact">
-                <label class="govuk-label govuk-radios__label" for="contact">
-                  I will add the apprentice’s email address
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-email">
-                    Email address
-                  </label>
-                  <input class="govuk-input govuk-!-width-one-third" id="contact-by-email" name="contactByEmail"
-                    type="email" spellcheck="false" autocomplete="email">
-                </div>
-              </div>
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="contact-2" name="contact" type="radio" value="phone"
-                  data-aria-controls="conditional-contact-2">
-                <label class="govuk-label govuk-radios__label" for="contact-2">
-                  I would like my training provider to add the apprentice’s email address
-                </label>
-              </div>
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2"></div>
-            </div>
-        </div>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
-        </form>
+        <label class="govuk-label" for="full-name">
+          First name
+        </label>
+        <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
 
+        <div class="govuk-!-padding-bottom-5"></div>
+
+          <div class="govuk-button-group">
+            <button type="submit" aria-disabled="true" class="govuk-button" data-module="govuk-button" href="#">
+              Save
+            </button>
+            <a class="govuk-link" href="#">Cancel</a>
+          </div>
+      
+    
+      
+      
       </div>
     </div>
 
-
+    
 
   </main>
 </div>

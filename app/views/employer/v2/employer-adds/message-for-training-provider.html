@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Apprentice's name" %}
+{% set pageTitle = "Message for your training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -49,58 +49,28 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-hint">Enter the name of your apprentice. If you have multiple apprentices you wish to add as a group, you will be able to do this at a later stage.</p>
-      
+        <h1 class="govuk-heading-xl">Message for your training provider</h1>
+        <p class="govuk-body-l">Give any details of the apprentice to <b>EDUC8 TRAINING</b>.</p>
+        <form action="/employer/{{version}}/add/cohort-sent" novalidate="" method="post">
 
-        <div class="govuk-form-group">
-        <label class="govuk-label" for="full-name">
-          First name
-        </label>
-        <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+          <div class="govuk-form-group  ">
+            <label class="govuk-label govuk-!-font-weight-bold" for="Message">Message (optional)</label>
+            <textarea class="govuk-textarea" cols="40" id="Message" name="Message" rows="10"></textarea>
+          </div>
 
-        <div class="govuk-!-padding-bottom-5"></div>
+          <button id="continue-button" type="submit" class="govuk-button">Send</button>
+        </form>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="full-name">
-            Last name
-          </label>
-          <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
-
-          <div class="govuk-!-padding-bottom-5"></div>
-
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="full-name">
-              Reference (optional)
-            </label>
-            <p class="govuk-hint">Add a reference, such as employee number or location. Your training provider cannot see this.</p>
-            <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
-
-            <div class="govuk-!-padding-bottom-5"></div>
-
-          <a id="continue-button" role="button" draggable="false" class="govuk-button" href="/employer/{{version}}/add/create">
-            Save and continue
-          </a>
-      
-      
-      
-      
-      
-      
-      
-      
       </div>
     </div>
-
-    
 
   </main>
 </div>

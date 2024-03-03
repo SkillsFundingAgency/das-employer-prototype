@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Apprentice's name" %}
+{% set pageTitle = "Add apprentice request sent to training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -47,62 +47,65 @@
 {% block content %}
 
 <div class="govuk-width-container">
-
-  {{ govukBackLink({
-  text: "Back to Apprentices",
-  href: "javascript:window.history.go(-1);"
-  }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-hint">Enter the name of your apprentice. If you have multiple apprentices you wish to add as a group, you will be able to do this at a later stage.</p>
-      
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Apprentice cohort approved
+          </h1>
+        </div>
+        <div class="govuk-!-padding-bottom-5"></div>
 
-        <div class="govuk-form-group">
-        <label class="govuk-label" for="full-name">
-          First name
-        </label>
-        <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Cohort reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              N6JNL8
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Training provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              EDUC8 TRAINING
+            </dd>
+          </div>
+        </dl>
+
+        <p class="govuk-body">
+          We will inform your training provider that the cohort has been approved.
+        </p>
+
+
+        <h2 class="govuk-heading-m">What happens next?</h2>
+
+
+        <p class="govuk-body">
+          Your apprentice(s) have been approved and can be found under <a href="#" class="govuk-link">manage your apprentices</a> section of the homepage.
+        </p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <div class="govuk-form-group">
-          <label class="govuk-label" for="full-name">
-            Last name
-          </label>
-          <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
+        <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Return to dashboard
+        </a>
 
-          <div class="govuk-!-padding-bottom-5"></div>
 
-          <div class="govuk-form-group">
-            <label class="govuk-label" for="full-name">
-              Reference (optional)
-            </label>
-            <p class="govuk-hint">Add a reference, such as employee number or location. Your training provider cannot see this.</p>
-            <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
 
-            <div class="govuk-!-padding-bottom-5"></div>
-
-          <a id="continue-button" role="button" draggable="false" class="govuk-button" href="/employer/{{version}}/add/create">
-            Save and continue
-          </a>
-      
-      
-      
-      
-      
-      
-      
-      
       </div>
     </div>
 
-    
 
-  </main>
+</div>
+</div>
+
+</main>
 </div>
 
 {% endblock %}
