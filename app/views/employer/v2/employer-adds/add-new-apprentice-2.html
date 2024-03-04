@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -58,20 +58,25 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">Complete the steps below, and send the details of your apprentice(s) to your training provider for review and approval.</p>
+        <p class="govuk-body">Complete the steps below, and send the details of your apprentice(s) to your training
+          provider for review and approval.</p>
 
-        <p class="govuk-body">Once approved, your apprentice(s) will appear under the ‘Manage your apprentices’ section on the homepage.</p>
-        
+        <p class="govuk-body">When you have added details for one apprentice, you can add another apprentice to the same
+          cohort with the same training
+          provider.</p>
+
         <p class="govuk-body">You can choose to have your training provider add some details where noted.</p>
 
-        <p class="govuk-body">Once approved, your apprentice(s) will appear under the ‘Manage your apprentices’ section on the homepage.</p>
+        <p class="govuk-body">Once approved, your apprentice(s) will appear under the <a href="#"
+            class="govuk-link">manage
+            apprentice</a> section on the homepage.</p>
         <div class="govuk-!-padding-bottom-5"></div>
 
         <ul class="govuk-task-list">
-          
+
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#"
+              <a class="govuk-link govuk-task-list__link" href="/employer/v2/employer-adds/apprentice-name"
                 aria-describedby="company-details-3-hint company-details-3-status">
                 Add apprentice personal details
               </a>
@@ -85,7 +90,7 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#"
+              <a class="govuk-link govuk-task-list__link" href="/employer/v2/employer-adds/select-standard"
                 aria-describedby="company-details-3-hint company-details-3-status">
                 Add training details
               </a>
@@ -101,7 +106,7 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="#"
+              <a class="govuk-link govuk-task-list__link" href="/employer/v2/employer-adds/add-training-provider"
                 aria-describedby="company-details-3-hint company-details-3-status">
                 Add or confirm your training provider
               </a>
@@ -121,14 +126,14 @@
           <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
             Send to training provider
           </button>
-          <a class="govuk-link" href="#">Save and finish later</a>
+          <a href="/employer/v2/employer-adds/add-apprentice-hub" class="govuk-link">Save and finish later</a>
         </div>
 
-        
+
       </div>
     </div>
 
-    
+
 
   </main>
 </div>

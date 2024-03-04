@@ -2180,3 +2180,16 @@ router.post('/employer/v1/add-2/action/approve-details', function (req, res) {
   }
 })
 
+// Employer V2 - Employer initiates journey  Routes
+
+router.post('/employer/v2/employer-adds/employer-add-or-TP-add', function (req, res) {
+  var whoAdds = req.session.data['who-adds-action']
+
+  if (whoAdds == "yes-add") {
+    res.redirect('/employer/v2/employer-adds/add-new-apprentice')
+  }
+  else if (whoAdds == "no-request") {
+    res.redirect('/employer/v2/employer-adds/add-training-provider-2')
+  }
+})
+

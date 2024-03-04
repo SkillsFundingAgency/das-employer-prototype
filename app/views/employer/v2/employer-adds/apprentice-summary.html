@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -49,7 +49,7 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -71,7 +71,7 @@
                   First name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Kathryn
+                  {{ data['first-name'] or 'Kathryn' }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> first name</span></a>
@@ -82,7 +82,7 @@
                   Last name
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Hudson
+                  {{ data['last-name'] or 'Hudson' }}
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> last name</span></a>
@@ -104,7 +104,7 @@
                   Email address
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  kathud@mail.com
+                  {{ data['first-name'] or 'Kathryn' }}@mail.com
                 </dd>
                 <dd class="govuk-summary-list__actions">
                   <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> email address</span></a>
@@ -143,20 +143,21 @@
               </div>
             </fieldset>
           </div>
-        </form>
+          </form>
 
-        <div class="govuk-!-padding-bottom-1"></div>
+          <div class="govuk-!-padding-bottom-1"></div>
 
-        <a id="continue-button" role="button" draggable="false" class="govuk-button" href="/employer/{{version}}/add/create">
-          Continue to your account
-        </a>
+          <a href="/employer/v2/employer-adds/add-new-apprentice-2" id="continue-button" role="button" draggable="false"
+            class="govuk-button">
+            Save and continue
+          </a>
 
 
 
+        </div>
       </div>
-    </div>
 
-    
+
 
 
 

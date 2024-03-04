@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -69,6 +69,22 @@
       </div>
     </div>
 
+    <!-- Add the link with the print icon -->
+
+    <head>
+      <title>Print Icon with Link</title>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+    </head>
+
+    <body>
+
+      <a href="#" class="print-link">
+        <i class="fas fa-print" style="color:   #1d70b8"></i> Print your application
+      </a>
+
+    </body>
+    <!-- End the link with the print icon -->
+
     <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
 
     <h2 class="govuk-heading-m">
@@ -123,7 +139,7 @@
               Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              kathud@mail.com
+              {{ data['first-name'] or 'Kathryn' }}@mail.com
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead
@@ -204,39 +220,40 @@
               10005760
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> UK provider reference number (UKPRN)</span></a>
+              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> UK provider reference number
+                  (UKPRN)</span></a>
             </dd>
           </div>
         </dl>
       </div>
     </div>
 
-    <hr class="govuk-section-break govuk-section-break--l">
-    <form id="submitCohort" novalidate="" method="post" action="">
-      <div class="govuk-form-group  ">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">Submit your application</h3>
-          </legend>
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
-              <div class="govuk-checkboxes" data-module="govuk-checkboxes">
-                <div class="govuk-checkboxes__item">
-                  <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
-                  <label class="govuk-label govuk-checkboxes__label" for="waste">
-                    I understand I won't be able to make any changes after my application’s been submitted
-                  </label>
-                </div>
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="waste-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+                Submit your application
+              </h1>
+            </legend>
+            <div class="govuk-checkboxes" data-module="govuk-checkboxes">
+              <div class="govuk-checkboxes__item">
+                <input class="govuk-checkboxes__input" id="waste" name="waste" type="checkbox" value="carcasses">
+                <label class="govuk-label govuk-checkboxes__label" for="waste">
+                  I understand I won't be able to make any changes after my application has been submitted
+                </label>
               </div>
-            </fieldset>
-          </div>
-          <div class="govuk-!-padding-bottom-1"></div>
-
-          <a id="continue-button" role="button" draggable="false" class="govuk-button" href="">
-            Submit to training provider
-          </a>
-
+              
+            </div>
+            
+          </fieldset>
+        </div>
+        <a id="continue-button" role="button" draggable="false" class="govuk-button"
+          href="/employer/v2/employer-adds/cohort-sent-to-training-provider">
+          Save and continue
+        </a>
   </main>
 
 </div>

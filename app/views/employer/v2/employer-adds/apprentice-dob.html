@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -49,7 +49,7 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -58,7 +58,8 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-hint">Apprentices aged 19 or over who have completed their first year are entitled to the National Minimum Wage.</p>
+        <p class="govuk-hint">Apprentices aged 19 or over who have completed their first year are entitled to the
+          National Minimum Wage.</p>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="contact-hint">
@@ -72,7 +73,7 @@
               </div>
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact">
                 <div class="govuk-form-group">
-                  <label class="govuk-label" for="contact-by-email">
+                  <label class="govuk-hint" for="contact-by-email">
                     For example, 19 10 2001
                   </label>
                   <div class="govuk-date-input" id="dob">
@@ -81,8 +82,8 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-day">
                           Day
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day" name="dob-day" type="text"
-                          autocomplete="bday-day" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-day"
+                          name="dob-day" type="text" autocomplete="bday-day" inputmode="numeric">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -90,8 +91,8 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-month">
                           Month
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month" name="dob-month"
-                          type="text" autocomplete="bday-month" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="dob-month"
+                          name="dob-month" type="text" autocomplete="bday-month" inputmode="numeric">
                       </div>
                     </div>
                     <div class="govuk-date-input__item">
@@ -99,8 +100,8 @@
                         <label class="govuk-label govuk-date-input__label" for="dob-year">
                           Year
                         </label>
-                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year" name="dob-year" type="text"
-                          autocomplete="bday-year" inputmode="numeric">
+                        <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="dob-year"
+                          name="dob-year" type="text" autocomplete="bday-year" inputmode="numeric">
                       </div>
                     </div>
                   </div>
@@ -116,7 +117,10 @@
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-contact-2"></div>
             </div>
         </div>
-        <button class="govuk-button" data-module="govuk-button">Continue</button>
+        <a href="/employer/v2/employer-adds/apprentice-summary" id="continue-button" role="button" draggable="false"
+          class="govuk-button">
+          Save and continue
+        </a>
         </form>
 
       </div>

@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -76,10 +76,19 @@
               EDUC8 TRAINING
             </dd>
           </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Message
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{data['Message'] or 'Not provided'}}
+            </dd>
+          </div>
         </dl>
 
 
-        <p class="govuk-body">Please save a record of your cohort reference number if you need to discuss your request.</p>
+        <p class="govuk-body">Please save a record of your cohort reference number if you need to discuss your request.
+        </p>
 
         <h2 class="govuk-heading-m">What happens next</h2>
         <ul class="govuk-list govuk-list--bullet">
@@ -90,12 +99,14 @@
 
 
         <p class="govuk-body">
-          Once your training provider has added the apprentice details, you will see their details in the <a href="#" class="govuk-link">manage apprentice</a> section of the homepage.
+          Once your training provider has added the apprentice details, you will see their details in the <a href="#"
+            class="govuk-link">manage apprentice</a> section of the homepage.
         </p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+        <a href="/employer/v2/employer-adds/index" role="button" draggable="false"
+          class="govuk-button govuk-button--secondary" data-module="govuk-button">
           Return to dashboard
         </a>
 

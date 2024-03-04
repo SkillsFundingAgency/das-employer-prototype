@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Add training provider" %}
+{% set pageTitle = "Add apprentice(s)" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -53,38 +53,68 @@
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <form id="addApprenticeship" novalidate="" method="post"
-          action="/employer/v2/employer-adds/provider-permissions">
-          <div class="govuk-form-group ">
-            <span id="course-name-hint" class="govuk-hint">Select the training provider for this apprentice, or add a
-              new one if you don't see them in your list</span>
-            <span class="field-validation-valid govuk-error-message" data-valmsg-for="CourseCode"
-              data-valmsg-replace="true" id="error-message-CourseCode"></span>
-            <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
-              id="CourseCode" name="CourseCode">
-              <option value="">EDUC8 TRAINING 10005760</option>
-              <option value="274">TRAINING PROVIDER 2</option>
-              <option value="272">TRAINING PROVIDER 3</option>
+        <p class="govuk-body">You can choose to add new apprentices or ask a training provider to add apprentices for
+          you.</p>
 
-            </select>
+
+        <form class="form govuk-!-padding-top-5" action="/employer/v2/employer-adds/employer-add-or-TP-add"
+          method="post">
+
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Do you want to add the apprentice details?
+                </h1>
+              </legend>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="who-adds-action" name="who-adds-action" type="radio"
+                    value="yes-add" aria-describedby="who-adds-action-hint">
+                  <label class="govuk-label govuk-radios__label" for="who-adds-action">
+                    Yes, I will add the apprentice(s) details
+                  </label>
+                  <div id="who-adds-action-hint" class="govuk-hint govuk-radios__hint">
+
+                  </div>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="who-adds-action-2" name="who-adds-action" type="radio"
+                    value="no-request" aria-describedby="who-adds-action-2-hint">
+                  <label class="govuk-label govuk-radios__label" for="who-adds-action-3">
+                    I would like my training provider to add the apprentice’s details
+                  </label>
+                  <div id="who-adds-action-hint" class="govuk-hint govuk-radios__hint">
+
+                  </div>
+                </div>
+              </div>
+
+            </fieldset>
           </div>
 
-          <div class="govuk-button-group">
-            <button type="submit" id="continue-button" class="govuk-button">Save and continue</button>
-            <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-              data-module="govuk-button">
-              Add a new training provider
-            </a>
-          </div>
+          <button class="govuk-button" data-module="govuk-button">Continue</button>
+
         </form>
+
       </div>
     </div>
 
-  </main>
+</div>
+</div>
+
+
+
+
+</div>
+</div>
+
+</main>
 </div>
 
 {% endblock %}

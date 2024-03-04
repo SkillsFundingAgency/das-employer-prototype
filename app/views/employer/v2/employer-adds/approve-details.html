@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -63,8 +63,6 @@
         <dl class="das-definition-list das-definition-list--inline">
           <dt class="das-definition-list__title">Cohort reference</dt>
           <dd class="das-definition-list__definition govuk-!-margin-bottom-4">N6JNL8</dd>
-          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Status</dt>
-          <dd id="cohortStatus" class="das-definition-list__definition">New request</dd>
         </dl>
       </div>
     </div>
@@ -88,7 +86,9 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-label="Name">
-            <span class="das-breakable">Kathryn Hudson</span>
+            <span class="das-breakable">
+              {{ data['first-name'] or 'Kathryn' }} {{ data['last-name'] or 'Hudson' }}
+            </span>
           </td>
           <td class="govuk-table__cell" data-label="Date of birth">19 Oct 1996</td>
           <td class="govuk-table__cell" data-label="Training dates">
@@ -164,7 +164,7 @@
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="send-details">
-                  Leave SOUTHAMPTON TRAINING ASSOCIATION LIMITED (THE) a message (optional)
+                  Leave a message (optional)
                 </label>
                 <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
               </div>
@@ -173,7 +173,10 @@
         </fieldset>
       </div>
 
-      <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+      <a id="continue-button" role="button" draggable="false" class="govuk-button"
+        href="/employer/v2/employer-adds/add-new-apprentice-3">
+        Save and continue
+      </a>
 
   </main>
 

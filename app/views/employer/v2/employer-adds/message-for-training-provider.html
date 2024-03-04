@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -59,14 +59,14 @@
 
         <h1 class="govuk-heading-xl">Message for your training provider</h1>
         <p class="govuk-body-l">Give any details of the apprentice to <b>EDUC8 TRAINING</b>.</p>
-        <form action="/employer/{{version}}/add/cohort-sent" novalidate="" method="post">
+        <form action="/employer/v2/employer-adds/apprentice-request-sent" novalidate="" method="post">
 
           <div class="govuk-form-group  ">
             <label class="govuk-label govuk-!-font-weight-bold" for="Message">Message (optional)</label>
             <textarea class="govuk-textarea" cols="40" id="Message" name="Message" rows="10"></textarea>
           </div>
 
-          <button id="continue-button" type="submit" class="govuk-button">Send</button>
+          <button id="continue-button" type="submit" class="govuk-button">Submit</button>
         </form>
 
       </div>
