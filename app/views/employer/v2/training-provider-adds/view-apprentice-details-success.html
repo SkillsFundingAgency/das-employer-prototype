@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/training-provider-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -52,11 +52,11 @@
   text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
-  
+
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
-    
+
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -74,7 +74,7 @@
             </h3>
           </div>
         </div>
-        
+
 
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
@@ -98,7 +98,7 @@
               First name
             </dt>
             <dd class="govuk-summary-list__value">
-              Jim
+              {{ data['first-name'] or 'Jim' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> first name</span></a>
@@ -188,7 +188,8 @@
 
     <hr class="govuk-section-break govuk-section-break--l">
 
-    <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+    <a href="/employer/v2/training-provider-adds/approve-details-updated" role="button" draggable="false"
+      class="govuk-button govuk-button--secondary" data-module="govuk-button">
       Return to summary
     </a>
 

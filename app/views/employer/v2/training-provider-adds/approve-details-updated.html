@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/training-provider-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -63,8 +63,6 @@
         <dl class="das-definition-list das-definition-list--inline">
           <dt class="das-definition-list__title">Cohort reference</dt>
           <dd class="das-definition-list__definition govuk-!-margin-bottom-4">N6JNL8</dd>
-          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Status</dt>
-          <dd id="cohortStatus" class="das-definition-list__definition">Approve request</dd>
         </dl>
       </div>
     </div>
@@ -128,10 +126,10 @@
         </tr>
       </thead>
       <tbody class="govuk-table__body">
-    
+
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-label="Name">
-            <span class="das-breakable">Jim Dolan</span>
+            <span class="das-breakable">{{ data['first-name'] or 'Jim' }} Dolan</span>
           </td>
           <td class="govuk-table__cell" data-label="Date of birth">1 Jan 1997</td>
           <td class="govuk-table__cell" data-label="Training dates">
@@ -180,7 +178,8 @@
             </label>
           </div>
           <div class="govuk-radios__item">
-            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio" value="scotland">
+            <input class="govuk-radios__input" id="whereDoYouLive-2" name="whereDoYouLive" type="radio"
+              value="scotland">
             <label class="govuk-label govuk-radios__label" for="whereDoYouLive-2">
               No, I reject this cohort
             </label>
@@ -194,9 +193,12 @@
         </div>
       </fieldset>
     </div>
-    
 
-      <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+
+    <a id="continue-button" role="button" draggable="false" class="govuk-button"
+      href="/employer/v2/training-provider-adds/apprentice-cohort-approved">
+      Save and submit
+    </a>
 
   </main>
 

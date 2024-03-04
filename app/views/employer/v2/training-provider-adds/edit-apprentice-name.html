@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v2/training-provider-adds/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -49,7 +49,7 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
@@ -58,28 +58,29 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <div class="govuk-form-group">
-        <label class="govuk-label" for="full-name">
-          First name
-        </label>
-        <input class="govuk-input" id="full-name" name="fullName" type="text" spellcheck="false" autocomplete="name">
-
-        <div class="govuk-!-padding-bottom-5"></div>
-
-          <div class="govuk-button-group">
-            <button type="submit" aria-disabled="true" class="govuk-button" data-module="govuk-button" href="#">
-              Save
-            </button>
-            <a class="govuk-link" href="#">Cancel</a>
+        <form class="form" action="/employer/v2/training-provider-adds/view-apprentice-details-success" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="first"
+              value="{{ data['first-name'] or '' }}">
           </div>
-      
-    
-      
-      
+          <div class="govuk-button-group"
+            href="/employer/v2/training-provider-adds/view-apprentice-details-success.html">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+            <a class="govuk-link" href="/employer/v2/training-provider-adds/view-apprentice-details">Cancel</a>
+          </div>
+        </form>
+
+
+
       </div>
     </div>
 
-    
+
 
   </main>
 </div>
