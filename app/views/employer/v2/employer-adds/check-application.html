@@ -104,7 +104,7 @@
               First name
             </dt>
             <dd class="govuk-summary-list__value">
-              Kathryn
+              {{ data['first-name'] or 'Kathryn' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
@@ -115,7 +115,7 @@
               Last name
             </dt>
             <dd class="govuk-summary-list__value">
-              Hudson
+              {{ data['last-name'] or 'Hudson' }}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> nationality (Lead
