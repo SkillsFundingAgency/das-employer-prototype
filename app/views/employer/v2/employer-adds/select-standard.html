@@ -55,16 +55,17 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
-
         <form id="addApprenticeship" novalidate="" method="post" action="/employer/v2/employer-adds/training-dates">
           <div class="govuk-form-group ">
-            <span id="course-name-hint" class="govuk-hint">Start typing the name of the course or choose an option from
-              the list </span>
-            <span class="field-validation-valid govuk-error-message" data-valmsg-for="CourseCode"
-              data-valmsg-replace="true" id="error-message-CourseCode"></span>
+            <h1 class="govuk-label-wrapper">
+              <label class="govuk-label govuk-label--xl" for="event-name">
+                {{ pageTitle }}
+              </label>
+            </h1>
+            <div id="course-name-hint" class="govuk-hint">Start typing the name of the course or choose an option from
+              the list </div>
             <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
-              id="CourseCode" name="CourseCode">
+              id="CourseCode" name="CourseCode" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
               <option value="">Please select an option</option>
               <option value="274">Abattoir worker, Level: 2</option>
               <option value="272">Academic professional, Level: 7</option>
