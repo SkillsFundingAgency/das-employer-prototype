@@ -1,0 +1,159 @@
+{% extends "layouts/main.html" %}
+{% set version = "v1" %}
+
+{% block pageTitle %}
+Access denied - Training provider
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+
+<div class="govuk-width-container">
+  <div class="govuk-breadcrumbs">
+    <ol class="govuk-breadcrumbs__list">
+      <li class="govuk-breadcrumbs__list-item">
+        <a class="govuk-breadcrumbs__link" id="breadcrumb-home" href="/employer/{{version}}/add">Home</a>
+      </li>
+      <li class="govuk-breadcrumbs__list-item" aria-current="page">Apprentices</li>
+    </ol>
+  </div>
+
+  {% block content %}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+
+
+    <h1 class="govuk-heading-xl">Add apprentices</h1>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        
+        <p class="govuk-body">Add an apprentice’s details to your account, or ask a training provider to add an apprentice’s
+          details for you.</p>
+
+          <div class="govuk-!-padding-bottom-3"></div>
+
+          <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html">
+            <button class="govuk-button" data-module="govuk-button">
+              Add an apprentice
+            </button>
+          </div>
+
+        <h1 class="govuk-heading-l">Apprentice requests</h1>
+
+        
+    </div>
+
+    
+
+  </main>
+
+  <div class="govuk-grid-row das-card--row">
+    <div class="govuk-grid-column-one-third">
+      <div class="das-card">
+        <div class="das-card--content">
+          <h3 class="govuk-heading-m das-card--heading">
+            <span class="das-card--stat">8</span>
+            <a class="card-link" href="1a-draft?filter=draft">
+              Draft adverts
+            </a>
+          </h3>
+          <p class="govuk-body das-card--description">Adverts that you need to complete and send for review.</p>
+          <!-- <p class="govuk-body das-card--description">./vacancies published on Find an Apprenctice service</p>
+                <ul class="das-card--tasks govuk-list">
+                  <li>
+                    <a class="govuk-link" href="vacancies?status=closing">6 vacancies are closing soon</a>
+                  </li>
+                  <li>
+                    <a class="govuk-link" href="vacancies?status=closing-no-applications">3 vacancies are closing soon and have no applications</a>
+                  </li>
+                </ul> -->
+        </div>
+  
+      </div>
+    </div>
+    <div class="govuk-grid-column-one-third">
+      <div class="das-card">
+        <div class="das-card--content">
+          <h3 class="govuk-heading-m das-card--heading">
+            <span class="das-card--stat">1</span>
+            <a class="card-link" href="#">
+              Review adverts
+            </a>
+          </h3>
+          <p class="govuk-body das-card--description">Adverts created by training providers that you need to review.
+          </p>
+          <!--<span class="das-card--stat">2</span>
+              <a class="card-link" href="vacancies?filter=pending review">
+                Review adverts
+              </a>
+            </h3>
+              <p class="govuk-body das-card--description">Adverts that you need to edit and resubmit.</p>-->
+        </div>
+  
+      </div>
+    </div>
+  
+  
+    <div class="govuk-grid-column-one-third">
+      <div class="das-card">
+        <div class="das-card--content">
+          <h3 class="govuk-heading-m das-card--heading">
+            <span class="das-card--stat">2</span>
+            <a class="card-link" href="1a-pending-review?filter=pending review">
+              Adverts pending DfE review
+            </a>
+          </h3>
+          <p class="govuk-body das-card--description">Adverts that you've sent for review.</p>
+          <!-- <p class="govuk-body das-card--description"></p> -->
+          <!-- <ul class="das-card--tasks govuk-list">
+                  <li>
+                    <a class="ga-track-anchor-click" href="vacancies?status=new" data-ga-event-category="link - click" >6 new applications to look at </a>
+                  </li>
+                </ul> -->
+        </div>
+  
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}
+
+{% endblock %}
