@@ -1,70 +1,124 @@
-.das-card--row {
-  margin-right: -10px;
-margin-left: -10px;
-.govuk-grid-column-one-third{
-  padding: 0 10px;
+.das-cards {
+    margin: 0 -15px;
+    flex-wrap: wrap;
+    -ms-flex-wrap: wrap
 }
+
+@media(min-width: 40.0625em) {
+    .das-cards {
+        display:flex;
+        display: -ms-flex
+    }
 }
-.das-card{
-  background-color: #ffffff;
-  border: 1px solid  $govuk-border-colour;
-  margin-bottom: 20px;
-  overflow: hidden;
-  
-  &.das-card--error{
-    border-color:$govuk-error-colour;
-    border-width: 3px;
-  }
-  &.das-card--inactive{
-    background-color: #f8f8f8;
-  }
 
-  .das-card--content{
-    padding: 20px;
-  }
-  .das-card--heading{
-    margin-bottom: 10px;
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-    a:visited{
-      color: #005ea5;
+.das-card {
+    padding: 0 15px;
+    margin-bottom: 15px;
+    box-sizing: border-box
+}
+
+@media(min-width: 40.0625em) {
+    .das-card {
+        width:50%
     }
-  }
-  .das-card--stat{
-    font-size: 19px;
-    font-size: 1.1875rem;
-    line-height: 1.31579;
-  }
-  @media (min-width: 48.0525em){
-    .das-card--stat{
-      display:block;
-      font-size: 24px;
-      font-size: 1.5rem;
-      line-height: 1.25;
+}
+
+@media(min-width: 40.0625em) {
+    .das-cards--bingo .das-card {
+        margin-bottom:30px
     }
+}
 
-  }
-
-  .das-card--description, .das-card--hint{
-    font-size: 16px;
-    font-size: 1rem;
-    line-height: 1.25;
-  }
-  .das-card--hint{
-    color:  $govuk-secondary-text-colour;
-  }
-  .das-card--tasks{
-    li{
-          a{
-            font-size: 16px;
-            font-size: 1rem;
-            line-height: 1.25;
-
-          }
-          a:visited{
-            color: #005ea5;
-          }
+@media(min-width: 40.0625em) {
+    .das-card--underline {
+        border-bottom:1px solid #b1b4b6;
+        width: calc(50% - 32px);
+        margin-left: 15px;
+        margin-right: 15px;
+        padding: 0
     }
-  }
+}
+
+.das-card__heading {
+    margin-top: 0;
+    margin-bottom: .5em
+}
+
+.das-card-link--bingo {
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    font-weight: 700;
+    font-size: .875rem;
+    line-height: 1.1428571429;
+    font-family: "GDS Transport",arial,sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-decoration: underline;
+    text-decoration-thickness: max(1px, .0625rem);
+    text-underline-offset: .1578em;
+    display: block;
+    background: #4c2c92;
+    text-decoration: none;
+    box-sizing: border-box;
+    height: 100%;
+    padding: 15px;
+    color: #fff
+}
+
+@media print {
+    .das-card-link--bingo {
+        font-family: sans-serif
+    }
+}
+
+@media(min-width: 40.0625em) {
+    .das-card-link--bingo {
+        font-size:1rem;
+        line-height: 1.25
+    }
+}
+
+@media print {
+    .das-card-link--bingo {
+        font-size: 14pt;
+        line-height: 1.2
+    }
+}
+
+@media print {
+    .das-card-link--bingo {
+        font-family: sans-serif
+    }
+}
+
+.das-card-link--bingo:hover {
+    text-decoration-thickness: max(3px, .1875rem, .12em);
+    -webkit-text-decoration-skip-ink: none;
+    text-decoration-skip-ink: none;
+    -webkit-text-decoration-skip: none;
+    text-decoration-skip: none
+}
+
+.das-card-link--bingo:focus {
+    outline: 3px solid rgba(0,0,0,0);
+    color: #0b0c0c;
+    background-color: #fd0;
+    box-shadow: 0 -2px #fd0,0 4px #0b0c0c;
+    text-decoration: none;
+    -webkit-box-decoration-break: clone;
+    box-decoration-break: clone
+}
+
+@media(min-width: 40.0625em) {
+    .das-card-link--bingo {
+        font-size:24px
+    }
+}
+
+.das-card-figure {
+    display: block;
+    font-weight: bold;
+    font-size: 3em;
+    margin-top: -0.1em
 }
