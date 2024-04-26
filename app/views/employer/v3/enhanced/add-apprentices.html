@@ -56,36 +56,30 @@ Access denied - Training provider
 
   {% block content %}
 
-  <main class="govuk-main-wrapper " id="main-content" role="main">
 
 
+  <h1 class="govuk-heading-xl">Add apprentices</h1>
 
-    <h1 class="govuk-heading-xl">Add apprentices</h1>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-        
-        <p class="govuk-body">Add an apprentice’s details to your account, or ask a training provider to add an apprentice’s
-          details for you.</p>
+      <p class="govuk-body govuk-!-padding-bottom-3">Add an apprentice’s details to your account, or ask a training
+        provider
+        to add an apprentice’s
+        details for you.</p>
 
-          <div class="govuk-!-padding-bottom-3"></div>
+      <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html">
+        <button class="govuk-button" data-module="govuk-button">
+          Add an apprentice
+        </button>
+      </div>
 
-          <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html">
-            <button class="govuk-button" data-module="govuk-button">
-              Add an apprentice
-            </button>
-          </div>
+      <h1 class="govuk-heading-l">Apprentice requests</h1>
 
-        <h1 class="govuk-heading-l">Apprentice requests</h1>
-
-        
+    </div>
     </div>
 
-    
-
-  </main>
-
-  <div class="govuk-grid-row das-card--row">
+  {# <div class="govuk-grid-row das-card--row">
     <div class="govuk-grid-column-one-third">
       <div class="das-card">
         <div class="das-card--content">
@@ -106,7 +100,7 @@ Access denied - Training provider
                   </li>
                 </ul> -->
         </div>
-  
+
       </div>
     </div>
     <div class="govuk-grid-column-one-third">
@@ -127,11 +121,11 @@ Access denied - Training provider
             </h3>
               <p class="govuk-body das-card--description">Adverts that you need to edit and resubmit.</p>-->
         </div>
-  
+
       </div>
     </div>
-  
-  
+
+
     <div class="govuk-grid-column-one-third">
       <div class="das-card">
         <div class="das-card--content">
@@ -149,9 +143,50 @@ Access denied - Training provider
                   </li>
                 </ul> -->
         </div>
-  
+
       </div>
     </div>
+  </div> #}
+  
+  <div class="das-tabs-boxes">
+    <ul class="das-tabs-boxes__list">
+  
+      <li class="das-tabs-boxes__list-item  das-tabs-boxes__list-item--selected">
+        <span class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/review" id="Review">
+          <span class="das-tabs-boxes__figure">51</span>
+          <span class="das-text-capitalise">Ready to review</span>
+        </span>
+      </li>
+  
+  
+  
+      <li class="das-tabs-boxes__list-item">
+        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider" id="WithProvider">
+          <span class="das-tabs-boxes__figure">27</span>
+          <span class="das-tabs-boxes__text das-text-capitalise">With training providers</span>
+        </a>
+      </li>
+  
+  
+  
+      <li class="das-tabs-boxes__list-item">
+        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/draft" id="Draft">
+          <span class="das-tabs-boxes__figure">37</span>
+          <span class="das-tabs-boxes__text das-text-capitalise">Drafts</span>
+        </a>
+      </li>
+  
+  
+  
+      <li class="das-tabs-boxes__list-item">
+        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-transfer-sender" id="WithTransferSender">
+          <span class="das-tabs-boxes__figure">1</span>
+          <span class="das-tabs-boxes__text das-text-capitalise">With transfer sending employers</span>
+        </a>
+      </li>
+  
+  
+    </ul>
   </div>
 </div>
 {% endblock %}
