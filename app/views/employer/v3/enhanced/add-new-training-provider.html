@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Add training provider" %}
+{% set pageTitle = "Add training provider details" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -53,30 +53,44 @@
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v2/employer-adds/confirm-training-provider">
+        <form action="/employer/v3/enhanced/confirm-training-provider" method="post" novalidate>
+
+          <input type="hidden" id="AccountHashedId" name="AccountHashedId" value="BB8W4N">
+          <input type="hidden" data-val="true" data-val-required="'Account Legal Entity Hashed Id' must not be empty."
+            id="AccountLegalEntityHashedId" name="AccountLegalEntityHashedId" value="36Z825">
+          <input type="hidden" id="ReservationId" name="ReservationId" value="">
+          <input type="hidden" id="CourseCode" name="CourseCode" value="">
+          <input type="hidden" id="StartMonthYear" name="StartMonthYear" value="">
+          <input type="hidden" id="TransferSenderId" name="TransferSenderId" value="">
+          <input type="hidden" id="LegalEntityName" name="LegalEntityName" value="Bambinos Day Nursery">
+          <input type="hidden" id="EncodedPledgeApplicationId" name="EncodedPledgeApplicationId" value="">
+
           <div class="govuk-form-group ">
-            <span id="course-name-hint" class="govuk-hint">Select the training provider for this apprentice, or add a new one if you don't see them in your list</span>
-            <span class="field-validation-valid govuk-error-message" data-valmsg-for="CourseCode"
-              data-valmsg-replace="true" id="error-message-CourseCode"></span>
-            <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
-              id="CourseCode" name="CourseCode">
-              <option value="">EDUC8 TRAINING 10005760</option>
-              <option value="274">TRAINING PROVIDER 2</option>
-              <option value="272">TRAINING PROVIDER 3</option>
+            <div id="course-name-hint" class="govuk-hint">Start typing your training provider’s name or UKPRN and select
+              from the suggestions </div>
 
-            </select>
+            <input class="govuk-input " id="error-message-ProviderId" type="text" name="ProviderId" value="">
           </div>
 
-          <div class="govuk-button-group">
-            <button type="submit" id="continue-button" class="govuk-button">Save and continue</button>
-            <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Add a new training provider
-            </a>
-          </div>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">
+                Don't have a training provider?
+              </span>
+            </summary>
+            <div class="govuk-details__text">
+              If you don’t have a training provider, you can search <a href="#" class="govuk-link">Find apprenticeship
+                training</a> if you’re an employer.
+            </div>
+          </details>
+          <button id="continue-button" type="submit" class="govuk-button">
+            Continue
+          </button>
         </form>
       </div>
     </div>

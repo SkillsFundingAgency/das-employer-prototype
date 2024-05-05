@@ -2193,3 +2193,15 @@ router.post('/employer/v2/employer-adds/employer-add-or-TP-add', function (req, 
   }
 })
 
+// Employer V2 - Employer initiates journey  Routes
+
+router.post('/employer/v3/enhanced/employer-add-or-TP-add', function (req, res) {
+  var whoAdds = req.session.data['who-adds-action']
+
+  if (whoAdds == "yes-add") {
+    res.redirect('/employer/v3/enhanced/request-sent-training-provider')
+  }
+  else if (whoAdds == "no-request") {
+    res.redirect('/employer/v3/enhanced/successful-candidates')
+  }
+})

@@ -49,41 +49,74 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
+      <div class="govuk-grid-column-whole">
         <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">Add details of one or more apprentices to your account, and authorise payments to their
-          training provider.</p>
+        <div class="govuk-grid-column-two-thirds">
 
-        <h2 class="govuk-heading-l">Before you start</h2>
+          <p class="govuk-body">Add details of one or more apprentices to your account, and authorise payments to their
+            training provider.</p>
 
-        <p class="govuk-body">You must:</p>
-        <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-          <li>know the names of your apprentices </li>
-          <li>know a unique email address for each of your apprentices</li>
-          <li>know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you
-            this</li>
-          <li>make sure the organisation that's named on the contract you have with your training provider is in your
-            account - <a href="#" class="govuk-link">view
-              organisations in this account</a> </li>
-          <li>make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="#"
-              class="govuk-link">view PAYE schemes in this account</a></li>
-        </ul>
+          <h2 class="govuk-heading-l">Before you start</h2>
 
-        <a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--start"
-          href="/employer/{{version}}/add/create">
-          Start now
-        </a>
+          <p class="govuk-body">You must:</p>
+          <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
+            <li>have a training provider</li>
+            <li>know the legal names of your apprentices</li>
+            <li>have consent from your apprentice to share their personal details</li>
+            <li>have authority to act for the organisation that's named on the contract you have with your training
+              provider</li>
+            <li>make sure the PAYE scheme that the apprentice(s) will be paid through is added to your account</li>
+          </ul>
+
+          <a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--start"
+            href="/employer/v3/enhanced/add-new-training-provider">
+            Start now
+          </a>
+
+        </div>
       </div>
-    </div>
 
-  </main>
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <hr class="das-section-break das-section-break--l" style="border-top: 3px solid #005ea5; padding-top: 0px;">
+        <div class="related-navigation">
+          <h2 class="govuk-heading-s">Helpful content</h2>
+          <ul class="govuk-list related-links">
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
+                href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link"
+                rel="noreferrer noopener" target="_blank">Find and compare training providers</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
+                href="https://www.gov.uk/government/collections/apprenticeship-vacancies" class="govuk-link"
+                rel="noreferrer noopener" target="_blank">How to recruit an apprentice</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link">How to apply for
+                funding</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link">View your
+                organisations</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link">View your PAYE
+                schemes</a></li>
+          </ul>
+        </div>
+      </div>
+
+
+
+
+
+
+
+    </div>
+</div>
+
+</main>
 </div>
 
 {% endblock %}

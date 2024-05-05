@@ -47,65 +47,78 @@
 {% block content %}
 
 <div class="govuk-width-container">
-
-  {{ govukBackLink({
-  text: "Back",
-  href: "javascript:window.history.go(-1);"
-  }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Training provider details
-            </h2>
-          </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Training provider
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  EDUC8 TRAINING
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/employer/v2/employer-adds/add-training-provider">Change<span
-                      class="govuk-visually-hidden"> training provider</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  UK Provider reference (UKPRN)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  10005760
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> UK provider reference number
-                      (UKPRN)</span></a>
-                </dd>
-              </div>
-            </dl>
-          </div>
+        <div class="govuk-panel govuk-panel--confirmation">
+          <h1 class="govuk-panel__title">
+            Apprentice request with training provider to review
+          </h1>
         </div>
+        <div class="govuk-!-padding-bottom-5"></div>
 
-        <div class="govuk-!-padding-bottom-1"></div>
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              N6JNL8
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Training provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              EDUC8 TRAINING
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Message
+            </dt>
+            <dd class="govuk-summary-list__value">
+              {{ data['apprentice-details'] or 'No message added' }}
+            </dd>
+          </div>
+        </dl>
 
-        <a id="continue-button" role="button" draggable="false" class="govuk-button"
-          href="/employer/v3/enhanced/employer-add-or-TP-add">
-          Save and continue
+        <h2 class="govuk-heading-m">What happens next</h2>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>your training provider will add the apprentice details</li>
+          <li>you will receive a confirmation email
+          </li>
+          <li>you will need to review the apprentice details and approve, if correct
+          </li>
+        </ul>
+
+
+        <p class="govuk-body">
+          Once you have approved the apprentice details sent by the training provider, you will see their details in <a href="#"
+            class="govuk-link">Manage apprentices</a>.
+        </p>
+
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <a href="/employer/v2/employer-adds/index" role="button" draggable="false"
+          class="govuk-button govuk-button--secondary" data-module="govuk-button">
+          Return to dashboard
         </a>
+
 
 
       </div>
     </div>
 
-  </main>
+
+</div>
+</div>
+
+</main>
 </div>
 
 {% endblock %}

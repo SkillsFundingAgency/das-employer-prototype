@@ -90,20 +90,66 @@
                       (UKPRN)</span></a>
                 </dd>
               </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Contact reference
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Frank Carter <br>
+                  01127 939103
+                </dd>
+                <dd class="govuk-summary-list__actions">
+                  <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> UK provider reference number
+                      (UKPRN)</span></a>
+                </dd>
+              </div>
             </dl>
           </div>
         </div>
 
-        <div class="govuk-!-padding-bottom-1"></div>
-
-        <a id="continue-button" role="button" draggable="false" class="govuk-button"
-          href="/employer/v3/enhanced/employer-add-or-TP-add">
-          Save and continue
-        </a>
-
+        <div class="govuk-form-group">
+          <div class="govuk-form-group">
+            <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h1 class="govuk-fieldset__heading">
+                  Have you completed this section?
+                </h1>
+              </legend>
+              <div id="signIn-hint" class="govuk-hint">
+                You can come back and make changes at any time before sending to your training provider for approval.
+              </div>
+              <div class="govuk-radios" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
+                    aria-describedby="signIn-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="signIn">
+                    Yes, I’ve completed this section
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
+                    aria-describedby="signIn-2-item-hint">
+                  <label class="govuk-label govuk-radios__label" for="signIn-2">
+                    No, I’ll come back to it later
+                  </label>
+                </div>
+              </div>
+            </fieldset>
+          </div>
+          </form>
+        
+          <div class="govuk-!-padding-bottom-1"></div>
+        
+          <a href="/employer/v2/employer-adds/add-new-apprentice-2" id="continue-button" role="button" draggable="false"
+            class="govuk-button">
+            Save and continue
+          </a>
+        
+        
+        
+        </div>
 
       </div>
-    </div>
 
   </main>
 </div>

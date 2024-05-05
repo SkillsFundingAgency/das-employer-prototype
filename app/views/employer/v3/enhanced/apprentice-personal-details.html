@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Add training provider" %}
+{% set pageTitle = "What are the apprentice personal details?" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -53,35 +53,42 @@
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
+
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Question 1 of 3</span>
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v2/employer-adds/confirm-training-provider">
-          <div class="govuk-form-group ">
-            <span id="course-name-hint" class="govuk-hint">Select the training provider for this apprentice, or add a new one if you don't see them in your list</span>
-            <span class="field-validation-valid govuk-error-message" data-valmsg-for="CourseCode"
-              data-valmsg-replace="true" id="error-message-CourseCode"></span>
-            <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
-              id="CourseCode" name="CourseCode">
-              <option value="">EDUC8 TRAINING 10005760</option>
-              <option value="274">TRAINING PROVIDER 2</option>
-              <option value="272">TRAINING PROVIDER 3</option>
-
-            </select>
+        <form class="form" action="/employer/v2/employer-adds/apprentice-email" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="first"
+              value="{{ data['first-name'] or '' }}">
           </div>
-
-          <div class="govuk-button-group">
-            <button type="submit" id="continue-button" class="govuk-button">Save and continue</button>
-            <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
-              Add a new training provider
-            </a>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="last-name">
+              Last name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="last"
+              value="{{ data['last-name'] or '' }}">
+          </div>
+          <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
           </div>
         </form>
+
+
       </div>
     </div>
-
   </main>
+
+
+
+
 </div>
 
 {% endblock %}
