@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/enhanced/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -59,7 +59,7 @@
         <span class="govuk-caption-l">Question 1 of 3</span>
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <form class="form" action="/employer/v2/employer-adds/apprentice-email" method="post">
+        <form class="form" action="/employer/v3/enhanced/select-funding" method="post">
           <div class="govuk-form-group">
             <label class="govuk-label" for="first-name">
               First name
@@ -74,7 +74,7 @@
             <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="last"
               value="{{ data['last-name'] or '' }}">
           </div>
-          <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html">
+          <div class="govuk-button-group" href="/employer/v3/enhanced/select-funding.html">
             <button class="govuk-button" data-module="govuk-button">
               Save and continue
             </button>

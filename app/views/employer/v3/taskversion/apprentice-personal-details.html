@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Confirm training provider" %}
+{% set pageTitle = "What are the apprentice personal details?" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v3/enhanced/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/taskversion/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -56,56 +56,39 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+        <span class="govuk-caption-l">Question 1 of 1</span>
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <div class="govuk-summary-card">
-          <div class="govuk-summary-card__title-wrapper">
-            <h2 class="govuk-summary-card__title">
-              Training provider details
-            </h2>
+        <form class="form" action="/employer/v3/taskversion/apprentice-summary" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="first-name">
+              First name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="first"
+              value="{{ data['first-name'] or '' }}">
           </div>
-          <div class="govuk-summary-card__content">
-            <dl class="govuk-summary-list">
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  Training provider
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  EDUC8 TRAINING
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="/employer/v2/employer-adds/add-training-provider">Change<span
-                      class="govuk-visually-hidden"> training provider</span></a>
-                </dd>
-              </div>
-              <div class="govuk-summary-list__row">
-                <dt class="govuk-summary-list__key">
-                  UK Provider reference (UKPRN)
-                </dt>
-                <dd class="govuk-summary-list__value">
-                  10005760
-                </dd>
-                <dd class="govuk-summary-list__actions">
-                  <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> UK provider reference number
-                      (UKPRN)</span></a>
-                </dd>
-              </div>
-            </dl>
+          <div class="govuk-form-group">
+            <label class="govuk-label" for="last-name">
+              Last name
+            </label>
+            <input class="govuk-input govuk-!-width-two-thirds" id="last-name" name="last-name" type="last"
+              value="{{ data['last-name'] or '' }}">
           </div>
-        </div>
-
-        <div class="govuk-!-padding-bottom-1"></div>
-
-        <a id="continue-button" role="button" draggable="false" class="govuk-button"
-          href="/employer/v3/enhanced/employer-add-or-TP-add">
-          Save and continue
-        </a>
+          <div class="govuk-button-group" href="/employer/v3/taskversion/apprentice-summary">
+            <button class="govuk-button" data-module="govuk-button">
+              Save and continue
+            </button>
+          </div>
+        </form>
 
 
       </div>
     </div>
-
   </main>
+
+
+
+
 </div>
 
 {% endblock %}

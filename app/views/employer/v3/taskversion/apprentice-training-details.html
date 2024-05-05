@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/taskversion/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -59,14 +59,16 @@
         <span class="govuk-caption-l">Question 2 of 3</span>
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v2/employer-adds/training-dates">
+        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v3/taskversion/training-costs">
           <div class="govuk-form-group">
             <label class="govuk-label govuk-label--m" for="passport-number">
               Apprenticeship course
             </label>
-            <div id="course-name-hint" class="govuk-hint">Start typing the name of the course and select from the suggestions</div>
+            <div id="course-name-hint" class="govuk-hint">Start typing the name of the course and select from the
+              suggestions</div>
             <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
-              id="CourseCode" name="CourseCode" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length="" data-show-all-values="" data-show-no-options-found="">
+              id="CourseCode" name="CourseCode" data-module="autocomplete" data-autoselect="" data-display-menu=""
+              data-min-length="" data-show-all-values="" data-show-no-options-found="">
               <option value="">Please select an option</option>
               <option value="274">Abattoir worker, Level: 2</option>
               <option value="272">Academic professional, Level: 7</option>
@@ -1568,7 +1570,9 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-              If you don’t know which apprenticeship training course is suitable for your apprentice, you can search <a href="#" class="govuk-link">Find apprenticeship training</a> or we recommend speaking to your training provider.
+              If you don’t know which apprenticeship training course is suitable for your apprentice, you can search <a
+                href="#" class="govuk-link">Find apprenticeship training</a> or we recommend speaking to your training
+              provider.
             </div>
           </details>
 
@@ -1586,8 +1590,8 @@
                     <label class="govuk-label govuk-date-input__label" for="expiry-month">
                       Month
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month" name="expiry-month"
-                      type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month"
+                      name="expiry-month" type="text" inputmode="numeric">
                   </div>
                 </div>
                 <div class="govuk-date-input__item">
@@ -1595,8 +1599,8 @@
                     <label class="govuk-label govuk-date-input__label" for="expiry-year">
                       Year
                     </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year" name="expiry-year"
-                      type="text" inputmode="numeric">
+                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year"
+                      name="expiry-year" type="text" inputmode="numeric">
                   </div>
                 </div>
               </div>
@@ -1611,9 +1615,9 @@
     </div>
 
 
-      </div>
-    </div>
-  </main>
+</div>
+</div>
+</main>
 
 
 

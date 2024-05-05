@@ -12,7 +12,7 @@ Add apprentices
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v1/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/taskversion/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -47,7 +47,11 @@ Add apprentices
 {% block content %}
 
 <div class="govuk-width-container">
-  <a href="#" class="govuk-back-link">Back</a>
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
@@ -60,11 +64,10 @@ Add apprentices
 
 
           <div class="govuk-grid-column-one-third" style="text-align: right;">
-            <div class="govuk-button-group" href="/employer/v2/employer-adds/apprentice-email.html"
-              style="float: right;">
-              <button class="govuk-button" data-module="govuk-button">
+            <div class="govuk-button-group" style="float: right;">
+              <a href="/employer/v3/taskversion/add-new-apprentice" class="govuk-button" data-module="govuk-button">
                 Add an apprentice
-              </button>
+              </a>
             </div>
           </div>
         </div>

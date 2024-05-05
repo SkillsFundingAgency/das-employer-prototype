@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Select funding" %}
+{% set pageTitle = "Add training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v3/enhanced/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/taskversion/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -53,54 +53,46 @@
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
-
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <span class="govuk-caption-l">Question 2 of 3</span>
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-
-        <p class="govuk-body">You have the following funding that you can use to fund your apprenticeship.</p>
-
-        <p class="govuk-body">If a reservation isn’t used for an apprenticeship within 6 months, then the funding
-          reservation will be lost and you may
-          have to wait until more funding is available.</p>
 
         <div class="govuk-form-group">
           <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-              <h1 class="govuk-fieldset__heading">
-                Which funding would you like to use?
-              </h1>
+              <div id="changedName-hint" class="govuk-hint">
+                Select from the list of your saved training providers.
+              </div>
             </legend>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
                   aria-describedby="signIn-item-hint">
                 <label class="govuk-label govuk-radios__label" for="signIn">
-                  Business administration, Level: 3 – Starting between Mar 2024 to Sep 2024
+                  EDUC8 TRAINING
                 </label>
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
-                  Reservation funds
+                  UKPRN: 10005760
                 </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
                   aria-describedby="signIn-2-item-hint">
                 <label class="govuk-label govuk-radios__label" for="signIn-2">
-                  Pledge 678CFR0 from Barry & Larry Ltd – £5,000
+                  TRAINING PROVIDER 2
                 </label>
                 <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                  Pledge funds
+                  UKPRN: 10004027
                 </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
                   aria-describedby="signIn-2-item-hint">
                 <label class="govuk-label govuk-radios__label" for="signIn-2">
-                  Transfer funds from Coventry City Council
+                  TRAINING PROVIDER 3
                 </label>
                 <div id="signIn-2-item-hint" class="govuk-hint govuk-radios__hint">
-                  Direct transfer funds
+                  UKPRN: 10009261
                 </div>
               </div>
               <div class="govuk-radios__divider">or</div>
@@ -108,7 +100,7 @@
                 <input class="govuk-radios__input" id="whereDoYouLive-6" name="whereDoYouLive" type="radio"
                   value="abroad">
                 <label class="govuk-label govuk-radios__label" for="whereDoYouLive-6">
-                  I want to reserve funds in this application
+                  Search for a new training provider
                 </label>
               </div>
             </div>
@@ -116,22 +108,18 @@
 
           <div class="govuk-!-padding-bottom-5"></div>
 
-          <div class="govuk-button-group">
-            <a href="/employer/v3/enhanced/apprentice-training-details" class="govuk-button" data-module="govuk-button">
+          <div class="govuk-button-group" style="text-align: center;">
+            <a href="/employer/v3/taskversion/confirm-training-provider" class="govuk-button" data-module="govuk-button">
               Save and continue
             </a>
           </div>
-
         </div>
-
 
       </div>
     </div>
-  </main>
+</div>
 
-
-
-
+</main>
 </div>
 
 {% endblock %}

@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v2/employer-adds/index">Home</a>
+        <a class="das-navigation__link" href="/employer/v3/enhanced/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -108,7 +108,7 @@
               {{ data['first-name'] or 'Jim' }} {{ data['last-name'] or 'Dolan' }}
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> age (Lead tenant)</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> name (apprentice 1)</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -119,8 +119,8 @@
               Business administrator, Level: 3
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead
-                  tenant)</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> apprenticeship course
+                  (apprentice 1)</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -131,8 +131,8 @@
               Dec 2024
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead
-                  tenant)</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> trianing start date (apprentice
+                  1)</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -143,8 +143,8 @@
               Training provider to add
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> working situation (Lead
-                  tenant)</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> total agreed apprenticeship
+                  price (apprentice 1)</span></a>
             </dd>
           </div>
         </dl>
@@ -165,13 +165,15 @@
     </table>
 
     <p class="govuk-body">
-      <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary" data-module="govuk-button">
+      <a href="" role="button" draggable="false" class="govuk-button govuk-button--secondary"
+        data-module="govuk-button">
         Add another apprentice
       </a>
       <a class="govuk-link das-float-right" href="#"></a>
     </p>
 
-    <form id="submitCohort" novalidate="" method="post" action="/employer/{{version}}/add/action/approve-details">
+    <form id="submitCohort" novalidate="" method="post"
+      action="/employer/v3/enhanced/apprentice-details-sent-to-training-provider">
       <div class="govuk-form-group  ">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -201,17 +203,17 @@
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
-              <div class="govuk-form-group"> 
+              <div class="govuk-form-group">
               </div>
             </div>
           </div>
         </fieldset>
       </div>
-    
+
       <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
-    
+
     </form>
-    
+
   </main>
 
 </div>
