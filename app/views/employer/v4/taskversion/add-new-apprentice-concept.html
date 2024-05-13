@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Add apprentice(s)" %}
+{% set pageTitle = "Set up an apprenticeship" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -58,7 +58,7 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">Complete the first two steps below for your training provider to review.</p>
+        <p class="govuk-body">Complete the steps below for your training provider to review.</p>
 
         <p class="govuk-body">You can complete ‘Add training details’, or ask your training provider to complete it for
           you to review.</p>
@@ -69,12 +69,12 @@
 
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/employer/v3/taskversion/successful-candidates"
+              <a class="govuk-link govuk-task-list__link" href="#"
                 aria-describedby="company-details-3-hint company-details-3-status">
-                Add apprentice personal details
+                Add or recruit an apprentice
               </a>
               <div id="company-details-3-hint" class="govuk-task-list__hint">
-                Apprentice name
+                Create an advert or add apprentice details
               </div>
             </div>
             <div class="govuk-task-list__status" id="company-details-3-status">
@@ -85,9 +85,9 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/employer/v3/taskversion/add-training-provider-2"
+              <a class="govuk-link govuk-task-list__link" href="#"
                 aria-describedby="company-details-3-hint company-details-3-status">
-                Confirm your training provider
+                Add or confirm your training provider
               </a>
               <div id="company-details-3-hint" class="govuk-task-list__hint">
                 Training provider name or UKPRN
@@ -101,12 +101,28 @@
           </li>
           <li class="govuk-task-list__item govuk-task-list__item--with-link">
             <div class="govuk-task-list__name-and-hint">
-              <a class="govuk-link govuk-task-list__link" href="/employer/v3/taskversion/select-funding"
+              <a class="govuk-link govuk-task-list__link" href="#"
+                aria-describedby="company-details-3-hint company-details-3-status">
+                Choose funding
+              </a>
+              <div id="company-details-3-hint" class="govuk-task-list__hint">
+                Use or apply for available funding for apprenticeship training
+              </div>
+            </div>
+            <div class="govuk-task-list__status" id="company-details-3-status">
+              <strong class="govuk-tag govuk-tag--blue">
+                Not yet started
+              </strong>
+            </div>
+          </li>
+          <li class="govuk-task-list__item govuk-task-list__item--with-link">
+            <div class="govuk-task-list__name-and-hint">
+              <a class="govuk-link govuk-task-list__link" href="#"
                 aria-describedby="company-details-3-hint company-details-3-status">
                 Add training details
               </a>
               <div id="company-details-3-hint" class="govuk-task-list__hint">
-                Apprenticeship training course, planned training start and total agreed price
+                Apprenticeship training course, planned training start date, and total agreed price
               </div>
             </div>
             <div class="govuk-task-list__status" id="company-details-3-status">
@@ -121,7 +137,7 @@
           <button type="submit" disabled aria-disabled="true" class="govuk-button" data-module="govuk-button">
             Send to training provider
           </button>
-          <a href="/employer/v2/employer-adds/add-apprentice-hub" class="govuk-link">Save and finish later</a>
+          <a href="#" class="govuk-link">Save and finish later</a>
         </div>
 
 
