@@ -48,35 +48,34 @@
 
 <div class="govuk-width-container">
 
-  <a href="/employer/v1/add/apprentices/" class="govuk-back-link">Back to Apprentices</a>
+  <a href="/employer/v1/add/apprentices/" class="govuk-back-link">Back</a>
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">Choose organisation</h1>
+        <h1 class="govuk-heading-l">Choose organisation</h1>
 
         <form action="/employer/{{version}}/add/provider-details" method="post" novalidate>
 
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
 
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Which organisation is named on the contract with the training provider for the apprentices you’d like to
-                add?
-              </legend>
+              <div id="changedName-hint" class="govuk-hint">
+                Select which organisation is named on the contract with the training provider
+              </div>
 
               <div class="govuk-radios">
                 <div class="govuk-radios__item" id="radio-item-legal-entity-code">
                   <input class="govuk-radios__input" id="LegalEntityId" name="LegalEntityId" type="radio" value="">
                   <label class="govuk-label govuk-radios__label" for="LegalEntityId">
-                    Bambinos Day Nursery
+                    Barry & Barry Ltd
                   </label>
                 </div>
                 <div class="govuk-radios__item" id="radio-item-legal-entity-code">
                   <input class="govuk-radios__input" id="LegalEntityId_2" name="LegalEntityId" type="radio" value="">
                   <label class="govuk-label govuk-radios__label" for="LegalEntityId_2">
-                    Glebe Nursery School
+                    Barry Global
                   </label>
                 </div>
               </div>
@@ -86,7 +85,7 @@
           <details id="service-help" class="govuk-details" data-module="govuk-details">
             <summary class="govuk-details__summary">
               <span class="govuk-details__summary-text">
-                What is a contract for services?
+                What is a contract for services
               </span>
             </summary>
             <div class="govuk-details__text">

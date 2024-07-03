@@ -49,38 +49,69 @@
 <div class="govuk-width-container">
 
   {{ govukBackLink({
-  text: "Back to Apprentices",
+  text: "Back",
   href: "javascript:window.history.go(-1);"
   }) }}
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">Add details of one or more apprentices to your account, and authorise payments to their
+        <p class="govuk-body">Add details of one or more apprentices to your account, and authorise payments to your
           training provider.</p>
+
+        <p class="govuk-body">If you have not reserved funds for this apprenticeship yet, adding a new apprentice will
+          reserve funds for you. If you
+          have reserved funds or have transfer funds available, you can select one whilst adding a new apprentice.</p>
 
         <h2 class="govuk-heading-l">Before you start</h2>
 
         <p class="govuk-body">You must:</p>
         <ul class="govuk-list govuk-list--bullet govuk-!-margin-bottom-8">
-          <li>know the names of your apprentices </li>
-          <li>know a unique email address for each of your apprentices</li>
-          <li>know your training provider's UK Provider Reference Number (UKPRN) - your training provider can tell you
-            this</li>
-          <li>make sure the organisation that's named on the contract you have with your training provider is in your
-            account - <a href="#" class="govuk-link">view
-              organisations in this account</a> </li>
-          <li>make sure the PAYE scheme that each apprentice is paid through is in your account - <a href="#"
-              class="govuk-link">view PAYE schemes in this account</a></li>
+          <li>have a <b>training provider</b></li>
+          <li>know know the <b>legal name</b> and <b>email address</b> of your apprentice</li>
+          <li>know the <b>course name</b> and <b>start date</b></li>
+          <li>have <b>authority to act</b> for the organisation that's named on the contract you have with your training
+            provider <a href="#" class="govuk-link">(view your
+              organisations)</a> </li>
+          <li>make sure the <b>PAYE scheme</b> that the apprentices will be paid through is added to your account <a
+              href="#" class="govuk-link">(view your PAYE schemes)</a></li>
         </ul>
 
         <a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--start"
-          href="/employer/{{version}}/add/create">
+          href="/employer/v5/add/create">
           Start now
+          <svg class="govuk-button__start-icon" xmlns="http://www.w3.org/2000/svg" width="17.5" height="19"
+            viewBox="0 0 33 40" aria-hidden="true" focusable="false">
+            <path fill="currentColor" d="M0 0h13l20 20-20 20H0l20-20z" />
+          </svg>
         </a>
+
       </div>
+
+      <div class="govuk-grid-column-one-third">
+
+        <div class="govuk-!-padding-bottom-2"></div>
+
+        <hr class="das-section-break das-section-break--l" style="border-top: 3px solid #005ea5; padding-top: 0px;">
+        <div class="related-navigation">
+          <h2 class="govuk-heading-s">Helpful content</h2>
+          <ul class="govuk-list related-links">
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
+                href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link"
+                rel="noreferrer noopener" target="_blank">Employing an apprentice (opens in a new tab)</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
+                href="https://www.gov.uk/government/collections/apprenticeship-vacancies" class="govuk-link"
+                rel="noreferrer noopener" target="_blank">Apprenticeship funding (opens in a new tab)</a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link"></a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link"></a></li>
+            <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link"></a></li>
+          </ul>
+        </div>
+      </div>
+
+
     </div>
 
   </main>
