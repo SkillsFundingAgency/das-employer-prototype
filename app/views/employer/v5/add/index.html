@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v2" %}
+{% set version = "v5" %}
 
 {% block pageTitle %}Home page
 {% endblock %}
@@ -11,8 +11,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link das-navigation__link--current"
-          href="/employer/v3/enhanced/index">Home</a>
+        <a class="das-navigation__link das-navigation__link--current" href="/employer/{{version}}/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -60,12 +59,12 @@
             <dd class="das-definition-list__definition">JJNLKR</dd>
             <dt class="das-definition-list__title">Agreement ID</dt>
             <dd class="das-definition-list__definition">
-              4EVY28
+              <a href="# " class="govuk-link govuk-link--no-visited-state">View your agreement IDs</a>
             </dd>
           </dl>
         </div>
 
-        <hr class="das-section-break das-section-break--l das-section-break--grey">
+        <hr class="das-section-break das-section-break--l das-section-break--heavy-grey">
 
         <div class="govuk-grid-row">
           <div class="govuk-grid-column-two-thirds">
@@ -76,29 +75,28 @@
               <div class="das-cards">
                 <div class="das-card">
                   <h3 class="govuk-heading-m das-card__heading">
-                    <a href="/employer/v3/enhanced/add-apprentices" class="govuk-link govuk-link--no-visited-state">Add
-                      apprentice(s)</a>
+                    <a href="/employer/{{version}}/add/apprentices"
+                      class="govuk-link govuk-link--no-visited-state">Apprentices</a>
                   </h3>
-                  <p class="govuk-body govuk-!-font-size-16">Add new apprentices, ask a training provider to add
-                    apprentices for you and review draft apprenticeships that you have
-                    created.</p>
+                  <p class="govuk-body govuk-!-font-size-16">Add apprentices, update details of existing apprentices,
+                    change training providers and authorise payments to training providers.</p>
                 </div>
                 <div class="das-card">
                   <h3 class="govuk-heading-m das-card__heading">
-                    <a href="/employer/v2/training-provider-adds/manage-apprentices"
-                      class="govuk-link govuk-link--no-visited-state">Manage apprenticeships</a>
-                  </h3>
-                  <p class="govuk-body govuk-!-font-size-16">Update details of existing apprentices, review apprentice
-                    requests from training providers, change training providers
-                    and authorise payments to training providers.</p>
-                </div>
-                <div class="das-card">
-                  <h3 class="govuk-heading-m das-card__heading">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">Your apprenticeship adverts</a>
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Your
+                      apprenticeship
+                      adverts</a>
                   </h3>
                   <p class="govuk-body govuk-!-font-size-16">Create adverts to post on find an apprenticeship, view
-                    applications, your previous adverts and adverts created by
-                    training providers.</p>
+                    applications, your previous adverts and adverts created by training providers.</p>
+                </div>
+                <div class="das-card">
+                  <h3 class="govuk-heading-m das-card__heading">
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Your training
+                      providers</a>
+                  </h3>
+                  <p class="govuk-body govuk-!-font-size-16">Add training providers and manage permissions to choose
+                    what they can do on your behalf.</p>
                 </div>
                 <div class="das-card">
                   <h3 class="govuk-heading-m das-card__heading">
@@ -111,12 +109,11 @@
                 </div>
                 <div class="das-card">
                   <h3 class="govuk-heading-m das-card__heading">
-                    <a href="#" class="govuk-link govuk-link--no-visited-state">Your
+                    <a href="#" class="govuk-link govuk-link--no-visited-state">Feedback on
                       training
                       providers</a>
                   </h3>
-                  <p class="govuk-body govuk-!-font-size-16">Add training providers and manage permissions to choose
-                    what they can do on your behalf.</p>
+                  <p class="govuk-body govuk-!-font-size-16">Give feedback on your training providers.</p>
                 </div>
                 <div class="das-card">
                   <h3 class="govuk-heading-m das-card__heading">
@@ -132,9 +129,7 @@
               </div>
             </section>
 
-
-
-            <hr class="das-section-break das-section-break--l das-section-break--grey">
+            <hr class="das-section-break das-section-break--l das-section-break--heavy-grey">
 
             <section>
               <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Finances</h2>
@@ -174,7 +169,7 @@
               </div>
             </section>
 
-            <hr class="das-section-break das-section-break--l das-section-break--grey">
+            <hr class="das-section-break das-section-break--l das-section-break--heavy-grey">
 
             <section>
               <h2 class="govuk-heading-l govuk-!-margin-bottom-2">Account</h2>
@@ -215,75 +210,11 @@
                   rel="nofollow" target="_blank">Take our 3 minute survey</a> so that we can improve this service.</p>
             </div>
           </div>
-
-          <div class="govuk-grid-column-one-third">
-            <div class="govuk-tabs" data-module="govuk-tabs">
-              <h2 class="govuk-tabs__title">
-                Contents
-              </h2>
-              <ul class="govuk-tabs__list" role="tablist">
-                <li class="govuk-tabs__list-item govuk-tabs__list-item--selected" role="presentation">
-                  <a class="govuk-tabs__tab" href="#tasks" id="tab_tasks" role="tab" aria-controls="tasks"
-                    aria-selected="true" tabindex="0">
-                    Tasks
-                  </a>
-                </li>
-              </ul>
-              <div class="govuk-tabs__panel" id="tasks" role="tabpanel" aria-labelledby="tab_tasks">
-
-                <ul class="govuk-list">
-                  <li>
-                    <span>
-                      <a href="/employer/v3/enhanced/add-apprentices"
-                        class="govuk-link govuk-link govuk-link--no-visited-state">Start adding apprentices now</a>
-                    </span>
-                    <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
-                  </li>
-                  <li>
-                </ul>
-              </div>
-
-              <div class="govuk-!-padding-bottom-5"></div>
-
-              <hr class="das-section-break das-section-break--l"
-                style="border-top: 3px solid #005ea5; padding-top: 0px;">
-              <div class="related-navigation">
-                <h2 class="govuk-heading-s">Helpful content</h2>
-                <ul class="govuk-list related-links">
-                  <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
-                      href="/employer/v3/enhanced/apprenticeship-step-by-step" class="govuk-link"
-                      rel="noreferrer noopener" target="_blank">How to set up an apprenticeship</a></li>
-                  <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
-                      href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link"
-                      rel="noreferrer noopener" target="_blank">Find and compare training providers</a></li>
-                  <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a href="#" class="govuk-link"
-                      rel="noreferrer noopener" target="_blank">How to apply for funding</a></li>
-                  <li class="govuk-body-s govuk-!-static-padding-bottom-1"><a
-                      href="https://www.gov.uk/government/collections/apprenticeship-vacancies" class="govuk-link"
-                      rel="noreferrer noopener" target="_blank">How to recruit an apprentice</a></li>
-                </ul>
-              </div>
-            </div>
-
-
-
-
-
-
-
-          </div>
         </div>
-
 
       </div>
     </div>
-</div>
-
-
-
-</div>
-</div>
-</main>
+  </main>
 </div>
 
 {% endblock %}
