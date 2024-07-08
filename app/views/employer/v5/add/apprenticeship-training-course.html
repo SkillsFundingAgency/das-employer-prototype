@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "What are the apprentice training details?" %}
+{% set pageTitle = "Apprenticeship training course" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -61,9 +61,7 @@
 
         <form id="addApprenticeship" novalidate="" method="post" action="/employer/v3/enhanced/training-costs">
           <div class="govuk-form-group">
-            <label class="govuk-label govuk-label--m" for="passport-number">
-              Apprenticeship course
-            </label>
+            
             <div id="course-name-hint" class="govuk-hint">Start typing the name of the course and select from the
               suggestions</div>
             <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
@@ -1576,36 +1574,7 @@
             </div>
           </details>
 
-          <div class="govuk-form-group">
-            <fieldset class="govuk-fieldset" role="group" aria-describedby="expiry-hint">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                Planned training start date
-              </legend>
-              <div id="expiry-hint" class="govuk-hint">
-                For example, 05 2024
-              </div>
-              <div class="govuk-date-input" id="expiry">
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="expiry-month">
-                      Month
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-2" id="expiry-month"
-                      name="expiry-month" type="text" inputmode="numeric">
-                  </div>
-                </div>
-                <div class="govuk-date-input__item">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label govuk-date-input__label" for="expiry-year">
-                      Year
-                    </label>
-                    <input class="govuk-input govuk-date-input__input govuk-input--width-4" id="expiry-year"
-                      name="expiry-year" type="text" inputmode="numeric">
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
+          
 
 
 

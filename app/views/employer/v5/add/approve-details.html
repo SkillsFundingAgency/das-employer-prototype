@@ -58,28 +58,48 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <dl class="das-definition-list das-definition-list--inline">
-          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Organisation</dt>
-          <dd class="das-definition-list__definition govuk-!-margin-bottom-4">Bambinos Day Nursery</dd>
-          <dt class="das-definition-list__title">Reference</dt>
-          <dd class="das-definition-list__definition govuk-!-margin-bottom-4">66RWLD</dd>
-          <dt class="das-definition-list__title govuk-!-margin-bottom-4">Status</dt>
-          <dd id="cohortStatus" class="das-definition-list__definition">New request</dd>
+        <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Training provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              EDUC8 TRAINING
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              N6JNLB
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">
+                  <strong class="govuk-tag govuk-tag--purple">
+                    New request
+                  </strong>
+                </td>
+              </tr>
+            </dd>
+          </div>
         </dl>
-
-        <h2 class="govuk-heading-s">Message from SOUTHAMPTON TRAINING ASSOCIATION LIMITED (THE):</h2>
-        <div class="govuk-inset-text">
-          <span>No message added.</span>
         </div>
       </div>
-    </div>
 
-    <hr class="govuk-section-break govuk-section-break--l govuk-section-break--visible">
+
+    <hr class="govuk-section-break govuk-section-break--l">
 
     <h3 class="govuk-heading-m">
-      1 x Children and Young People's Workforce: Children and Young People's Social Care, Level: 3
+      1 x Business administrator, Level: 2
     </h3>
     <table class="govuk-table das-table--responsive">
       <thead class="govuk-table__head">
@@ -95,46 +115,56 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-label="Name">
-            <span class="das-breakable">Jennifer Smith</span>
+            <span class="das-breakable">Jim Dolan</span>
           </td>
           <td class="govuk-table__cell" data-label="Date of birth">1 Jan 1995</td>
           <td class="govuk-table__cell" data-label="Training dates">
-            14 Sep 2023 to Jan 2024 </td>
+            Aug 2024 to Aug 2026 </td>
           <td class="govuk-table__cell" data-label="Price">
-            £1,500 </td>
+            £5,000 </td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
-            <a class="govuk-link edit-apprentice" href="#">
-              Edit
-              <span class="govuk-visually-hidden">Jennifer Smith's details</span>
-            </a>
-            <br>
-            {# <a class="govuk-link view-apprentice" href="#">View</a> #}
-            <br>
-            <a class="govuk-link delete-apprentice" href="#">
-              Delete <span class="govuk-visually-hidden">John Smith's details</span>
-            </a>
+            <ul class="govuk-summary-list__actions-list">
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> delete</span></a>
+              </li>
+              <li class="govuk-summary-list__actions-list-item">
+                <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> edit</span></a>
+              </li>
+            </ul>
           </td>
         </tr>
       </tbody>
     </table>
 
-    <table class="govuk-table">
+    <style>
+      .govuk-table__cell--numeric {
+        text-align: right;
+      }
+    
+      .das-table-cell-width-10 {
+        width: 10%;
+      }
+    
+      .das-table-cell-width-80 {
+        width: 25%;
+      }
+    </style>
+    
+    <table class="govuk-table das-table--responsive">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price
-            <br>(excluding VAT)
-          </th>
-          <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-10"><strong>£1,500</strong>
-          </td>
+          <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price (excluding
+            VAT)</th>
+          <td class="govuk-table__cell govuk-table__cell--numeric das-table-cell-width-10"><strong
+              style="text-align: right;">£5,000</strong></td>
           <td class="govuk-table__cell das-table-cell-width-10" aria-hidden="true"></td>
         </tr>
       </tbody>
     </table>
 
-    <p class="govuk-body">
-      <a href="/employer/{{version}}/add/select-standard" class="govuk-link add-apprentice">Add another
-        apprentice</a>
-      <a class="govuk-link das-float-right" href="#">Delete this group</a>
+    <p class="govuk-body" style="display: flex; justify-content: space-between; align-items: center;">
+      <a href="/employer/{{version}}/add/select-standard" class="govuk-link add-apprentice">Add another apprentice</a>
+      <a class="govuk-link" href="#">Delete this group</a>
     </p>
     <hr class="govuk-section-break govuk-section-break--l">
     <form id="submitCohort" novalidate="" method="post" action="/employer/{{version}}/add/action/approve-details">
@@ -154,7 +184,7 @@
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="approve-details">
-                  Leave SOUTHAMPTON TRAINING ASSOCIATION LIMITED (THE) a message (optional)
+                  Leave EDUC8 TRAINING a message (optional)
                 </label>
                 <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5"></textarea>
               </div>
@@ -163,13 +193,13 @@
               <input class="govuk-radios__input" id="radio-send" name="selection" type="radio" value="Send"
                 aria-controls="conditional-send">
               <label class="govuk-label govuk-radios__label" for="radio-send">
-                Go to homepage
+                No, request changes from training provider
               </label>
             </div>
             <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
               <div class="govuk-form-group">
                 <label class="govuk-label" for="send-details">
-                  Leave SOUTHAMPTON TRAINING ASSOCIATION LIMITED (THE) a message (optional)
+                  Leave EDUC8 TRAINING a message (optional)
                 </label>
                 <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
               </div>

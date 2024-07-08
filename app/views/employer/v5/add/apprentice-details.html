@@ -57,10 +57,11 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
     <div class="govuk-inset-text">
-      <p class="govuk-body">You’ll only be able to authorise payments for this apprentice once all the fields have been
-        completed - either by yourself or your training provider</p>
+      <h3 class="govuk-heading-s">Payments</h3>
+      <p class="govuk-body">You will only be able to authorise payments for this apprentice once all fields have been completed – either by yourself
+      or your training provider.</p>
     </div>
 
     <dl class="govuk-summary-list govuk-!-margin-bottom-9">
@@ -69,7 +70,7 @@ href: "javascript:window.history.go(-1);"
           Training provider
         </dt>
         <dd class="govuk-summary-list__value">
-          SOUTHAMPTON TRAINING ASSOCIATION LIMITED (THE)
+          EDUC8 TRAINING
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -77,7 +78,7 @@ href: "javascript:window.history.go(-1);"
           Training course
         </dt>
         <dd class="govuk-summary-list__value">
-          Children and Young Peoples Workforce: Residential Childcare, Level: 3
+          Business administration, <br>Level: 2
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state" href="/employer/{{version}}/add/select-standard">
@@ -207,14 +208,14 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="StartMonth" name="StartMonth" value="12">
+                  id="StartMonth" name="StartMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="StartYear" name="StartYear" value="2024">
+                  id="StartYear" name="StartYear" value="">
               </div>
             </div>
           </div>
@@ -225,7 +226,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset" aria-describedby="finish-date-hint" role="group">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--s">
-            Planned training finish date
+            Planned training end date
           </legend>
           <div id="finish-date-hint" class="govuk-hint">
             For example, 6 2024
@@ -277,20 +278,67 @@ href: "javascript:window.history.go(-1);"
           </div>
         </fieldset>
       </div>
+      
       {% endif %}
+
+      <div class="govuk-!-padding-bottom-5"></div>
+
+
 
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Total agreed apprenticeship price (excluding
           VAT)</label>
+
+          <div class="govuk-!-padding-bottom-5"></div>
+
+          <dl class="govuk-summary-list govuk-!-margin-bottom-5">
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Appprenticeship training course
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Business administration, Level: 2
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Funding band maximum
+              </dt>
+              <dd class="govuk-summary-list__value">
+                £5,000
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Your contribution
+              </dt>
+              <dd class="govuk-summary-list__value">
+                <p class="govuk-body">5% of the total agreed apprenticeship price if your apprentice is over the age of 22</p>
+                
+                <p class="govuk-body">No contribution cost if your apprentice is under the age of 22</p>
+              </dd>
+            </div>
+            <div class="govuk-summary-list__row">
+              <dt class="govuk-summary-list__key">
+                Total agreed apprenticeship price
+              </dt>
+              <dd class="govuk-summary-list__value">
+                Total price that is paid to the training provider
+              </dd>
+            </div>
+          </dl>
+
         <div id="price-hint" class="govuk-hint">
           Enter the price, including any end-point assessment costs, in whole pounds. For example, for £1,500 enter 1500
         </div>
-        <div class="govuk-input__wrapper govuk-!-margin-top-3">
+        <div class="govuk-input__wrapper govuk-!-margin-top-1">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
           <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
             spellcheck="false">
         </div>
       </div>
+
+      <div class="govuk-!-padding-bottom-5"></div>
 
       <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
         <div class="govuk-form-group ">
@@ -304,6 +352,8 @@ href: "javascript:window.history.go(-1);"
         </div>
       </div>
 
+      
+
       <div class="govuk-inset-text">
         <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
         <p class="govuk-body">We'll ask you to confirm the <a class="govuk-link"
@@ -312,8 +362,10 @@ href: "javascript:window.history.go(-1);"
           We'll do this before the end of the apprenticeship.</p>
       </div>
 
+      <div class="govuk-!-padding-bottom-5"></div>
 
-      <button type="submit" class="govuk-button">Save and continue</button>
+
+      <button type="submit" class="govuk-button">Continue</button>
 
     </form>
 
