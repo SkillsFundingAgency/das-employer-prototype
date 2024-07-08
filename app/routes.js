@@ -2220,3 +2220,32 @@ router.post('/employer/v5/add/action/confirm-provider-details', function (req, r
     res.redirect('/employer/v5/add/provider-permissions');
   }
 });
+
+
+
+router.post('/employer/v5/add/action/start-adding-apprentices', function (req, res) {
+  var selection = req.body['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where user will add apprentice details
+    res.redirect('/employer/v5/add/successful-applicants-location');
+  } else if (selection === "No") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v5/add/apprentice-request-sent');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v5/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v5/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v5/add/notification-sent')
+  }
+  else {
+    res.redirect('/employer/v5/add/apprentice-sent')
+  }
+})
+

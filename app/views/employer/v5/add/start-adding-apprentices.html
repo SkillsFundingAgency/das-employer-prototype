@@ -58,15 +58,17 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body-m">You can either add an apprentice’s details yourself or ask your training provider to add them for you.
+        <p class="govuk-body-m">You can either add an apprentice’s details yourself or ask your training provider to add
+          them for you.
         </p>
         <p class="govuk-body-m">You’ll need to review and approve any details your training provider adds.</p>
 
-        <p class="govuk-body-m">You can also save apprentice details you have added as a draft, and return to make changes.</p>
+        <p class="govuk-body-m">You can also save apprentice details you have added as a draft, and return to make
+          changes.</p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <form id="submitCohort" novalidate="" method="post" action="/employer/{{version}}/add/action/approve-details">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v5/add/action/start-adding-apprentices">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -74,7 +76,7 @@
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="radio-approve" name="selection" type="radio" value="Approve"
+                  <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Yes"
                     aria-controls="conditional-approve">
                   <label class="govuk-label govuk-radios__label" for="radio-approve">
                     Yes, I will add apprentice details
@@ -84,7 +86,7 @@
                   </div>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="radio-send" name="selection" type="radio" value="Send"
+                  <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="No"
                     aria-controls="conditional-send">
                   <label class="govuk-label govuk-radios__label" for="radio-send">
                     No, I would like my training provider to add apprentice details

@@ -92,8 +92,8 @@
             </dd>
           </div>
         </dl>
-        </div>
       </div>
+    </div>
 
 
     <hr class="govuk-section-break govuk-section-break--l">
@@ -128,7 +128,8 @@
                 <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> delete</span></a>
               </li>
               <li class="govuk-summary-list__actions-list-item">
-                <a class="govuk-link" href="#">Edit<span class="govuk-visually-hidden"> edit</span></a>
+                <a class="govuk-link" href="/employer/v5/add/apprentice-details">Edit<span
+                    class="govuk-visually-hidden"> edit</span></a>
               </li>
             </ul>
           </td>
@@ -140,20 +141,21 @@
       .govuk-table__cell--numeric {
         text-align: right;
       }
-    
+
       .das-table-cell-width-10 {
         width: 10%;
       }
-    
+
       .das-table-cell-width-80 {
         width: 25%;
       }
     </style>
-    
+
     <table class="govuk-table das-table--responsive">
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price (excluding
+          <th class="govuk-table__header das-table-cell-width-80" scope="row">Total apprenticeship training price
+            (excluding
             VAT)</th>
           <td class="govuk-table__cell govuk-table__cell--numeric das-table-cell-width-10"><strong
               style="text-align: right;">£5,000</strong></td>
@@ -167,7 +169,7 @@
       <a class="govuk-link" href="#">Delete this group</a>
     </p>
     <hr class="govuk-section-break govuk-section-break--l">
-    <form id="submitCohort" novalidate="" method="post" action="/employer/{{version}}/add/action/approve-details">
+    <form id="submitCohort" novalidate="" method="post" action="/employer/v5/add/action/approve-details">
       <div class="govuk-form-group  ">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
