@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Confirm training provider" %}
+{% set pageTitle = "Set permissions for EDUC8 TRAINING" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -58,71 +58,66 @@
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Training provider
-            </dt>
-            <dd class="govuk-summary-list__value">
-              EDUC8 TRAINING
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/employer/v5/add/provider-details">Change<span class="govuk-visually-hidden">
-                  date of birth</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              UK Provider Reference (UKPRN)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              10005760
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              educ8training@gmail.com
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              Telephone
-            </dt>
-            <dd class="govuk-summary-list__value">
-              01127 939103
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              Website
-            </dt>
-            <dd class="govuk-summary-list__value">
-              www.educ8training.co.uk
-            </dd>
-          </div>
-        </dl>
+        <p class="govuk-body">Select the permissions you want EDUC8 TRAINING to have. You can change these permissions at any time.</p>
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <div class="govuk-form-group">
+          <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
+            <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+              <h1 class="govuk-fieldset__heading">
+              Add apprentice records
+              </h1>
+            </legend>
+            <div id="signIn-hint" class="govuk-hint">
+              Your training provider can add apprentice records and reserve funding on your behalf.
+            </div>
+            <div class="govuk-radios" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
+                  aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="signIn">
+                  Yes, but I want final review of apprentice records
+                </label>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
+                  aria-describedby="signIn-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="signIn-2">
+                  No
+                </label>
+              </div>
+            </div>
+          </fieldset>
+        </div>
 
         <form method="post" action="/employer/v5/add/confirm-provider-details" novalidate>
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-label govuk-label--m">
-                Is this the main provider of the apprenticeship training?
+                Recruit apprentices
               </legend>
+              <div id="signIn-hint" class="govuk-hint">
+                Your training provider can advertise apprenticeships and review applications on your behalf.
+              </div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="UseThisProvider" name="use-provider" type="radio" value="Yes">
                   <label class="govuk-label govuk-radios__label" for="UseThisProvider">
-                    Yes, it's EDUCATE8 TRAINING
+                    Yes
+                  </label>
+                </div>
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="UseThisProvider" name="use-provider" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="UseThisProvider">
+                    Yes, but I want to review adverts before they're advertised
                   </label>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="UseThisProvider-no" name="use-provider" type="radio"
                     value="No">
                   <label class="govuk-label govuk-radios__label" for="UseThisProvider-no">
-                    No, I'd like to change the training provider
+                    No
                   </label>
                 </div>
               </div>
