@@ -2205,3 +2205,18 @@ router.post('/employer/v3/enhanced/employer-add-or-TP-add', function (req, res) 
     res.redirect('/employer/v3/enhanced/successful-candidates')
   }
 })
+
+
+// Employer V5 - Employer initiates journey  Routes
+
+
+
+router.post('/employer/v5/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.body['use-provider'];
+
+  if (useProvider === "No") {
+    res.redirect('/employer/v5/add/provider-details');
+  } else {
+    res.redirect('/employer/v5/add/provider-permissions');
+  }
+});

@@ -58,7 +58,8 @@
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">Select the permissions you want EDUC8 TRAINING to have. You can change these permissions at any time.</p>
+        <p class="govuk-body">Select the permissions you want EDUC8 TRAINING to have. You can change these permissions
+          at any time.</p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
@@ -66,24 +67,24 @@
           <fieldset class="govuk-fieldset" aria-describedby="signIn-hint">
             <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
               <h1 class="govuk-fieldset__heading">
-              Add apprentice records
+                Add apprentice records
               </h1>
             </legend>
-            <div id="signIn-hint" class="govuk-hint">
+            <div id="addPermission-hint" class="govuk-hint">
               Your training provider can add apprentice records and reserve funding on your behalf.
             </div>
             <div class="govuk-radios" data-module="govuk-radios">
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
-                  aria-describedby="signIn-item-hint">
-                <label class="govuk-label govuk-radios__label" for="signIn">
+                <input class="govuk-radios__input" id="addPermission" name="addPermission" type="radio" value="Yes"
+                  aria-describedby="addPermission-hint">
+                <label class="govuk-label govuk-radios__label" for="addPermission">
                   Yes, but I want final review of apprentice records
                 </label>
               </div>
               <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="signIn-2" name="signIn" type="radio" value="govuk-one-login"
-                  aria-describedby="signIn-2-item-hint">
-                <label class="govuk-label govuk-radios__label" for="signIn-2">
+                <input class="govuk-radios__input" id="addPermission-2" name="addPermission" type="radio" value="No"
+                  aria-describedby="addPermission-2-item-hint">
+                <label class="govuk-label govuk-radios__label" for="addPermission-2">
                   No
                 </label>
               </div>
@@ -91,32 +92,32 @@
           </fieldset>
         </div>
 
-        <form method="post" action="/employer/v5/add/confirm-provider-details" novalidate>
+        <form method="post" action="/employer/v5/add/start-adding-apprentices" novalidate>
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-label govuk-label--m">
                 Recruit apprentices
               </legend>
-              <div id="signIn-hint" class="govuk-hint">
+              <div id="recruit-hint" class="govuk-hint">
                 Your training provider can advertise apprenticeships and review applications on your behalf.
               </div>
               <div class="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="UseThisProvider" name="use-provider" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="UseThisProvider">
+                  <input class="govuk-radios__input" id="recruit" name="recruit" type="radio" value="Yes">
+                  <label class="govuk-label govuk-radios__label" for="recruit-yes">
                     Yes
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="UseThisProvider" name="use-provider" type="radio" value="Yes">
-                  <label class="govuk-label govuk-radios__label" for="UseThisProvider">
+                  <input class="govuk-radios__input" id="recruit-yes-but-review" name="recruit" type="radio"
+                    value="Yes-but-review">
+                  <label class="govuk-label govuk-radios__label" for="recruit-yes-but-review">
                     Yes, but I want to review adverts before they're advertised
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="UseThisProvider-no" name="use-provider" type="radio"
-                    value="No">
-                  <label class="govuk-label govuk-radios__label" for="UseThisProvider-no">
+                  <input class="govuk-radios__input" id="recruit-no" name="recruit" type="radio" value="No">
+                  <label class="govuk-label govuk-radios__label" for="recruit-no">
                     No
                   </label>
                 </div>
@@ -124,7 +125,10 @@
             </fieldset>
           </div>
 
-          <button id="continue-button" type="submit" class="govuk-button">Continue</button>
+          <a id="continue-button" role="button" draggable="false" class="govuk-button"
+            href="/employer/v5/add/start-adding-apprentices">
+            Continue
+          </a>
         </form>
       </div>
     </div>

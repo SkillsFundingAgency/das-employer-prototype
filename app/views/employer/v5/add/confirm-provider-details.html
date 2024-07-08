@@ -105,8 +105,8 @@
           </div>
         </dl>
 
-        <form method="post" action="/employer/v5/add/confirm-provider-details" novalidate>
-          <div class="govuk-form-group  ">
+        <form method="post" action="/employer/v5/add/action/confirm-provider-details" novalidate>
+          <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-label govuk-label--m">
                 Is this the main provider of the apprenticeship training?
@@ -119,8 +119,7 @@
                   </label>
                 </div>
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="UseThisProvider-no" name="use-provider" type="radio"
-                    value="No">
+                  <input class="govuk-radios__input" id="UseThisProvider-no" name="use-provider" type="radio" value="No">
                   <label class="govuk-label govuk-radios__label" for="UseThisProvider-no">
                     No, I'd like to change the training provider
                   </label>
@@ -128,9 +127,10 @@
               </div>
             </fieldset>
           </div>
-
+        
           <button id="continue-button" type="submit" class="govuk-button">Continue</button>
         </form>
+
       </div>
     </div>
   </main>
