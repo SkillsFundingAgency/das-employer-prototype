@@ -188,7 +188,8 @@
                 <label class="govuk-label" for="approve-details">
                   Leave EDUC8 TRAINING a message (optional)
                 </label>
-                <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5"></textarea>
+                <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5">
+                  {{ data['approvemessage'] or '' }}</textarea>
               </div>
             </div>
             <div class="govuk-radios__item">
@@ -203,7 +204,8 @@
                 <label class="govuk-label" for="send-details">
                   Leave EDUC8 TRAINING a message (optional)
                 </label>
-                <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
+                <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5">
+                  {{ data['sendmessage'] or '' }}</textarea>
               </div>
             </div>
           </div>

@@ -2217,7 +2217,7 @@ router.post('/employer/v5/add/action/confirm-provider-details', function (req, r
   if (useProvider === "No") {
     res.redirect('/employer/v5/add/provider-details');
   } else {
-    res.redirect('/employer/v5/add/provider-permissions');
+    res.redirect('/employer/v5/add/start-adding-apprentices');
   }
 });
 
@@ -2228,7 +2228,7 @@ router.post('/employer/v5/add/action/start-adding-apprentices', function (req, r
 
   if (selection === "Yes") {
     // Redirect to page where user will add apprentice details
-    res.redirect('/employer/v5/add/successful-applicants-location');
+    res.redirect('/employer/v5/add/successful-applicants');
   } else if (selection === "No") {
     // Redirect to page where user wants training provider to add apprentice details
     res.redirect('/employer/v5/add/apprentice-request-sent');
