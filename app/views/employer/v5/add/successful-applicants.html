@@ -65,16 +65,17 @@ Select an apprentice
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-two-thirds">
 
+          <div class="govuk-inset-text">
           <h2 class="govuk-heading-m">New apprentice</h2>
-              
-                <p class="govuk-body">If you don’t want to choose an applicant from an advert, you can add a new apprentice to
-                  continue.
-                </p>
-                <a id="continue-button" role="button" draggable="false" class="govuk-button"
-                  href="/employer/v5/add/non-levy-funding">
-                  Add new apprentice
-                </a>
-              
+          
+          <p class="govuk-body">If you don’t want to choose an applicant from an advert, you can add a new apprentice to
+            continue.
+          </p>
+
+          <p class="govuk-body">
+          <a href="/employer/v5/add/non-levy-funding" class="govuk-link">Add new apprentice</a>
+          </p>
+          </div>
            
         </div>
       </div>
@@ -94,10 +95,40 @@ Select an apprentice
           <p class="govuk-body">You can add multiple candidates from apprenticeship adverts, but one at a time.</p>
 
 
+        
+      
+          <h2 class="govuk-heading-s">Applicants (4)</h2>
+      
+      
+          <!-- search box START -->
+          <div class="moj-search">
+          
+            <form action="#" method="post">
+          
+              <div class="govuk-form-group">
+          
+                <div id="search-hint" class="govuk-hint moj-search__hint ">
+                  Search applicant name
+                </div>
+          
+                <input class="govuk-input moj-search__input " id="search" name="search" type="search"
+                  aria-describedby="search-hint">
+          
+              </div>
+          
+              <button type="submit" class="govuk-button moj-search__button " data-module="govuk-button">
+                Search
+              </button>
+          
+            </form>
+          </div>
+
+          <!-- search box END -->
+      
         </div>
       </div>
 
-      <div class="govuk-!-padding-bottom-5"></div>
+    
 
       <dl class="govuk-summary-list">
         <div class="govuk-summary-list__row">
@@ -169,6 +200,8 @@ Select an apprentice
           </dd>
         </div>
       </dl>
+
+      
 
       
       </div>
