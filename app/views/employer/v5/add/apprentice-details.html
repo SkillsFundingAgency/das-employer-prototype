@@ -116,16 +116,25 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group govuk-!-margin-bottom-0">
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
+          <div id="name-hint" class="govuk-hint">
+            This should be their legal name. You do not need to include any middle names
+          </div>
           <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
             value="{{ data['FirstName'] or ''}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
+          <div id="lastname-hint" class="govuk-hint">
+            This should be their legal name
+          </div>
           <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
             value="{{ data['LastName'] or ''}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
+          <div id="lastname-hint" class="govuk-hint">
+            This should be the apprentice’s preferred email address
+          </div>
           <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
             value="{{ data['Email'] }}">
         </div>
