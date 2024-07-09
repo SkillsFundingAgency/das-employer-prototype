@@ -61,14 +61,14 @@
         <p class="govuk-body">Before you can add your apprentice, you need to add the training provider for this
           apprenticeship.</p>
 
-        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v5/add/apprentice-details">
+        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v5/add/confirm-provider-details">
           <div class="govuk-form-group">
-        
+
             <div id="course-name-hint" class="govuk-hint">Start typing your training provider’s name or UKPRN and select
-            from the suggestions</div>
-            <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint" id="CourseCode"
-              name="CourseCode" data-module="autocomplete" data-autoselect="" data-display-menu="" data-min-length=""
-              data-show-all-values="" data-show-no-options-found="">
+              from the suggestions</div>
+            <select class="govuk-select govuk-!-width-three-quarters" aria-describedby="course-name-hint"
+              id="CourseCode" name="CourseCode" data-module="autocomplete" data-autoselect="" data-display-menu=""
+              data-min-length="" data-show-all-values="" data-show-no-options-found="">
               <option value="">Please select an option</option>
               <option value="10000020"> 5 E LTD. 10000020</option>
               <option value="10000028"> WOODSPEEN TRAINING LIMITED 10000028</option>
@@ -600,7 +600,8 @@
               <option value="10005266"> HART LEARNING &amp; DEVELOPMENT LTD 10005266</option>
               <option value="10005268"> TRANSWORLD PUBLICATIONS SERVICES LIMITED 10005268</option>
               <option value="10005277"> SKILLS TO GROUP LIMITED 10005277</option>
-              <option value="10005310"> EDUC8 TRAINING (ENGLAND) LIMITED 10005310</option>
+              <option value="10005310"> EDUC8 TRAINING 10005310</option>
+              <option value="10005310"> EDUC8 TRAINING LIMITED 10009234</option>
               <option value="10005319"> QUBE QUALIFICATIONS AND DEVELOPMENT LIMITED 10005319</option>
               <option value="10005389"> RAVENSBOURNE 10005389</option>
               <option value="10005398"> READING BOROUGH COUNCIL 10005398</option>
@@ -2921,35 +2922,35 @@
             </select>
           </div>
 
-        <form action="/employer/v5/add/confirm-provider-details" method="post" novalidate>
+          <form action="/employer/v5/add/confirm-provider-details" method="post" novalidate>
 
-          <input type="hidden" id="AccountHashedId" name="AccountHashedId" value="BB8W4N">
-          <input type="hidden" data-val="true" data-val-required="'Account Legal Entity Hashed Id' must not be empty."
-            id="AccountLegalEntityHashedId" name="AccountLegalEntityHashedId" value="36Z825">
-          <input type="hidden" id="ReservationId" name="ReservationId" value="">
-          <input type="hidden" id="CourseCode" name="CourseCode" value="">
-          <input type="hidden" id="StartMonthYear" name="StartMonthYear" value="">
-          <input type="hidden" id="TransferSenderId" name="TransferSenderId" value="">
-          <input type="hidden" id="LegalEntityName" name="LegalEntityName" value="Bambinos Day Nursery">
-          <input type="hidden" id="EncodedPledgeApplicationId" name="EncodedPledgeApplicationId" value="">
+            <input type="hidden" id="AccountHashedId" name="AccountHashedId" value="BB8W4N">
+            <input type="hidden" data-val="true" data-val-required="'Account Legal Entity Hashed Id' must not be empty."
+              id="AccountLegalEntityHashedId" name="AccountLegalEntityHashedId" value="36Z825">
+            <input type="hidden" id="ReservationId" name="ReservationId" value="">
+            <input type="hidden" id="CourseCode" name="CourseCode" value="">
+            <input type="hidden" id="StartMonthYear" name="StartMonthYear" value="">
+            <input type="hidden" id="TransferSenderId" name="TransferSenderId" value="">
+            <input type="hidden" id="LegalEntityName" name="LegalEntityName" value="Bambinos Day Nursery">
+            <input type="hidden" id="EncodedPledgeApplicationId" name="EncodedPledgeApplicationId" value="">
 
 
 
-          <details class="govuk-details">
-            <summary class="govuk-details__summary">
-              <span class="govuk-details__summary-text">
-                Help with training provider
-              </span>
-            </summary>
-            <div class="govuk-details__text">
-              If you don’t have a training provider, you can search <a href="#" class="govuk-link">Find apprenticeship
-                training</a> if you’re an employer.
-            </div>
-          </details>
-          <button id="continue-button" type="submit" class="govuk-button">
-            Continue
-          </button>
-        </form>
+            <details class="govuk-details">
+              <summary class="govuk-details__summary">
+                <span class="govuk-details__summary-text">
+                  Help with training provider
+                </span>
+              </summary>
+              <div class="govuk-details__text">
+                If you don’t have a training provider, you can search <a href="#" class="govuk-link">Find apprenticeship
+                  training</a> if you’re an employer.
+              </div>
+            </details>
+            <button id="continue-button" type="submit" class="govuk-button">
+              Continue
+            </button>
+          </form>
 
       </div>
     </div>
