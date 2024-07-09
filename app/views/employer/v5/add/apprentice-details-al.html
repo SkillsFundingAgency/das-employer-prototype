@@ -120,7 +120,7 @@ href: "javascript:window.history.go(-1);"
             This should be their legal name. You do not need to include any middle names
           </div>
           <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
-            value="{{ data['FirstName'] or ''}}">
+            value="{{ data['FirstName'] or 'Al'}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
@@ -128,7 +128,7 @@ href: "javascript:window.history.go(-1);"
             This should be their legal name
           </div>
           <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
-            value="{{ data['LastName'] or ''}}">
+            value="{{ data['LastName'] or 'Lightfoot'}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
@@ -136,7 +136,7 @@ href: "javascript:window.history.go(-1);"
             This should be the apprentice’s preferred email address
           </div>
           <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
-            value="{{ data['Email'] }}">
+            value="{{ data['Email'] or 'alanlightfoot2009@gmail.com'}}">
         </div>
         <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -171,21 +171,21 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '' }}">
+                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '19' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '' }}">
+                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '1' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '' }}">
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '2000' }}">
               </div>
             </div>
           </div>

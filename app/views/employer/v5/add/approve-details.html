@@ -99,7 +99,7 @@
     <hr class="govuk-section-break govuk-section-break--l">
 
     <h3 class="govuk-heading-m">
-      1 x Business administrator, Level: 2
+      1 x Laboratory technician, Level: 3
     </h3>
     <table class="govuk-table das-table--responsive">
       <thead class="govuk-table__head">
@@ -115,13 +115,13 @@
 
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-label="Name">
-            <span class="das-breakable">Jim Dolan</span>
+            <span class="das-breakable">{{ data['FirstName'] or 'Al' }} {{ data['LastName'] or 'Lightfoot' }}</span>
           </td>
-          <td class="govuk-table__cell" data-label="Date of birth">1 Jan 1995</td>
+          <td class="govuk-table__cell" data-label="Date of birth">19 Jan 2000</td>
           <td class="govuk-table__cell" data-label="Training dates">
-            Aug 2024 to Aug 2026 </td>
+            Aug 2024 to July 2025 </td>
           <td class="govuk-table__cell" data-label="Price">
-            £5,000 </td>
+            £21,000 </td>
           <td class="govuk-table__cell govuk-table__cell--numeric">
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item">
