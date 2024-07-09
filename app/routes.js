@@ -2212,7 +2212,7 @@ router.post('/employer/v3/enhanced/employer-add-or-TP-add', function (req, res) 
 
 
 router.post('/employer/v5/add/action/confirm-provider-details', function (req, res) {
-  var useProvider = req.body['use-provider'];
+  var useProvider = req.session.data['use-provider'];
 
   if (useProvider === "No") {
     res.redirect('/employer/v5/add/provider-details');
@@ -2224,7 +2224,7 @@ router.post('/employer/v5/add/action/confirm-provider-details', function (req, r
 
 
 router.post('/employer/v5/add/action/start-adding-apprentices', function (req, res) {
-  var selection = req.body['selection'];
+  var selection = req.session.data['selection'];
 
   if (selection === "Yes") {
     // Redirect to page where user will add apprentice details
