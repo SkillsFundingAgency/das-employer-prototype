@@ -2277,3 +2277,13 @@ router.post('/employer/v6/add/action/start-adding-apprentices', function (req, r
   }
 });
 
+router.post('/employer/v6/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v6/add/notification-sent')
+  }
+  else {
+    res.redirect('/employer/v6/add/apprentice-sent')
+  }
+})
