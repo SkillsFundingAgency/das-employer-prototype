@@ -79,7 +79,7 @@ href: "javascript:window.history.go(-1);"
           Training course
         </dt>
         <dd class="govuk-summary-list__value">
-          Laboratory technician, Level: 3
+          Business administration, <br>Level: 3
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link govuk-link--no-visited-state" href="/employer/v5/add/apprenticeship-training-course">
@@ -116,27 +116,18 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group govuk-!-margin-bottom-0">
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
-          <div id="name-hint" class="govuk-hint">
-            This should be their legal name. You do not need to include any middle names
-          </div>
           <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
-            value="{{ data['FirstName'] or 'Al'}}">
+            value="{{ data['FirstName'] or ''}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
-          <div id="lastname-hint" class="govuk-hint">
-            This should be their legal name
-          </div>
           <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
-            value="{{ data['LastName'] or 'Lightfoot'}}">
+            value="{{ data['LastName'] or ''}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
-          <div id="lastname-hint" class="govuk-hint">
-            This should be the apprentice’s preferred email address
-          </div>
           <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
-            value="{{ data['Email'] or 'alanlightfoot2009@gmail.com'}}">
+            value="{{ data['Email'] }}">
         </div>
         <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -171,21 +162,21 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '19' }}">
+                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '1' }}">
+                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '2000' }}">
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '' }}">
               </div>
             </div>
           </div>
@@ -218,14 +209,14 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="StartMonth" name="StartMonth" value="08">
+                  id="StartMonth" name="StartMonth" value="">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="StartYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="StartYear" name="StartYear" value="2024">
+                  id="StartYear" name="StartYear" value="">
               </div>
             </div>
           </div>
@@ -307,7 +298,7 @@ href: "javascript:window.history.go(-1);"
               Appprenticeship training course
             </dt>
             <dd class="govuk-summary-list__value">
-              Laboratory technician, Level: 3
+              Business administration, Level: 2
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -315,7 +306,7 @@ href: "javascript:window.history.go(-1);"
               Funding band maximum
             </dt>
             <dd class="govuk-summary-list__value">
-              £21,000
+              £5,000
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -334,15 +325,13 @@ href: "javascript:window.history.go(-1);"
               Total agreed apprenticeship price
             </dt>
             <dd class="govuk-summary-list__value">
-              Total price that is paid to the training provider
+              Total training provider receives from all funding sources
             </dd>
           </div>
         </dl>
 
         <div id="price-hint" class="govuk-hint">
-          Enter the total agreed apprenticeship price, including your contribution and any end-point assessment costs,
-          in whole
-          pounds.<br><br>For example, for £3,000 enter 3000
+          Enter the price, including any end-point assessment costs, in whole pounds. For example, for £3,000 enter 3000
         </div>
         <div class="govuk-input__wrapper govuk-!-margin-top-1">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
@@ -368,7 +357,6 @@ href: "javascript:window.history.go(-1);"
 
 
       <div class="govuk-inset-text">
-
         <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
         <p class="govuk-body">We'll ask you to confirm the <a class="govuk-link"
             href="/employer/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
