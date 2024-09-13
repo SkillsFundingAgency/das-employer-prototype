@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Apprentice details approved and sent to training provider" %}
+{% set pageTitle = "Notification sent to training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -48,24 +48,9 @@
 
 <div class="govuk-width-container">
 
-  <a href="/employer/v6/add/approve-details" class="govuk-back-link">Back</a>
+  <a href="/employer/v5/add/approve-details" class="govuk-back-link">Back</a>
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
-
-    <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
-      data-module="govuk-notification-banner">
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-      <div class="govuk-notification-banner__content">
-        <p class="govuk-notification-banner__heading">
-          You have 7 days left to send your application.
-          <a class="govuk-notification-banner__link" href="#">View application</a>.
-        </p>
-      </div>
-    </div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
@@ -79,7 +64,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Funding</dt>
-            <dd class="govuk-summary-list__value">Levy funds</dd>
+            <dd class="govuk-summary-list__value">Reserved</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Training provider</dt>
@@ -87,10 +72,15 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Message for training provider</dt>
-            <dd class="govuk-summary-list__value">{{ data['approvemessage'] or 'No message.' }}</dd>
+            <dd class="govuk-summary-list__value">{{ data['sendmessage'] or 'No message.' }}</dd>
           </div>
         </dl>
         <h2 class="govuk-heading-m">What happens next?</h2>
+
+        <p class="govuk-body">Your training provider will add the apprentice’s details, and you will receive another
+          email asking you to review these
+          details. You will need to review the apprentice’s details and approve or reject them as soon as possible.
+        </p>
 
         <p class="govuk-body">Your training provider will review these details and add additional details for each
           apprentice, including:</p>
@@ -113,7 +103,7 @@
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <p class="govuk-body"><a href="/employer/v6/add/view-details" class="govuk-link">Go back to view apprentice
+        <p class="govuk-body"><a href="/employer/v5/add/view-details" class="govuk-link">Go back to view apprentice
             records</a>
         </p>
 
