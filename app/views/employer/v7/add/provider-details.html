@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v1" %}
-{% set pageTitle = "Add training provider" %}
+{% set version = "v7" %}
+{% set pageTitle = "Select your training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v5/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/{{version}}/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -61,7 +61,7 @@
         <p class="govuk-body">Before you can add your apprentice, you need to add the training provider for this
           apprenticeship.</p>
 
-        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v5/add/confirm-provider-details">
+        <form id="addApprenticeship" novalidate="" method="post" action="/employer/v7/add/confirm-provider-details">
           <div class="govuk-form-group">
 
             <div id="course-name-hint" class="govuk-hint">Start typing your training provider’s name or UKPRN and select
@@ -2928,11 +2928,11 @@
               </span>
             </summary>
             <div class="govuk-details__text">
-              If you don’t have a training provider, you can search <p class="govuk-body">
-                <a href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link"
-                  rel="noreferrer noopener" target="_blank">Find
-                  apprenticeship
-                  training (opens in new tab)</a> if you’re an employer.
+              If you don’t have a training provider, you can search <a
+                href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link"
+                rel="noreferrer noopener" target="_blank">Find
+                apprenticeship
+                training (opens in new tab)</a> if you’re an employer.
               </p>
             </div>
           </details>

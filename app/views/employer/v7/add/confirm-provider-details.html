@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v1" %}
+{% set version = "v7" %}
 {% set pageTitle = "Confirm training provider" %}
 
 {% block pageTitle %}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v5/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/{{version}}/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -67,7 +67,7 @@
               EDUC8 TRAINING
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="/employer/v5/add/provider-details">Change<span class="govuk-visually-hidden">
+              <a class="govuk-link" href="/employer/v7/add/provider-details">Change<span class="govuk-visually-hidden">
                   date of birth</span></a>
             </dd>
           </div>
@@ -81,31 +81,15 @@
           </div>
           <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
             <dt class="govuk-summary-list__key">
-              Email
-            </dt>
-            <dd class="govuk-summary-list__value">
-              educ8training@gmail.com
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
-              Telephone
-            </dt>
-            <dd class="govuk-summary-list__value">
-              01127 939103
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row govuk-summary-list__row--no-actions">
-            <dt class="govuk-summary-list__key">
               Website
             </dt>
             <dd class="govuk-summary-list__value">
-              www.educ8training.co.uk
+              www.educ8training.co.uk <br>(opens in a new tab)
             </dd>
           </div>
         </dl>
 
-        <form method="post" action="/employer/v5/add/action/confirm-provider-details" novalidate>
+        <form method="post" action="/employer/v7/add/action/confirm-provider-details" novalidate>
           <div class="govuk-form-group">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-label govuk-label--m">

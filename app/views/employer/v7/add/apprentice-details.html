@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v1" %}
+{% set version = "v7" %}
 {% set pageTitle = "Add apprentice details" %}
 
 {% block pageTitle %}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v5/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/{{version}}/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -58,61 +58,12 @@ href: "javascript:window.history.go(-1);"
   <div class="govuk-grid-column-two-thirds">
 
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-    <div class="govuk-inset-text">
-      <h3 class="govuk-heading-s">Payments</h3>
-      <p class="govuk-body">You will only be able to authorise payments for this apprentice once all fields have been
-        completed – either by yourself
-        or your training provider.</p>
-    </div>
 
-    <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Training provider
-        </dt>
-        <dd class="govuk-summary-list__value">
-          EDUC8 TRAINING
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Training course
-        </dt>
-        <dd class="govuk-summary-list__value">
-          Laboratory technician, Level: 3
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="/employer/v5/add/apprenticeship-training-course">
-            Change<span class="govuk-visually-hidden"> training course</span>
-          </a>
-        </dd>
-      </div>
-      {# <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Delivery model
-        </dt>
-        <dd class="govuk-summary-list__value">
-          {{ data['delivery-method'] or 'Regular' }}
-        </dd>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link govuk-link--no-visited-state" href="#">
-            Change<span class="govuk-visually-hidden"> delivery model</span>
-          </a>
-        </dd>
-      </div> #}
-    </dl>
 
-    <form id="addApprenticeship" action="/employer/v5/add/approve-details" method="post">
-      <h2 class="govuk-heading-l">
+    <form id="addApprenticeship" action="/employer/v7/add/approve-details" method="post">
+      <h2 class="govuk-heading-m">
         Apprentice personal details
       </h2>
-      <div class="govuk-form-group ">
-        <label class="govuk-label govuk-!-font-weight-bold" for="Uln">Unique learner number</label>
-        <span id="uln-hint" class="govuk-hint">
-          <span id="uln">This will be added by your training provider.</span>
-          <input id="Uln" name="Uln" type="hidden" value="">
-        </span>
-      </div>
       <div class="govuk-form-group govuk-!-margin-bottom-0">
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="FirstName">First name</label>
@@ -145,8 +96,8 @@ href: "javascript:window.history.go(-1);"
             </span>
           </summary>
           <div class="govuk-details__text">
-            <p class="govuk-body">Your apprentice will receive an email alert inviting them to the My apprenticeship
-              service. On the service, your apprentice will be able to:</p>
+            <p class="govuk-body">Your apprentice will get an email inviting them to the My apprenticeship service.
+              Using the service they can:</p>
             <ul class="govuk-list govuk-list--bullet">
               <li>review and confirm their apprenticeship details</li>
               <li>understand the roles and responsibilities of an apprentice, an employer and a training provider</li>
@@ -192,7 +143,7 @@ href: "javascript:window.history.go(-1);"
         </fieldset>
       </div>
 
-      <h2 class="govuk-heading-l govuk-!-margin-top-9">
+      <h2 class="govuk-heading-m govuk-!-margin-top-9">
         Apprentice training details
       </h2>
       {# <dl class="govuk-summary-list govuk-summary-list--no-border">
@@ -291,56 +242,15 @@ href: "javascript:window.history.go(-1);"
 
       {% endif %}
 
-      <div class="govuk-!-padding-bottom-5"></div>
-
 
 
       <div class="govuk-form-group ">
         <label class="govuk-label govuk-!-font-weight-bold" for="Cost">Total agreed apprenticeship price (excluding
           VAT)</label>
 
-        <div class="govuk-!-padding-bottom-5"></div>
-
-        <dl class="govuk-summary-list govuk-!-margin-bottom-5">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Appprenticeship training course
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Laboratory technician, Level: 3
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Funding band maximum
-            </dt>
-            <dd class="govuk-summary-list__value">
-              £21,000
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Your contribution
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <p class="govuk-body">5% of the total agreed apprenticeship price if your apprentice is over the age of 22
-              </p>
-
-              <p class="govuk-body">0% of the total agreed apprenticeship price if the apprentice is 22 or under</p>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Total agreed apprenticeship price
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Total price that is paid to the training provider
-            </dd>
-          </div>
-        </dl>
-
         <div id="price-hint" class="govuk-hint">
-          Enter the total agreed apprenticeship price, which includes your contribution and any end-point assessment costs,
+          Enter the total agreed apprenticeship price, which includes your contribution and any end-point assessment
+          costs,
           in whole
           pounds.<br><br>For example, for £3,000 enter 3000
         </div>
@@ -350,8 +260,6 @@ href: "javascript:window.history.go(-1);"
             spellcheck="false">
         </div>
       </div>
-
-      <div class="govuk-!-padding-bottom-5"></div>
 
       <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
         <div class="govuk-form-group ">
@@ -365,25 +273,37 @@ href: "javascript:window.history.go(-1);"
         </div>
       </div>
 
+      <p class="govuk-body"><strong>By saving these details you will automatically reserve funds for this
+          apprentice.</strong></p>
 
 
-      <div class="govuk-inset-text">
-
-        <p class="govuk-body govuk-!-font-weight-bold">End-point assessments</p>
-        <p class="govuk-body">We'll ask you to confirm the <a class="govuk-link"
-            href="/employer/{{version}}/https://www.gov.uk/government/publications/using-the-register-of-apprentice-assessment-organisations"
-            target="_blank" title="Opens in a new window">apprentice assessment organisation</a> for this apprentice.
-          We'll do this before the end of the apprenticeship.</p>
-      </div>
-
-      <div class="govuk-!-padding-bottom-5"></div>
+      <button type="submit" class="govuk-button">Save and continue</button>
 
 
-      <button type="submit" class="govuk-button">Continue</button>
 
     </form>
 
   </div>
+
+  <div class="govuk-grid-column-one-third">
+    <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
+      aria-label="set-up-apprenticeship">
+      <div class="govuk-cookie-banner__message govuk-width-container">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <h2 class="govuk-cookie-banner__heading govuk-heading-s">Summary:</h2>
+            <ul class="govuk-list govuk-list">
+              <li>Training provider: <br><strong>EDUC8 TRAINING</strong></li>
+              <li>Course: <br><strong>Business administration, <br>Level: 2</strong><br><a
+                  href="/employer/v7/add/apprenticeship-training-course" class="govuk-link">Change</a></li>
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 </div>
 
 {% endblock %}
