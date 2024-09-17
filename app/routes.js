@@ -2354,3 +2354,25 @@ router.post('/employer/v7/add/action/confirm-reservation', function (req, res) {
     res.redirect('/employer/v7/add/action/confirm-reservation'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v8/reservation/action/apprenticeship-training', function (req, res) {
+  var apprenticeCourse = req.session.data['apprentice-course']
+
+  if (apprenticeCourse == "yes") {
+    res.redirect('/employer/v8/reservation/apprenticeship-training-start')
+  }
+  else if (apprenticeCourse == "no") {
+    res.redirect('/employer/v8/reservation/FAT-page')
+  }
+})
+
+router.post('/employer/v8/reservation/action/apprenticeship-funding-avilable', function (req, res) {
+  var reserveFunding = req.session.data['reserveFunding']
+
+  if (reserveFunding == "no") {
+    res.redirect('/employer/v8/reservation/index')
+  }
+  else {
+    res.redirect('/employer/v8/reservation/apprenticeship-funding-successful')
+  }
+})
