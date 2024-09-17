@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v1" %}
-{% set pageTitle = "Add apprentice request sent to training provider" %}
+{% set pageTitle = "Funding reserved and add apprentice request sent to training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -48,8 +48,6 @@
 
 <div class="govuk-width-container">
 
-  <a href="/employer/v5/add/start-adding-apprentices" class="govuk-back-link">Back</a>
-
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
@@ -63,19 +61,19 @@
             <dd class="govuk-summary-list__value">JJXYRN</dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Training provider</dt>
-            <dd class="govuk-summary-list__value">EDUC8 TRAINING</dd>
+            <dt class="govuk-summary-list__key">Funding</dt>
+            <dd class="govuk-summary-list__value">New reservation</dd>
           </div>
           <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">Funding</dt>
-            <dd class="govuk-summary-list__value">To be added by training provider</dd>
+            <dt class="govuk-summary-list__key">Training provider</dt>
+            <dd class="govuk-summary-list__value">EDUC8 TRAINING</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Message for training provider</dt>
             <dd class="govuk-summary-list__value">{{ data['sendmessage'] or 'No message.' }}</dd>
           </div>
         </dl>
-        <h2 class="govuk-heading-m">What happens next?</h2>
+        <h2 class="govuk-heading-m">What happens next</h2>
 
         <p class="govuk-body">Your training provider will add the apprentice’s details, and you will receive another
           email asking you to review these
