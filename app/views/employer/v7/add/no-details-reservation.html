@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v7" %}
-{% set pageTitle = "You need to reserve funding for your apprentice" %}
+{% set pageTitle = "You cannot send a request to your training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -61,59 +61,20 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-
-        <p class="govuk-body-m">You can reserve funding from the government up to 3 months in advance or within one
-          month of the start date.
+        <p class="govuk-body-m">As a minimum, you need to know the apprenticeship training course and the planned start
+          date.
         </p>
 
-        <p class="govuk-body-m">This will cover 100% of your apprenticeship training and assessment costs if the
-          apprentice is 22 or under, or 95% if
-          over 22 (up to the funding band maximum).</p>
+        <p class="govuk-body-m">If you don’t know which apprenticeship training course is suitable for your apprentice,
+          you can search <a href="https://www.gov.uk/employers-find-apprenticeship-training" class="govuk-link">Find
+            apprenticeship training</a>. 
+        </p>
+
+        <p class="govuk-body-m">If you don’t know the planned start date for your apprentice you should speak to your
+          training provider.</p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/reserve-funding-info">
-          <div class="govuk-form-group  ">
-            <fieldset class="govuk-fieldset">
-              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">Do you want to reserve funding?</h3>
-              </legend>
-              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Yes"
-                    aria-controls="conditional-approve">
-                  <label class="govuk-label govuk-radios__label" for="radio-approve">
-                    Yes, I want to reserve funding
-                  </label>
-                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    I know the apprenticeship training course and planned start date
-                  </div>
-                </div>
-                <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="No"
-                    aria-controls="conditional-send">
-                  <label class="govuk-label govuk-radios__label" for="radio-send">
-                    No, I don’t want to reserve funding
-                  </label>
-                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    I don’t know the apprenticeship training course or planned start date
-                  </div>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="send-details">
-                      Leave EDUC8 TRAINING a message (optional)
-                    </label>
-                    <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5"></textarea>
-                  </div>
-                </div>
-              </div>
-            </fieldset>
-          </div>
-
-          <button type="submit" id="continue-button" class="govuk-button">Continue</button>
-
-        </form>
       </div>
       <div class="govuk-grid-column-one-third">
         <div class="govuk-cookie-banner govuk-!-padding-left-3" data-nosnippet role="region"

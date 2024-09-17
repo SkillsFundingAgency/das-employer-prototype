@@ -2313,3 +2313,44 @@ router.post('/employer/v7/add/action/start-adding-apprentices', function (req, r
     res.redirect('/employer/v7/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v7/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v7/add/apprentice-sent')
+  }
+  else {
+    res.redirect('/employer/v7/add/apprentice-sent')
+  }
+})
+
+router.post('/employer/v7/add/action/reserve-funding-info', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where user will add reservation
+    res.redirect('/employer/v7/add/reservation-details');
+  } else if (selection === "No") {
+    // Redirect to page where user doesn't know the details for a reservation
+    res.redirect('/employer/v7/add/no-details-reservation');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v7/add/action/reserve-funding-info'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v7/add/action/confirm-reservation', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where request to training provider is sent
+    res.redirect('/employer/v7/add/apprentice-request-sent');
+  } else if (selection === "No") {
+    // Redirect to page where user doesn't know the details for a reservation
+    res.redirect('/employer/v7/add/reservation-details-2');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v7/add/action/confirm-reservation'); // Redirect to form page again if necessary
+  }
+});

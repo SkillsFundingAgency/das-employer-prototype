@@ -58,6 +58,21 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
+        <div class="govuk-notification-banner" role="region" aria-labelledby="govuk-notification-banner-title"
+          data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Important
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              Funds have been reserved for this apprentice
+            </h3>
+            <p class="govuk-body">Continue to send apprentice details to your training provider.</p>
+          </div>
+        </div>
+
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
         <dl class="govuk-summary-list govuk-!-margin-bottom-5">
@@ -92,11 +107,19 @@
             </dd>
           </div>
         </dl>
+
+        <div class="govuk-inset-text">
+          <h3 class="govuk-heading-s">Payments</h3>
+          <p class="govuk-body">You will only be able to authorise payments for this apprentice once all fields have
+            been
+            completed, either by yourself
+            or your training provider.</p>
+        </div>
+
       </div>
     </div>
 
-
-    <hr class="govuk-section-break govuk-section-break--l">
+    <hr class="govuk-section-break govuk-section-break--m">
 
     <h3 class="govuk-heading-m">
       1 x Laboratory technician, Level: 3
@@ -176,12 +199,14 @@
 
 
         <hr class="govuk-section-break govuk-section-break--l">
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v5/add/action/approve-details">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/approve-details">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+                <h3 class="govuk-fieldset__heading">Submit apprentice details to your training provider?</h3>
               </legend>
+              <p class="govuk-body">Your training provider will review these details, and approve them or make changes
+                for you to review.</p>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="radio-approve" name="selection" type="radio" value="Approve"
@@ -203,27 +228,19 @@
                   <input class="govuk-radios__input" id="radio-send" name="selection" type="radio" value="Send"
                     aria-controls="conditional-send">
                   <label class="govuk-label govuk-radios__label" for="radio-send">
-                    No, request changes from training provider
+                    No, save as a draft and I'll come back to it later
                   </label>
-                </div>
-                <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
-                  <div class="govuk-form-group">
-                    <label class="govuk-label" for="send-details">
-                      Leave EDUC8 TRAINING a message (optional)
-                    </label>
-                    <textarea class="govuk-textarea" id="send-details" name="sendmessage" rows="5">
-                  {{ data['sendmessage'] or '' }}</textarea>
-                  </div>
                 </div>
               </div>
             </fieldset>
           </div>
 
-          <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+          <p class="govuk-body"><strong>Once details are submitted, you’ll need to contact your training provider to
+              make any changes immediately.</strong></p>
 
-          <p>
-            <a href="#" class="govuk-link">Save and exit</a>
-          </p>
+          <button type="submit" id="continue-button" class="govuk-button">Accept and submit</button>
+
+
 
   </main>
 

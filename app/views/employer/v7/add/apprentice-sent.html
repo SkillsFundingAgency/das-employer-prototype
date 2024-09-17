@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v1" %}
-{% set pageTitle = "Apprentice details approved and sent to training provider" %}
+{% set version = "v7" %}
+{% set pageTitle = "Funding reserved and apprentice details sent to training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -13,7 +13,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/employer/v5/add/index">Home</a>
+        <a class="das-navigation__link" href="/employer/{{version}}/add/index">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
@@ -64,7 +64,7 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Funding</dt>
-            <dd class="govuk-summary-list__value">Reserved</dd>
+            <dd class="govuk-summary-list__value">New reservation</dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">Training provider</dt>
@@ -80,27 +80,26 @@
         <p class="govuk-body">Your training provider will review these details and add additional details for each
           apprentice, including:</p>
         <ul class="govuk-list govuk-list--bullet">
-          <li>any information you have not provided</li>
           <li>a Unique Learner Number (ULN)</li>
-          <li>recognition of prior learning details if applicable</li>
+          <li>recognition of prior learning details (if applicable)</li>
         </ul>
 
 
-        <p class="govuk-body">You will need to review any details added by your training provider. When all the
-          apprentice details have been approved
-          by both you and your training provider, you can view apprentices in <a href="#" class="govuk-link">Manage your
-            apprentices</a>.
+        <p class="govuk-body">If you need to review any details added by your training provider, you can review and
+          approve this in <a href="#" class="govuk-link">Apprentice requests</a>.
+        </p>
+
+        <p class="govuk-body">When all the apprentice details have been approved by both you and your training provider,
+          you can view apprentices in <a href="#" class="govuk-link">Manage your apprentices</a>.
         </p>
 
         <p class="govuk-body">You can view and update your <a href="#" class="govuk-link">training provider
             permissions</a> in your account.
         </p>
 
-        <div class="govuk-!-padding-bottom-5"></div>
+        <div class="govuk-!-padding-bottom-1"></div>
 
-        <p class="govuk-body"><a href="/employer/v5/add/view-details" class="govuk-link">Go back to view apprentice
-            records</a>
-        </p>
+
 
         <div class="govuk-!-padding-bottom-1"></div>
 
