@@ -2318,7 +2318,7 @@ router.post('/employer/v7/add/action/approve-details', function (req, res) {
   var selection = req.session.data['selection']
 
   if (selection == "Send") {
-    res.redirect('/employer/v7/add/apprentice-sent')
+    res.redirect('/employer/v7/add/action/index')
   }
   else {
     res.redirect('/employer/v7/add/apprentice-sent')
@@ -2354,6 +2354,8 @@ router.post('/employer/v7/add/action/confirm-reservation', function (req, res) {
     res.redirect('/employer/v7/add/action/confirm-reservation'); // Redirect to form page again if necessary
   }
 });
+
+// Employer V8 - Reservation journey
 
 router.post('/employer/v8/reservation/action/apprenticeship-training', function (req, res) {
   var apprenticeCourse = req.session.data['apprentice-course']
@@ -2404,3 +2406,14 @@ router.post('/employer/v8/add/action/start-adding-apprentices', function (req, r
     res.redirect('/employer/v8/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v8/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v8/add/index')
+  }
+  else {
+    res.redirect('/employer/v8/add/apprentice-sent')
+  }
+})
