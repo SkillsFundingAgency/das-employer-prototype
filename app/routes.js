@@ -2376,3 +2376,31 @@ router.post('/employer/v8/reservation/action/apprenticeship-funding-avilable', f
     res.redirect('/employer/v8/reservation/apprenticeship-funding-successful')
   }
 })
+
+
+// Employer V8 - Employer initiates journey  Routes
+
+router.post('/employer/v8/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider'];
+
+  if (useProvider === "No") {
+    res.redirect('/employer/v8/add/provider-details');
+  } else {
+    res.redirect('/employer/v8/add/start-adding-apprentices');
+  }
+});
+
+router.post('/employer/v8/add/action/start-adding-apprentices', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where user will add apprentice details
+    res.redirect('/employer/v8/add/apprentice-details');
+  } else if (selection === "No") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v8/add/apprentice-request-sent');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v8/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
+  }
+});
