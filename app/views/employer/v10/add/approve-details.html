@@ -196,7 +196,7 @@
 
 
         <hr class="govuk-section-break govuk-section-break--l">
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v9/add/action/approve-details">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v10/add/action/approve-details">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -215,10 +215,10 @@
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="approve-details">
-                      Leave EDUC8 TRAINING a message (optional)
+                      Leave EDUC8 TRAINING a message (required)
                     </label>
                     <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5">
-                  {{ data['approvemessage'] or '' }}</textarea>
+                  {{ data['approvemessage'] or 'No message.' }}</textarea>
                   </div>
                 </div>
                 <div class="govuk-radios__item">

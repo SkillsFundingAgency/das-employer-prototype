@@ -2483,3 +2483,14 @@ router.post('/employer/v10/add/action/start-adding-apprentices', function (req, 
     res.redirect('/employer/v10/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v10/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v10/add/index')
+  }
+  else {
+    res.redirect('/employer/v10/add/apprentice-sent')
+  }
+})
