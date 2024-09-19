@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v7" %}
-{% set pageTitle = "Apprentice details" %}
+{% set pageTitle = "Confirm funding for your training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -61,42 +61,66 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-        <p class="govuk-body-m">You can either add an apprentice’s details yourself or ask your training provider to add
-          them for you.
-        </p>
-        <p class="govuk-body-m">You’ll need to review and approve any details your training provider adds.</p>
 
-        <p class="govuk-body-m">You can also save apprentice details you have added as a draft, and return to make
-          changes.</p>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              New reservation
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reservation type</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Apprenticeship training course
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Business administration, Level: 3
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  September 2024
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v9/add/action/start-adding-apprentices">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/confirm-reservation">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">Do you want to add apprentice details?</h3>
+                <h3 class="govuk-fieldset__heading">Have you entered all funding?</h3>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Yes"
                     aria-controls="conditional-approve">
                   <label class="govuk-label govuk-radios__label" for="radio-approve">
-                    Yes, I will add apprentice details
+                    Yes, I've entered all the funding
                   </label>
                   <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    My training provider will review and approve these details
+                    Send my request to my training provider
                   </div>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="No"
                     aria-controls="conditional-send">
                   <label class="govuk-label govuk-radios__label" for="radio-send">
-                    No, I would like my training provider to add apprentice details
+                    No, I want to add funding for another apprentice
                   </label>
-                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    I will need to review and approve these details
-                  </div>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-send">
                   <div class="govuk-form-group">
@@ -114,17 +138,16 @@
 
         </form>
       </div>
-
       <div class="govuk-grid-column-one-third">
-        <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
+        <div class="govuk-cookie-banner govuk-!-padding-left-3" data-nosnippet role="region"
           aria-label="set-up-apprenticeship">
           <div class="govuk-cookie-banner__message govuk-width-container">
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-full">
-                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Apprenticeship details</h2>
+              <div class="govuk-grid-column-two-thirds">
+                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Summary:</h2>
                 <ul class="govuk-list govuk-list">
-                  <li>Funding: <br><strong>Current funds</strong></li>
-                  <li>Training provider: <br><strong>EDUC8 TRAINING</strong></li>
+                  <li>Training provider: <strong>EDUC8 TRAINING</strong></li>
+                  <li></li>
                   <li></li>
                 </ul>
               </div>
@@ -132,7 +155,6 @@
           </div>
         </div>
       </div>
-
     </div>
   </main>
 </div>
