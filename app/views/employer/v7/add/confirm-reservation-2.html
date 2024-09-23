@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v7" %}
-{% set pageTitle = "You need to reserve funding for your apprentice" %}
+{% set pageTitle = "Confirm funding for your training provider" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -62,43 +62,104 @@
       <div class="govuk-grid-column-two-thirds">
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body-m">You can reserve funding from the government up to 3 months in advance or within one
-          month of the start date.
-        </p>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              New reservation 1
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> reservation type</span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Apprenticeship training course
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Business administration, Level: 3
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  October 2024
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
 
-        <p class="govuk-body-m">This will cover 100% of your apprenticeship training and assessment costs if the
-          apprentice is 22 or under, or 95% if
-          over 22 (up to the funding band maximum).</p>
+        <div class="govuk-summary-card">
+          <div class="govuk-summary-card__title-wrapper">
+            <h2 class="govuk-summary-card__title">
+              New reservation 2
+            </h2>
+            <ul class="govuk-summary-card__actions">
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="#">Delete<span class="govuk-visually-hidden"> of University of Gloucestershire
+                    (University of Gloucestershire)</span></a>
+              </li>
+              <li class="govuk-summary-card__action">
+                <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"></span></a>
+              </li>
+            </ul>
+          </div>
+          <div class="govuk-summary-card__content">
+            <dl class="govuk-summary-list">
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Apprenticeship training course
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  Business administration, Level: 3
+                </dd>
+              </div>
+              <div class="govuk-summary-list__row">
+                <dt class="govuk-summary-list__key">
+                  Start date
+                </dt>
+                <dd class="govuk-summary-list__value">
+                  October 2024
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/reserve-funding-info">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/confirm-reservation">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">Do you want to reserve funding?</h3>
+                <h3 class="govuk-fieldset__heading">Have you entered all funding?</h3>
               </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Yes"
                     aria-controls="conditional-approve">
                   <label class="govuk-label govuk-radios__label" for="radio-approve">
-                    Yes, I want to reserve funding
+                    Yes, I've entered all the funding
                   </label>
                   <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    I know the apprenticeship training course and planned start date
+                    Send my request to my training provider
                   </div>
                 </div>
                 <div class="govuk-radios__item">
                   <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="No"
                     aria-controls="conditional-send">
                   <label class="govuk-label govuk-radios__label" for="radio-send">
-                    No, I don’t want to reserve funding
+                    No, I want to add funding for another apprentice
                   </label>
-                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                    I don’t know the apprenticeship training course or planned start date
-                  </div>
                 </div>
+
               </div>
             </fieldset>
           </div>
