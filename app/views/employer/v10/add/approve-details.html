@@ -74,7 +74,7 @@
               Funding type
             </dt>
             <dd class="govuk-summary-list__value">
-              Reservation
+              Transfer from connection
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -136,12 +136,17 @@
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
           <td class="govuk-table__cell" data-label="Apprentice">
-            Jim Dolan
+            {{ data['FirstName'] or 'Jim'}} {{ data['LastName'] or 'Dolan'}}
           </td>
-          <td class="govuk-table__cell" data-label="Date of birth">19 Jan 2000</td>
-          <td class="govuk-table__cell" data-label="Start date">Oct 2024</td>
-          <td class="govuk-table__cell" data-label="Planned end dates">Oct 2026</td>
-          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,000</td>
+          <td class="govuk-table__cell" data-label="Date of birth">{{ data['BirthDay'] or '19' }}/{{ data['BirthMonth']
+            or 'Oct' }}/{{ data['BirthYear'] or '2000' }}</td>
+          <td class="govuk-table__cell" data-label="Start date">{{ data['StartMonth'] or 'Oct' }}/{{ data['StartYear']
+            or '2024' }}</td>
+          <td class="govuk-table__cell" data-label="Planned end dates">{{ data['EndMonth'] or 'Oct' }}/{{
+            data['EndYear']
+            or '2026' }}</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£{{ data['Cost'] or '5,000' }}
+          </td>
           <td class="govuk-table__cell">
             <strong class="govuk-tag govuk-tag--light-blue">
               Ready to share
@@ -151,7 +156,7 @@
             <ul class="govuk-summary-list__actions-list">
               <li class="govuk-summary-list__actions-list-item">
                 <a class="govuk-link govuk-link--no-visited-state"
-                  href="/employer/v7/add/apprentice-details">Change<span class="govuk-visually-hidden">
+                  href="/employer/v10/add/apprentice-details">Change<span class="govuk-visually-hidden">
                     Jim Dolan</span></a>
               </li>
               <li class="govuk-summary-list__actions-list-item">
