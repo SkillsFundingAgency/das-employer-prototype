@@ -75,7 +75,7 @@
               Apprenticeship training start date
             </dt>
             <dd class="govuk-summary-list__value">
-              Nov 2024 - Dec 2024
+              {{data['start-month'] or 'Nov 2024 - Dec 2024'}}
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#">
@@ -88,7 +88,7 @@
               Apprenticeship training course
             </dt>
             <dd class="govuk-summary-list__value">
-              {{data['apprenticeship-course'] or 'Children and Young Peoples Workforce: Residential Childcare, Level:
+              {{data['apprenticeship-course'] or 'Business administrator, Level:
               3'}}
             </dd>
             <dd class="govuk-summary-list__actions">
