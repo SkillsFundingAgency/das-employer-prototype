@@ -140,9 +140,9 @@
           </td>
           <td class="govuk-table__cell" data-label="Date of birth">{{ data['BirthDay'] or '19' }}/{{ data['BirthMonth']
             or 'Oct' }}/{{ data['BirthYear'] or '2000' }}</td>
-          <td class="govuk-table__cell" data-label="Start date">{{ data['StartMonth'] or 'Oct' }}/{{ data['StartYear']
+          <td class="govuk-table__cell" data-label="Start date">{{ data['StartMonth'] or '10' }}/{{ data['StartYear']
             or '2024' }}</td>
-          <td class="govuk-table__cell" data-label="Planned end dates">{{ data['EndMonth'] or 'Oct' }}/{{
+          <td class="govuk-table__cell" data-label="Planned end dates">{{ data['EndMonth'] or '10' }}/{{
             data['EndYear']
             or '2026' }}</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£{{ data['Cost'] or '5,000' }}
@@ -177,7 +177,7 @@
             (excluding
             VAT)
           </th>
-          <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£4,000</strong>
+          <td class="govuk-table__cell govuk-table__header--numeric das-table-cell-width-20"><strong>£{{ data['Cost'] or '5,000' }}</strong>
           </td>
         </tr>
       </tbody>
