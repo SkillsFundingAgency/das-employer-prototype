@@ -65,7 +65,7 @@
         <div class="govuk-summary-card">
           <div class="govuk-summary-card__title-wrapper">
             <h2 class="govuk-summary-card__title">
-              New reservation
+              Reservation for apprentice 1
             </h2>
             <ul class="govuk-summary-card__actions">
               <li class="govuk-summary-card__action">
@@ -80,7 +80,7 @@
                   Apprenticeship training course
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Business administration, Level: 3
+                  Business administrator, Level: 3
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -88,17 +88,20 @@
                   Start date
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  September 2024
+                  November 2024
                 </dd>
               </div>
             </dl>
           </div>
         </div>
 
+        <p class="govuk-body-m">If you're adding multiple apprentices, you can additional funding for your training
+          provider.</p>
+
 
         <div class="govuk-!-padding-bottom-5"></div>
 
-        <form id="submitCohort" novalidate="" method="post" action="/employer/v7/add/action/confirm-reservation">
+        <form id="submitCohort" novalidate="" method="post" action="/employer/v8/add/action/confirm-funding">
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -138,23 +141,23 @@
 
         </form>
       </div>
+
       <div class="govuk-grid-column-one-third">
-        <div class="govuk-cookie-banner govuk-!-padding-left-3" data-nosnippet role="region"
+        <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
           aria-label="set-up-apprenticeship">
           <div class="govuk-cookie-banner__message govuk-width-container">
             <div class="govuk-grid-row">
-              <div class="govuk-grid-column-two-thirds">
-                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Summary:</h2>
+              <div class="govuk-grid-column-full">
+                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Apprenticeship details</h2>
                 <ul class="govuk-list govuk-list">
-                  <li>Training provider: <strong>EDUC8 TRAINING</strong></li>
-                  <li></li>
-                  <li></li>
+                  <li>Training provider: <br><strong>EDUC8 TRAINING</strong></li>
                 </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
+
     </div>
   </main>
 </div>

@@ -2400,7 +2400,7 @@ router.post('/employer/v8/add/action/start-adding-apprentices', function (req, r
     res.redirect('/employer/v8/add/apprentice-details');
   } else if (selection === "No") {
     // Redirect to page where user wants training provider to add apprentice details
-    res.redirect('/employer/v8/add/apprentice-request-sent');
+    res.redirect('/employer/v8/add/confirm-funding');
   } else {
     // Handle any other scenario if needed
     res.redirect('/employer/v8/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
@@ -2417,6 +2417,21 @@ router.post('/employer/v8/add/action/approve-details', function (req, res) {
     res.redirect('/employer/v8/add/apprentice-sent')
   }
 })
+
+router.post('/employer/v8/add/action/confirm-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where request to training provider is sent
+    res.redirect('/employer/v8/add/apprentice-request-sent');
+  } else if (selection === "No") {
+    // Redirect to page where user doesn't know the details for a reservation
+    res.redirect('/employer/v8/add/funding-existing');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v7/add/action/confirm-reservation'); // Redirect to form page again if necessary
+  }
+});
 
 
 // Employer V9 - Employer initiates journey  Routes
