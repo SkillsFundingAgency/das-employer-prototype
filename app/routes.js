@@ -2310,7 +2310,7 @@ router.post('/employer/v7/add/action/start-adding-apprentices', function (req, r
     res.redirect('/employer/v7/add/reserve-funding-info');
   } else {
     // Handle any other scenario if needed
-    res.redirect('/employer/v7/add/action/start-adding-apprentices'); // Redirect to form page again if necessary
+    res.redirect('/employer/v7/add/start-adding-apprentices'); // Redirect to form page again if necessary
   }
 });
 
@@ -2318,7 +2318,7 @@ router.post('/employer/v7/add/action/approve-details', function (req, res) {
   var selection = req.session.data['selection']
 
   if (selection == "Send") {
-    res.redirect('/employer/v7/add/action/index')
+    res.redirect('/employer/v7/add/index')
   }
   else {
     res.redirect('/employer/v7/add/apprentice-sent')
