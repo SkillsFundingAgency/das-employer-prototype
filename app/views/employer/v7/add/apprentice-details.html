@@ -255,33 +255,31 @@ href: "javascript:window.history.go(-1);"
         <div class="govuk-input__wrapper govuk-!-margin-top-1">
           <div class="govuk-input__prefix" aria-hidden="true">£</div>
           <input class="govuk-input govuk-input--width-5" type="text" inputmode="numeric" id="Cost" name="Cost"
-            spellcheck="false" value="{{ data['Cost'] or '' }}>
+            spellcheck="false">
         </div>
       </div>
 
-      <div class=" govuk-character-count" data-module="character-count" data-maxlength="20">
-          <div class="govuk-form-group ">
-            <label class="govuk-label govuk-!-font-weight-bold" for="Reference">Reference (optional)</label>
-            <div id="reference-hint" class="govuk-hint">
-              Add a reference, such as employee number or location - this won't be seen by the training provider
-            </div>
-
-            <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text"
-              id="Reference" name="Reference" value="">
+      <div class="govuk-character-count" data-module="character-count" data-maxlength="20">
+        <div class="govuk-form-group ">
+          <label class="govuk-label govuk-!-font-weight-bold" for="Reference">Reference (optional)</label>
+          <div id="reference-hint" class="govuk-hint">
+            Add a reference, such as employee number or location - this won't be seen by the training provider
           </div>
+
+          <input maxlength="20" class="govuk-input govuk-!-width-three-quarters js-character-count" type="text"
+            id="Reference" name="Reference" value="">
         </div>
-
-        <p class="govuk-body"><strong>By saving these details you will automatically reserve funds for this
-            apprentice.</strong></p>
+      </div>
 
 
-        <button type="submit" class="govuk-button">Save and continue</button>
+      <button type="submit" class="govuk-button">Save and continue</button>
 
 
 
     </form>
 
   </div>
+
 
   <div class="govuk-grid-column-one-third">
     <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
@@ -301,6 +299,8 @@ href: "javascript:window.history.go(-1);"
       </div>
     </div>
   </div>
+
+
 </div>
 </div>
 
