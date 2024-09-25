@@ -80,7 +80,8 @@
                   Apprenticeship training course
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  Business administrator, Level: 3
+                  {{data['apprenticeship-course'] or 'Business administrator, Level:
+                  3'}}
                 </dd>
               </div>
               <div class="govuk-summary-list__row">
@@ -88,7 +89,7 @@
                   Start date
                 </dt>
                 <dd class="govuk-summary-list__value">
-                  November 2024
+                  Between {{data['start-month'] or 'Nov 2024 - Dec 2024'}}
                 </dd>
               </div>
             </dl>

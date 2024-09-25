@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v7" %}
-{% set pageTitle = "Approve apprentice details" %}
+{% set pageTitle = "Check apprentice details" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -86,10 +86,10 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Funding type
+              Funding
             </dt>
             <dd class="govuk-summary-list__value">
-              Funds reserved
+              Reserved funds
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -213,7 +213,7 @@
           <div class="govuk-form-group  ">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-                <h3 class="govuk-fieldset__heading">Send apprentice details to your training provider?</h3>
+                <h3 class="govuk-fieldset__heading">Submit apprentice details to your training provider?</h3>
               </legend>
               <p class="govuk-body">Your training provider will review these details, and approve them or make changes
                 for you to review.</p>
@@ -222,12 +222,14 @@
                   <input class="govuk-radios__input" id="radio-approve" name="selection" type="radio" value="Approve"
                     aria-controls="conditional-approve">
                   <label class="govuk-label govuk-radios__label" for="radio-approve">
-                    Yes, approve and notify training provider
+                    Yes, send to employer to review or add details
                   </label>
                 </div>
                 <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve">
                   <div class="govuk-form-group">
                     <label class="govuk-label" for="approve-details">
+                      <p class="govuk-body">If no changes are made by your training provider, these details will be
+                        approved</p>
                       Leave EDUC8 TRAINING a message (optional)
                     </label>
                     <textarea class="govuk-textarea" id="approve-details" name="approvemessage" rows="5">
@@ -248,7 +250,7 @@
           <p class="govuk-body"><strong>Once details are submitted, you’ll need to contact your training provider to
               make any changes immediately.</strong></p>
 
-          <button type="submit" id="continue-button" class="govuk-button">Confirm and send</button>
+          <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
 
 
 
