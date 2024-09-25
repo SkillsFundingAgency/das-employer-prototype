@@ -59,8 +59,8 @@
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">You can choose existing funding that you have previously applied for or reserve new
-          funding.</p>
+        <p class="govuk-body">You can choose to use your existing levy funds or use other funding that you have
+          previously applied for.</p>
 
         <div class="govuk-!-padding-bottom-5"></div>
 
@@ -78,8 +78,11 @@
                 <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
                   aria-describedby="signIn-item-hint">
                 <label class="govuk-label govuk-radios__label" for="signIn">
-                  Current funds
+                  Levy transfer funds
                 </label>
+                <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
+                  You have 3 levy transfers
+                </div>
               </div>
               <div class="govuk-radios__item">
                 <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
@@ -90,6 +93,13 @@
                 <div id="signIn-item-hint" class="govuk-hint govuk-radios__hint">
                   You have 1 transfer connection
                 </div>
+              </div>
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="signIn" name="signIn" type="radio" value="government-gateway"
+                  aria-describedby="signIn-item-hint">
+                <label class="govuk-label govuk-radios__label" for="signIn">
+                  Current funds
+                </label>
               </div>
             </div>
           </fieldset>
@@ -104,6 +114,25 @@
         </div>
 
 
+      </div>
+
+      <div class="govuk-grid-column-one-third">
+        <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
+          aria-label="set-up-apprenticeship">
+          <div class="govuk-cookie-banner__message govuk-width-container">
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-full">
+                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Your progress</h2>
+                <ul class="govuk-list govuk-list">
+                  <li>Step 1: Funding <br><strong></strong></li>
+                  <li>Step 2: Training provider <br><strong></strong></li>
+                  <li>Step 3: Course</li>
+                  <li>Step 4: Apprentice details</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
       <div class="govuk-grid-column-one-third">
