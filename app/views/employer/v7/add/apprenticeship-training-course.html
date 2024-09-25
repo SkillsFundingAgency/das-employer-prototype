@@ -57,7 +57,10 @@
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+        <h1 class="govuk-heading-l">
+          <span class="govuk-caption-l">Step 2 of 3</span>
+          {{ pageTitle }}
+        </h1>
 
         <form id="addApprenticeship" novalidate="" method="post" action="/employer/v7/add/apprentice-details">
           <div class="govuk-form-group">
@@ -764,22 +767,6 @@
           <button type="submit" id="continue-button" class="govuk-button">Continue</button>
         </form>
 
-      </div>
-
-      <div class="govuk-grid-column-one-third">
-        <div class="govuk-cookie-banner govuk-!-padding-left-3 govuk-!-padding-right-3" data-nosnippet role="region"
-          aria-label="set-up-apprenticeship">
-          <div class="govuk-cookie-banner__message govuk-width-container">
-            <div class="govuk-grid-row">
-              <div class="govuk-grid-column-full">
-                <h2 class="govuk-cookie-banner__heading govuk-heading-s">Apprenticeship details</h2>
-                <ul class="govuk-list govuk-list">
-                  <li>Training provider: <br><strong>EDUC8 TRAINING</strong></li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
       </div>
 
 

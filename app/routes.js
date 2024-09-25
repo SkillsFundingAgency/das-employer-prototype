@@ -2307,7 +2307,7 @@ router.post('/employer/v7/add/action/start-adding-apprentices', function (req, r
     res.redirect('/employer/v7/add/apprenticeship-training-course');
   } else if (selection === "No") {
     // Redirect to page where user wants training provider to add apprentice details
-    res.redirect('/employer/v7/add/reserve-funding-info');
+    res.redirect('/employer/v7/add/apprentice-request-sent');
   } else {
     // Handle any other scenario if needed
     res.redirect('/employer/v7/add/start-adding-apprentices'); // Redirect to form page again if necessary
