@@ -2509,3 +2509,63 @@ router.post('/employer/v10/add/action/approve-details', function (req, res) {
     res.redirect('/employer/v10/add/apprentice-sent')
   }
 })
+
+
+// Employer V11 - Employer initiates journey  Routes
+
+router.post('/employer/v11/add/action/funding-existing', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+    // Redirect to page where user will add apprentice details
+    res.redirect('/employer/v11/add/select-transfer-connection');
+  } else if (selection === "Levy") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v11/add/select-levy-transfer');
+  } else if (selection === "Reserved") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v11/add/select-reservation');
+  } else if (selection === "New") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v11/add/provider-details-2');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v11/add/action/funding-existing'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v11/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider'];
+
+  if (useProvider === "No") {
+    res.redirect('/employer/v11/add/provider-details');
+  } else {
+    res.redirect('/employer/v11/add/start-adding-apprentices');
+  }
+});
+
+router.post('/employer/v11/add/action/start-adding-apprentices', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Yes") {
+    // Redirect to page where user will add apprentice details
+    res.redirect('/employer/v11/add/apprenticeship-training-course');
+  } else if (selection === "No") {
+    // Redirect to page where user wants training provider to add apprentice details
+    res.redirect('/employer/v11/add/apprentice-request-sent');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v11/add/action/apprenticeship-training-course'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v11/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v11/add/index')
+  }
+  else {
+    res.redirect('/employer/v11/add/apprentice-sent')
+  }
+})
