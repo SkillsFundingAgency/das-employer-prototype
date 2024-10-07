@@ -56,7 +56,7 @@ Funding
   <main class="govuk-main-wrapper">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-l">Select reservation</h1>
+        <h1 class="govuk-heading-l">Select a connection to transfer from</h1>
       </div>
     </div>
 
@@ -65,14 +65,15 @@ Funding
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
-        <p class="govuk-body">You can add multiple reservations, but you’ll need to do this one at a time. If you want
-          to amend these, you can <a href="#" class="govuk-link">manage your reservations (opens in a new
-            tab)</a>.</p>
-        </p>
+        <div class="govuk-!-padding-bottom-4"></div>
 
-        <p class="govuk-hint">If your apprentice’s course or level has changed since you reserved funds, you
-          can update this when you add
-          apprentice details.</p>
+        <p class="govuk-body">You can choose existing transfer connections. If you want to amend these, you can <a
+            href="#" class="govuk-link">manage your transfer connections (opens in a new
+            tab)</a>.</p>
+
+        <p class="govuk-body">You can only use one transfer from a connection per application, but you can add multiple
+          apprenticeships to that
+          transfer.</p>
 
 
       </div>
@@ -83,62 +84,107 @@ Funding
     <dl class="govuk-summary-list">
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
-          Apprenticeship course
+          Company name
         </dt>
-        <dd class="govuk-summary-list__key">
-          Start date
-        </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> reservation</span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">Business administrator, Level: 2
+        <dt class="govuk-summary-list__value">
+          Bristol City Council
         </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Between {{data['start-month'] or 'Nov 2024 - Dec 2024'}}</p>
-        </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="/employer/v8/add/provider-details">Select<span class="govuk-visually-hidden">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
                   select reservation</span></a>
             </li>
           </ul>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">{{data['apprenticeship-course'] or 'Business administrator, Level:
-          3'}}
+        <dt class="govuk-summary-list__value">
+          Bristol City Council
         </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Between {{data['start-month'] or 'Nov 2024 - Dec 2024'}}</p>
-        </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="/employer/v8/add/provider-details">Select<span class="govuk-visually-hidden">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
                   select reservation</span></a>
             </li>
           </ul>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">Data analyst, Level: 3
+        <dt class="govuk-summary-list__value">
+          Department for Education
         </dt>
-        <dd class="govuk-summary-list__value">
-          <p class="govuk-body">Between {{data['start-month'] or 'Nov 2024 - Dec 2024'}}</p>
-        </dd>
         <dd class="govuk-summary-list__actions">
           <ul class="govuk-summary-list__actions-list">
             <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="/employer/v8/add/provider-details">Select<span class="govuk-visually-hidden">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
+                  select reservation</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Inspireworks Trust
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
+                  select reservation</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Moon River Advisory
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
+                  select reservation</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Rochester City Council
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
+                  select reservation</span></a>
+            </li>
+          </ul>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__value">
+          Wolverhampton City Council
+        </dt>
+        <dd class="govuk-summary-list__actions">
+          <ul class="govuk-summary-list__actions-list">
+            <li class="govuk-summary-list__actions-list-item">
+              <a class="govuk-link" href="/employer/v10/add/provider-details">Select<span class="govuk-visually-hidden">
                   select reservation</span></a>
             </li>
           </ul>
         </dd>
       </div>
     </dl>
+
+
+</div>
 
 
 </div>
