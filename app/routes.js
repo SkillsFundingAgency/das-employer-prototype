@@ -2606,7 +2606,7 @@ router.post('/employer/v12/add/action/start-adding-apprentices', function (req, 
 
   if (selection === "Yes") {
 
-    res.redirect('/employer/v12/add/apprenticeship-training-course');
+    res.redirect('/employer/v12/add/successful-applicants');
   } else if (selection === "No") {
 
     res.redirect('/employer/v12/add/apprentice-request-sent');
@@ -2615,3 +2615,14 @@ router.post('/employer/v12/add/action/start-adding-apprentices', function (req, 
     res.redirect('/employer/v11/add/action/apprenticeship-training-course'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v12/add/action/approve-details', function (req, res) {
+  var selection = req.session.data['selection']
+
+  if (selection == "Send") {
+    res.redirect('/employer/v12/add/index')
+  }
+  else {
+    res.redirect('/employer/v12/add/apprentice-sent')
+  }
+})

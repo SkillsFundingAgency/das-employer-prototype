@@ -60,37 +60,15 @@ Select an apprentice
       </div>
     </div>
 
-
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-two-thirds">
-
-        <div class="govuk-inset-text">
-          <h2 class="govuk-heading-m">New apprentice</h2>
-
-          <p class="govuk-body">If you don’t want to choose an applicant from an advert, you can add a new apprentice to
-            continue.
-          </p>
-
-          <p class="govuk-body">
-            <a href="/employer/v5/add/non-levy-funding" class="govuk-link">Add new apprentice</a>
-          </p>
-        </div>
-
-      </div>
-    </div>
-
     <div class="govuk-!-padding-bottom-5"></div>
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
 
 
-        <h2 class="govuk-heading-m">Successful applicants (4)</h2>
+        <h2 class="govuk-heading-m">Apprentice list (50)</h2>
 
         <p class="govuk-body">You can select a successful applicant from your adverts.</p>
-
-        <p class="govuk-body">Details will be pre-filled using the information provided by the applicant.</p>
 
         <p class="govuk-body">You can add multiple applicants from apprenticeship adverts, but one at a time.</p>
 
@@ -118,86 +96,248 @@ Select an apprentice
           </form>
         </div>
 
+
+
         <!-- search box END -->
 
       </div>
     </div>
+    <div class="govuk-!-padding-bottom-8"></div>
+
+    <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
+      <form method="get" action="/N7BRPJ/apprentices">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full">
+            <div class="das-pane govuk-!-margin-bottom-3">
+              <div class="govuk-grid-row">
+                <div class="govuk-grid-column-one-third">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="selectedProvider">Vacancy name</label>
+                    <select class="govuk-select govuk-!-width-full" id="selectedProvider" name="selectedProvider">
+                      <option label="All" aria-label="All training providers" value="">Business administrator</option>
+                      <option label="Business admin apprenticeship">
+                        Business admin apprenticeship
+                      </option>
+                      <option label="	Data analyst apprenticeship">
+                        Data analyst apprenticeship
+                      </option>
+                    </select>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="selectedCourse">Status</label>
+                    <select class="govuk-select govuk-!-width-full" id="selectedCourse" name="selectedCourse">
+                      <option label="All" aria-label="All courses" value="">All</option>
+                      <option label="Successful">Successful
+                      </option>
+                      <option label="In review" value="In review">In review</option>
+                      <option label="Rejected" value="Rejected">Rejected</option>
+                      <!-- other options here -->
+                    </select>
+                  </div>
+                </div>
+                <div class="govuk-grid-column-one-third">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="selectedEndDate">Applications made within</label>
+                    <select class="govuk-select govuk-!-width-full" id="selectedEndDate" name="selectedEndDate">
+                      <option label="All" aria-label="All end dates" value="">All</option>
+                      <option label="4 weeks">4 weeks</option>
+                      <option label="8 weeks">8 weeks</option>
+                      <option label="10 weeks">10 weeks</option>
+                      <option label="12 weeks">12 weeks</option>
+                      <!-- other options here -->
+                    </select>
+                  </div>
+                </div>
+              </div>
+              <!-- other form elements here -->
+              <button class="govuk-button govuk-!-margin-0" type="submit">Apply filters</button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </div>
+
+
+
+
 
     <div class="govuk-!-padding-bottom-5"></div>
 
+    <div class="govuk-tabs" data-module="govuk-tabs">
+      <h2 class="govuk-tabs__title">
+        Contents
+      </h2>
+      <ul class="govuk-tabs__list">
+        <li class="govuk-tabs__list-item govuk-tabs__list-item--selected">
+          <a class="govuk-tabs__tab" href="#past-day">
+            Applications 2024/2025 (7)
+          </a>
+        </li>
+        <li class="govuk-tabs__list-item">
+          <a class="govuk-tabs__tab" href="#past-week">
+            Archive applications (43)
+          </a>
+        </li>
+      </ul>
+      <div class="govuk-tabs__panel" id="past-day">
+        <h2 class="govuk-heading-m">Apprentice list</h2>
+
+        <table class="govuk-table responsive-table" data-module="das-table-sort">
+          <thead class="govuk-table__header">
+            <tr class="govuk-table__row" role="row">
+
+              <th scope="col" class="govuk-table__header das-table--double-arrows" aria-sort="none">
+                <a href="#" class="govuk-link das-table__sort" aria-sort="none">Name </a>
+              </th>
+              <th scope="col" class="govuk-table__header das-table--double-arrows" aria-sort="none">
+                <a href="#" class="govuk-link das-table__sort" aria-sort="none">Application ID</a>
+              </th>
+              <th scope="col" class="govuk-table__header das-table--double-arrows" aria-sort="none">
+                <a href="#" class="govuk-link das-table__sort" aria-sort="none">Date of birth</a>
+              </th>
+              <th scope="col" class="govuk-table__header das-table--double-arrows" aria-sort="none">
+                <a href="#" class="govuk-link das-table__sort" aria-sort="none">Vacancy name</a>
+              </th>
+              <th scope="col" class="govuk-table__header das-table--double-arrows" aria-sort="none">
+                <a href="#" class="govuk-link das-table__sort" aria-sort="none">Status</a>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="/employer/v12/add/apprentice-details" class="govuk-link govuk-link--no-visited-state">Jim
+                  Dolan</a>
+                <input type="hidden" name="678CFR0-name" value="Keith Stewart">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">678CFR0</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">19/1/2000</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Business admin apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Successful
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="#" class="govuk-link govuk-link--no-visited-state">Ellen
+                  Collins</a>
+                <input type="hidden" name="6H0IL55-name" value="Ellen Collins">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">6H0IL55</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">7/8/2001</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Business admin apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Successful
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="" class="govuk-link govuk-link--no-visited-state">Cynthia Perez</a>
+                <input type="hidden" name="FL13JK0-name" value="Cynthia Perez">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">FL13JK0</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">28/8/2003</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Business admin apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Successful
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="" class="govuk-link govuk-link--no-visited-state">Susie Noble</a>
+                <input type="hidden" name="LL13J9H-name" value="Susie Noble">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">LL13J9H</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">9/3/2005</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Business admin apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--blue">
+                  In review
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="" class="govuk-link govuk-link--no-visited-state">Neena Patel</a>
+                <input type="hidden" name="78BH067-name" value="Neena Patel">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">78BH067</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">17/1/2004</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Business admin apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--blue">
+                  In review
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="" class="govuk-link govuk-link--no-visited-state">Ben Jones</a>
+                <input type="hidden" name="78BH067-name" value="Neena Patel">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">78BH067</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">1/8/2003</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Data analyst apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--green">
+                  Successful
+                </strong>
+              </td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" role="gridcell" data-label="Name">
+                <a href="" class="govuk-link govuk-link--no-visited-state">Amy McKennie</a>
+                <input type="hidden" name="78BH067-name" value="Neena Patel">
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Application ID">78BH067</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date of birth">20/11/2002</td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Date applied">Data analyst apprenticeship
+              </td>
+              <td class="govuk-table__cell" role="gridcell" data-label="Status">
+                <strong class="govuk-tag govuk-tag--blue">
+                  In review
+                </strong>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+
+      </div>
+    </div>
+    </form>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
 
 
-    <dl class="govuk-summary-list">
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__key">
-          Apprentice
-        </dt>
-        <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
-        </dd>
+        <h2 class="govuk-heading-m">New apprentice</h2>
+
+        <p class="govuk-body">If you don’t want to choose an applicant from an advert, you can add a new apprentice to
+          continue.
+        </p>
+
+        <p class="govuk-body">
+          <a href="#" class="govuk-link">Add new apprentice</a>
+        </p>
+
       </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
-          Al Lightfoot
-        </dt>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> remove apprentice</span></a>
-            </li>
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="/employer/v5/add/non-levy-funding-al">Select<span
-                  class="govuk-visually-hidden"> select apprentice</span></a>
-            </li>
-          </ul>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
-          Bernard McKelly
-        </dt>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> remove apprentice</span></a>
-            </li>
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Select<span class="govuk-visually-hidden"> select apprentice</span></a>
-            </li>
-          </ul>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
-          Nirmal Kaur
-        </dt>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> remove apprentice</span></a>
-            </li>
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Select<span class="govuk-visually-hidden"> select apprentice</span></a>
-            </li>
-          </ul>
-        </dd>
-      </div>
-      <div class="govuk-summary-list__row">
-        <dt class="govuk-summary-list__value">
-          Zita Smythe
-        </dt>
-        <dd class="govuk-summary-list__actions">
-          <ul class="govuk-summary-list__actions-list">
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Remove<span class="govuk-visually-hidden"> remove apprentice</span></a>
-            </li>
-            <li class="govuk-summary-list__actions-list-item">
-              <a class="govuk-link" href="#">Select<span class="govuk-visually-hidden"> select apprentice</span></a>
-            </li>
-          </ul>
-        </dd>
-      </div>
-    </dl>
+    </div>
+</div>
 
 
 

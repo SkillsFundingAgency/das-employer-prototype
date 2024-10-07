@@ -60,7 +60,7 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
 
-    <form id="addApprenticeship" action="/employer/v10/add/approve-details" method="post">
+    <form id="addApprenticeship" action="/employer/v12/add/approve-details" method="post">
       <h2 class="govuk-heading-m">
         Apprentice personal details
       </h2>
@@ -71,7 +71,7 @@ href: "javascript:window.history.go(-1);"
             This should be their legal name. You do not need to include any middle names
           </div>
           <input class="govuk-input" type="text" id="FirstName" name="FirstName" autocomplete="given-name"
-            value="{{ data['FirstName'] or ''}}">
+            value="{{ data['FirstName'] or 'Jim'}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="LastName">Last name</label>
@@ -79,7 +79,7 @@ href: "javascript:window.history.go(-1);"
             This should be their legal name
           </div>
           <input class="govuk-input" type="text" id="LastName" name="LastName" autocomplete="family-name"
-            value="{{ data['LastName'] or ''}}">
+            value="{{ data['LastName'] or 'Dolan'}}">
         </div>
         <div class="govuk-form-group ">
           <label class="govuk-label govuk-label--s" for="Email">Email address</label>
@@ -87,7 +87,7 @@ href: "javascript:window.history.go(-1);"
             This should be the apprentice’s preferred email address
           </div>
           <input class="govuk-input" type="text" id="Email" name="Email" autocomplete="email"
-            value="{{ data['Email'] }}">
+            value="{{ data['Email'] or 'jim@mail.com'}}">
         </div>
         <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
           <summary class="govuk-details__summary">
@@ -122,21 +122,21 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthDay">Day</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '' }}">
+                  id="BirthDay" name="BirthDay" value="{{ data['BirthDay'] or '5' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthMonth">Month</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-2" type="text" inputmode="numeric"
-                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '' }}">
+                  id="BirthMonth" name="BirthMonth" value="{{ data['BirthMonth'] or '8' }}">
               </div>
             </div>
             <div class="govuk-date-input__item">
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '' }}">
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '2001' }}">
               </div>
             </div>
           </div>
@@ -289,11 +289,10 @@ href: "javascript:window.history.go(-1);"
           <div class="govuk-grid-column-full">
             <h2 class="govuk-cookie-banner__heading govuk-heading-s">Your progress</h2>
             <ul class="govuk-list govuk-list">
-              <li>Step 1: Funding <br><strong>Transfer from Inspireworks Trust</strong></li>
-              <li>Step 2: Training provider <br><strong>EDUC8 TRAINING</strong></li>
-              <li>Step 3: Course <br><strong>Business administrator, <br>Level:
-                  3</strong><br><a href="/employer/v10/add/apprenticeship-training-course" class="govuk-link">Change</a>
-              </li>
+              <li>Step 1: Funding <br><strong>Levy transfer from Coventry City Council</strong></li>
+              <li>Step 2: Training provider<br><strong>EDUC8 TRAINING</strong></li>
+              <li>Step 3: Course<br><strong>Business administrator, Level: 3</strong><br><a
+                  href="/employer/v12/add/apprenticeship-training-course" class="govuk-link">Change</a></li>
               <li>Step 4: Apprentice details</li>
             </ul>
           </div>
@@ -301,7 +300,6 @@ href: "javascript:window.history.go(-1);"
       </div>
     </div>
   </div>
-</div>
 
 
 </div>
