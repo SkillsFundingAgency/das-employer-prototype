@@ -136,7 +136,7 @@ href: "javascript:window.history.go(-1);"
               <div class="govuk-form-group">
                 <label class="govuk-label govuk-date-input__label" for="BirthYear">Year</label>
                 <input class="govuk-input govuk-date-input__input govuk-input--width-4" type="text" inputmode="numeric"
-                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '2001' }}">
+                  id="BirthYear" name="BirthYear" value="{{ data['BirthYear'] or '2005' }}">
               </div>
             </div>
           </div>
@@ -280,6 +280,9 @@ href: "javascript:window.history.go(-1);"
             <div class="govuk-summary-list__row">
               <dt class="govuk-summary-list__key">
                 Total agreed apprenticeship price (optional)
+                <div id="price-hint" class="govuk-hint">
+                  For example, for £10,000 enter 10000
+                </div>
               </dt>
               <dd class="govuk-summary-list__value">
                 <div class="govuk-input__wrapper govuk-!-margin-top-1">
