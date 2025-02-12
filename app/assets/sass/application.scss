@@ -5,6 +5,8 @@
 @import "components/_card"; // icon font styles
 @import "components/_das-card"; // icon font styles
 @import "components/_tabs_boxes"; // icon font styles
+
+@import "components/_gov-header"; // icon font styles
 // Add extra styles here
 
 
@@ -35,7 +37,6 @@
   line-height: 1.25;
   color: #fff;
   padding: 5px 0;
-  margin-top: -10px;
 }
 
 @media print {
@@ -729,4 +730,18 @@ dl.das-inline-def-list dd {
 
 .das-section-break--heavy-grey {
   border-top: 5px solid #b1b4b6;
+}
+
+@media (min-width: 40.0625em) {
+  .das-table--condensed .govuk-table__body tr th,
+  .das-table--condensed .govuk-table__body tr td,
+  .das-table--condensed .govuk-table__header,
+  .das-table--condensed .govuk-table__cell {
+    padding: 7px 15px 7px 0;
+    font-size: 15px;
+  }
+}
+.das-table--condensed .govuk-link, .das-table--condensed .das-table__sort {
+  margin-bottom: 5px;
+  display: inline-block;
 }

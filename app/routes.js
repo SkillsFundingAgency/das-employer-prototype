@@ -8,6 +8,7 @@ const router = govukPrototypeKit.requests.setupRouter()
 
 // Add your routes here
 
+require('./routes/training-provider/v2.js');
 
 //SAVED STANDARDS
 
