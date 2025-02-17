@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v2" %}
+{% set version = "v3" %}
 {% set pageTitle = "Choose an employer" %}
 
 {% block header %}
@@ -56,7 +56,7 @@ href: "javascript:window.history.go(-1);"
 
     <form action="#" method="post">
       <div class="govuk-form-group">
-        <label class="govuk-label" for="searchTerm">Search employer name or account name</label>
+        <label class="govuk-label" for="searchTerm">Search by employer name, account name or agreement ID</label>
         <div id="employer-container"></div>
       </div>
 
@@ -86,9 +86,9 @@ href: "javascript:window.history.go(-1);"
       </thead>
       <tbody class="govuk-table__body">
         <tr class="govuk-table__row">
-          <td class="govuk-table__cell" data-label="Employer">LAND ROVER EXPERIENCE LIMITED</td>
-          <td class="govuk-table__cell" data-label="Account name">LAND ROVER EXPERIENCE LIMITED</td>
-          <td class="govuk-table__cell" data-label="Agreement ID">3D8KEM</td>
+          <td class="govuk-table__cell" data-label="Employer">BAMBINOS DAY NURSERY LIMITED</td>
+          <td class="govuk-table__cell" data-label="Account name">BAMBINOS DAY NURSERY LIMITED</td>
+          <td class="govuk-table__cell" data-label="Agreement ID">754ZJE</td>
           <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
             <a href="/training-provider/{{version}}/approvals/add/confirm-employer"
               class="govuk-link govuk-link--no-visited-state">
@@ -724,7 +724,7 @@ href: "javascript:window.history.go(-1);"
 <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
 <script>
   const employers = [
-    "LAND ROVER EXPERIENCE LIMITED",
+    "BAMBINOS DAY NURSERY LIMITED",
     "TENNIS ANGELS LTD",
     "COVENTRY LTD",
     "SHAHZAD & CO LTD",

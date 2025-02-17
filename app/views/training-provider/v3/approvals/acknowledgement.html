@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v2" %}
+{% set version = "v3" %}
 {% if data['approve-details'] == "yes" %}
 {% set pageTitle = "Cohort approved and sent to employer" %}
 {% else %}
@@ -63,16 +63,16 @@ href: "javascript:window.history.go(-1);"
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Cohort reference</dt>
-        <dd class="govuk-summary-list__value">WRDJPX</dd>
+        <dd class="govuk-summary-list__value">N6JNL8</dd>
       </div>
 
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Sent to </dt>
-        <dd class="govuk-summary-list__value">LAND ROVER EXPERIENCE LIMITED</dd>
+        <dd class="govuk-summary-list__value">BAMBINOS DAY NURSEY LIMITED</dd>
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">On behalf of</dt>
-        <dd class="govuk-summary-list__value">SOUTHAMPTON ENGINEERING TRAINING ASSOCIATION LIMITED (THE)</dd>
+        <dd class="govuk-summary-list__value">YOUR TRAINING PROVIDER NAME</dd>
       </div>
 
       <div class="govuk-summary-list__row">
@@ -86,15 +86,19 @@ href: "javascript:window.history.go(-1);"
     <h2 class="govuk-heading-m">What happens next</h2>
     {% if data['approve-details'] == "yes" %}
     <p class="govuk-body">
-      The employer will review the cohort and either approve it or contact you with an update.
+      The employer has 2 weeks to review and approve the cohort. If they don’t do this within 2 weeks, the request will
+      be
+      sent back to you.
     </p>
     {% else %}
     <p class="govuk-body">
-      The updated cohort will appear in the employer’s account for them to review.
+      The employer has 2 weeks to review and approve the cohort. If they don’t do this within 2 weeks, the request will
+      be
+      sent back to you.
     </p>
     {% endif %}
     <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/approvals/apprentice-requests"> Go
-        to apprentice
+        to Apprentice
         requests</a></a>
 
     <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/">Go to homepage</a></p>

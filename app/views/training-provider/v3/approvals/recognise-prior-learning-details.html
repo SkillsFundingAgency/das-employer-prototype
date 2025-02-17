@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v2" %}
+{% set version = "v3" %}
 {% set pageTitle = "Recognition of prior learning (RPL) details" %}
 
 {% block header %}
@@ -51,7 +51,7 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="/training-provider/{{version}}/approvals/add/select-option">
+    <form class="form" method="post" action="/training-provider/{{version}}/approvals/approve-details">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">

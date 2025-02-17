@@ -2572,7 +2572,7 @@ router.post('/employer/v11/add/action/approve-details', function (req, res) {
 })
 
 
-// Employer V12 - Employer initiates journey  Routes
+// TP V3 - 1st proto for ILR Routes
 
 router.post('/employer/v12/add/action/funding-existing', function (req, res) {
   var selection = req.session.data['selection'];
@@ -2625,5 +2625,65 @@ router.post('/employer/v12/add/action/approve-details', function (req, res) {
   }
   else {
     res.redirect('/employer/v12/add/apprentice-sent')
+  }
+});
+
+
+router.post('/training-provider/v3/approvals/add/action/entry-method', function (req, res) {
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v3/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v3/approvals/add/select-journey')
+  }
+  else if (addApprenticeDetails == "ILR") {
+    res.redirect('/training-provider/v3/approvals/add/select-journey')
+  }
+});
+
+router.post('/training-provider/v3/approvals/add/action/select-journey', function (req, res) {
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v3/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v3/approvals/add/select-employer')
+  }
+})
+
+router.post('/training-provider/v3/approvals/add/action/confirm-employer', function (req, res) {
+  var confirmEmployer = req.session.data['confirm-employer']
+
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v3/approvals/add/select-apprentice-ILR')
+  }
+  else {
+    res.redirect('/training-provider/v3/approvals/add/select-employer')
+  }
+})
+
+router.post('/training-provider/v3/approvals/action/recognise-prior-learning', function (req, res) {
+  var priorLearning = req.session.data['prior-learning']
+  var pilotProgram = req.session.data['pilot-program']
+  var deliveryMethod = req.session.data['delivery-method']
+
+  if (priorLearning == "yes") {
+    res.redirect('/training-provider/v3/approvals/recognise-prior-learning-details')
+  }
+  else if (priorLearning == "no") {
+    if (pilotProgram == "No") {
+      res.redirect('/training-provider/v3/approvals/approve-details')
+    }
+    else {
+      if (deliveryMethod == "portable-flexi-job") {
+        res.redirect('/training-provider/v3/approvals/approve-details')
+      }
+      else {
+        res.redirect('/training-provider/v3/approvals/approve-details')
+      }
+    }
   }
 })
