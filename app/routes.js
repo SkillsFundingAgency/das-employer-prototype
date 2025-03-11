@@ -2687,3 +2687,27 @@ router.post('/training-provider/v3/approvals/action/recognise-prior-learning', f
     }
   }
 })
+
+// TP V4 - 2nd iteration proto for ILR
+
+router.post('/training-provider/v4/approvals/add/action/select-journey', function (req, res) {
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v4/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v4/approvals/add/select-employer')
+  }
+})
+
+router.post('/training-provider/v4/approvals/add/action/confirm-employer', function (req, res) {
+  var confirmEmployer = req.session.data['confirm-employer']
+
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v4/approvals/add/select-apprentice-ILR')
+  }
+  else {
+    res.redirect('/training-provider/v4/approvals/add/select-employer')
+  }
+})
