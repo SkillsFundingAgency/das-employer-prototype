@@ -1,23 +1,61 @@
 {% extends "layouts/main.html" %}
-{% set version = "v2" %}
+{% set version = "v4" %}
+{% set pageTitle = "Select a standard" %}
 
-{% block pageTitle %}
-Question page template – {{ serviceName }} – GOV.UK Prototype Kit
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
 {% endblock %}
 
 {% block beforeContent %}
-<a class="govuk-back-link" href="/training-provider/{{version}}/javascript:window.history.back()">Back</a>
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
 {% endblock %}
 
 {% block content %}
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" action="/training-provider/{{version}}/url/of/next/page" method="post">
-      <h1 class="govuk-heading-xl">Select a standard</h1>
+    <form class="form" action="/training-provider/{{version}}/approvals/add-details-alan-2" method="post">
+      <h1 class="govuk-heading-l">Select a standard</h1>
 
       <div class="govuk-inset-text">
-        For more information visit <a class="govuk-link" href="/training-provider/{{version}}/#">IfATEpage for this
+        For more information visit <a class="govuk-link" href="/training-provider/{{version}}/#">IfATE page for this
           standard (opens in a
           new tab)</a>
       </div>
@@ -28,7 +66,7 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
             Apprenticeship training course
           </dt>
           <dd class="govuk-summary-list__value">
-            Game programmer, Level: 7
+            Early Years Practitioner, Level: 2
           </dd>
         </div>
         <div class="govuk-summary-list__row">
@@ -37,13 +75,13 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
           </dt>
 
           <dd class="govuk-summary-list__value">
-            1.0
+            1.2
           </dd>
         </div>
       </dl>
 
 
-      <div class="govuk-!-padding-bottom-5"></div>
+      <div class="govuk-!-padding-bottom-1"></div>
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -55,14 +93,14 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
               <input class="govuk-radios__input" id="where-do-you-live" name="where-do-you-live" type="radio"
                 value="england">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live">
-                Game software programmer
+                Early Years Practitioner option 1
               </label>
             </div>
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="where-do-you-live-2" name="where-do-you-live" type="radio"
                 value="scotland">
               <label class="govuk-label govuk-radios__label" for="where-do-you-live-2">
-                Game technology programmer
+                Early Years Practitioner option 2
               </label>
             </div>
             <div class="govuk-!-padding-bottom-1"></div>
@@ -80,8 +118,8 @@ Question page template – {{ serviceName }} – GOV.UK Prototype Kit
         </fieldset>
       </div>
 
-      <button class="govuk-button" data-module="govuk-button">Save and Continue</button>
-      <button class="govuk-link">Cancel and return</button>
+      <button class="govuk-button" data-module="govuk-button">Save and continue</button>
+
 
     </form>
 
