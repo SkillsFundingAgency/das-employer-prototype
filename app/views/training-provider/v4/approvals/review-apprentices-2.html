@@ -253,4 +253,25 @@ href: "javascript:window.history.go(-1);"
 </div>
 </div>
 
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const form = document.querySelector(".form");
+    const radioYes = document.getElementById("approve-details");
+    const radioNo = document.getElementById("approve-details-2");
+    const submitButton = document.getElementById("continue-button");
+
+    if (form && radioYes && radioNo && submitButton) {
+      submitButton.addEventListener("click", function (event) {
+        if (radioNo.checked) {
+          form.action = "/training-provider/{{version}}/approvals/apprentice-requests";
+        } else {
+          form.action = "/training-provider/{{version}}/approvals/acknowledgement";
+        }
+        form.submit();
+      });
+    }
+  });
+</script>
+
+
 {% endblock %}
