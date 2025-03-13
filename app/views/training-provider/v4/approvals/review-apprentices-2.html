@@ -100,8 +100,10 @@ href: "javascript:window.history.go(-1);"
     </details>
   </div>
 </div>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-<h3 class="govuk-heading-m">Missing details
+
+
+<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
+<h3 class="govuk-heading-m">Ready to send
 </h3>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 <table class="govuk-table das-table--responsive das-table--condensed">
@@ -131,7 +133,7 @@ href: "javascript:window.history.go(-1);"
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
           href="/training-provider/{{version}}/approvals/add/apprentice-details">
-          Add details
+          View details
           <span class="govuk-visually-hidden"> Alan Lightfoot</span>
         </a>
         <br><br>
@@ -141,25 +143,6 @@ href: "javascript:window.history.go(-1);"
       </td>
     </tr>
   </tbody>
-</table>
-
-<hr class="govuk-section-break govuk-section-break--l govuk-section-break">
-<h3 class="govuk-heading-m">Ready to send
-</h3>
-<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-<table class="govuk-table das-table--responsive das-table--condensed">
-  <thead class="govuk-table__head">
-    <tr class="govuk-table__row">
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Apprenticeship training course</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
-      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning (RPL)</th>
-      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
-    </tr>
-  </thead>
   <tbody class="govuk-table__body">
     <tr class="govuk-table__row">
       <td class="govuk-table__cell" data-label="Name">
@@ -214,10 +197,6 @@ href: "javascript:window.history.go(-1);"
   <button type="submit" class="govuk-button govuk-button--secondary" data-module="govuk-button">
     Add another apprentice
   </button>
-  <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort"
-    href="/training-provider/{{version}}/approvals/add/entry-method" style="float:right">
-    Delete cohort
-  </a>
 </p>
 
 <hr class="govuk-section-break govuk-section-break--l">
@@ -227,7 +206,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+            <h3 class="govuk-fieldset__heading">Send to employer?</h3>
           </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -254,7 +233,7 @@ href: "javascript:window.history.go(-1);"
               <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no"
                 data-aria-controls="conditional-approve-details-2">
               <label class="govuk-label govuk-radios__label" for="approve-details-2">
-                No, send to employer to review or add details
+                No, save cohort to drafts
               </label>
 
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
@@ -276,7 +255,7 @@ href: "javascript:window.history.go(-1);"
       <br>
       <p><a class="govuk-link govuk-link--no-visited-state"
           href="/training-provider/{{version}}/approvals/apprentice-requests">
-          Save and exit
+          Delete this cohort and create a new one
         </a></p>
     </form>
 

@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v3" %}
+{% set version = "v4" %}
 {% set pageTitle = "Recognition of prior learning (RPL) details" %}
 
 {% block header %}
@@ -51,7 +51,7 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="/training-provider/{{version}}/approvals/approve-details">
+    <form class="form" method="post" action="/training-provider/{{version}}/approvals/add-details-alan-3">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -59,6 +59,25 @@ href: "javascript:window.history.go(-1);"
             {{ pageTitle }}
           </h1>
         </legend>
+        <div class="govuk-!-padding-bottom-3"></div>
+        <dl class="govuk-summary-list govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding adjustment for prior learning
+            </dt>
+            <dd class="govuk-summary-list__value">
+              15%
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Planned off-the-job training hours
+            </dt>
+            <dd class="govuk-summary-list__value">
+              200
+            </dd>
+          </div>
+        </dl>
         {# <div class="govuk-form-group">
           <div class="govuk-form-group ">
             <label class="govuk-label govuk-!-font-weight-bold" for="ReducedDuration">
@@ -87,7 +106,7 @@ href: "javascript:window.history.go(-1);"
             </div>
           </div>
         </div> #}
-
+        <div class="govuk-!-padding-bottom-3"></div>
         <div class="govuk-form-group">
 
           <div class="govuk-form-group ">
@@ -184,6 +203,7 @@ href: "javascript:window.history.go(-1);"
 
         </div>
       </fieldset>
+      <div class="govuk-!-padding-bottom-3"></div>
 
       <button class="govuk-button" type="submit">
         Save and continue
