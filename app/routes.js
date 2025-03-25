@@ -2735,3 +2735,14 @@ router.post('/employer/v14/training-provider-adds/action/review-details', functi
     res.redirect('/employer/v14/training-provider-adds/request-changes')
   }
 })
+
+router.post('/employer/v15/training-provider-adds/action/review-details', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v15/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v15/training-provider-adds/request-changes')
+  }
+})
