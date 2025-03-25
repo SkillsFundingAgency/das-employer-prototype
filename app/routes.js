@@ -2711,3 +2711,27 @@ router.post('/training-provider/v4/approvals/add/action/confirm-employer', funct
     res.redirect('/training-provider/v4/approvals/add/select-employer')
   }
 })
+
+router.post('/training-provider/v4/approvals/add/action/confirm-employer', function (req, res) {
+  var confirmEmployer = req.session.data['confirm-employer']
+
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v4/approvals/add/select-apprentice-ILR')
+  }
+  else {
+    res.redirect('/training-provider/v4/approvals/add/select-employer')
+  }
+})
+
+// Employer V14 - 2nd iteration proto for ILR
+
+router.post('/employer/v14/training-provider-adds/action/review-details', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v14/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v14/training-provider-adds/request-changes')
+  }
+})
