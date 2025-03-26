@@ -2746,3 +2746,45 @@ router.post('/employer/v15/training-provider-adds/action/review-details', functi
     res.redirect('/employer/v15/training-provider-adds/request-changes')
   }
 })
+
+router.post('/employer/v14/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+
+    res.redirect('/employer/v14/training-provider-adds/select-transfer-connection');
+  } else if (selection === "Levy") {
+
+    res.redirect('/employer/v14/training-provider-adds/select-levy-transfer');
+  } else if (selection === "Current") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-transfer');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v14/training-provider-adds/select-funding'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v14/training-provider-adds/action/select-levy-transfer', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Barry") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-transfer-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-transfer-2');
+
+  }
+});
+
+router.post('/employer/v14/training-provider-adds/action/review-details-transfer-2', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v14/training-provider-adds/approved-transfer')
+  }
+  else {
+    res.redirect('/employer/v14/training-provider-adds/request-changes-transfer')
+  }
+})

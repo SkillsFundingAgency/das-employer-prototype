@@ -54,9 +54,24 @@
   }) }}
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
+    
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+          aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+          <div class="govuk-notification-banner__header">
+            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+              Success
+            </h2>
+          </div>
+          <div class="govuk-notification-banner__content">
+            <h3 class="govuk-notification-banner__heading">
+              Funding changed to transfer
+            </h3>
+          </div>
+        </div>
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
@@ -78,7 +93,10 @@
               Funding
             </dt>
             <dd class="govuk-summary-list__value">
-              Current levy funds
+              Transfer from Barry & Larry <br>£24,000
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> change funding</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -94,7 +112,7 @@
               Reference
             </dt>
             <dd class="govuk-summary-list__value">
-              K4JF7E
+              N7XJBP
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -102,8 +120,7 @@
               Message from training provider
             </dt>
             <dd class="govuk-summary-list__value">
-              Hi, please check that you are happy with details - includes apprentice over the maximum funding band as
-              discussed
+              Please approve and add transfer details. Need this completed asap, thanks
             </dd>
           </div>
         </dl>
@@ -132,22 +149,43 @@
           <tbody class="govuk-table__body">
             <tr class="govuk-table__row">
               <td class="govuk-table__cell" data-label="Name">
-                <span class="das-table-cell--highlight das-breakable">Fatima Hussain</span>
+                <span class="das-table-cell--highlight das-breakable">Deepika Sharma</span>
               </td>
-              <td class="govuk-table__cell" data-label="Unique learner number">7443068554</td>
+              <td class="govuk-table__cell" data-label="Unique learner number">7342365215</td>
               <td class="govuk-table__cell" data-label="Apprenticeship training course">Early Years Practitioner,
                 Level:
-                2
+                3
               </td>
-              <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
+              <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2005</td>
               <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,500</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
               <td class="govuk-table__cell" data-label="Recognition of prior learning">No</td>
               <td class="govuk-table__cell govuk-table__cell--numeric">
                 <a class="govuk-link govuk-link--no-visited-state"
-                  href="/employer/v14/training-provider-adds/details-fatima-1">
+                  href="/employer/v14/training-provider-adds/details-deepika-1">
                   View details
-                  <span class="govuk-visually-hidden"> Fatima Hussain</span>
+                  <span class="govuk-visually-hidden"> Deepika Sharma</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-label="Name">
+                <span class="das-table-cell--highlight das-breakable">Elijah Robinson</span>
+              </td>
+              <td class="govuk-table__cell" data-label="Unique learner number">7582483570</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship training course">Early Years Practitioner, Level:
+                2</td>
+              <td class="govuk-table__cell" data-label="Date of birth">19 Oct 2003</td>
+              <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,000</td>
+              <td class="govuk-table__cell" data-label="Recognition of prior learning">No</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-link--no-visited-state"
+                  href="/employer/v14/training-provider-adds/details-elijah-1">
+                  View details
+                  <span class="govuk-visually-hidden"> Bernard McKelly</span>
                 </a>
               </td>
             </tr>
@@ -162,7 +200,7 @@
               Total apprentices
             </dt>
             <dd class="govuk-summary-list__value">
-              1
+              2
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -170,7 +208,7 @@
               Total apprenticeship training price (excluding VAT)
             </dt>
             <dd class="govuk-summary-list__value">
-              £4,500
+              £11,000
             </dd>
           </div>
         </dl>
