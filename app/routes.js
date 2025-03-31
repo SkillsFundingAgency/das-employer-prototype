@@ -2815,3 +2815,14 @@ router.post('/employer/v14/training-provider-adds/action/review-details-connecti
     res.redirect('/employer/v14/training-provider-adds/request-changes-connection')
   }
 })
+
+router.post('/employer/v14/training-provider-adds/action/review-details-max-funding', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v14/training-provider-adds/approved-max-funding')
+  }
+  else {
+    res.redirect('/employer/v14/training-provider-adds/request-changes-max-funding')
+  }
+})
