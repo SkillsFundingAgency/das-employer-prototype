@@ -2788,3 +2788,30 @@ router.post('/employer/v14/training-provider-adds/action/review-details-transfer
     res.redirect('/employer/v14/training-provider-adds/request-changes-transfer')
   }
 })
+
+router.post('/employer/v14/training-provider-adds/action/select-transfer-connection', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Bristol") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Birm") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v14/training-provider-adds/review-details-connection-1');
+
+  }
+});
+
+router.post('/employer/v14/training-provider-adds/action/review-details-connection-1', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v14/training-provider-adds/approved-connection')
+  }
+  else {
+    res.redirect('/employer/v14/training-provider-adds/request-changes-connection')
+  }
+})
