@@ -1,0 +1,100 @@
+{% extends "layouts/main.html" %}
+{% set version = "v16" %}
+{% set pageTitle = "Request changes sent to training provider" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/training-provider-adds/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <div class="govuk-panel govuk-panel--confirmation">
+      <h1 class="govuk-panel__title">{{ pageTitle }}</h1>
+    </div>
+    <dl class="govuk-summary-list govuk-summary-list">
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Funding</dt>
+        <dd class="govuk-summary-list__value">Transfer from Coventry City Council<br>
+          £11,000</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Training provider </dt>
+        <dd class="govuk-summary-list__value">EDUC8 TRAINING</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Reference</dt>
+        <dd class="govuk-summary-list__value">N7XJBP</dd>
+      </div>
+
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">Message</dt>
+        <dd class="govuk-summary-list__value">{{ data['approve-message'] or 'No message added' }}</dd>
+      </div>
+
+    </dl>
+    <h2 class="govuk-heading-m">What happens next</h2>
+    <p class="govuk-body">
+      Your training provider will review your message. You’ll be notified if the training provider resends the
+      apprentice
+      details for approval.
+    </p>
+
+    <p class="govuk-body">
+      You can find the apprentice details in <a class="govuk-link"
+        href="/employer/{{version}}/training-provider-adds/apprentice-requests-2"> Apprentice
+        requests</a>.
+
+    <h2 class="govuk-heading-m">Transfer funding</h2>
+
+    <p class="govuk-body">
+      After the details are added and approved, the employer transferring your funds will get a notification asking them
+      to
+      review and approve the funding.
+    </p>
+  </div>
+</div>
+{% endblock %}
