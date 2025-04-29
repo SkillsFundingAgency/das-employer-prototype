@@ -2919,3 +2919,14 @@ router.post('/employer/v16/training-provider-adds/action/review-details-max-fund
     res.redirect('/employer/v16/training-provider-adds/request-changes-max-funding')
   }
 })
+
+router.post('/employer/v16/training-provider-adds/action/review-details', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v16/training-provider-adds/approved-transfer')
+  }
+  else {
+    res.redirect('/employer/v16/training-provider-adds/request-changes-transfer')
+  }
+})

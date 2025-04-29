@@ -60,8 +60,8 @@
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <p class="govuk-body">You can choose from funding that you have previously applied for or use your current
-          funds.</p>
+        <p class="govuk-body">You can choose to use funding that you have previously applied for or use your
+          organisation’s current funds.</p>
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -89,59 +89,60 @@
             </tr>
           </tbody>
         </table>
-      </div>
-    </div>
 
-    <div class="govuk-!-padding-bottom-5"></div>
 
-    <form id="submitCohort" novalidate="" method="post"
-      action="/employer/v16/training-provider-adds/action/select-funding">
-      <div class="govuk-form-group govuk-!-padding-m">
-        <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">Which funding would you like to select?</h3>
-          </legend>
-          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Levy"
-                aria-controls="conditional-approve">
-              <label class="govuk-label govuk-radios__label" for="radio-levy">
-                Transfer funds
-              </label>
-              <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                A funding opportunity (pledge) from a levy-paying business
-              </div>
-            </div>
-            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
-              <div class="govuk-radios__item">
-                <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Connection"
-                  aria-controls="conditional-approve">
-                <label class="govuk-label govuk-radios__label" for="radio-connection">
-                  Transfer funds from a connection
-                </label>
-                <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                  A levy-paying business that has set up a connection with you in the service
-                </div>
-              </div>
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <form id="submitCohort" novalidate="" method="post"
+          action="/employer/v16/training-provider-adds/action/select-funding">
+          <div class="govuk-form-group govuk-!-padding-m">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">Which funding would you like to select?</h3>
+              </legend>
               <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
                 <div class="govuk-radios__item">
-                  <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="Current"
-                    aria-controls="conditional-send">
-                  <label class="govuk-label govuk-radios__label" for="radio-current">
-                    Current funds
+                  <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Levy"
+                    aria-controls="conditional-approve">
+                  <label class="govuk-label govuk-radios__label" for="radio-levy">
+                    Transfer funds
                   </label>
                   <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-
+                    Use a specific funding opportunity (pledge) that you’ve already set up from a levy-paying business
                   </div>
                 </div>
-              </div>
-        </fieldset>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Connection"
+                      aria-controls="conditional-approve">
+                    <label class="govuk-label govuk-radios__label" for="radio-connection">
+                      Transfer funds from a connection
+                    </label>
+                    <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                      Use funds from a levy-paying business that you’ve set up a connection with in the service
+                    </div>
+                  </div>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="Current"
+                        aria-controls="conditional-send">
+                      <label class="govuk-label govuk-radios__label" for="radio-current">
+                        Current funds
+                      </label>
+                      <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                        Use your organisation’s current funds
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" id="continue-button" class="govuk-button">Continue</button>
+
+        </form>
       </div>
-
-      <button type="submit" id="continue-button" class="govuk-button">Continue</button>
-
-    </form>
-
   </main>
 
 </div>
