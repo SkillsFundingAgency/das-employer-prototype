@@ -2827,7 +2827,7 @@ router.post('/employer/v14/training-provider-adds/action/review-details-max-fund
   }
 })
 
-// Employer V16 - 2nd iteration proto for ILR
+// Employer V16 Levy - 2nd iteration proto for ILR
 
 router.post('/employer/v16/training-provider-adds/action/review-details', function (req, res) {
   var approveDetails = req.session.data['approve-details']
@@ -2928,5 +2928,98 @@ router.post('/employer/v16/training-provider-adds/action/review-details', functi
   }
   else {
     res.redirect('/employer/v16/training-provider-adds/request-changes-transfer')
+  }
+})
+
+// Employer V16 Non-levy - 2nd iteration proto for ILR
+
+router.post('/employer/v17/training-provider-adds/action/review-details', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v17/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v17/training-provider-adds/request-changes')
+  }
+})
+
+router.post('/employer/v17/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+
+    res.redirect('/employer/v17/training-provider-adds/select-transfer-connection');
+  } else if (selection === "Levy") {
+
+    res.redirect('/employer/v17/training-provider-adds/select-levy-transfer');
+  } else if (selection === "Current") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-transfer');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v17/training-provider-adds/select-funding'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v17/training-provider-adds/action/select-levy-transfer', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Barry") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-transfer-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-transfer-2');
+
+  }
+});
+
+router.post('/employer/v17/training-provider-adds/action/select-transfer-connection', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Bristol") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Birm") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v17/training-provider-adds/review-details-connection-1');
+
+  }
+});
+
+router.post('/employer/v17/training-provider-adds/action/review-details-transfer-2', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v17/training-provider-adds/approved-transfer')
+  }
+  else {
+    res.redirect('/employer/v17/training-provider-adds/request-changes-transfer')
+  }
+})
+
+router.post('/employer/v17/training-provider-adds/action/review-details-connection-1', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v17/training-provider-adds/approved-connection')
+  }
+  else {
+    res.redirect('/employer/v17/training-provider-adds/request-changes-connection')
+  }
+})
+
+router.post('/employer/v17/training-provider-adds/action/review-details-max-funding', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v17/training-provider-adds/approved-max-funding')
+  }
+  else {
+    res.redirect('/employer/v17/training-provider-adds/request-changes-max-funding')
   }
 })

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v16" %}
-{% set pageTitle = "View details for Elijah Robinson" %}
+{% set version = "v17" %}
+{% set pageTitle = "View details for Fatima Hussain" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -70,7 +70,7 @@
               Name
             </dt>
             <dd class="govuk-summary-list__value">
-              Elijah Robinson
+              Fatima Hussain
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
@@ -81,7 +81,7 @@
               Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              e.robinson@education.co.uk
+              f.hussain@education.co.uk
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> email</span></a>
@@ -92,7 +92,7 @@
               Date of birth
             </dt>
             <dd class="govuk-summary-list__value">
-              22 Jun 2005
+              22 Jun 2003
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a>
@@ -103,7 +103,7 @@
               Unique learner number (ULN)
             </dt>
             <dd class="govuk-summary-list__value">
-              7342365215
+              7443068554
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Unique learner number</span></a>
@@ -202,13 +202,14 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Version
+              Maximum funding band for this course
             </dt>
             <dd class="govuk-summary-list__value">
-              1.0
+              £4,000
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> email</span></a>
+              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Apprenticeship training
+                  course</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -239,7 +240,7 @@
               Training price
             </dt>
             <dd class="govuk-summary-list__value">
-              £6,500
+              £4,000
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Training price</span></a>
@@ -261,7 +262,7 @@
               Total agreed apprenticeship price
             </dt>
             <dd class="govuk-summary-list__value">
-              £7,000
+              £4,500
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Total agreed apprenticeship
@@ -269,8 +270,34 @@
             </dd>
           </div>
         </dl>
+
+        <div class="govuk-!-margin-top-4">
+          <hr class="govuk-section-break govuk-section-break--m govuk-section-break--visible">
+          <div class="govuk-warning-text govuk-!-width-two-thirds govuk-!-padding-bottom-0">
+            <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+            <strong class="govuk-warning-text__text">
+              <span class="govuk-visually-hidden">Warning</span>
+              You need to pay £500 to your training provider
+            </strong>
+            <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+              The total agreed apprenticeship price is more than the maximum funding band of £4,000.
+            </p>
+            <p class="govuk-body govuk-!-margin-bottom-0">
+              The government sets a maximum funding band for each course. Learn more on the
+              <a href="https://www.instituteforapprenticeships.org/apprenticeship-standards/st0888-v1-0"
+                class="govuk-link" rel="noreferrer noopener" target="_blank">
+                IfATE website (opens in new tab)
+              </a>.
+            </p>
+          </div>
+        </div>
       </div>
     </div>
+
+
+
+
+
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
         <h2 class="govuk-summary-card__title">
@@ -293,7 +320,7 @@
 
 
     <p><a class="govuk-link govuk-link--no-visited-state"
-        href="/employer/v14/training-provider-adds/review-details-transfer">
+        href="/employer/{{version}}/training-provider-adds/review-details-max-funding">
         Return to Review apprentices
       </a></p>
     </form>
