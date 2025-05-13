@@ -73,7 +73,7 @@
 }
 
 .das-account-header--provider {
-  background: #f47738
+  background: #00703c
 }
 
 .das-account-header--employer {
@@ -733,6 +733,7 @@ dl.das-inline-def-list dd {
 }
 
 @media (min-width: 40.0625em) {
+
   .das-table--condensed .govuk-table__body tr th,
   .das-table--condensed .govuk-table__body tr td,
   .das-table--condensed .govuk-table__header,
@@ -741,7 +742,9 @@ dl.das-inline-def-list dd {
     font-size: 15px;
   }
 }
-.das-table--condensed .govuk-link, .das-table--condensed .das-table__sort {
+
+.das-table--condensed .govuk-link,
+.das-table--condensed .das-table__sort {
   margin-bottom: 5px;
   display: inline-block;
 }
