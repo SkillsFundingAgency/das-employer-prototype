@@ -1,0 +1,421 @@
+{% extends "layouts/main.html" %}
+{% set version = "v3" %}
+{% set pageTitle = "Select learner from ILR" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+    <p class="govuk-body">
+      These are the learners you’ve submitted ILR for.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I can’t find the learner I need
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">If you cannot find the learner you’re looking for, try:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>refreshing this page</li>
+          <li>updating the ILR</li>
+        </ul>
+      </div>
+    </details>
+
+
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="searchTerm">Search apprentice name or ULN</label>
+        <div id="ILR-container"></div>
+      </div>
+
+    </form>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body record-count">10 apprentice records</p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-!-text-align-right">
+        <p class="govuk-body last-updated">Last updated 11:00am on Monday 17 March</p>
+      </div>
+    </div>
+
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <table class="govuk-table" data-module="moj-sortable-table">
+      <thead class="govuk-table__head">
+
+        <tr class="govuk-table__row">
+
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Employer">
+              Name
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Account name">
+              ULN
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header" aria-sort="none">
+            <a class="das-table__sort" title="Sort the table by Account name">
+              Course
+            </a>
+          </th>
+          <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+        </tr>
+
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Alan Lightfoot</td>
+          <td class="govuk-table__cell" data-label="ULN">7232486935</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="/training-provider/v5/approvals/add-email" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Alan Lightfoot</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Bernard McKelly</td>
+          <td class="govuk-table__cell" data-label="ULN">7232487018</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Bernard McKelly</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Carlos Mendoza</td>
+          <td class="govuk-table__cell" data-label="ULN">7447194694</td>
+          <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Carlos Mendoza</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Deepika Sharma</td>
+          <td class="govuk-table__cell" data-label="ULN">7342365215</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Deepika Sharma</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Elijah Robinson</td>
+          <td class="govuk-table__cell" data-label="ULN">7582483570</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Elijah Robinson</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Fatima Hussain</td>
+          <td class="govuk-table__cell" data-label="ULN">7443068554</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Fatima Hussain</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Grace O’Connor</td>
+          <td class="govuk-table__cell" data-label="ULN">7436562065</td>
+          <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Grace O’Connor</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Mohammed Ali</td>
+          <td class="govuk-table__cell" data-label="ULN">7502286029</td>
+          <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Mohammed Ali</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Sophia Williams</td>
+          <td class="govuk-table__cell" data-label="ULN">7418298617</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Sophia Williams</span>
+            </a>
+          </td>
+        </tr>
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">Yusuf Ahmed</td>
+          <td class="govuk-table__cell" data-label="ULN">7007543626</td>
+          <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+            <a href="#" class="govuk-link govuk-link--no-visited-state">
+              Select <span class="govuk-visually-hidden">Yusuf Ahmed</span>
+            </a>
+          </td>
+        </tr>
+
+      </tbody>
+    </table>
+
+  </div>
+</div>
+
+
+
+<style>
+  .autocomplete__wrapper {
+    position: relative;
+    max-width: 35em;
+    margin-bottom: 20px;
+    font-family: "GDS Transport", Arial, sans-serif;
+  }
+
+  @media (min-width: 40.0625em) {
+    .autocomplete__wrapper {
+      margin-bottom: 30px;
+    }
+  }
+
+  .autocomplete__hint,
+  .autocomplete__input {
+    -webkit-appearance: none;
+    border: 2px solid #0b0c0c;
+    border-radius: 0;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    margin-bottom: 0;
+    width: 100%;
+  }
+
+  .autocomplete__input {
+    background-color: transparent;
+    position: relative;
+  }
+
+  .autocomplete__hint {
+    color: #b1b4b6;
+    position: absolute;
+  }
+
+  .autocomplete__input--default {
+    padding: 5px;
+  }
+
+  .autocomplete__input--focused {
+    outline: 3px solid #fd0;
+    outline-offset: 0;
+    box-shadow: inset 0 0 0 2px;
+  }
+
+  .autocomplete__input--show-all-values {
+    padding: 5px 34px 5px 5px;
+    cursor: pointer;
+  }
+
+  .autocomplete__dropdown-arrow-down {
+    z-index: -1;
+    display: inline-block;
+    position: absolute;
+    right: 8px;
+    width: 24px;
+    height: 24px;
+    top: 10px;
+  }
+
+  .autocomplete__menu {
+    background-color: #fff;
+    border: 2px solid #0b0c0c;
+    border-top: 0;
+    color: #0b0c0c;
+    margin: 0;
+    max-height: 342px;
+    overflow-x: hidden;
+    padding: 0;
+    width: 100%;
+    width: calc(100% - 4px);
+  }
+
+  .autocomplete__menu--visible {
+    display: block;
+  }
+
+  .autocomplete__menu--hidden {
+    display: none;
+  }
+
+  .autocomplete__menu--overlay {
+    box-shadow: rgba(0, 0, 0, 0.256863) 0 2px 6px;
+    left: 0;
+    position: absolute;
+    top: 100%;
+    z-index: 100;
+  }
+
+  .autocomplete__menu--inline {
+    position: relative;
+  }
+
+  .autocomplete__option {
+    border-bottom: solid #b1b4b6;
+    border-width: 1px 0;
+    cursor: pointer;
+    display: block;
+    position: relative;
+  }
+
+  .autocomplete__option>* {
+    pointer-events: none;
+  }
+
+  .autocomplete__option:first-of-type {
+    border-top-width: 0;
+  }
+
+  .autocomplete__option:last-of-type {
+    border-bottom-width: 0;
+  }
+
+  .autocomplete__option--odd {
+    background-color: #fafafa;
+  }
+
+  .autocomplete__option--focused,
+  .autocomplete__option:hover {
+    background-color: #1d70b8;
+    border-color: #1d70b8;
+    color: #fff;
+    outline: 0;
+  }
+
+  .autocomplete__option--no-results {
+    background-color: #fafafa;
+    color: #646b6f;
+    cursor: not-allowed;
+  }
+
+  .autocomplete__hint,
+  .autocomplete__input,
+  .autocomplete__option {
+    font-size: 16px;
+    line-height: 1.25;
+  }
+
+  .autocomplete__hint,
+  .autocomplete__option {
+    padding: 5px;
+  }
+
+  @media (min-width: 641px) {
+
+    .autocomplete__hint,
+    .autocomplete__input,
+    .autocomplete__option {
+      font-size: 19px;
+      line-height: 1.31579;
+    }
+  }
+</style>
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+  const ILR = [
+    "Alan Lightfoot 7232486935",
+    "Bernard McKelly 7232487018",
+    "Carlos Mendoza 7447194694",
+    "Deepika Sharma 7342365215",
+    "Elijah Robinson 7582483570",
+    "Fatima Hussain 7443068554",
+    "Grace O’Connor 7436562065",
+    "Mohammed Ali 7502286029",
+    "Sophia Williams 7418298617",
+    "Yusuf Ahmed 7007543626",
+  ];
+
+  accessibleAutocomplete({
+    autoselect: true,
+    element: document.querySelector('#ILR-container'),
+    id: 'ILR',
+    name: 'ILR-autocomplete',
+    source: ILR,
+    defaultValue: '{{ data['
+    employer - autocomplete '] }}',
+    displayMenu: 'overlay',
+    minLength: 2,
+    tNoResults: function () {
+      return "Other"
+    }
+  });
+</script>
+
+
+{% endblock %}
