@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v5" %}
-{% set pageTitle = "Check details for Alan Lightfoot" %}
+{% set pageTitle = "View details for Alan Lightfoot" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -374,15 +374,10 @@ href: "javascript:window.history.go(-1);"
   </div>
 </div>
 
-<a id="continue-button" role="button" draggable="false" class="govuk-button"
-  href="/training-provider/{{version}}/approvals/review-apprentices-1">
-  Confirm and add
-</a>
-
 
 <p><a class="govuk-link govuk-link--no-visited-state"
-    href="/training-provider/{{version}}/approvals/add-select-apprentice-ILR">
-    Cancel and return to Select learner from ILR
+    href="/training-provider/{{version}}/approvals/review-apprentices-1">
+    Back to Review apprentices
   </a></p>
 </form>
 

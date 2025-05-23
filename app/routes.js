@@ -3093,3 +3093,17 @@ router.post('/training-provider/v5/approvals/action/recognise-prior-learning-2',
     }
   }
 })
+
+router.post('/training-provider/v5/approvals/add/action/entry-method', function (req, res) {
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v5/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v5/approvals/add/select-journey')
+  }
+  else if (addApprenticeDetails == "ILR") {
+    res.redirect('/training-provider/v5/approvals/add/select-journey')
+  }
+});
