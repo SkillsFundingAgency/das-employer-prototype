@@ -3165,3 +3165,14 @@ router.post('/employer/v18/training-provider-adds/action/select-transfer-connect
 
   }
 });
+
+router.post('/employer/v18/training-provider-adds/action/review-details-connection-1', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v18/training-provider-adds/approved-connection')
+  }
+  else {
+    res.redirect('/employer/v18/training-provider-adds/request-changes-connection')
+  }
+})
