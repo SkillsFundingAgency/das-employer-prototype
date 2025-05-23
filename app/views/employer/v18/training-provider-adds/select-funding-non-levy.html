@@ -56,8 +56,9 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
-      <p class="govuk-body" style="float: right;"><a
-          href="/employer/{{version}}/training-provider-adds/select-funding-non-levy" class="govuk-link">Go to Non-levy
+
+      <p class="govuk-body" style="float: right;"><a href="/employer/{{version}}/training-provider-adds/select-funding"
+          class="govuk-link">Go to Levy
           page</a>
       </p>
       <div class="govuk-grid-column-two-thirds">
@@ -65,7 +66,7 @@
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
         <p class="govuk-body">You can choose to use funding that you have previously applied for or use your
-          organisation’s current funds.</p>
+          reserved funds.</p>
 
         <table class="govuk-table">
           <thead class="govuk-table__head">
@@ -99,7 +100,7 @@
         <div class="govuk-!-padding-bottom-5"></div>
 
         <form id="submitCohort" novalidate="" method="post"
-          action="/employer/v18/training-provider-adds/action/select-funding">
+          action="/employer/v16/training-provider-adds/action/select-funding">
           <div class="govuk-form-group govuk-!-padding-m">
             <fieldset class="govuk-fieldset">
               <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -132,10 +133,11 @@
                       <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="Current"
                         aria-controls="conditional-send">
                       <label class="govuk-label govuk-radios__label" for="radio-current">
-                        Current funds
+                        Reserved funds
                       </label>
                       <div id="tp-hint" class="govuk-hint govuk-radios__hint">
-                        Use your organisation’s current funds
+                        Use apprenticeship funding that you or your training provider have already reserved from the
+                        government
                       </div>
                     </div>
                   </div>

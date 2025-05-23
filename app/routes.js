@@ -3131,3 +3131,37 @@ router.post('/employer/v18/training-provider-adds/action/review-details-2', func
     res.redirect('/employer/v18/training-provider-adds/request-changes')
   }
 })
+
+router.post('/employer/v18/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+
+    res.redirect('/employer/v18/training-provider-adds/select-transfer-connection');
+  } else if (selection === "Levy") {
+
+    res.redirect('/employer/v18/training-provider-adds/select-levy-transfer');
+  } else if (selection === "Current") {
+
+    res.redirect('/employer/v18/training-provider-adds/review-details-transfer');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v18/training-provider-adds/select-funding'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v18/training-provider-adds/action/select-transfer-connection', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Bristol") {
+
+    res.redirect('/employer/v18/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Birm") {
+
+    res.redirect('/employer/v18/training-provider-adds/review-details-connection-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v18/training-provider-adds/review-details-connection-1');
+
+  }
+});

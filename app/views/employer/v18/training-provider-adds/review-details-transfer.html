@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v16" %}
+{% set version = "v18" %}
 {% set pageTitle = "Review apprentice details" %}
 
 {% block pageTitle %}
@@ -56,7 +56,11 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <div class="govuk-grid-row">
+      <p class="govuk-body" style="float: right;"><a
+          href="/employer/{{version}}/training-provider-adds/review-details-transfer-non-levy" class="govuk-link">Go to
+          Non-levy page</a></p>
       <div class="govuk-grid-column-two-thirds">
+
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
@@ -67,18 +71,16 @@
             </dt>
             <dd class="govuk-summary-list__value">
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  Ready for approval
-                </strong>
+                Ready for approval
               </td>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Funding
+              Funding type
             </dt>
             <dd class="govuk-summary-list__value">
-              Current funds
+              Your organisation's funds
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="/employer/{{version}}/training-provider-adds/select-funding">Change<span
@@ -106,7 +108,7 @@
               Message from training provider
             </dt>
             <dd class="govuk-summary-list__value">
-              Please approve and add transfer details. Need this completed asap, thanks
+              Transfer cohort for Deepika and Elijah
             </dd>
           </div>
         </dl>

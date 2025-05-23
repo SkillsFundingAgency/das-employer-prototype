@@ -55,23 +55,13 @@
 
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
-
     <div class="govuk-grid-row">
+      <p class="govuk-body" style="float: right;"><a
+          href="/employer/{{version}}/training-provider-adds/review-details-transfer" class="govuk-link">Go to Levy
+          page</a>
+      </p>
       <div class="govuk-grid-column-two-thirds">
 
-        <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
-          aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
-          <div class="govuk-notification-banner__header">
-            <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-              Success
-            </h2>
-          </div>
-          <div class="govuk-notification-banner__content">
-            <h3 class="govuk-notification-banner__heading">
-              Funding changed to transfer
-            </h3>
-          </div>
-        </div>
 
         <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
@@ -88,14 +78,15 @@
           </div>
           <div class="govuk-summary-list__row">
             <dt class="govuk-summary-list__key">
-              Funding
+              Funding type
             </dt>
             <dd class="govuk-summary-list__value">
-              Transfer funds from
-              Coventry City Council
+              Reserved funds
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> change funding</span></a>
+              <a class="govuk-link"
+                href="/employer/{{version}}/training-provider-adds/select-funding-non-levy">Change<span
+                  class="govuk-visually-hidden"> change funding</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -119,7 +110,7 @@
               Message from training provider
             </dt>
             <dd class="govuk-summary-list__value">
-              Please approve and add transfer details. Need this completed asap, thanks
+              Transfer cohort for Deepika and Elijah
             </dd>
           </div>
         </dl>
@@ -218,8 +209,7 @@
     <hr class="govuk-section-break govuk-section-break--l">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/employer/v16/training-provider-adds/action/review-details-connection-1" method="post"
-          class="form">
+        <form action="/employer/v16/training-provider-adds/action/review-details" method="post" class="form">
           <div class="govuk-form-group">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">
