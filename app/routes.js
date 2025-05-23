@@ -3107,3 +3107,27 @@ router.post('/training-provider/v5/approvals/add/action/entry-method', function 
     res.redirect('/training-provider/v5/approvals/add/select-journey')
   }
 });
+
+// Employer v18 Levy & non-levy - Employer provider
+
+router.post('/employer/v18/training-provider-adds/action/remove-alan', function (req, res) {
+  var approveDetails = req.session.data['remove-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v18/training-provider-adds/review-details-2')
+  }
+  else {
+    res.redirect('/employer/v18/training-provider-adds/review-details')
+  }
+})
+
+router.post('/employer/v18/training-provider-adds/action/review-details-2', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v18/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v18/training-provider-adds/request-changes')
+  }
+})

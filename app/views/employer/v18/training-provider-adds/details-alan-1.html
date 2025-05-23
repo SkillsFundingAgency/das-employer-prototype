@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v16" %}
+{% set version = "v18" %}
 {% set pageTitle = "View details for Alan Lightfoot" %}
 
 {% block pageTitle %}
@@ -56,6 +56,17 @@
   <main class="govuk-main-wrapper " id="main-content" role="main">
 
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I need to change some apprentice details
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        You’ll need to remove the apprentice or request changes by your training provider.
+      </div>
+    </details>
 
     <div class="govuk-summary-card">
       <div class="govuk-summary-card__title-wrapper">
@@ -159,7 +170,7 @@
               Start date
             </dt>
             <dd class="govuk-summary-list__value">
-              Mar 2025
+              12 June 2025
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> start date</span></a>
@@ -170,7 +181,7 @@
               Planned end date
             </dt>
             <dd class="govuk-summary-list__value">
-              Mar 2026
+              12 June 2026
             </dd>
             <dd class="govuk-summary-list__actions">
               <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> planned end date</span></a>
