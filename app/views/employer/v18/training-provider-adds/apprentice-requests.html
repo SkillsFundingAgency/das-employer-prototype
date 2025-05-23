@@ -1,0 +1,191 @@
+{% extends "layouts/main.html" %}
+{% set version = "v18" %}
+
+{% block pageTitle %}
+Add apprentices
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/training-provider-adds/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+
+      <main class="govuk-main-wrapper">
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-two-thirds">
+            <h1 class="govuk-heading-xl">Apprentice requests</h1>
+          </div>
+        </div>
+
+
+
+        <div class="govuk-!-padding-bottom-5">
+
+          <div class="govuk-grid-row">
+            <div class="govuk-grid-column-full">
+
+              <div class="das-tabs-boxes">
+                <ul class="das-tabs-boxes__list">
+
+                  <li class="das-tabs-boxes__list-item  das-tabs-boxes__list-item--selected"
+                    style="border: 1px solid grey; color:black">
+                    <span class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/review" id="Review">
+                      <span class="das-tabs-boxes__figure">2</span>
+                      <span class="das-text-capitalise">Ready for your review</span>
+                    </span>
+                  </li>
+
+
+
+                  <li class="das-tabs-boxes__list-item"
+                    style="border: 1px solid grey; color:black; background-color:white">
+                    <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider" id="WithProvider">
+                      <span class="das-tabs-boxes__figure">0</span>
+                      <span class="das-tabs-boxes__text das-text-capitalise"
+                        style="color:#1d70b8; font-weight:bold">Drafts</span>
+                    </a>
+                  </li>
+
+
+
+                  <li class="das-tabs-boxes__list-item"
+                    style="border: 1px solid grey; color:black; background-color:white">
+                    <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider" id="WithProvider">
+                      <span class="das-tabs-boxes__figure">0</span>
+                      <span class="das-tabs-boxes__text das-text-capitalise"
+                        style="color:#1d70b8; font-weight:bold">With
+                        training
+                        provider to review</span>
+                    </a>
+                  </li>
+
+
+
+                  <li class="das-tabs-boxes__list-item"
+                    style="border: 1px solid grey; color:black; background-color:white">
+                    <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider" id="WithProvider">
+                      <span class="das-tabs-boxes__figure">0</span>
+                      <span class="das-tabs-boxes__text das-text-capitalise"
+                        style="color:#1d70b8; font-weight:bold">With
+                        transfer
+                        sending employers</span>
+                    </a>
+                  </li>
+
+
+                </ul>
+              </div>
+
+              <table class="govuk-table">
+                <caption class="govuk-table__caption govuk-table__caption--m">Ready for your review (2)</caption>
+                <thead class="govuk-table__head">
+                  <tr class="govuk-table__row">
+                    <th scope="col" class="govuk-table__header app-custom-class">Training provider</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Reference</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Number of apprentices</th>
+                    <th scope="col" class="govuk-table__header app-custom-class">Last message</th>
+                    <th scope="col" class="govuk-table__header app-custom-class" style="padding-left: 80px"></th>
+                  </tr>
+                </thead>
+                <tbody class="govuk-table__body">
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">EDUC8 TRAINING LTD</td>
+                    <td class="govuk-table__cell">HT345S</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">No message</td>
+                    <td class="govuk-table__cell">
+                      <dd class="govuk-summary-list__actions">
+                        <ul class="govuk-summary-list__actions-list">
+                          <li class="govuk-summary-list__actions-list-item">
+                            <a class="govuk-link"
+                              href="/employer/{{version}}/training-provider-adds/review-details">View
+                              details<span class="govuk-visually-hidden"> view
+                                details</span></a>
+                          </li>
+                        </ul>
+                      </dd>
+                    </td>
+                  </tr>
+                  <tr class="govuk-table__row">
+                    <td class="govuk-table__cell">EDUC8 TRAINING LTD</td>
+                    <td class="govuk-table__cell">N7XJBP</td>
+                    <td class="govuk-table__cell">2</td>
+                    <td class="govuk-table__cell">Transfer cohort for Deepika and Elijah </td>
+                    <td class="govuk-table__cell">
+                      <dd class="govuk-summary-list__actions">
+                        <ul class="govuk-summary-list__actions-list">
+                          <li class="govuk-summary-list__actions-list-item">
+                            <a class="govuk-link"
+                              href="/employer/{{version}}/training-provider-adds/review-details-transfer">View
+                              details<span class="govuk-visually-hidden"> view
+                                details</span></a>
+                          </li>
+                        </ul>
+                      </dd>
+                    </td>
+                  </tr>
+
+
+                </tbody>
+              </table>
+
+
+            </div>
+          </div>
+
+
+
+      </main>
+    </div>
+  </div>
+</div>
+</div>
+{% endblock %}
+
+{% endblock %}

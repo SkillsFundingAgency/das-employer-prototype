@@ -1,0 +1,158 @@
+{% extends "layouts/main.html" %}
+{% set version = "v16" %}
+
+{% block pageTitle %}
+Funding
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/training-provider-adds/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+
+  <main class="govuk-main-wrapper">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">Select a connection</h1>
+      </div>
+    </div>
+
+    <div class="govuk-!-padding-bottom-1"></div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <div class="govuk-!-padding-bottom-4"></div>
+
+        <p class="govuk-body">These are the employers you’ve connected with.</p>
+
+        <p class="govuk-body">The employer you’ve connected with will need to approve the funds.</p>
+
+        <p class="govuk-body">If you cannot find the connection you need, you can <a href="#" class="govuk-link">manage
+            your transfer connections (opens in a new
+            tab)</a>.</p>
+
+      </div>
+    </div>
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    <form id="submitCohort" novalidate="" method="post"
+      action="/employer/v16/training-provider-adds/action/select-transfer-connection">
+      <div class="govuk-form-group govuk-!-padding-m">
+        <fieldset class="govuk-fieldset">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+            <h3 class="govuk-fieldset__heading">Which connection would you like to select?</h3>
+          </legend>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Bristol"
+                aria-controls="conditional-approve">
+              <label class="govuk-label govuk-radios__label" for="radio-bristol">
+                Bristol City Council
+              </label>
+              <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                Connection approved on 20 Mar 2022
+              </div>
+            </div>
+            <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Birm"
+                  aria-controls="conditional-approve">
+                <label class="govuk-label govuk-radios__label" for="radio-birm">
+                  Birmingham City Council
+                </label>
+                <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                  Connection approved on 5 Aug 2023
+                </div>
+              </div>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Cov"
+                    aria-controls="conditional-approve">
+                  <label class="govuk-label govuk-radios__label" for="radio-cov">
+                    Coventry City Council
+                  </label>
+                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                    Connection approved on 20 Mar 2024
+                  </div>
+                </div>
+        </fieldset>
+      </div>
+
+      <button type="submit" id="continue-button" class="govuk-button">Continue</button>
+
+    </form>
+
+
+</div>
+
+
+</div>
+
+
+
+
+</div>
+
+
+
+</main>
+</div>
+
+
+</div>
+
+
+
+</main>
+</div>
+</div>
+</div>
+</div>
+{% endblock %}
+
+{% endblock %}

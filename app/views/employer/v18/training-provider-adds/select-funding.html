@@ -1,0 +1,152 @@
+{% extends "layouts/main.html" %}
+{% set version = "v16" %}
+{% set pageTitle = "Select funding" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/training-provider-adds/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+        <p class="govuk-body">You can choose to use funding that you have previously applied for or use your
+          organisation’s current funds.</p>
+
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header app-custom-class">Apprentice</th>
+              <th scope="col" class="govuk-table__header app-custom-class">Apprenticeship course</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric">Price</th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Deepika Sharma</td>
+              <td class="govuk-table__cell">Early Years Practitioner, Level: 3</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£7,000</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">Elijah Robinson</td>
+              <td class="govuk-table__cell">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£4,000</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <th scope="row" class="govuk-table__header">Total apprenticeship training price</th>
+              <td class="govuk-table__cell"></td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">£11,000</td>
+            </tr>
+          </tbody>
+        </table>
+
+
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <form id="submitCohort" novalidate="" method="post"
+          action="/employer/v16/training-provider-adds/action/select-funding">
+          <div class="govuk-form-group govuk-!-padding-m">
+            <fieldset class="govuk-fieldset">
+              <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                <h3 class="govuk-fieldset__heading">Which funding would you like to select?</h3>
+              </legend>
+              <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Levy"
+                    aria-controls="conditional-approve">
+                  <label class="govuk-label govuk-radios__label" for="radio-levy">
+                    Transfer funds
+                  </label>
+                  <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                    Use a specific funding opportunity (pledge) that you’ve already set up from a levy-paying business
+                  </div>
+                </div>
+                <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Connection"
+                      aria-controls="conditional-approve">
+                    <label class="govuk-label govuk-radios__label" for="radio-connection">
+                      Transfer funds from a connection
+                    </label>
+                    <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                      Use funds from a levy-paying business that you’ve set up a connection with in the service
+                    </div>
+                  </div>
+                  <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+                    <div class="govuk-radios__item">
+                      <input class="govuk-radios__input" id="radio-no" name="selection" type="radio" value="Current"
+                        aria-controls="conditional-send">
+                      <label class="govuk-label govuk-radios__label" for="radio-current">
+                        Current funds
+                      </label>
+                      <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+                        Use your organisation’s current funds
+                      </div>
+                    </div>
+                  </div>
+                </div>
+            </fieldset>
+          </div>
+
+          <button type="submit" id="continue-button" class="govuk-button">Continue</button>
+
+        </form>
+      </div>
+  </main>
+
+</div>
+
+{% endblock %}
+
+{% endblock %}
