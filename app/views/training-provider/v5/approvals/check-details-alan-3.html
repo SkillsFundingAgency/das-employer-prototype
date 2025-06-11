@@ -52,6 +52,20 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
 
+    <div class="govuk-notification-banner govuk-notification-banner--success" role="alert"
+      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
+          Success
+        </h2>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <h3 class="govuk-notification-banner__heading">
+          Standard option added
+        </h3>
+      </div>
+    </div>
+
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
     <details class="govuk-details">
@@ -89,10 +103,10 @@ href: "javascript:window.history.go(-1);"
               Email address
             </dt>
             <dd class="govuk-summary-list__value">
-              <a href="/training-provider/v5/approvals/add-email" class="govuk-link">Add email address</a>
+              a.lightfoot@education.co.uk
             </dd>
             <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Email</span></a>
+              <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> Email</span></a>
             </dd>
           </div>
           <div class="govuk-summary-list__row">
@@ -234,10 +248,10 @@ href: "javascript:window.history.go(-1);"
           Standard option
         </dt>
         <dd class="govuk-summary-list__value">
-          <a href="#" class="govuk-link">Add standard option</a>
+          Early years practitioner option 1
         </dd>
         <dd class="govuk-summary-list__actions">
-          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> standard option</span></a>
+          <a class="govuk-link" href="#">Change<span class="govuk-visually-hidden"> standard option</span></a>
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -319,7 +333,8 @@ href: "javascript:window.history.go(-1);"
     </h2>
     <ul class="govuk-summary-card__actions">
       <li class="govuk-summary-card__action">
-        <a class="govuk-link" href="#">Add<span class="govuk-visually-hidden"> add RPL</span></a>
+        <a class="govuk-link" href="/training-provider/v5/approvals/recognise-prior-learning-details">Add<span
+            class="govuk-visually-hidden"> add RPL</span></a>
       </li>
     </ul>
   </div>

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v5" %}
-{% set pageTitle = "Email address" %}
+{% set pageTitle = "Add email address" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -51,7 +51,7 @@ href: "javascript:window.history.go(-1);"
 
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form class="form" method="post" action="/training-provider/v5/approvals/select-standard-option">
+    <form class="form" method="post" action="/training-provider/v5/approvals/check-details-alan-2">
 
       <fieldset class="govuk-fieldset">
         <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -60,11 +60,9 @@ href: "javascript:window.history.go(-1);"
             {{ pageTitle }}
           </h1>
         </legend>
-        <p class="govuk-body">The learner's email address is missing from the ILR.</p>
+        <p class="govuk-body">This is the email address we will use to contact the apprentice.</p>
 
-        <p class="govuk-body">When you add the email address here, it won’t update the ILR. You’ll need to add it there
-          too and
-          resubmit the file.</p>
+
 
 
         <div class="govuk-form-group ">
@@ -104,9 +102,10 @@ href: "javascript:window.history.go(-1);"
       <button class="govuk-button" type="submit">
         Save and continue
       </button>
-      <input name="__RequestVerificationToken" type="hidden"
-        value="CfDJ8MGlgOl-I-5MpaJ74kI230nZES1XmVkjW9niiRMUw_o60FLsQTDdkMHfTfQON7uH3qfke1f3i42yHt7NqhKlGvdFWyzk7mWZHu7Ro3-G62LjqJHipTC_ypFvNME--5dnxBwQMr6ZxhAckGGtSugvyaGcYsPlP7rohydMNgV6PhQ_ICkepoEqFDDtalUoTALeWw">
+
     </form>
+    <a class="govuk-link" href="#">Cancel</a>
+
   </div>
 </div>
 
