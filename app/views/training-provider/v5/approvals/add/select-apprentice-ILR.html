@@ -54,7 +54,9 @@ href: "javascript:window.history.go(-1);"
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
     <p class="govuk-body">
-      These are the learners you’ve submitted ILR for.</p>
+      These are the learners you’ve submitted ILR for that are linked to <b>BAMBINOS DAY NURSERY</b>. It also includes
+      any learners
+      who are not linked to an employer in the ILR.</p>
 
     <details class="govuk-details">
       <summary class="govuk-details__summary">
@@ -82,10 +84,74 @@ href: "javascript:window.history.go(-1);"
       </div>
 
     </form>
-
   </div>
 
   <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
+        <form method="get" action="#">
+          <div class="govuk-grid-row">
+            <!-- Course -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="courseSelect">Course</label>
+                <select class="govuk-select govuk-!-width-full" id="courseSelect" name="course">
+                  <option value="">All</option>
+                  <option>Business Administrator, Level: 3</option>
+                  <option>Customer Service Practitioner, Level: 2</option>
+                  <option>Early Years Practitioner, Level: 2</option>
+                  <option>Early Years Educator, Level: 3</option>
+                  <option>HR Support, Level: 3</option>
+                  <option>Teaching Assistant, Level: 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Start Month -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="startMonthSelect">Start month</label>
+                <select class="govuk-select govuk-!-width-full" id="startMonthSelect" name="startMonth">
+                  <option value="">All</option>
+                  <option>June 2025</option>
+                  <option>July 2025</option>
+                  <option>August 2025</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Academic Year -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="academicYearSelect">Academic year</label>
+                <select class="govuk-select govuk-!-width-full" id="academicYearSelect" name="academicYear">
+                  <option value="">All</option>
+                  <option>2023 to 2024</option>
+                  <option>2024 to 2025</option>
+                  <option>2025 to 2026</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Apply Filters Button -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="applyFiltersButton" style="visibility: hidden;">.</label>
+                <button class="govuk-button govuk-!-margin-top-0" id="applyFiltersButton" type="submit">
+                  Apply filters
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="govuk-grid-column-full govuk-!-padding-top-6">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-one-half">
         <p class="govuk-body record-count">60 apprentice records</p>
@@ -94,8 +160,8 @@ href: "javascript:window.history.go(-1);"
         <p class="govuk-body last-updated">Last updated 11:00am on 2 June 2025</p>
       </div>
     </div>
-
   </div>
+
 
   <div class="govuk-grid-column-full">
     <table class="govuk-table" data-module="moj-sortable-table">
