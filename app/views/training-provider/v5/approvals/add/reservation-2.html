@@ -1,0 +1,131 @@
+{% extends "layouts/main.html" %}
+{% set version = "v5" %}
+{% set pageTitle = "Add apprentice details" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Add details for Bernard McKelly</span>
+    <h1 class="govuk-heading-l">Select a reservation</h1>
+  </div>
+</div>
+
+<div class="govuk-!-padding-bottom-1"></div>
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <p class="govuk-body">If you cannot find the reservation you need, you can <a href="#" class="govuk-link">manage
+        your reservations (opens in a new
+        tab)</a>.</p>
+
+
+  </div>
+</div>
+
+
+<form id="submitCohort" novalidate="" method="post" action="/training-provider/v5/approvals/check-details-alan">
+  <div class="govuk-form-group govuk-!-padding-m">
+    <fieldset class="govuk-fieldset">
+
+      <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+        <div class="govuk-radios__item">
+          <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Barry"
+            aria-controls="conditional-approve">
+          <label class="govuk-label govuk-radios__label" for="radio-Barry">
+            Early Years Practitioner, Level: 2
+          </label>
+          <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+            Created in April 2025
+          </div>
+        </div>
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Cov"
+              aria-controls="conditional-approve">
+            <label class="govuk-label govuk-radios__label" for="radio-cov">
+              Early Years Educator, Level: 3
+            </label>
+            <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+              Created in April 2025
+            </div>
+          </div>
+
+        </div>
+        <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+          <div class="govuk-radios__item">
+            <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Cov"
+              aria-controls="conditional-approve">
+            <label class="govuk-label govuk-radios__label" for="radio-cov">
+              Teaching Assistant, Level: 3
+            </label>
+            <div id="tp-hint" class="govuk-hint govuk-radios__hint">
+              Created in April 2025
+            </div>
+          </div>
+
+          <div class="govuk-radios__divider">or</div>
+          <div class="govuk-radios govuk-radios--conditional" data-module="govuk-radios">
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="radio-yes" name="selection" type="radio" value="Cov"
+                aria-controls="conditional-approve">
+              <label class="govuk-label govuk-radios__label" for="radio-cov">
+                Create a new reservation
+              </label>
+            </div>
+    </fieldset>
+  </div>
+
+  <button type="submit" id="continue-button" class="govuk-button">Continue</button>
+
+</form>
+
+</div>
+</div>
+{% endblock %}
