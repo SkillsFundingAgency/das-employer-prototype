@@ -3218,3 +3218,16 @@ router.post('/employer/v19/training-provider-adds/action/select-funding', functi
     res.redirect('/employer/v19/training-provider-adds/select-funding'); // Redirect to form page again if necessary
   }
 });
+
+router.post('/employer/v19/training-provider-adds/action/select-levy-transfer', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Barry") {
+
+    res.redirect('/employer/v19/training-provider-adds/review-details-transfer-1');
+  } else if (selection === "Cov") {
+
+    res.redirect('/employer/v19/training-provider-adds/review-details-transfer-2');
+
+  }
+});
