@@ -1,0 +1,249 @@
+{% extends "layouts/main.html" %}
+{% set version = "v16" %}
+{% set pageTitle = "Review apprentice details" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/training-provider-adds/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+        <dl class="govuk-summary-list govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Status
+            </dt>
+            <dd class="govuk-summary-list__value">
+              <td class="govuk-table__cell">
+                <strong class="govuk-tag govuk-tag--yellow">
+                  Ready for approval
+                </strong>
+              </td>
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Training provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              EDUC8 TRAINING
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Reference
+            </dt>
+            <dd class="govuk-summary-list__value">
+              K4JF7E
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Message from training provider
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Hi, please check that you are happy with details - includes apprentice over the maximum funding band as
+              discussed
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-full">
+        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+        <table class="govuk-table das-table--responsive das-table--condensed">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Apprenticeship training course
+              </th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning
+                (RPL)
+              </th>
+              <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell" data-label="Name">
+                <span class="das-table-cell--highlight das-breakable">Fatima Hussain</span>
+              </td>
+              <td class="govuk-table__cell" data-label="Unique learner number">7443068554</td>
+              <td class="govuk-table__cell" data-label="Apprenticeship training course">Early Years Practitioner,
+                Level:
+                2
+              </td>
+              <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
+              <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,500</td>
+              <td class="govuk-table__cell" data-label="Recognition of prior learning">No</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a class="govuk-link govuk-link--no-visited-state"
+                  href="/employer/{{version}}/training-provider-adds/details-fatima-1">
+                  View details
+                  <span class="govuk-visually-hidden"> Fatima Hussain</span>
+                </a>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="govuk-grid-column-full">
+        <dl class="govuk-summary-list govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total apprentices
+            </dt>
+            <dd class="govuk-summary-list__value">
+              1
+            </dd>
+          </div>
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Total apprenticeship training price (excluding VAT)
+            </dt>
+            <dd class="govuk-summary-list__value">
+              £4,500
+            </dd>
+          </div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="govuk-grid-row">
+      <div class="govuk-warning-text govuk-!-width-two-thirds govuk-!-padding-bottom-0">
+        <span class="govuk-warning-text__icon" aria-hidden="true">!</span>
+        <strong class="govuk-warning-text__text">
+          <span class="govuk-visually-hidden">Warning</span>
+          You need to pay £500 to your training provider
+        </strong>
+        <p class="govuk-body govuk-!-margin-top-2 govuk-!-margin-bottom-1">
+          The total agreed apprenticeship price for Fatima Hussain is <strong>£4,500</strong>.<br>
+          The maximum funding band for the course is <strong>£4,000</strong>.
+        </p>
+      </div>
+    </div>
+
+
+
+    <hr class="govuk-section-break govuk-section-break--m">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <form action="/employer/v16/training-provider-adds/action/review-details-max-funding" method="post"
+          class="form">
+          <div class="govuk-form-group">
+            <div class="govuk-form-group">
+              <fieldset class="govuk-fieldset">
+                <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
+                  <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+                </legend>
+
+                <div class="govuk-radios" data-module="govuk-radios">
+                  <!-- First Radio Button -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="approve-details-yes" name="approve-details" type="radio"
+                      value="yes" data-aria-controls="conditional-approve-details">
+                    <label class="govuk-label govuk-radios__label" for="approve-details-yes">
+                      Yes, approve and notify training provider
+                    </label>
+                  </div>
+
+                  <!-- Second Radio Button (With Conditional Reveal) -->
+                  <div class="govuk-radios__item">
+                    <input class="govuk-radios__input" id="approve-details-no" name="approve-details" type="radio"
+                      value="no" data-aria-controls="conditional-approve-details">
+                    <label class="govuk-label govuk-radios__label" for="approve-details-no">
+                      No, request changes from training provider
+                    </label>
+                  </div>
+
+                  <!-- Conditional Reveal Section -->
+                  <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                    id="conditional-approve-details">
+                    <div class="govuk-form-group">
+                      <label class="govuk-label" for="approve-message">
+                        Leave EDUC8 TRAINING a message (required)
+                      </label>
+                      <textarea class="govuk-textarea" id="approve-message" name="approve-message"
+                        rows="5">{{ data['approve-message'] or '' }}</textarea>
+                    </div>
+                  </div>
+                </div>
+              </fieldset>
+            </div>
+
+          </div>
+
+          <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+          <br>
+        </form>
+
+      </div>
+    </div>
+</div>
+</main>
+
+</div>
+
+{% endblock %}
+
+{% endblock %}

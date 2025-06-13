@@ -3108,7 +3108,7 @@ router.post('/training-provider/v5/approvals/add/action/entry-method', function 
   }
 });
 
-// Employer v18 Levy & non-levy - Employer provider
+// Employer v18 Levy & non-levy 
 
 router.post('/employer/v18/training-provider-adds/action/remove-alan', function (req, res) {
   var approveDetails = req.session.data['remove-details']
@@ -3176,3 +3176,45 @@ router.post('/employer/v18/training-provider-adds/action/review-details-connecti
     res.redirect('/employer/v18/training-provider-adds/request-changes-connection')
   }
 })
+
+// Employer v19 Non-levy 
+
+router.post('/employer/v19/training-provider-adds/action/remove-alan', function (req, res) {
+  var approveDetails = req.session.data['remove-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v19/training-provider-adds/review-details-2')
+  }
+  else {
+    res.redirect('/employer/v19/training-provider-adds/review-details')
+  }
+})
+
+router.post('/employer/v19/training-provider-adds/action/review-details-2', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v19/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v19/training-provider-adds/request-changes')
+  }
+})
+
+router.post('/employer/v19/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+
+    res.redirect('/employer/v19/training-provider-adds/select-transfer-connection');
+  } else if (selection === "Levy") {
+
+    res.redirect('/employer/v19/training-provider-adds/select-levy-transfer');
+  } else if (selection === "Current") {
+
+    res.redirect('/employer/v19/training-provider-adds/review-details-transfer');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v19/training-provider-adds/select-funding'); // Redirect to form page again if necessary
+  }
+});
