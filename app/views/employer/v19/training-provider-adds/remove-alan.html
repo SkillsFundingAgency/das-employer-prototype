@@ -77,39 +77,48 @@
       <div class="govuk-grid-column-two-thirds">
         <form action="/employer/v19/training-provider-adds/action/remove-alan" method="post" class="form">
           <div class="govuk-form-group">
-            <div class="govuk-form-group">
-              <fieldset class="govuk-fieldset">
-
-
-                <div class="govuk-radios" data-module="govuk-radios">
-                  <!-- First Radio Button -->
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-details-yes" name="remove-details" type="radio"
-                      value="yes" data-aria-controls="conditional-remove-details">
-                    <label class="govuk-label govuk-radios__label" for="remove-details-yes">
-                      Yes, remove apprentice
+            <fieldset class="govuk-fieldset">
+    
+              <div class="govuk-radios" data-module="govuk-radios">
+                <!-- First Radio Button -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="remove-details-yes" name="remove-details" type="radio" value="yes"
+                    aria-controls="conditional-remove-yes">
+                  <label class="govuk-label govuk-radios__label" for="remove-details-yes">
+                    Yes, remove apprentice
+                  </label>
+                </div>
+    
+                <!-- Conditional section for first radio -->
+                <div id="conditional-remove-yes" class="govuk-radios__conditional govuk-radios__conditional--hidden">
+                  <div class="govuk-form-group">
+                    <label class="govuk-label" for="remove-message">
+                      Provide a message or additional details (required)
                     </label>
-                  </div>
-
-                  <!-- Second Radio Button  -->
-                  <div class="govuk-radios__item">
-                    <input class="govuk-radios__input" id="remove-details-no" name="remove-details" type="radio"
-                      value="no" data-aria-controls="conditional-remove-details">
-                    <label class="govuk-label govuk-radios__label" for="remove-details-no">
-                      No, don't remove
-                    </label>
+                    <textarea class="govuk-textarea" id="remove-message" name="remove-message" rows="5">
+                        </textarea>
                   </div>
                 </div>
-              </fieldset>
-            </div>
-
-          </div>
-
+    
+                <!-- Second Radio Button -->
+                <div class="govuk-radios__item">
+                  <input class="govuk-radios__input" id="remove-details-no" name="remove-details" type="radio" value="no">
+                  <label class="govuk-label govuk-radios__label" for="remove-details-no">
+                    No, don't remove
+                  </label>
+                </div>
+    
+              </div><!-- .govuk-radios -->
+            </fieldset>
+          </div><!-- .govuk-form-group -->
+    
           <button type="submit" id="continue-button" class="govuk-button">Continue</button>
-          <br>
+    
         </form>
+      </div><!-- .govuk-grid-column-two-thirds -->
+    </div><!-- .govuk-grid-row -->
 
-      </div>
+      
 
   </main>
 
