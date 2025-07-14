@@ -1,0 +1,1448 @@
+{% extends "layouts/main.html" %}
+{% set version = "v6" %}
+{% set pageTitle = "Select learner from ILR" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+    <p class="govuk-body">
+      These are learners from your ILR submissions that are not approved in the apprenticeship service yet.</p>
+
+    <p class="govuk-body">
+      It includes learners linked to <b>BAMBINOS DAY NURSERY</b> and those not yet linked to an employer.</p>
+
+    <details class="govuk-details">
+      <summary class="govuk-details__summary">
+        <span class="govuk-details__summary-text">
+          I can’t find the learner I need
+        </span>
+      </summary>
+      <div class="govuk-details__text">
+        <p class="govuk-body">It can take up to 15 minutes for these records to update after an ILR file is submitted.
+          Try refreshing this page after
+          15 minutes.</p>
+      </div>
+    </details>
+
+
+
+    <div class="govuk-!-padding-bottom-5"></div>
+
+    <form action="#" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="searchTerm">Search apprentice name or ULN</label>
+        <div id="ILR-container"></div>
+      </div>
+
+    </form>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-grid-row">
+      <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
+        <form method="get" action="#">
+          <div class="govuk-grid-row">
+            <!-- Course -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="courseSelect">Course</label>
+                <select class="govuk-select govuk-!-width-full" id="courseSelect" name="course">
+                  <option value="">All</option>
+                  <option>Business Administrator, Level: 3</option>
+                  <option>Customer Service Practitioner, Level: 2</option>
+                  <option>Early Years Practitioner, Level: 2</option>
+                  <option>Early Years Educator, Level: 3</option>
+                  <option>HR Support, Level: 3</option>
+                  <option>Teaching Assistant, Level: 3</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Start Month -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="startMonthSelect">Start month</label>
+                <select class="govuk-select govuk-!-width-full" id="startMonthSelect" name="startMonth">
+                  <option value="">All</option>
+                  <option>June</option>
+                  <option>July</option>
+                  <option>August</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Academic Year -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="academicYearSelect">Start year</label>
+                <select class="govuk-select govuk-!-width-full" id="academicYearSelect" name="academicYear">
+                  <option value="">2025</option>
+                  <option>2026</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- Apply Filters Button -->
+            <div class="govuk-grid-column-one-quarter">
+              <div class="govuk-form-group">
+                <label class="govuk-label" for="applyFiltersButton" style="visibility: hidden;">.</label>
+                <button class="govuk-button govuk-!-margin-top-0" id="applyFiltersButton" type="submit">
+                  Apply filters
+                </button>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+
+
+
+  <div class="govuk-grid-column-full govuk-!-padding-top-6">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-one-half">
+        <p class="govuk-body record-count">60 apprentice records</p>
+      </div>
+      <div class="govuk-grid-column-one-half govuk-!-text-align-right">
+        <p class="govuk-body last-updated">Last updated 11:00am on 13 June 2025</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="govuk-grid-column-full">
+    <div class="govuk-form-group" style="margin-bottom: 15px;">
+      <div class="govuk-checkboxes govuk-checkboxes--small">
+        <div class="govuk-checkboxes__item">
+          <input type="checkbox" id="select-all" class="govuk-checkboxes__input">
+          <label for="select-all" class="govuk-label govuk-checkboxes__label">
+            Select all rows
+          </label>
+        </div>
+      </div>
+    </div>
+    <div class="govuk-form-group" id="ApprenticesToSelect">
+      <fieldset class="govuk-fieldset">
+        <legend class="govuk-visually-hidden">Select the apprentices you want to select</legend>
+        <table class="govuk-table" data-module="moj-sortable-table" aria-label="ILR Apprentices">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header das-table-cell-width-5">Select</th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">
+                <a class="das-table__sort" title="Sort the table by Name">
+                  Name
+                </a>
+              </th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">
+                <a class="das-table__sort" title="Sort the table by ULN">
+                  ULN
+                </a>
+              </th>
+              <th scope="col" class="govuk-table__header">
+                Course
+              </th>
+              <th scope="col" class="govuk-table__header" aria-sort="none">
+                <a class="das-table__sort" title="Sort the table by Start date">
+                  Start date
+                </a>
+              </th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body">
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7232486935"
+                      name="selectedLearners" type="checkbox" value="7232486935">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7232486935">
+                      <span class="govuk-visually-hidden">Select Alan Lightfoot</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Alan Lightfoot</td>
+              <td class="govuk-table__cell" data-label="ULN">7232486935</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">12 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7232487018"
+                      name="selectedLearners" type="checkbox" value="7232487018">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7232487018">
+                      <span class="govuk-visually-hidden">Select Bernard McKelly</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Bernard McKelly</td>
+              <td class="govuk-table__cell" data-label="ULN">7232487018</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">12 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7447194694"
+                      name="selectedLearners" type="checkbox" value="7447194694">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7447194694">
+                      <span class="govuk-visually-hidden">Select Carlos Mendoza</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Carlos Mendoza</td>
+              <td class="govuk-table__cell" data-label="ULN">7447194694</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">15 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7342365215"
+                      name="selectedLearners" type="checkbox" value="7342365215">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7342365215">
+                      <span class="govuk-visually-hidden">Select Deepika Sharma</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Deepika Sharma</td>
+              <td class="govuk-table__cell" data-label="ULN">7342365215</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">18 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7582483570"
+                      name="selectedLearners" type="checkbox" value="7582483570">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7582483570">
+                      <span class="govuk-visually-hidden">Select Elijah Robinson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Elijah Robinson</td>
+              <td class="govuk-table__cell" data-label="ULN">7582483570</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">22 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7443068554"
+                      name="selectedLearners" type="checkbox" value="7443068554">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7443068554">
+                      <span class="govuk-visually-hidden">Select Fatima Hussain</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Fatima Hussain</td>
+              <td class="govuk-table__cell" data-label="ULN">7443068554</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">18 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7436562065"
+                      name="selectedLearners" type="checkbox" value="7436562065">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7436562065">
+                      <span class="govuk-visually-hidden">Select Grace O’Connor</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Grace O’Connor</td>
+              <td class="govuk-table__cell" data-label="ULN">7436562065</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">5 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7502286029"
+                      name="selectedLearners" type="checkbox" value="7502286029">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7502286029">
+                      <span class="govuk-visually-hidden">Select Mohammed Ali</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Mohammed Ali</td>
+              <td class="govuk-table__cell" data-label="ULN">7502286029</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">5 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7418298617"
+                      name="selectedLearners" type="checkbox" value="7418298617">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7418298617">
+                      <span class="govuk-visually-hidden">Select Sophia Williams</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Sophia Williams</td>
+              <td class="govuk-table__cell" data-label="ULN">7418298617</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">10 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7007543626"
+                      name="selectedLearners" type="checkbox" value="7007543626">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7007543626">
+                      <span class="govuk-visually-hidden">Select Yusuf Ahmed</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Yusuf Ahmed</td>
+              <td class="govuk-table__cell" data-label="ULN">7007543626</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">18 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7447194694-2"
+                      name="selectedLearners" type="checkbox" value="7447194694">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7447194694-2">
+                      <span class="govuk-visually-hidden">Select Carlos Mendoza</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Carlos Mendoza</td>
+              <td class="govuk-table__cell" data-label="ULN">7447194694</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">15 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8237461839"
+                      name="selectedLearners" type="checkbox" value="8237461839">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8237461839">
+                      <span class="govuk-visually-hidden">Select Emily Carter</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Emily Carter</td>
+              <td class="govuk-table__cell" data-label="ULN">8237461839</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">03 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-9128746235"
+                      name="selectedLearners" type="checkbox" value="9128746235">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-9128746235">
+                      <span class="govuk-visually-hidden">Select Thomas Reed</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Thomas Reed</td>
+              <td class="govuk-table__cell" data-label="ULN">9128746235</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">10 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8756341902"
+                      name="selectedLearners" type="checkbox" value="8756341902">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8756341902">
+                      <span class="govuk-visually-hidden">Select Sophie Turner</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Sophie Turner</td>
+              <td class="govuk-table__cell" data-label="ULN">8756341902</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">08 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7348592034"
+                      name="selectedLearners" type="checkbox" value="7348592034">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7348592034">
+                      <span class="govuk-visually-hidden">Select Liam Johnson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Liam Johnson</td>
+              <td class="govuk-table__cell" data-label="ULN">7348592034</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">01 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-6758219364"
+                      name="selectedLearners" type="checkbox" value="6758219364">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-6758219364">
+                      <span class="govuk-visually-hidden">Select Olivia Harris</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Olivia Harris</td>
+              <td class="govuk-table__cell" data-label="ULN">6758219364</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">04 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8392047612"
+                      name="selectedLearners" type="checkbox" value="8392047612">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8392047612">
+                      <span class="govuk-visually-hidden">Select Jacob Knight</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Jacob Knight</td>
+              <td class="govuk-table__cell" data-label="ULN">8392047612</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">07 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-9501726483"
+                      name="selectedLearners" type="checkbox" value="9501726483">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-9501726483">
+                      <span class="govuk-visually-hidden">Select Isla Mason</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Isla Mason</td>
+              <td class="govuk-table__cell" data-label="ULN">9501726483</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">06 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7392041837"
+                      name="selectedLearners" type="checkbox" value="7392041837">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7392041837">
+                      <span class="govuk-visually-hidden">Select Noah Davies</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Noah Davies</td>
+              <td class="govuk-table__cell" data-label="ULN">7392041837</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">02 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8492037648"
+                      name="selectedLearners" type="checkbox" value="8492037648">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8492037648">
+                      <span class="govuk-visually-hidden">Select Grace Patel</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Grace Patel</td>
+              <td class="govuk-table__cell" data-label="ULN">8492037648</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">09 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-9301847562"
+                      name="selectedLearners" type="checkbox" value="9301847562">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-9301847562">
+                      <span class="govuk-visually-hidden">Select Harvey Bell</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Harvey Bell</td>
+              <td class="govuk-table__cell" data-label="ULN">9301847562</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">11 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7819204736"
+                      name="selectedLearners" type="checkbox" value="7819204736">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7819204736">
+                      <span class="govuk-visually-hidden">Select Zara Collins</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Zara Collins</td>
+              <td class="govuk-table__cell" data-label="ULN">7819204736</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">14 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8021934756"
+                      name="selectedLearners" type="checkbox" value="8021934756">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8021934756">
+                      <span class="govuk-visually-hidden">Select Oscar Bennett</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Oscar Bennett</td>
+              <td class="govuk-table__cell" data-label="ULN">8021934756</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">05 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7182049567"
+                      name="selectedLearners" type="checkbox" value="7182049567">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7182049567">
+                      <span class="govuk-visually-hidden">Select Ella James</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Ella James</td>
+              <td class="govuk-table__cell" data-label="ULN">7182049567</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">12 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8937162840"
+                      name="selectedLearners" type="checkbox" value="8937162840">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8937162840">
+                      <span class="govuk-visually-hidden">Select Lucas Gray</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Lucas Gray</td>
+              <td class="govuk-table__cell" data-label="ULN">8937162840</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">13 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7392810492"
+                      name="selectedLearners" type="checkbox" value="7392810492">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7392810492">
+                      <span class="govuk-visually-hidden">Select Chloe Ahmed</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Chloe Ahmed</td>
+              <td class="govuk-table__cell" data-label="ULN">7392810492</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">07 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-9042817362"
+                      name="selectedLearners" type="checkbox" value="9042817362">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-9042817362">
+                      <span class="govuk-visually-hidden">Select Henry Watson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Henry Watson</td>
+              <td class="govuk-table__cell" data-label="ULN">9042817362</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">09 June 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8923746190"
+                      name="selectedLearners" type="checkbox" value="8923746190">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8923746190">
+                      <span class="govuk-visually-hidden">Select Lily Walker</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Lily Walker</td>
+              <td class="govuk-table__cell" data-label="ULN">8923746190</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">01 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-9028134762"
+                      name="selectedLearners" type="checkbox" value="9028134762">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-9028134762">
+                      <span class="govuk-visually-hidden">Select Alfie Shaw</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Alfie Shaw</td>
+              <td class="govuk-table__cell" data-label="ULN">9028134762</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">05 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7819263051"
+                      name="selectedLearners" type="checkbox" value="7819263051">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7819263051">
+                      <span class="govuk-visually-hidden">Select Maya Green</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Maya Green</td>
+              <td class="govuk-table__cell" data-label="ULN">7819263051</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">08 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7419203847"
+                      name="selectedLearners" type="checkbox" value="7419203847">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7419203847">
+                      <span class="govuk-visually-hidden">Select Amelia Knight</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Amelia Knight</td>
+              <td class="govuk-table__cell" data-label="ULN">7419203847</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">10 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8192038472"
+                      name="selectedLearners" type="checkbox" value="8192038472">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8192038472">
+                      <span class="govuk-visually-hidden">Select Noah Richardson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Noah Richardson</td>
+              <td class="govuk-table__cell" data-label="ULN">8192038472</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">12 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7658192038"
+                      name="selectedLearners" type="checkbox" value="7658192038">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7658192038">
+                      <span class="govuk-visually-hidden">Select Sophie Barker</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Sophie Barker</td>
+              <td class="govuk-table__cell" data-label="ULN">7658192038</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">15 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-8291038475"
+                      name="selectedLearners" type="checkbox" value="8291038475">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-8291038475">
+                      <span class="govuk-visually-hidden">Select Jake Martin</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Jake Martin</td>
+              <td class="govuk-table__cell" data-label="ULN">8291038475</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">18 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7812039485"
+                      name="selectedLearners" type="checkbox" value="7812039485">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7812039485">
+                      <span class="govuk-visually-hidden">Select Ruby Patel</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Ruby Patel</td>
+              <td class="govuk-table__cell" data-label="ULN">7812039485</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">20 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7492837461"
+                      name="selectedLearners" type="checkbox" value="7492837461">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7492837461">
+                      <span class="govuk-visually-hidden">Select Leo Matthews</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Leo Matthews</td>
+              <td class="govuk-table__cell" data-label="ULN">7492837461</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">22 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7281937465"
+                      name="selectedLearners" type="checkbox" value="7281937465">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7281937465">
+                      <span class="govuk-visually-hidden">Select Freya Simpson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Freya Simpson</td>
+              <td class="govuk-table__cell" data-label="ULN">7281937465</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">25 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7982038471"
+                      name="selectedLearners" type="checkbox" value="7982038471">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7982038471">
+                      <span class="govuk-visually-hidden">Select Mason Hughes</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Mason Hughes</td>
+              <td class="govuk-table__cell" data-label="ULN">7982038471</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">28 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7138492038"
+                      name="selectedLearners" type="checkbox" value="7138492038">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7138492038">
+                      <span class="govuk-visually-hidden">Select Lola Adams</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Lola Adams</td>
+              <td class="govuk-table__cell" data-label="ULN">7138492038</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">30 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7859203741"
+                      name="selectedLearners" type="checkbox" value="7859203741">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7859203741">
+                      <span class="govuk-visually-hidden">Select Ethan Woods</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Ethan Woods</td>
+              <td class="govuk-table__cell" data-label="ULN">7859203741</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">01 August 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7012948375"
+                      name="selectedLearners" type="checkbox" value="7012948375">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7012948375">
+                      <span class="govuk-visually-hidden">Select Grace Palmer</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Grace Palmer</td>
+              <td class="govuk-table__cell" data-label="ULN">7012948375</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">03 August 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-0000000000"
+                      name="selectedLearners" type="checkbox" value="0000000000">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-0000000000">
+                      <span class="govuk-visually-hidden">Select Liam Foster</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Liam Foster</td>
+              <td class="govuk-table__cell" data-label="ULN">7000000000</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">05 August 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7958203746"
+                      name="selectedLearners" type="checkbox" value="7958203746">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7958203746">
+                      <span class="govuk-visually-hidden">Select Isla Reynolds</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Isla Reynolds</td>
+              <td class="govuk-table__cell" data-label="ULN">7958203746</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">1 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7682938475"
+                      name="selectedLearners" type="checkbox" value="7682938475">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7682938475">
+                      <span class="govuk-visually-hidden">Select Harvey Allen</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Harvey Allen</td>
+              <td class="govuk-table__cell" data-label="ULN">7682938475</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">2 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7139203841"
+                      name="selectedLearners" type="checkbox" value="7139203841">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7139203841">
+                      <span class="govuk-visually-hidden">Select Emily Davies</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Emily Davies</td>
+              <td class="govuk-table__cell" data-label="ULN">7139203841</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">3 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7351839402"
+                      name="selectedLearners" type="checkbox" value="7351839402">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7351839402">
+                      <span class="govuk-visually-hidden">Select Benjamin Grant</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Benjamin Grant</td>
+              <td class="govuk-table__cell" data-label="ULN">7351839402</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">4 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7410293847"
+                      name="selectedLearners" type="checkbox" value="7410293847">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7410293847">
+                      <span class="govuk-visually-hidden">Select Chloe Ellis</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Chloe Ellis</td>
+              <td class="govuk-table__cell" data-label="ULN">7410293847</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">5 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7283928475"
+                      name="selectedLearners" type="checkbox" value="7283928475">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7283928475">
+                      <span class="govuk-visually-hidden">Select Lucas Murphy</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Lucas Murphy</td>
+              <td class="govuk-table__cell" data-label="ULN">7283928475</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">6 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7920384712"
+                      name="selectedLearners" type="checkbox" value="7920384712">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7920384712">
+                      <span class="govuk-visually-hidden">Select Maya Bennett</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Maya Bennett</td>
+              <td class="govuk-table__cell" data-label="ULN">7920384712</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">7 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7851093842"
+                      name="selectedLearners" type="checkbox" value="7851093842">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7851093842">
+                      <span class="govuk-visually-hidden">Select Oscar Hall</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Oscar Hall</td>
+              <td class="govuk-table__cell" data-label="ULN">7851093842</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">8 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7129384756"
+                      name="selectedLearners" type="checkbox" value="7129384756">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7129384756">
+                      <span class="govuk-visually-hidden">Select Ella Watson</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Ella Watson</td>
+              <td class="govuk-table__cell" data-label="ULN">7129384756</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">9 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7658392018"
+                      name="selectedLearners" type="checkbox" value="7658392018">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7658392018">
+                      <span class="govuk-visually-hidden">Select Leo Chapman</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Leo Chapman</td>
+              <td class="govuk-table__cell" data-label="ULN">7658392018</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">10 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7348201947"
+                      name="selectedLearners" type="checkbox" value="7348201947">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7348201947">
+                      <span class="govuk-visually-hidden">Select Freya Morgan</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Freya Morgan</td>
+              <td class="govuk-table__cell" data-label="ULN">7348201947</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">11 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7203984751"
+                      name="selectedLearners" type="checkbox" value="7203984751">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7203984751">
+                      <span class="govuk-visually-hidden">Select Henry Brooks</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Henry Brooks</td>
+              <td class="govuk-table__cell" data-label="ULN">7203984751</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">12 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7012948371"
+                      name="selectedLearners" type="checkbox" value="7012948371">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7012948371">
+                      <span class="govuk-visually-hidden">Select Zara Moore</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Zara Moore</td>
+              <td class="govuk-table__cell" data-label="ULN">7012948371</td>
+              <td class="govuk-table__cell" data-label="Course">Business Administrator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">13 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7582013946"
+                      name="selectedLearners" type="checkbox" value="7582013946">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7582013946">
+                      <span class="govuk-visually-hidden">Select Ethan Clarke</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Ethan Clarke</td>
+              <td class="govuk-table__cell" data-label="ULN">7582013946</td>
+              <td class="govuk-table__cell" data-label="Course">Early Years Educator, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">14 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7482019475"
+                      name="selectedLearners" type="checkbox" value="7482019475">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7482019475">
+                      <span class="govuk-visually-hidden">Select Molly Hughes</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Molly Hughes</td>
+              <td class="govuk-table__cell" data-label="ULN">7482019475</td>
+              <td class="govuk-table__cell" data-label="Course">Customer Service Practitioner, Level: 2</td>
+              <td class="govuk-table__cell" data-label="Start date">15 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7638492018"
+                      name="selectedLearners" type="checkbox" value="7638492018">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7638492018">
+                      <span class="govuk-visually-hidden">Select Nathan Ellis</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Nathan Ellis</td>
+              <td class="govuk-table__cell" data-label="ULN">7638492018</td>
+              <td class="govuk-table__cell" data-label="Course">HR Support, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">16 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7193847201"
+                      name="selectedLearners" type="checkbox" value="7193847201">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7193847201">
+                      <span class="govuk-visually-hidden">Select Sophia Ward</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Sophia Ward</td>
+              <td class="govuk-table__cell" data-label="ULN">7193847201</td>
+              <td class="govuk-table__cell" data-label="Course">Teaching Assistant, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">17 July 2025</td>
+            </tr>
+            <tr class="govuk-table__row">
+              <td class="govuk-table__cell">
+                <div class="govuk-checkboxes govuk-checkboxes--small">
+                  <div class="govuk-checkboxes__item">
+                    <input class="govuk-checkboxes__input apprentice-checkbox" id="select-learner-7802943847"
+                      name="selectedLearners" type="checkbox" value="7802943847">
+                    <label class="govuk-label govuk-checkboxes__label" for="select-learner-7802943847">
+                      <span class="govuk-visually-hidden">Select Owen Fraser</span>
+                    </label>
+                  </div>
+                </div>
+              </td>
+              <td class="govuk-table__cell" data-label="Name">Owen Fraser</td>
+              <td class="govuk-table__cell" data-label="ULN">7802943847</td>
+              <td class="govuk-table__cell" data-label="Course">Team Leader Supervisor, Level: 3</td>
+              <td class="govuk-table__cell" data-label="Start date">18 July 2025</td>
+            </tr>
+          </tbody>
+        </table>
+      </fieldset>
+    </div>
+
+    <a id="continue-button" role="button" draggable="false" class="govuk-button"
+      href="/training-provider/v6/approvals/review-apprentices-1">
+      Add
+    </a>
+  </div>
+
+
+  <style>
+    .autocomplete__wrapper {
+      position: relative;
+      max-width: 35em;
+      margin-bottom: 20px;
+      font-family: "GDS Transport", Arial, sans-serif;
+    }
+
+    @media (min-width: 40.0625em) {
+      .autocomplete__wrapper {
+        margin-bottom: 30px;
+      }
+    }
+
+    .autocomplete__hint,
+    .autocomplete__input {
+      -webkit-appearance: none;
+      border: 2px solid #0b0c0c;
+      border-radius: 0;
+      box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      -webkit-box-sizing: border-box;
+      margin-bottom: 0;
+      width: 100%;
+    }
+
+    .autocomplete__input {
+      background-color: transparent;
+      position: relative;
+    }
+
+    .autocomplete__hint {
+      color: #b1b4b6;
+      position: absolute;
+    }
+
+    .autocomplete__input--default {
+      padding: 5px;
+    }
+
+    .autocomplete__input--focused {
+      outline: 3px solid #fd0;
+      outline-offset: 0;
+      box-shadow: inset 0 0 0 2px;
+    }
+
+    .autocomplete__input--show-all-values {
+      padding: 5px 34px 5px 5px;
+      cursor: pointer;
+    }
+
+    .autocomplete__dropdown-arrow-down {
+      z-index: -1;
+      display: inline-block;
+      position: absolute;
+      right: 8px;
+      width: 24px;
+      height: 24px;
+      top: 10px;
+    }
+
+    .autocomplete__menu {
+      background-color: #fff;
+      border: 2px solid #0b0c0c;
+      border-top: 0;
+      color: #0b0c0c;
+      margin: 0;
+      max-height: 342px;
+      overflow-x: hidden;
+      padding: 0;
+      width: 100%;
+      width: calc(100% - 4px);
+    }
+
+    .autocomplete__menu--visible {
+      display: block;
+    }
+
+    .autocomplete__menu--hidden {
+      display: none;
+    }
+
+    .autocomplete__menu--overlay {
+      box-shadow: rgba(0, 0, 0, 0.256863) 0 2px 6px;
+      left: 0;
+      position: absolute;
+      top: 100%;
+      z-index: 100;
+    }
+
+    .autocomplete__menu--inline {
+      position: relative;
+    }
+
+    .autocomplete__option {
+      border-bottom: solid #b1b4b6;
+      border-width: 1px 0;
+      cursor: pointer;
+      display: block;
+      position: relative;
+    }
+
+    .autocomplete__option>* {
+      pointer-events: none;
+    }
+
+    .autocomplete__option:first-of-type {
+      border-top-width: 0;
+    }
+
+    .autocomplete__option:last-of-type {
+      border-bottom-width: 0;
+    }
+
+    .autocomplete__option--odd {
+      background-color: #fafafa;
+    }
+
+    .autocomplete__option--focused,
+    .autocomplete__option:hover {
+      background-color: #1d70b8;
+      border-color: #1d70b8;
+      color: #fff;
+      outline: 0;
+    }
+
+    .autocomplete__option--no-results {
+      background-color: #fafafa;
+      color: #646b6f;
+      cursor: not-allowed;
+    }
+
+    .autocomplete__hint,
+    .autocomplete__input,
+    .autocomplete__option {
+      font-size: 16px;
+      line-height: 1.25;
+    }
+
+    .autocomplete__hint,
+    .autocomplete__option {
+      padding: 5px;
+    }
+
+    @media (min-width: 641px) {
+
+      .autocomplete__hint,
+      .autocomplete__input,
+      .autocomplete__option {
+        font-size: 19px;
+        line-height: 1.31579;
+      }
+    }
+  </style>
+  <script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+  <script>
+    const ILR = [
+      "Alan Lightfoot 7232486935",
+      "Bernard McKelly 7232487018",
+      "Carlos Mendoza 7447194694",
+      "Deepika Sharma 7342365215",
+      "Elijah Robinson 7582483570",
+      "Fatima Hussain 7443068554",
+      "Grace O’Connor 7436562065",
+      "Mohammed Ali 7502286029",
+      "Sophia Williams 7418298617",
+      "Yusuf Ahmed 7007543626",
+    ];
+
+    accessibleAutocomplete({
+      autoselect: true,
+      element: document.querySelector('#ILR-container'),
+      id: 'ILR',
+      name: 'ILR-autocomplete',
+      source: ILR,
+      defaultValue: '{{ data['
+    employer - autocomplete '] }}',
+      displayMenu: 'overlay',
+      minLength: 2,
+      tNoResults: function () {
+        return "Other"
+      }
+  });
+  </script>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      const selectAllCheckbox = document.getElementById('select-all');
+      const apprenticeCheckboxes = document.querySelectorAll('.apprentice-checkbox');
+
+      if (selectAllCheckbox && apprenticeCheckboxes.length > 0) {
+        selectAllCheckbox.addEventListener('change', function () {
+          apprenticeCheckboxes.forEach(checkbox => {
+            checkbox.checked = selectAllCheckbox.checked;
+          });
+        });
+
+        apprenticeCheckboxes.forEach(checkbox => {
+          checkbox.addEventListener('change', function () {
+            if (!this.checked) {
+              selectAllCheckbox.checked = false;
+            } else {
+              // Check if all individual checkboxes are now checked
+              const allChecked = Array.from(apprenticeCheckboxes).every(cb => cb.checked);
+              if (allChecked) {
+                selectAllCheckbox.checked = true;
+              }
+            }
+          });
+        });
+      }
+    });
+  </script>
+
+
+  {% endblock %}

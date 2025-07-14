@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v5" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set version = "v6" %}
+{% set pageTitle = "Do you want us to group your cohorts for you?" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -52,7 +52,7 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/training-provider/{{version}}/approvals/add/action/entry-method" method="post" class="form">
+    <form action="/training-provider/{{version}}/approvals/add/action/cohort-type" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -62,28 +62,31 @@ href: "javascript:window.history.go(-1);"
             </h1>
           </legend>
 
+          <p class="govuk-body">You can either select learners manually to create a cohort, or set up preferences for
+            grouping cohorts.</p>
+
           <div class="govuk-radios" data-module="govuk-radios">
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-3" name="add-apprentice-details"
-                type="radio" value="ILR" aria-describedby="add-apprentice-details-3-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-3">
-                Select apprentices from ILR
+              <input class="govuk-radios__input" id="cohort-creation-manual" name="cohort-creation-method" type="radio"
+                value="manual">
+              <label class="govuk-label govuk-radios__label" for="cohort-creation-manual">
+                No, manually create cohorts
               </label>
-              <div id="add-apprentice-details-3-item-hint" class="govuk-hint govuk-radios__hint">
-                Add new apprentice details by importing from the ILR file you have submitted to Submit Learner Records
+              <div id="cohort-creation-manual-hint" class="govuk-hint govuk-radios__hint">
+                Select one or more learners to add to a cohort
               </div>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio"
-                value="csv-file" aria-describedby="add-apprentice-details-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Upload a CSV file
+              <input class="govuk-radios__input" id="cohort-creation-grouped" name="cohort-creation-method" type="radio"
+                value="grouped">
+              <label class="govuk-label govuk-radios__label" for="cohort-creation-grouped">
+                Yes, group cohorts and choose settings
               </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices
-                for 1 or more employers.
+              <div id="cohort-creation-grouped-hint" class="govuk-hint govuk-radios__hint">
+                Define preferences for the service to group learners into cohorts for you, for example, by start date or
+                course
               </div>
             </div>
 
@@ -98,6 +101,4 @@ href: "javascript:window.history.go(-1);"
 
   </div>
 </div>
-
-
 {% endblock %}

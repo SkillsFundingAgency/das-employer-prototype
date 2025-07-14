@@ -1,10 +1,11 @@
 {% extends "layouts/main.html" %}
-{% set version = "v5" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set version = "v2" %}
+{% set pageTitle = "TRAINING PROVIDER LIMITED" %}
 
 {% block header %}
 {% include "includes/header.html" %}
 {% include "includes/training-provider-account-header.html" %}
+
 <nav class="das-navigation">
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
@@ -37,7 +38,6 @@
   </div>
 </nav>
 {% endblock %}
-
 {% block beforeContent %}
 
 {{ govukBackLink({
@@ -52,42 +52,26 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/training-provider/{{version}}/approvals/add/action/entry-method" method="post" class="form">
+    <form action="/training-provider/{{version}}/add-apprentice/add-apprentice-details" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
             <h1 class="govuk-fieldset__heading">
-              {{ pageTitle }}
+              Upload a CSV file
             </h1>
           </legend>
 
-          <div class="govuk-radios" data-module="govuk-radios">
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-3" name="add-apprentice-details"
-                type="radio" value="ILR" aria-describedby="add-apprentice-details-3-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-3">
-                Select apprentices from ILR
-              </label>
-              <div id="add-apprentice-details-3-item-hint" class="govuk-hint govuk-radios__hint">
-                Add new apprentice details by importing from the ILR file you have submitted to Submit Learner Records
-              </div>
-            </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio"
-                value="csv-file" aria-describedby="add-apprentice-details-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Upload a CSV file
-              </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices
-                for 1 or more employers.
-              </div>
-            </div>
-
+          <div class="govuk-hint" id="file-hint">
+            Your CSV file should not have more than 100 rows
           </div>
+
+        <div class="govuk-form-group">
+          <label class="govuk-label" for="file-upload-1">
+            Upload a file
+          </label>
+          <input class="govuk-file-upload" id="file-upload-1" name="fileUpload1" type="file" aria-describedby="file-hint">
+        </div>
 
         </fieldset>
       </div>
@@ -98,6 +82,4 @@ href: "javascript:window.history.go(-1);"
 
   </div>
 </div>
-
-
 {% endblock %}

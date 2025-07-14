@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v5" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set version = "v6" %}
+{% set pageTitle = "Confirm employer" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -52,41 +52,38 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/training-provider/{{version}}/approvals/add/action/entry-method" method="post" class="form">
+    <h1 class="govuk-heading-l">Confirm employer</h1>
+    <h3 class="govuk-heading-m govuk-!-margin-bottom-0">BAMBINOS DAY NURSERY LIMITED</h3>
+    <dl class="das-definition-list das-definition-list--inline das-definition-list--muted govuk-!-font-size-19">
+      <dt class="das-definition-list__title">Account Name</dt>
+      <dd class="das-definition-list__definition">BAMBINO COMMUNITY NURSERY (AYLESBURY) LIMITED</dd>
+      <dt class="das-definition-list__title">Agreement ID</dt>
+      <dd class="das-definition-list__definition">754ZJE</dd>
+    </dl>
+
+    <form class="form" action="/training-provider/{{version}}/approvals/add/action/confirm-employer" method="post">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
-          <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
+          <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
             <h1 class="govuk-fieldset__heading">
-              {{ pageTitle }}
+              Is this the employer you’d like to add apprentice details for?
             </h1>
           </legend>
-
           <div class="govuk-radios" data-module="govuk-radios">
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-3" name="add-apprentice-details"
-                type="radio" value="ILR" aria-describedby="add-apprentice-details-3-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-3">
-                Select apprentices from ILR
+              <input class="govuk-radios__input" id="confirm-employer" name="confirm-employer" type="radio" value="yes">
+              <label class="govuk-label govuk-radios__label" for="confirm-employer">
+                Yes, use BAMBINOS DAY NURSERY LIMITED
               </label>
-              <div id="add-apprentice-details-3-item-hint" class="govuk-hint govuk-radios__hint">
-                Add new apprentice details by importing from the ILR file you have submitted to Submit Learner Records
-              </div>
             </div>
-
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio"
-                value="csv-file" aria-describedby="add-apprentice-details-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Upload a CSV file
+              <input class="govuk-radios__input" id="confirm-employer-2" name="confirm-employer" type="radio"
+                value="no">
+              <label class="govuk-label govuk-radios__label" for="confirm-employer-2">
+                No, choose a different employer
               </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices
-                for 1 or more employers.
-              </div>
             </div>
-
           </div>
 
         </fieldset>
@@ -98,6 +95,5 @@ href: "javascript:window.history.go(-1);"
 
   </div>
 </div>
-
 
 {% endblock %}

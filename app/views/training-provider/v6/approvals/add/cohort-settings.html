@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v5" %}
-{% set pageTitle = "Add apprentice details" %}
+{% set version = "v6" %}
+{% set pageTitle = "Cohort settings" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -52,7 +52,7 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <form action="/training-provider/{{version}}/approvals/add/action/entry-method" method="post" class="form">
+    <form action="/training-provider/{{version}}/approvals/add/action/cohort-settings" method="post" class="form">
 
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
@@ -62,42 +62,51 @@ href: "javascript:window.history.go(-1);"
             </h1>
           </legend>
 
+          <p class="govuk-body">You can group your learners into draft cohorts using data from the ILR. All cohorts are
+            sorted by
+            employer.</p>
+
+          <h2 class="govuk-heading-m">How do you want to group your cohorts?</h2>
+          <div id="changedName-hint" class="govuk-hint">
+            These settings will apply to all employers </div>
+
           <div class="govuk-radios" data-module="govuk-radios">
 
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details-3" name="add-apprentice-details"
-                type="radio" value="ILR" aria-describedby="add-apprentice-details-3-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details-3">
-                Select apprentices from ILR
-              </label>
-              <div id="add-apprentice-details-3-item-hint" class="govuk-hint govuk-radios__hint">
-                Add new apprentice details by importing from the ILR file you have submitted to Submit Learner Records
+            <div class="govuk-radios" data-module="govuk-radios">
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cohort-option-one-learner" name="cohort-grouping-type"
+                  type="radio" value="one-learner-per-cohort">
+                <label class="govuk-label govuk-radios__label" for="cohort-option-one-learner">
+                  Create one cohort for one learner
+                </label>
+                <div id="cohort-option-one-learner-hint" class="govuk-hint govuk-radios__hint">
+                  If you always have one learner per cohort, choose this option.
+                </div>
+              </div>
+
+              <div class="govuk-radios__item">
+                <input class="govuk-radios__input" id="cohort-option-group-learners" name="cohort-grouping-type"
+                  type="radio" value="group-learners">
+                <label class="govuk-label govuk-radios__label" for="cohort-option-group-learners">
+                  Group learners into cohorts
+                </label>
+                <div id="cohort-option-group-learners-hint" class="govuk-hint govuk-radios__hint">
+                  Group by start date, training course or ILR submission, or a combination.
+                </div>
               </div>
             </div>
-
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="add-apprentice-details" name="add-apprentice-details" type="radio"
-                value="csv-file" aria-describedby="add-apprentice-details-item-hint">
-              <label class="govuk-label govuk-radios__label" for="add-apprentice-details">
-                Upload a CSV file
-              </label>
-              <div id="add-apprentice-details-item-hint" class="govuk-hint govuk-radios__hint">
-                You can add new apprentices into existing or new cohorts from a file. The file can contain apprentices
-                for 1 or more employers.
-              </div>
-            </div>
-
-          </div>
 
         </fieldset>
-      </div>
-
-      <button class="govuk-button" data-module="govuk-button">Continue</button>
+      </div> <button class="govuk-button" data-module="govuk-button">Save and continue</button>
 
     </form>
 
+    <p><a class="govuk-link govuk-link--no-visited-state"
+        href="/training-provider/{{version}}/approvals/add/select-journey">
+        Cancel and manually create cohort
+      </a></p>
+
   </div>
 </div>
-
-
 {% endblock %}

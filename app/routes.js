@@ -3231,3 +3231,67 @@ router.post('/employer/v19/training-provider-adds/action/select-levy-transfer', 
 
   }
 });
+
+// Training provider v6
+
+router.post('/training-provider/v6/approvals/add/action/entry-method', function (req, res) {
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v6/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v6/approvals/add/ilr-spec')
+  }
+  else if (addApprenticeDetails == "ILR") {
+    res.redirect('/training-provider/v6/approvals/add/ilr-spec')
+  }
+});
+
+router.post('/training-provider/v6/approvals/add/action/cohort-type', function (req, res) {
+  var cohortCreationMethod = req.session.data['cohort-creation-method'];
+
+  if (cohortCreationMethod == "manual") {
+    res.redirect('/training-provider/v6/approvals/add/select-journey');
+  }
+  else if (cohortCreationMethod == "grouped") {
+    res.redirect('/training-provider/v6/approvals/add/cohort-settings');
+  }
+});
+
+router.post('/training-provider/v6/approvals/add/action/cohort-settings', function (req, res) {
+  var cohortGroupingType = req.session.data['cohort-grouping-type'];
+  if (cohortGroupingType == "one-learner-per-cohort") {
+    res.redirect('/training-provider/v6/approvals/acknowledgement-settings-one-learner');
+  }
+  else if (cohortGroupingType == "group-learners") {
+    res.redirect('/training-provider/v6/approvals/add/group-settings');
+  }
+  else {
+    console.log("Unexpected cohort grouping type received: " + cohortGroupingType);
+    // Redirect back to the form or an error page if the value is not recognized
+    res.redirect('/training-provider/v6/error-page');
+  }
+});
+
+router.post('/training-provider/v6/approvals/add/action/select-journey', function (req, res) {
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v6/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v6/approvals/add/select-employer')
+  }
+})
+
+router.post('/training-provider/v6/approvals/add/action/confirm-employer', function (req, res) {
+  var confirmEmployer = req.session.data['confirm-employer']
+
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v6/approvals/add/select-apprentice-ILR')
+  }
+  else {
+    res.redirect('/training-provider/v6/approvals/add/select-employer')
+  }
+})
