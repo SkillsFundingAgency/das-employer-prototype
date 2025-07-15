@@ -3256,7 +3256,7 @@ router.post('/training-provider/v6/approvals/add/action/cohort-type', function (
   }
 
   else if (cohortCreationMethod == "auto-grouped") {
-    res.redirect('/training-provider/v6/approvals/add/cohort-settings');
+    res.redirect('/training-provider/v6/approvals/add/group-settings');
   }
 
   else if (cohortCreationMethod == "auto-single") {
