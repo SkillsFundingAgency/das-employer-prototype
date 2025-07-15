@@ -3041,7 +3041,7 @@ router.post('/training-provider/v5/approvals/add/action/confirm-employer', funct
   var confirmEmployer = req.session.data['confirm-employer']
 
   if (confirmEmployer == "yes") {
-    res.redirect('/training-provider/v5/approvals/add/select-apprentice-ILR')
+    res.redirect('/training-provider/v5/approvals/add/select-apprentice-ILR-update')
   }
   else {
     res.redirect('/training-provider/v5/approvals/add/select-employer')
