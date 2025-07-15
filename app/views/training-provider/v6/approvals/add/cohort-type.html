@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v6" %}
-{% set pageTitle = "Do you want us to group your cohorts for you?" %}
+{% set pageTitle = "How do you want to set up cohorts?" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -62,8 +62,9 @@ href: "javascript:window.history.go(-1);"
             </h1>
           </legend>
 
-          <p class="govuk-body">You can either select learners manually to create a cohort, or set up preferences for
-            grouping cohorts.</p>
+          <p class="govuk-body">You can automatically group your learners into draft cohorts using data from the ILR.
+            All cohorts are sorted by
+            employer.</p>
 
           <div class="govuk-radios" data-module="govuk-radios">
 
@@ -71,22 +72,32 @@ href: "javascript:window.history.go(-1);"
               <input class="govuk-radios__input" id="cohort-creation-manual" name="cohort-creation-method" type="radio"
                 value="manual">
               <label class="govuk-label govuk-radios__label" for="cohort-creation-manual">
-                No, manually create cohorts
+                Manually
               </label>
               <div id="cohort-creation-manual-hint" class="govuk-hint govuk-radios__hint">
-                Select one or more learners to add to a cohort
+                Select one or more learners from a list to add to a cohort
               </div>
             </div>
 
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="cohort-creation-grouped" name="cohort-creation-method" type="radio"
-                value="grouped">
-              <label class="govuk-label govuk-radios__label" for="cohort-creation-grouped">
-                Yes, group cohorts and choose settings
+              <input class="govuk-radios__input" id="cohort-creation-auto-grouped" name="cohort-creation-method"
+                type="radio" value="auto-grouped">
+              <label class="govuk-label govuk-radios__label" for="cohort-creation-auto-grouped">
+                Automatically (group learners)
               </label>
-              <div id="cohort-creation-grouped-hint" class="govuk-hint govuk-radios__hint">
-                Define preferences for the service to group learners into cohorts for you, for example, by start date or
-                course
+              <div id="cohort-creation-auto-grouped-hint" class="govuk-hint govuk-radios__hint">
+                Choose to group learners by start date, training course or ILR submission, or a combination
+              </div>
+            </div>
+
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="cohort-creation-auto-single" name="cohort-creation-method"
+                type="radio" value="auto-single">
+              <label class="govuk-label govuk-radios__label" for="cohort-creation-auto-single">
+                Automatically (one learner per cohort)
+              </label>
+              <div id="cohort-creation-auto-single-hint" class="govuk-hint govuk-radios__hint">
+                Each learner will be put in their own cohort
               </div>
             </div>
 

@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
 {% set version = "v6" %}
-{% set pageTitle = "Review apprentices" %}
+{% set pageTitle = "Approve apprentice details" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -96,7 +96,7 @@ href: "javascript:window.history.go(-1);"
 </div>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-<h3 class="govuk-heading-m">1 x Early Years Practitioner, Level: 2
+<h3 class="govuk-heading-m">1 x Early years practitioner, Level: 2
 </h3>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
@@ -120,16 +120,16 @@ href: "javascript:window.history.go(-1);"
       <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
       <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
       <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£3,500</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£3,888</td>
       <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
         <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/apprentice-details-alan">
+          href="/training-provider/v6/approvals/recognise-prior-learning-details">
           Add RPL
           <span class="govuk-visually-hidden"> Alan Lightfoot</span>
         </a>
       </td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link govuk-link--no-visited-state" href="#">
+        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/v6/approvals/check-details-alan">
           View
           <span class="govuk-visually-hidden"> Alan Lightfoot</span>
         </a>
@@ -143,7 +143,7 @@ href: "javascript:window.history.go(-1);"
 </table>
 
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-<h3 class="govuk-heading-m">1 x Early Years Practitioner, Level: 3
+<h3 class="govuk-heading-m">2 x Early years educator, Level: 3
 </h3>
 <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
 <table class="govuk-table das-table--responsive das-table--condensed">
@@ -168,20 +168,21 @@ href: "javascript:window.history.go(-1);"
       <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
       <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
-        <a class="govuk-link govuk-link--no-visited-state" href="#">
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/v6/approvals/recognise-prior-learning-details-2">
           Add RPL
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          <span class="govuk-visually-hidden"> Bernard McKelly</span>
         </a>
       </td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/apprentice-details-alan">
+          href="/training-provider/{{version}}/approvals/check-details-bernard">
           View
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          <span class="govuk-visually-hidden"> Bernard McKelly</span>
         </a>
         <br><br>
         <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
-          Remove <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          Remove <span class="govuk-visually-hidden"> Bernard McKelly</span>
         </a>
       </td>
     </tr>
@@ -196,20 +197,20 @@ href: "javascript:window.history.go(-1);"
       <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
       <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
-        <a class="govuk-link govuk-link--no-visited-state" href="#">
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/v6/approvals/recognise-prior-learning-details-3">
           Add RPL
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          <span class="govuk-visually-hidden"> Carla Mendoza</span>
         </a>
       </td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/apprentice-details-alan">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">
           View
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          <span class="govuk-visually-hidden"> Carla Mendoza</span>
         </a>
         <br><br>
         <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
-          Remove <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+          Remove <span class="govuk-visually-hidden"> Carla Mendoza</span>
         </a>
       </td>
     </tr>
@@ -226,7 +227,7 @@ href: "javascript:window.history.go(-1);"
           Total apprentices
         </dt>
         <dd class="govuk-summary-list__value">
-          1
+          3
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -234,7 +235,7 @@ href: "javascript:window.history.go(-1);"
           Total apprenticeship training price (excluding VAT)
         </dt>
         <dd class="govuk-summary-list__value">
-          £3,500
+          £17,888
         </dd>
       </div>
     </dl>
@@ -260,7 +261,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">Send to employer?</h3>
+            <h3 class="govuk-fieldset__heading">Approve these details?</h3>
           </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
@@ -282,12 +283,24 @@ href: "javascript:window.history.go(-1);"
                 </div>
               </div>
             </div>
-            <!-- Second Radio Button (Without Conditional Reveal) -->
+            <!-- Second Radio Button -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no">
+              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no"
+                data-aria-controls="conditional-approve-details-2">
               <label class="govuk-label govuk-radios__label" for="approve-details-2">
-                No, save and return to Apprentice requests
+                No, send to employer to review or add details
               </label>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-approve-details-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="approve-message-no">
+                    Leave BAMBINOS DAY NURSERY LIMITED a message
+                  </label>
+                  <textarea class="govuk-textarea" id="approve-message-no" name="approve-message-no"
+                    rows="5">{{ data['approve-message'] or '' }}</textarea>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -295,6 +308,10 @@ href: "javascript:window.history.go(-1);"
 
       <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
       <br>
+      <p><a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">
+          Save and exit
+        </a></p>
     </form>
 
   </div>

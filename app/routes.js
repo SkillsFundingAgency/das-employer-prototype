@@ -3254,8 +3254,13 @@ router.post('/training-provider/v6/approvals/add/action/cohort-type', function (
   if (cohortCreationMethod == "manual") {
     res.redirect('/training-provider/v6/approvals/add/select-journey');
   }
-  else if (cohortCreationMethod == "grouped") {
+
+  else if (cohortCreationMethod == "auto-grouped") {
     res.redirect('/training-provider/v6/approvals/add/cohort-settings');
+  }
+
+  else if (cohortCreationMethod == "auto-single") {
+    res.redirect('/training-provider/v6/approvals/acknowledgement-settings-one-learner');
   }
 });
 
