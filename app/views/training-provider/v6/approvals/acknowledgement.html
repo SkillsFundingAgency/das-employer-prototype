@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v3" %}
+{% set version = "v6" %}
 {% if data['approve-details'] == "yes" %}
 {% set pageTitle = "Cohort approved and sent to employer" %}
 {% else %}
@@ -101,12 +101,13 @@ href: "javascript:window.history.go(-1);"
         to Apprentice
         requests</a></a>
 
-    <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/">Go to homepage</a></p>
+    <p class="govuk-body"><a class="govuk-link" href="/training-provider/{{version}}/approvals/add/homepage">Go to
+        homepage</a></p>
     <br>
 
     <a id="continue-button" role="button" draggable="false" class="govuk-button govuk-button--secondary"
-      href="/training-provider/v6/approvals/add/cohort-type">
-      Go back to cohort settings
+      href="/training-provider/{{version}}/approvals/add/homepage">
+      Go back to homepage
     </a>
   </div>
 </div>
