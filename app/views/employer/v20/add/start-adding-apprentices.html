@@ -1,0 +1,107 @@
+{% extends "layouts/main.html" %}
+{% set version = "v20" %}
+{% set pageTitle = "Apprentice details" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/v5/add/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+  <main class="govuk-main-wrapper " id="main-content" role="main">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+        <p class="govuk-body-m">Tell your training provider which apprentices they need to add.
+        </p>
+        <p class="govuk-body-m">You’ll need to review and approve any apprentice details your training provider adds.
+        </p>
+
+        <dl class="govuk-summary-list">
+          <div class="govuk-summary-list__row">
+            <dt class="govuk-summary-list__key">
+              Funding type
+            </dt>
+            <dd class="govuk-summary-list__value">
+              Reserved funds
+            </dd>
+            <dd class="govuk-summary-list__actions">
+              <a class="govuk-link" href="/employer/v20/add/select-funding">Change<span class="govuk-visually-hidden">
+                  date of birth</span></a>
+            </dd>
+          </div>
+        </dl>
+
+        <div class="govuk-!-padding-bottom-5"></div>
+
+        <h1 class="govuk-heading-m">What are the full names of the apprentices?</h1>
+
+        <div id="apprentices-hint" class="govuk-hint">
+          You can also include a message or other apprentice details for EDUC8 TRAINING
+        </div>
+
+        <form action="/employer/{{version}}/add/apprentice-request-sent" novalidate="" method="post">
+          <div class="govuk-form-group">
+            <label class="govuk-label govuk-!-font-weight-bold" for="send-details-message"></label>
+            <textarea class="govuk-textarea" cols="40" id="send-details-message" name="send-details" rows="10"
+              aria-describedby="apprentices-hint"></textarea>
+          </div>
+
+          <button id="continue-button" type="submit" class="govuk-button">Confirm and send</button>
+        </form>
+
+
+      </div>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+{% endblock %}

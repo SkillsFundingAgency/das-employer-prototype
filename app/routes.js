@@ -3300,3 +3300,64 @@ router.post('/training-provider/v6/approvals/add/action/confirm-employer', funct
     res.redirect('/training-provider/v6/approvals/add/select-employer')
   }
 })
+
+// Employer empty cohort v20
+
+router.post('/employer/v20/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection']; // Correctly captures the 'name="selection"' value from the form
+
+  if (selection === "Connection") {
+    res.redirect('/employer/v20/add/select-transfer-connection');
+  } else if (selection === "Levy") {
+    res.redirect('/employer/v20/add/select-levy-transfer');
+  } else if (selection === "Reserved") {
+    // Assuming a redirect for "Reserved funds"
+    res.redirect('/employer/v20/add/provider-details'); // Example redirect
+  } else if (selection === "New") {
+    // Assuming a redirect for "I want to reserve new funds"
+    res.redirect('/employer/v20/add/provider-details'); // Example redirect
+  } else {
+    // If no selection is made or it's an unexpected value
+    // You might want to display an error message or redirect to the form again.
+    res.redirect('/employer/v20/add/provider-details'); // Redirect back to the form
+  }
+});
+
+router.post('/employer/v20/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider'];
+
+  if (useProvider === "No") {
+    res.redirect('/employer/v20/add/provider-details');
+  } else {
+    res.redirect('/employer/v20/add/start-adding-apprentices');
+  }
+});
+
+router.post('/employer/v21/training-provider-adds/action/select-funding', function (req, res) {
+  var selection = req.session.data['selection'];
+
+  if (selection === "Connection") {
+
+    res.redirect('/employer/v21/add/select-transfer-connection');
+  } else if (selection === "Levy") {
+
+    res.redirect('/employer/v21/add/select-levy-transfer');
+  } else if (selection === "Current") {
+
+    res.redirect('/employer/v21/add/provider-details');
+  } else {
+    // Handle any other scenario if needed
+    res.redirect('/employer/v21/add/select-funding'); // Redirect to form page again if necessary
+  }
+});
+
+router.post('/employer/v21/add/action/confirm-provider-details', function (req, res) {
+  var useProvider = req.session.data['use-provider']
+
+  if (useProvider == "No") {
+    res.redirect('/employer/v21/add/provider-details')
+  }
+  else {
+    res.redirect('/employer/v21/add/start-adding-apprentices')
+  }
+})
