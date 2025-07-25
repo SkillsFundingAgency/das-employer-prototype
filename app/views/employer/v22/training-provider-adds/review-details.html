@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v17" %}
-{% set pageTitle = "Review apprentice details" %}
+{% set version = "v22" %}
+{% set pageTitle = "Approve apprentice details" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -67,9 +67,9 @@
             </dt>
             <dd class="govuk-summary-list__value">
               <td class="govuk-table__cell">
-                <strong class="govuk-tag govuk-tag--yellow">
-                  Ready for approval
-                </strong>
+
+                Ready for approval
+
               </td>
             </dd>
           </div>
@@ -94,7 +94,7 @@
               Message from training provider
             </dt>
             <dd class="govuk-summary-list__value">
-              Please review and approve by 14 May. If you have any questions, please contact Peggy at
+              Please review and approve by 20 August. If you have any questions, please contact Peggy at
               Peggy@educ8training.co.uk
             </dd>
           </div>
@@ -102,118 +102,119 @@
       </div>
     </div>
 
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
-        <table class="govuk-table das-table--responsive das-table--condensed">
-          <thead class="govuk-table__head">
-            <tr class="govuk-table__row">
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Apprenticeship training course
-              </th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
-              <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning
-                (RPL)
-              </th>
-              <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
-            </tr>
-          </thead>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Name">
-                <span class="das-table-cell--highlight das-breakable">Alan Lightfoot</span>
-              </td>
-              <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
-              <td class="govuk-table__cell" data-label="Apprenticeship training course">Early Years Practitioner,
-                Level:
-                2
-              </td>
-              <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
-              <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£3,500</td>
-              <td class="govuk-table__cell" data-label="Recognition of prior learning">Yes</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state"
-                  href="/employer/{{version}}/training-provider-adds/details-alan-1">
-                  View details
-                  <span class="govuk-visually-hidden"> Alan Lightfoot</span>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-          <tbody class="govuk-table__body">
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Name">
-                <span class="das-table-cell--highlight das-breakable">Bernard McKelly</span>
-              </td>
-              <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
-              <td class="govuk-table__cell" data-label="Apprenticeship training course">Early Years Educator,
-                Level: 3</td>
-              <td class="govuk-table__cell" data-label="Date of birth">1 Oct 2004</td>
-              <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
-              <td class="govuk-table__cell" data-label="Recognition of prior learning">No</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state"
-                  href="/employer/{{version}}/training-provider-adds/details-bernard-1">
-                  View details
-                  <span class="govuk-visually-hidden"> Bernard McKelly</span>
-                </a>
-              </td>
-            </tr>
-            <tr class="govuk-table__row">
-              <td class="govuk-table__cell" data-label="Name">
-                <span class="das-table-cell--highlight das-breakable">Carla Mendoza</span>
-              </td>
-              <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
-              <td class="govuk-table__cell" data-label="Apprenticeship training course">Teaching Assistant, Level: 3
-              </td>
-              <td class="govuk-table__cell" data-label="Date of birth">19 May 2001</td>
-              <td class="govuk-table__cell" data-label="Training dates">Mar 2025 to Mar 2026</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
-              <td class="govuk-table__cell" data-label="Recognition of prior learning">No</td>
-              <td class="govuk-table__cell govuk-table__cell--numeric">
-                <a class="govuk-link govuk-link--no-visited-state"
-                  href="/employer/{{version}}/training-provider-adds/details-carla-1">
-                  View details
-                  <span class="govuk-visually-hidden"> Carla Mendoza</span>
-                </a>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <h3 class="govuk-heading-m">1 x Early years practitioner, Level: 2
+    </h3>
 
-      <div class="govuk-grid-column-full">
-        <dl class="govuk-summary-list govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Total apprentices
-            </dt>
-            <dd class="govuk-summary-list__value">
-              3
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Total apprenticeship training price (excluding VAT)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              £17,500
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <table class="govuk-table das-table--responsive das-table--condensed">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning (RPL)</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">
+            <span class="das-table-cell--highlight das-breakable">Alan Lightfoot</span>
+          </td>
+          <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
+          <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
+          <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£3,888</td>
+          <td class="govuk-table__cell" data-label="Recognition of prior learning">Yes<br>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link govuk-link--no-visited-state"
+              href="/training-provider/{{version}}/approvals/check-details-alan">
+              View
+              <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+            </a>
+            <br><br>
+            <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+              Remove <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <h3 class="govuk-heading-m">2 x Early years educator, Level: 3
+    </h3>
+    <hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+    <table class="govuk-table das-table--responsive das-table--condensed">
+      <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+          <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning (RPL)</th>
+          <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+        </tr>
+      </thead>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">
+            <span class="das-table-cell--highlight das-breakable">Bernard McKelly</span>
+          </td>
+          <td class="govuk-table__cell" data-label="Unique learner number">7232486936</td>
+          <td class="govuk-table__cell" data-label="Date of birth">1 Oct 2004</td>
+          <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
+          <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link govuk-link--no-visited-state"
+              href="/training-provider/{{version}}/approvals/check-details-bernard">
+              View
+              <span class="govuk-visually-hidden"> Bernard McKelly</span>
+            </a>
+            <br><br>
+            <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+              Remove <span class="govuk-visually-hidden"> Bernard McKelly</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+      <tbody class="govuk-table__body">
+        <tr class="govuk-table__row">
+          <td class="govuk-table__cell" data-label="Name">
+            <span class="das-table-cell--highlight das-breakable">Carla Mendoza</span>
+          </td>
+          <td class="govuk-table__cell" data-label="Unique learner number">7232486937</td>
+          <td class="govuk-table__cell" data-label="Date of birth">19 May 2001</td>
+          <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+          <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
+          <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+          </td>
+          <td class="govuk-table__cell govuk-table__cell--numeric">
+            <a class="govuk-link govuk-link--no-visited-state" href="#">
+              View
+              <span class="govuk-visually-hidden"> Carla Mendoza</span>
+            </a>
+            <br><br>
+            <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+              Remove <span class="govuk-visually-hidden"> Carla Mendoza</span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
 
 
     <hr class="govuk-section-break govuk-section-break--l">
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <form action="/employer/v17/training-provider-adds/action/review-details" method="post" class="form">
+        <form action="/employer/v22/training-provider-adds/action/review-details" method="post" class="form">
           <div class="govuk-form-group">
             <div class="govuk-form-group">
               <fieldset class="govuk-fieldset">

@@ -3361,3 +3361,14 @@ router.post('/employer/v21/add/action/confirm-provider-details', function (req, 
     res.redirect('/employer/v21/add/start-adding-apprentices')
   }
 })
+
+router.post('/employer/v22/training-provider-adds/action/review-details', function (req, res) {
+  var approveDetails = req.session.data['approve-details']
+
+  if (approveDetails == "yes") {
+    res.redirect('/employer/v22/training-provider-adds/approved')
+  }
+  else {
+    res.redirect('/employer/v22/training-provider-adds/request-changes')
+  }
+})

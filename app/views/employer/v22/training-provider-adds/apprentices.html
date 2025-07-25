@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v17" %}
+{% set version = "v22" %}
 
 {% block pageTitle %}
 Access denied - Training provider
@@ -67,6 +67,11 @@ Access denied - Training provider
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
         <div class="das-cards">
+          <div class="das-card das-card--underline">
+            <h2 class="govuk-heading-m das-card__heading"><a id="AddApprentice" href="start-page"
+                class="govuk-link govuk-link--no-visited-state">Send an apprentice request</a></h2>
+            <p>Choose funding and send your request to your training provider to add apprentice details</p>
+          </div>
           <div class="das-card das-card--underline">
             <h2 class="govuk-heading-m das-card__heading"><a id="YourCohorts"
                 href="/employer/{{version}}/training-provider-adds/apprentice-requests"
