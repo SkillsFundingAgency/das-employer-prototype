@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v17" %}
-{% set pageTitle = "Edit apprentice's name" %}
+{% set version = "v22" %}
+{% set pageTitle = "Add your reference" %}
 
 {% block pageTitle %}
 {{pageTitle}}
@@ -56,31 +56,33 @@
 
     <div class="govuk-grid-row">
       <div class="govuk-grid-column-two-thirds">
-        <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+        <span class="govuk-caption-l">Details for Alan Lightfoot</span>
+        <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
-        <form class="form" action="/employer/v2/training-provider-adds/view-apprentice-details-success" method="post">
+        <p class="govuk-body">
+          Add a reference, such as employee number or location - this won’t be seen by your training provider.
+        </p>
+
+        <form class="form" action="/employer/v22/training-provider-adds/details-alan-1" method="post">
           <div class="govuk-form-group">
-            <label class="govuk-label" for="first-name">
-              First name
+            <label class="govuk-label" for="reference">
+              Reference
             </label>
-            <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="first"
-              value="{{ data['first-name'] or '' }}">
+            <input class="govuk-input govuk-!-width-two-thirds" id="reference" name="reference" type="text"
+              value="{{ data['reference'] or '' }}">
           </div>
-          <div class="govuk-button-group"
-            href="/employer/v2/training-provider-adds/view-apprentice-details-success.html">
-            <button class="govuk-button" data-module="govuk-button">
-              Save and continue
+
+          <div class="govuk-button-group">
+            <button class="govuk-button" data-module="govuk-button" type="submit">
+              Continue
             </button>
-            <a class="govuk-link" href="/employer/v2/training-provider-adds/view-apprentice-details">Cancel</a>
+            <a class="govuk-link" href="/employer/v22/training-provider-adds/details-alan-1">Cancel</a>
           </div>
         </form>
 
 
-
       </div>
     </div>
-
-
 
   </main>
 </div>
