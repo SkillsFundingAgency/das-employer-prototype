@@ -3372,3 +3372,41 @@ router.post('/employer/v22/training-provider-adds/action/review-details', functi
     res.redirect('/employer/v22/training-provider-adds/request-changes')
   }
 })
+
+// Training provider webinar update V7
+
+router.post('/training-provider/v7/approvals/add/action/entry-method', function (req, res) {
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v7/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v7/approvals/add/select-journey')
+  }
+  else if (addApprenticeDetails == "ILR") {
+    res.redirect('/training-provider/v7/approvals/add/select-journey')
+  }
+});
+
+router.post('/training-provider/v7/approvals/add/action/select-journey', function (req, res) {
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v7/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v7/approvals/add/select-employer')
+  }
+})
+
+router.post('/training-provider/v7/approvals/add/action/confirm-employer', function (req, res) {
+  var confirmEmployer = req.session.data['confirm-employer']
+
+  if (confirmEmployer == "yes") {
+    res.redirect('/training-provider/v7/approvals/add/select-apprentice-ILR-update')
+  }
+  else {
+    res.redirect('/training-provider/v7/approvals/add/select-employer')
+  }
+})
