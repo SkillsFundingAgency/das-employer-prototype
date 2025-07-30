@@ -3410,3 +3410,33 @@ router.post('/training-provider/v7/approvals/add/action/confirm-employer', funct
     res.redirect('/training-provider/v7/approvals/add/select-employer')
   }
 })
+
+router.post('/training-provider/v7/approvals/review-apprentices-3', function (req, res) {
+  var approveDetails = req.session.data['approve-details'];
+
+  console.log('\n--- Debugging Route: review-apprentices-3 ---');
+  console.log('1. approveDetails (from session):', approveDetails);
+  console.log('2. approve-message-yes (from session):', req.session.data['approve-message-yes']); // <<< IMPORTANT LINE
+  console.log('3. approve-message-no (from session):', req.session.data['approve-message-no']);  // <<< IMPORTANT LINE
+  console.log('--------------------------------------');
+
+  if (approveDetails === "yes") {
+    req.session.data['approvalMessage'] = req.session.data['approve-message-yes'] || '';
+    delete req.session.data['requestChangesMessage'];
+    delete req.session.data['approve-message-no'];
+    console.log('4. Storing approvalMessage:', req.session.data['approvalMessage']);
+    console.log('5. Current Session Data (after yes logic):', req.session.data); // <<< IMPORTANT LINE
+    res.redirect('/training-provider/v7/approvals/acknowledgement');
+  } else if (approveDetails === "no") {
+    req.session.data['requestChangesMessage'] = req.session.data['approve-message-no'] || '';
+    delete req.session.data['approvalMessage'];
+    delete req.session.data['approve-message-yes'];
+    console.log('4. Storing requestChangesMessage:', req.session.data['requestChangesMessage']);
+    console.log('5. Current Session Data (after no logic):', req.session.data); // <<< IMPORTANT LINE
+    res.redirect('/training-provider/v7/approvals/acknowledgement');
+  } else {
+    // ... (rest of your else block)
+    console.log('5. Current Session Data (after default logic):', req.session.data);
+    res.redirect('/training-provider/v7/approvals/review-apprentices-3');
+  }
+});

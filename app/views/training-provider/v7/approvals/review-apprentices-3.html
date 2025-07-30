@@ -217,7 +217,7 @@ href: "javascript:window.history.go(-1);"
 <hr class="govuk-section-break govuk-section-break--l">
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
-    <form action="/training-provider/{{version}}/approvals/acknowledgement" method="post" class="form">
+    <form class="form" action="/training-provider/v7/approvals/review-apprentices-3" method="post">
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
@@ -225,30 +225,44 @@ href: "javascript:window.history.go(-1);"
           </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
-            <!-- First Radio Button -->
+            <!-- First Radio Button (Yes, approve and notify employer) -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approve-details" name="approve-details" type="radio" value="yes"
-                data-aria-controls="conditional-approve-details">
-              <label class="govuk-label govuk-radios__label" for="approve-details">
+              <input class="govuk-radios__input" id="approve-details-yes" name="approve-details" type="radio"
+                value="yes" data-aria-controls="conditional-approve-details-yes">
+              <label class="govuk-label govuk-radios__label" for="approve-details-yes">
                 Yes, approve and notify employer
               </label>
 
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve-details">
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-approve-details-yes">
                 <div class="govuk-form-group">
                   <label class="govuk-label" for="approve-message-yes">
-                    Leave BAMBINOS DAY NURSERY LIMITED a message
+                    Leave BAMBINOS DAY NURSERY LIMITED a message (optional)
                   </label>
                   <textarea class="govuk-textarea" id="approve-message-yes" name="approve-message-yes"
-                    rows="5">{{ data['approve-message'] or '' }}</textarea>
+                    rows="5">{{ data['approve-message-yes'] or '' }}</textarea>
                 </div>
               </div>
             </div>
-            <!-- Second Radio Button (Without Conditional Reveal) -->
+
+            <!-- Second Radio Button (No, send to employer to review or add details) -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no">
-              <label class="govuk-label govuk-radios__label" for="approve-details-2">
+              <input class="govuk-radios__input" id="approve-details-no" name="approve-details" type="radio" value="no"
+                data-aria-controls="conditional-approve-details-no">
+              <label class="govuk-label govuk-radios__label" for="approve-details-no">
                 No, send to employer to review or add details
               </label>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-approve-details-no">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="approve-message-no">
+                    Leave BAMBINOS DAY NURSERY LIMITED a message (optional)
+                  </label>
+                  <textarea class="govuk-textarea" id="approve-message-no" name="approve-message-no"
+                    rows="5">{{ data['approve-message-no'] or '' }}</textarea>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -264,25 +278,7 @@ href: "javascript:window.history.go(-1);"
 </div>
 </div>
 
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    const form = document.querySelector(".form");
-    const radioYes = document.getElementById("approve-details");
-    const radioNo = document.getElementById("approve-details-2");
-    const submitButton = document.getElementById("continue-button");
 
-    if (form && radioYes && radioNo && submitButton) {
-      submitButton.addEventListener("click", function (event) {
-        if (radioNo.checked) {
-          form.action = "/training-provider/{{version}}/approvals/apprentice-requests";
-        } else {
-          form.action = "/training-provider/{{version}}/approvals/acknowledgement";
-        }
-        form.submit();
-      });
-    }
-  });
-</script>
 
 
 {% endblock %}
