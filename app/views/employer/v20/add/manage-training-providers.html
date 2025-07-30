@@ -1,0 +1,139 @@
+{% extends "layouts/main.html" %}
+{% set version = "v20" %}
+{% set pageTitle = "Send an apprentice request" %}
+
+{% block pageTitle %}
+{{pageTitle}}
+{% endblock %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/employer-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/add/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Finance</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/employer/{{version}}/#">Adverts</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/employer/{{version}}/apprentice/">Apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your team</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/employer/{{version}}/#">Your organisations and agreements</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/employer/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/employer/{{version}}/#">PAYE schemes</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+{% block main %}
+{% block content %}
+
+<div class="govuk-width-container">
+
+  {{ govukBackLink({
+  text: "Back",
+  href: "javascript:window.history.go(-1);"
+  }) }}
+  <main class="govuk-main-wrapper" id="main-content" role="main">
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds">
+
+        <form action="#" method="GET">
+          <h1 class="govuk-heading-l govuk-!-margin-bottom-4">
+            Manage training providers
+          </h1>
+          <p class="govuk-body govuk-!-font-size-19">
+            View your training providers and the permissions you currently have with them. Accept or decline permissions
+            requests from training providers, or change their permissions yourself. You can also add a new training
+            provider.
+          </p>
+          <details class="govuk-details">
+            <summary class="govuk-details__summary">
+              <span class="govuk-details__summary-text">View how permissions work</span>
+            </summary>
+            <div class="govuk-details__text" id="details-content-0" aria-hidden="false">
+              <p class="govuk-body">
+                Permissions refer to what a training provider can do on your behalf.
+              </p>
+              <p class="govuk-body">
+                There are 2 training provider permissions in the Apprenticeship service:
+              </p>
+              <ul class="govuk-list govuk-list--bullet">
+                <li><strong>Add apprentice records</strong> means the training provider can add details of new
+                  apprentices
+                  and reserve funding for them if needed. Apprentice records will not be added to your account until you
+                  approve them.</li>
+
+                <li><strong>Recruit apprentices</strong> means the training provider can advertise apprenticeships and
+                  review applications. You can choose to approve adverts before they're published.</li>
+              </ul>
+              <p class="govuk-body">
+                You’ll be emailed when you need to approve any records or adverts.
+              </p>
+              <p class="govuk-body">
+                You can change training provider permissions at any time from your account.
+              </p>
+            </div>
+          </details>
+          <div class="govuk-button-group">
+            <button type="submit" id="continue" class="govuk-button" data-disable-on-submit="true">Add a training
+              provider</button>
+          </div>
+        </form>
+      </div>
+    </div>
+    <div class="govuk-grid-column">
+      <div class="govuk-grid-column govuk-!-margin-bottom-5">
+        <h2 class="govuk-heading-l govuk-!-margin-bottom-1 govuk-!-margin-top-2">Baminos Day Nursery</h2>
+        <p class="govuk-!-font-size-16">Agreement ID: JJNLKR</p>
+      </div>
+      <table class="govuk-table">
+        <thead class="govuk-table__head">
+          <tr class="govuk-table__row">
+            <th id="training-provider" scope="col" class="govuk-table__header govuk-!-width-one-third">Training provider
+            </th>
+            <th id="add-records" scope="col" class="govuk-table__header govuk-!-width-one-quarter">Permission to add
+              apprentice records</th>
+            <th id="recruit-apprentices" scope="col" class="govuk-table__header govuk-!-width-one-quarter">Permission to
+              recruit apprentices</th>
+            <th id="permissions" scope="col" class="govuk-table__header">Permissions</th>
+          </tr>
+        </thead>
+        <tbody class="govuk-table__body">
+          <tr class="govuk-table__row">
+            <td headers="training-provider" class="govuk-table__cell govuk-!-padding-bottom-4">EDUC8 TRAINING (ENGLAND)
+              LIMITED</td>
+            <td headers="add-records" class="govuk-table__cell govuk-!-padding-bottom-4">No
+            </td>
+            <td headers="recruit-apprentices" class="govuk-table__cell govuk-!-padding-bottom-4">No</td>
+            <td headers="permissions" class="govuk-table__cell"><a class="govuk-link"
+                href="/employer/{{version}}/add/provider-permissions">Change
+                permissions</a></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </main>
+</div>
+
+{% endblock %}
+
+{% endblock %}
