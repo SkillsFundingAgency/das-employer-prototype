@@ -217,6 +217,7 @@ href: "javascript:window.history.go(-1);"
 </head>
 
 <body>
+
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Select learner from ILR</h1>
@@ -224,21 +225,18 @@ href: "javascript:window.history.go(-1);"
       <p class="govuk-body">This list shows learners from your ILR submissions who are not yet approved in this service.
         It includes:</p>
       <ul class="govuk-list govuk-list--bullet">
-        <li>learners linked to BAMBINOS DAY NURSERY - <a href="#" class="govuk-link">Change</a></li>
+        <li>learners linked to BAMBINOS DAY NURSERY - <a
+            href="/training-provider/{{version}}/approvals/add/select-employer" class="govuk-link">Change</a></li>
         <li>learners not linked to an employer yet</li>
       </ul>
-    </div>
-  </div>
-  <div class="govuk-!-padding-bottom-6"></div>
 
-  <div class="govuk-grid-row" id="addedLearnersSection" style="display: none;">
-    <div class="govuk-grid-column-full">
-      <h2 class="govuk-heading-m">Learners in cohort (<span id="addedLearnersCount">0</span>)</h2>
+      <h2 class="govuk-heading-m">Learners in group (<span id="groupCount">0</span>)</h2>
       <span id="some-id-hint" class="govuk-hint">
         You can add multiple learners
       </span>
       <div class="govuk-!-padding-bottom-5"></div>
-      <div id="addedTableContainer" class="govuk-!-padding-bottom-6">
+      <!-- New Table for Learners in Group -->
+      <div id="groupTableContainer" style="display: none;">
         <table class="govuk-table">
           <thead class="govuk-table__head">
             <tr class="govuk-table__row">
@@ -249,16 +247,13 @@ href: "javascript:window.history.go(-1);"
               <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
             </tr>
           </thead>
-          <tbody class="govuk-table__body" id="addedLearnersTableBody">
-            <!-- Added learners will appear here -->
+          <tbody class="govuk-table__body" id="groupTableBody">
+            <!-- Table rows will be dynamically generated here by JavaScript -->
           </tbody>
         </table>
       </div>
-    </div>
-  </div>
+      <!-- End of New Table -->
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
       <form action="#" method="post" id="mainForm">
         <div class="govuk-form-group">
           <label class="govuk-label" for="searchTerm">Search apprentice name or ULN</label>
@@ -266,108 +261,106 @@ href: "javascript:window.history.go(-1);"
         </div>
       </form>
     </div>
-  </div>
 
-  <!-- New container for the filter section -->
-  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
-      <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
-        <form method="get" action="#" id="filterForm">
-          <h2 class="govuk-heading-m">Filter</h2>
-          <div class="govuk-grid-row">
-            <!-- 1/3 Column: Course type & Course name -->
-            <div class="govuk-grid-column-one-third">
-              <!-- Course Type -->
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="courseTypeSelect">Course type</label>
-                <select class="govuk-select govuk-!-width-full" id="courseTypeSelect" name="courseType">
-                  <option value="">All</option>
-                  <option>Short course</option>
-                  <option>Apprenticeship</option>
-                  <option>Bootcamp</option>
-                </select>
+      <div class="govuk-grid-row">
+        <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
+          <form method="get" action="#" id="filterForm">
+            <h2 class="govuk-heading-m">Filter</h2>
+
+            <div class="govuk-grid-row">
+              <!-- 1/3 Column: Course type & Course name -->
+              <div class="govuk-grid-column-one-third">
+                <!-- Course Type -->
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="courseTypeSelect">Course type</label>
+                  <select class="govuk-select govuk-!-width-full" id="courseTypeSelect" name="courseType">
+                    <option value="">All</option>
+                    <option>Short course</option>
+                    <option>Apprenticeship</option>
+                    <option>Bootcamp</option>
+                  </select>
+                </div>
+
+                <!-- Course Name -->
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="courseNameSelect">Course name</label>
+                  <select class="govuk-select govuk-!-width-full" id="courseNameSelect" name="courseName">
+                    <option value="">All</option>
+                    <option>Business administrator, Level 3</option>
+                    <option>Customer service practitioner, Level 2</option>
+                    <option>Early years practitioner, Level 2</option>
+                    <option>Early years educator, Level 3</option>
+                    <option>HR support, Level 3</option>
+                    <option>Teaching assistant, Level 3</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- Course Name -->
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="courseNameSelect">Course name</label>
-                <select class="govuk-select govuk-!-width-full" id="courseNameSelect" name="courseName">
-                  <option value="">All</option>
-                  <option>Business administrator, Level 3</option>
-                  <option>Customer service practitioner, Level 2</option>
-                  <option>Early years practitioner, Level 2</option>
-                  <option>Early years educator, Level 3</option>
-                  <option>HR support, Level 3</option>
-                  <option>Teaching assistant, Level 3</option>
-                </select>
-              </div>
-            </div>
+              <!-- 2/3 Column: Start month & Start year -->
+              <div class="govuk-grid-column-one-third">
+                <!-- Start Month -->
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="startMonthSelect">Start month</label>
+                  <select class="govuk-select govuk-!-width-full" id="startMonthSelect" name="startMonth">
+                    <option value="">All</option>
+                    <option>September 2025</option>
+                    <option>October 2025</option>
+                    <option>November 2025</option>
+                  </select>
+                </div>
 
-            <!-- 2/3 Column: Start month & Start year -->
-            <div class="govuk-grid-column-one-third">
-              <!-- Start Month -->
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="startMonthSelect">Start month</label>
-                <select class="govuk-select govuk-!-width-full" id="startMonthSelect" name="startMonth">
-                  <option value="">All</option>
-                  <option>September</option>
-                  <option>October</option>
-                  <option>November</option>
-                </select>
+                <!-- Start Year -->
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="startYearSelect">Start year</label>
+                  <select class="govuk-select govuk-!-width-full" id="startYearSelect" name="startYear">
+                    <option value="">All</option>
+                    <option value="2025" selected>2025</option>
+                    <option value="2026">2026</option>
+                  </select>
+                </div>
               </div>
 
-              <!-- Start Year -->
-              <div class="govuk-form-group">
-                <label class="govuk-label" for="startYearSelect">Start year</label>
-                <select class="govuk-select govuk-!-width-full" id="startYearSelect" name="startYear">
-                  <option value="">All</option>
-                  <option value="2025" selected>2025</option>
-                  <option value="2026">2026</option>
-                </select>
-              </div>
-            </div>
+              <!-- 3/3 Column: Checkbox filter -->
+              <div class="govuk-grid-column-one-third">
+                <div class="govuk-form-group">
+                  <label class="govuk-label">Show learners linked to</label>
+                  <span class="govuk-hint">Select all that apply</span>
 
-            <!-- 3/3 Column: Checkbox filter -->
-            <div class="govuk-grid-column-one-third">
-              <div class="govuk-form-group">
-                <label class="govuk-label">Show learners linked to</label>
-                <span class="govuk-hint">Select all that apply</span>
-
-                <div class="govuk-checkboxes govuk-checkboxes--small">
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="employerBambinos" name="employers" type="checkbox"
-                      value="BAMBINOS DAY NURSERY">
-                    <label class="govuk-label govuk-checkboxes__label" for="employerBambinos">
-                      BAMBINOS DAY NURSERY
-                    </label>
-                  </div>
-                  <div class="govuk-checkboxes__item">
-                    <input class="govuk-checkboxes__input" id="employerNone" name="employers" type="checkbox"
-                      value="No employer">
-                    <label class="govuk-label govuk-checkboxes__label" for="employerNone">
-                      No employer
-                    </label>
+                  <div class="govuk-checkboxes govuk-checkboxes--small">
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="employerBambinos" name="employers" type="checkbox"
+                        value="BAMBINOS DAY NURSERY">
+                      <label class="govuk-label govuk-checkboxes__label" for="employerBambinos">
+                        BAMBINOS DAY NURSERY
+                      </label>
+                    </div>
+                    <div class="govuk-checkboxes__item">
+                      <input class="govuk-checkboxes__input" id="employerNone" name="employers" type="checkbox"
+                        value="No employer">
+                      <label class="govuk-label govuk-checkboxes__label" for="employerNone">
+                        No employer
+                      </label>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
 
-          <!-- Apply Filters Button -->
-          <div class="govuk-grid-row">
-            <div class="govuk-grid-column-one-third">
-              <button class="govuk-button govuk-!-margin-top-0" id="applyFiltersButton" type="submit">
-                Apply filters
-              </button>
+            <!-- Apply Filters Button -->
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-one-third">
+                <button class="govuk-button govuk-!-margin-top-0" id="applyFiltersButton" type="submit">
+                  Apply filters
+                </button>
+              </div>
             </div>
-          </div>
-        </form>
+          </form>
+        </div>
       </div>
     </div>
-  </div>
 
-  <div class="govuk-grid-row govuk-!-padding-top-6">
-    <div class="govuk-grid-column-full">
+    <div class="govuk-grid-column-full govuk-!-padding-top-6">
       <div class="govuk-grid-row">
         <div class="govuk-grid-column-one-half">
           <p class="govuk-body record-count"></p>
@@ -377,9 +370,7 @@ href: "javascript:window.history.go(-1);"
         </div>
       </div>
     </div>
-  </div>
 
-  <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div id="resultsTableContainer">
         <table class="govuk-table">
@@ -396,7 +387,6 @@ href: "javascript:window.history.go(-1);"
             <!-- Table rows will be dynamically generated here by JavaScript -->
           </tbody>
         </table>
-        
 
         <div class="govuk-grid-row govuk-!-margin-top-4" style="align-items: center;">
           <!-- Pagination -->
@@ -443,16 +433,9 @@ href: "javascript:window.history.go(-1);"
     </div>
   </div>
 
-  <div class="govuk-button-group govuk-!-margin-top-6">
-    <button class="govuk-button" data-module="govuk-button">
-      Save and continue
-    </button>
-  </div>
-
-
   <script>
     // Full dataset of 73 records
-    const learnersDataInitial = [{
+    const initialLearnersData = [{
       name: "Alan Lightfoot",
       uln: "7232486935",
       course: "Early years practitioner, Level 2",
@@ -827,87 +810,120 @@ href: "javascript:window.history.go(-1);"
     }
 
     // Assign a random start date to each learner
-    learnersDataInitial.forEach(learner => {
+    initialLearnersData.forEach(learner => {
       learner.startDate = assignRandomStartDate();
     });
 
     // Manually override the start dates for the specified learners
-    learnersDataInitial[0].startDate = "September 2025"; // Alan Lightfoot
-    learnersDataInitial[1].startDate = "September 2025"; // Bernard McKelly
-    learnersDataInitial[2].startDate = "September 2025"; // Carlos Mendoza
-
-    // Sort learners alphabetically
-    learnersDataInitial.sort((a, b) => a.name.localeCompare(b.name));
+    initialLearnersData[0].startDate = "September 2025"; // Alan Lightfoot
+    initialLearnersData[1].startDate = "September 2025"; // Bernard McKelly
+    initialLearnersData[2].startDate = "September 2025"; // Carlos Mendoza
 
     // Data for the accessible autocomplete search box
-    const ILR = learnersDataInitial.map(l => `${l.name} ${l.uln}`);
+    const ILR = initialLearnersData.map(l => `${l.name} ${l.uln}`);
 
-    // State variables for the two tables
-    let learnersData = [...learnersDataInitial]; // Main list
-    let addedLearnersData = []; // Learners in the group
+    // State variables for the two lists of learners
+    let learnersInGroup = [];
+    let allLearners = [...initialLearnersData];
+
+    // Handle initial state: move Alan Lightfoot to the group list
+    const alanLightfoot = allLearners.find(l => l.name === "Alan Lightfoot");
+    if (alanLightfoot) {
+      learnersInGroup.push(alanLightfoot);
+      allLearners = allLearners.filter(l => l.name !== "Alan Lightfoot");
+    }
 
     // State variables for pagination
     let currentPage = 1;
     const pageSize = 25;
-
-    // Initialize the accessible autocomplete
-    accessibleAutocomplete({
-  autoselect: true,
-  element: document.querySelector('#ILR-container'),
-  id: 'searchTerm', // matches the label
-  name: 'ILR-autocomplete',
-  source: ILR,
-  defaultValue: '',
-  displayMenu: 'overlay',
-  minLength: 2,
-  tNoResults: function () {
-    return "Other";
-  },
-  onConfirm: function(selected) {
-    // When user selects a value or presses enter
-    searchTermInput.value = selected || '';
-    currentPage = 1; // Reset to page 1
-    applyFiltersAndPaginate();
-  }
-});
-
 
     // --- Dynamic Table and Pagination Logic ---
     document.addEventListener("DOMContentLoaded", () => {
       const filterForm = document.getElementById("filterForm");
       const searchTermInput = document.getElementById("searchTerm");
       const recordsTableBody = document.getElementById("recordsTableBody");
-      const addedLearnersTableBody = document.getElementById("addedLearnersTableBody");
-      const addedLearnersSection = document.getElementById("addedLearnersSection"); // New element reference
+      const groupTableBody = document.getElementById("groupTableBody");
       const recordCountDisplay = document.querySelector(".record-count");
-      const addedLearnersCount = document.getElementById("addedLearnersCount");
+      const groupCountDisplay = document.getElementById("groupCount");
       const resultsSummary = document.getElementById("resultsSummary");
       const paginationList = document.getElementById("paginationList");
       const nextPageLink = document.getElementById("nextPageLink");
       const resultsTableContainer = document.getElementById("resultsTableContainer");
+      const groupTableContainer = document.getElementById("groupTableContainer");
       const noResultsMessage = document.getElementById("noResultsMessage");
 
-      // Function to render a table given a dataset and a target tbody element
-      function renderTable(dataToRender, targetBody, isAddedTable = false) {
-        targetBody.innerHTML = '';
-        dataToRender.forEach(learner => {
-          const row = document.createElement('tr');
-          row.className = 'govuk-table__row';
-          row.dataset.uln = learner.uln; // Use data attribute for easy lookup
-          const actionText = isAddedTable ? 'Remove' : 'Add';
-          row.innerHTML = `
+      // Initialize the accessible autocomplete
+      accessibleAutocomplete({
+        autoselect: true,
+        element: document.querySelector('#ILR-container'),
+        id: 'searchTerm', // Using 'searchTerm' to match the label
+        name: 'ILR-autocomplete',
+        source: ILR,
+        defaultValue: '',
+        displayMenu: 'overlay',
+        minLength: 2,
+        tNoResults: function () {
+          return "Other"
+        }
+      });
+      // The `accessible-autocomplete` library generates a new input, so we need to get its ID
+      const newSearchTermInput = document.getElementById("searchTerm");
+      newSearchTermInput.addEventListener('change', applyFiltersAndPaginate);
+
+
+      // Function to render the table rows for the group
+      function renderGroupTable() {
+        groupTableBody.innerHTML = '';
+        if (learnersInGroup.length > 0) {
+          groupTableContainer.style.display = 'block';
+          learnersInGroup.forEach(learner => {
+            const row = document.createElement('tr');
+            row.className = 'govuk-table__row';
+            row.innerHTML = `
             <td class="govuk-table__cell" data-label="Name">${learner.name}</td>
             <td class="govuk-table__cell" data-label="ULN">${learner.uln}</td>
             <td class="govuk-table__cell" data-label="Course">${learner.course}</td>
             <td class="govuk-table__cell" data-label="Start date">${learner.startDate}</td>
             <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-              <a href="javascript:void(0)" class="govuk-link govuk-link--no-visited-state action-link" data-action="${actionText.toLowerCase()}">
-                ${actionText} <span class="govuk-visually-hidden">${learner.name}</span>
+              <a href="javascript:void(0)" class="govuk-link govuk-link--no-visited-state remove-learner-btn" data-uln="${learner.uln}">
+                Remove <span class="govuk-visually-hidden">${learner.name}</span>
               </a>
             </td>
           `;
-          targetBody.appendChild(row);
-        });
+            groupTableBody.appendChild(row);
+          });
+        } else {
+          groupTableContainer.style.display = 'none';
+        }
+        groupCountDisplay.textContent = learnersInGroup.length;
+      }
+
+      // Function to render the table rows for the main list
+      function renderMainTable(dataToRender) {
+        recordsTableBody.innerHTML = '';
+        if (dataToRender.length === 0) {
+          resultsTableContainer.style.display = 'none';
+          noResultsMessage.style.display = 'block';
+        } else {
+          resultsTableContainer.style.display = 'block';
+          noResultsMessage.style.display = 'none';
+          dataToRender.forEach(learner => {
+            const row = document.createElement('tr');
+            row.className = 'govuk-table__row';
+            row.innerHTML = `
+              <td class="govuk-table__cell" data-label="Name">${learner.name}</td>
+              <td class="govuk-table__cell" data-label="ULN">${learner.uln}</td>
+              <td class="govuk-table__cell" data-label="Course">${learner.course}</td>
+              <td class="govuk-table__cell" data-label="Start date">${learner.startDate}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
+                <a href="javascript:void(0)" class="govuk-link govuk-link--no-visited-state add-learner-btn" data-uln="${learner.uln}">
+                  Add <span class="govuk-visually-hidden">${learner.name}</span>
+                </a>
+              </td>
+            `;
+            recordsTableBody.appendChild(row);
+          });
+        }
       }
 
       // Function to update pagination controls
@@ -915,28 +931,23 @@ href: "javascript:window.history.go(-1);"
         const totalPages = Math.ceil(filteredRecords.length / pageSize);
         paginationList.innerHTML = '';
 
-        if (totalPages <= 1) {
-          nextPageLink.style.display = 'none';
-          return;
-        }
-
         // Previous link
         const prevLink = document.createElement('li');
         prevLink.className = `govuk-pagination__item govuk-pagination__item--prev ${currentPage === 1 ? 'govuk-!-display-none' : ''}`;
-        prevLink.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" rel="prev">
+        prevLink.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" rel="prev" id="prevPageLink">
                                 <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
                                 <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
                                   <path d="M1.9 6.5L8.4 0l1.4 1.4-4.2 4.3h8.3v2H5.6l4.2 4.3-1.4 1.4L1.9 6.5z"></path>
                                 </svg>
                               </a>`;
-        prevLink.addEventListener('click', (e) => {
+        paginationList.appendChild(prevLink);
+        document.getElementById('prevPageLink').addEventListener('click', (e) => {
           e.preventDefault();
           if (currentPage > 1) {
             currentPage--;
             applyFiltersAndPaginate();
           }
         });
-        paginationList.appendChild(prevLink);
 
         // Page links
         for (let i = 1; i <= totalPages; i++) {
@@ -952,148 +963,101 @@ href: "javascript:window.history.go(-1);"
         }
 
         // Next link
-        nextPageLink.style.display = currentPage < totalPages ? 'block' : 'none';
-
+        const nextLink = document.getElementById("nextPageLink");
+        nextLink.style.display = currentPage < totalPages ? 'block' : 'none';
+        nextLink.removeEventListener('click', applyFiltersAndPaginate); // Remove old listener
+        nextLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentPage < totalPages) {
+            currentPage++;
+            applyFiltersAndPaginate();
+          }
+        });
       }
 
-      // Main function to update all UI elements
-      function updateAllTables() {
-        // Show/hide the added learners section
-        addedLearnersSection.style.display = addedLearnersData.length > 0 ? 'block' : 'none';
 
-        // Render the top table
-        renderTable(addedLearnersData, addedLearnersTableBody, true);
-        addedLearnersCount.textContent = addedLearnersData.length;
-
-        // Render the main table with filtering and pagination
-        applyFiltersAndPaginate();
-      }
-
-      // Main function to filter and paginate the main table
+      // Main function to filter and paginate the table
       function applyFiltersAndPaginate() {
-        const searchTerm = (searchTermInput.value || "").toLowerCase().trim();
+        const searchTerm = (newSearchTermInput.value || "").toLowerCase().trim();
         const courseType = document.getElementById("courseTypeSelect").value;
         const courseName = document.getElementById("courseNameSelect").value;
         const startMonth = document.getElementById("startMonthSelect").value;
         const startYear = document.getElementById("startYearSelect").value;
         const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
 
-        // Learners with no employer
-        const noEmployerLearners = new Set([
-          "Yusuf Ahmed",
-          "Sophie Turner",
-          "Olivia Harris",
-          "Jacob Knight",
-          "David Kim"
-        ]);
-
-        // Filter the dataset
-        const filteredRecords = learnersData.filter(learner => {
+        // Filter the main learner list
+        const filteredRecords = allLearners.filter(learner => {
           const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
           const matchesCourseType = !courseType || learner.course.includes(courseType);
           const matchesCourseName = !courseName || learner.course.includes(courseName);
           const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
           const matchesStartYear = !startYear || learner.startDate.includes(startYear);
-
-          let matchesEmployer = true;
-          if (employerCheckboxes.length > 0) {
-            matchesEmployer = employerCheckboxes.some(checkboxValue => {
-              if (checkboxValue === "No employer") {
-                return noEmployerLearners.has(learner.name);
-              }
-              return learner.employer === checkboxValue;
-            });
-          }
+          const matchesEmployer = employerCheckboxes.length === 0 || employerCheckboxes.includes(learner.employer);
 
           return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
         });
 
-        // Update the search term field to match the input
-        document.getElementById('searchTerm').value = searchTermInput.value;
-
-        // Pagination logic
         const startIndex = (currentPage - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-        const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
+        const paginatedRecords = filteredRecords.slice(startIndex, startIndex + pageSize);
 
-        // Show or hide results table based on filtered records
-        if (filteredRecords.length > 0) {
-          resultsTableContainer.style.display = 'block';
-          noResultsMessage.style.display = 'none';
-        } else {
-          resultsTableContainer.style.display = 'none';
-          noResultsMessage.style.display = 'block';
-        }
-
-        // Render the main table
-        renderTable(paginatedRecords, recordsTableBody);
-
-        // Build the filter summary dynamically
-        const activeFilters = [];
-        if (startYear) activeFilters.push(`<b>${startYear}</b>`); // Default year always bold
-        if (courseType) activeFilters.push(`<b>${courseType}</b>`);
-        if (courseName) activeFilters.push(`<b>${courseName}</b>`);
-        if (startMonth) activeFilters.push(`<b>${startMonth}</b>`);
-        if (employerCheckboxes.length > 0) activeFilters.push(...employerCheckboxes.map(e => `<b>${e}</b>`));
-
-        const filterSummary = activeFilters.length > 0
-          ? activeFilters.join(', ')
-          : '<b>2025</b>'; // Default if nothing else is selected
-
-        // Update record count and results summary
-        recordCountDisplay.innerHTML = `${filteredRecords.length} learner records matching ${filterSummary}`;
-        resultsSummary.textContent = `Showing ${startIndex + 1} to ${Math.min(endIndex, filteredRecords.length)} of ${filteredRecords.length} results`;
-
-        // Update pagination controls
+        renderMainTable(paginatedRecords);
         updatePagination(filteredRecords);
+        recordCountDisplay.textContent = `Showing ${filteredRecords.length} records`;
+
+        // Update add/remove button listeners
+        document.querySelectorAll('.add-learner-btn').forEach(button => {
+          button.addEventListener('click', handleAddRemove);
+        });
+        document.querySelectorAll('.remove-learner-btn').forEach(button => {
+          button.addEventListener('click', handleAddRemove);
+        });
       }
 
-
-      // Event listener for the filter form submission
-      filterForm.addEventListener('submit', (e) => {
+      // Handler for adding and removing learners
+      function handleAddRemove(e) {
         e.preventDefault();
-        currentPage = 1; // Reset to page 1 on new filter
-        updateAllTables();
-      });
+        const uln = e.target.getAttribute('data-uln');
+        const isAdd = e.target.classList.contains('add-learner-btn');
 
-      // Event listener for the Add and Remove links
-      document.body.addEventListener('click', (e) => {
-        const link = e.target.closest('.action-link');
-        if (!link) return;
-
-        e.preventDefault();
-
-        const uln = link.closest('tr').dataset.uln;
-        const action = link.dataset.action;
-
-        if (action === 'add') {
-          const learnerIndex = learnersData.findIndex(l => l.uln === uln);
-          if (learnerIndex !== -1) {
-            const learnerToAdd = learnersData.splice(learnerIndex, 1)[0];
-            addedLearnersData.push(learnerToAdd);
-            window.scrollTo(0, 0); // Scroll to top after adding a learner
+        if (isAdd) {
+          const learnerToAdd = allLearners.find(l => l.uln === uln);
+          if (learnerToAdd) {
+            learnersInGroup.push(learnerToAdd);
+            allLearners = allLearners.filter(l => l.uln !== uln);
           }
-        } else if (action === 'remove') {
-          const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
-          if (learnerIndex !== -1) {
-            const learnerToRemove = addedLearnersData.splice(learnerIndex, 1)[0];
-            learnersData.push(learnerToRemove);
+        } else {
+          const learnerToRemove = learnersInGroup.find(l => l.uln === uln);
+          if (learnerToRemove) {
+            allLearners.push(learnerToRemove);
+            learnersInGroup = learnersInGroup.filter(l => l.uln !== uln);
           }
         }
 
-        // Sort the main learners data alphabetically after a change
-        learnersData.sort((a, b) => a.name.localeCompare(b.name));
+        // Re-render both tables
+        renderGroupTable();
+        currentPage = 1;
+        applyFiltersAndPaginate();
+      }
 
-        updateAllTables();
+      // Event listeners
+      filterForm.addEventListener("submit", (e) => {
+        e.preventDefault();
+        currentPage = 1; // Reset pagination on new filter
+        applyFiltersAndPaginate();
       });
 
       // Initial render on page load
-      updateAllTables();
+      renderGroupTable();
+      applyFiltersAndPaginate();
     });
   </script>
 </body>
 
 </html>
+
+
+
+
 
 
 {% endblock %}
