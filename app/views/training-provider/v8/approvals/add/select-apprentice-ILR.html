@@ -363,6 +363,10 @@ href: "javascript:window.history.go(-1);"
               <button class="govuk-button govuk-!-margin-top-0" id="applyFiltersButton" type="submit">
                 Apply filters
               </button>
+              <a href="javascript:void(0)" class="govuk-link govuk-!-margin-left-4 govuk-!-font-size-19"
+                style="padding: 6px 12px; display: inline-block;" id="clearFiltersLink">
+                Clear filters
+              </a>
             </div>
           </div>
         </form>
@@ -400,7 +404,7 @@ href: "javascript:window.history.go(-1);"
             <!-- Table rows will be dynamically generated here by JavaScript -->
           </tbody>
         </table>
-        
+
 
         <div class="govuk-grid-row govuk-!-margin-top-4" style="align-items: center;">
           <!-- Pagination -->
@@ -850,24 +854,24 @@ href: "javascript:window.history.go(-1);"
 
     // Initialize the accessible autocomplete
     accessibleAutocomplete({
-  autoselect: true,
-  element: document.querySelector('#ILR-container'),
-  id: 'searchTerm', // matches the label
-  name: 'ILR-autocomplete',
-  source: ILR,
-  defaultValue: '',
-  displayMenu: 'overlay',
-  minLength: 2,
-  tNoResults: function () {
-    return "Other";
-  },
-  onConfirm: function(selected) {
-    // When user selects a value or presses enter
-    searchTermInput.value = selected || '';
-    currentPage = 1; // Reset to page 1
-    applyFiltersAndPaginate();
-  }
-});
+      autoselect: true,
+      element: document.querySelector('#ILR-container'),
+      id: 'searchTerm', // matches the label
+      name: 'ILR-autocomplete',
+      source: ILR,
+      defaultValue: '',
+      displayMenu: 'overlay',
+      minLength: 2,
+      tNoResults: function () {
+        return "Other";
+      },
+      onConfirm: function (selected) {
+        // When user selects a value or presses enter
+        searchTermInput.value = selected || '';
+        currentPage = 1; // Reset to page 1
+        applyFiltersAndPaginate();
+      }
+    });
 
 
     // --- Dynamic Table and Pagination Logic ---
@@ -884,6 +888,27 @@ href: "javascript:window.history.go(-1);"
       const nextPageLink = document.getElementById("nextPageLink");
       const resultsTableContainer = document.getElementById("resultsTableContainer");
       const noResultsMessage = document.getElementById("noResultsMessage");
+      const clearFiltersLink = document.getElementById('clearFiltersLink');
+      clearFiltersLink.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // Reset all selects
+        document.getElementById('courseTypeSelect').value = '';
+        document.getElementById('courseNameSelect').value = '';
+        document.getElementById('startMonthSelect').value = '';
+        document.getElementById('startYearSelect').value = '2025';
+
+        // Uncheck all employer checkboxes
+        document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
+
+        // Clear search input
+        searchTermInput.value = '';
+
+        // Reset page and update tables
+        currentPage = 1;
+        updateAllTables();
+      });
+
 
       // Function to render a table given a dataset and a target tbody element
       function renderTable(dataToRender, targetBody, isAddedTable = false) {
@@ -1015,13 +1040,21 @@ href: "javascript:window.history.go(-1);"
         const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
 
         // Show or hide results table based on filtered records
+        const recordCountDisplay = document.querySelector(".record-count");
+        const lastUpdatedDisplay = document.querySelector(".last-updated");
+
         if (filteredRecords.length > 0) {
           resultsTableContainer.style.display = 'block';
           noResultsMessage.style.display = 'none';
+          recordCountDisplay.style.display = 'block';
+          lastUpdatedDisplay.style.display = 'block';
         } else {
           resultsTableContainer.style.display = 'none';
           noResultsMessage.style.display = 'block';
+          recordCountDisplay.style.display = 'none';
+          lastUpdatedDisplay.style.display = 'none';
         }
+
 
         // Render the main table
         renderTable(paginatedRecords, recordsTableBody);
