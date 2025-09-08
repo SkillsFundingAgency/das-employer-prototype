@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v7" %}
+{% set version = "v8" %}
 {% set pageTitle = "Approve apprentice details" %}
 
 {% block header %}
@@ -9,7 +9,7 @@
   <div class="govuk-width-container">
     <ul class="das-navigation__list ">
       <li class="das-navigation__list-item">
-        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+        <a class="das-navigation__link" href="/training-provider/{{version}}/approvals/add/homepage">Home</a>
       </li>
       <li class="das-navigation__list-item">
         <a class="das-navigation__link das-navigation__link--current"
@@ -87,9 +87,10 @@ href: "javascript:window.history.go(-1);"
         </span>
       </summary>
       <div class="govuk-details__text">
-        You will need to amend most details in the ILR. You can change RPL or standard option (if relevant) by selecting
-        'View
-        details'.
+        <p class="govuk-body">You will need to amend most details in the ILR. It can take up to 15 minutes to update
+          here. Use the Save and exit link,
+          or go back to the previous page.</p>
+        <p class="govuk-body">You can adjust RPL or standard option (if relevant) by selecting 'View’</p>
       </div>
     </details>
   </div>
@@ -119,12 +120,18 @@ href: "javascript:window.history.go(-1);"
       </td>
       <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
       <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
-      <td class="govuk-table__cell" data-label="Training dates">20 August 2025 to 20 August 2026</td>
+      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£3,888</td>
-      <td class="govuk-table__cell" data-label="Recognition of prior learning">Yes</td>
+      <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/recognise-prior-learning-details">
+          Add RPL
+          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+        </a>
+      </td>
       <td class="govuk-table__cell govuk-table__cell--numeric">
         <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/apprentice-details-alan">
+          href="/training-provider/{{version}}/approvals/check-details-alan">
           View
           <span class="govuk-visually-hidden"> Alan Lightfoot</span>
         </a>
@@ -137,6 +144,83 @@ href: "javascript:window.history.go(-1);"
   </tbody>
 </table>
 
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+<h3 class="govuk-heading-m">2 x Early years educator, Level: 3
+</h3>
+<hr class="govuk-section-break govuk-section-break--m govuk-section-break">
+<table class="govuk-table das-table--responsive das-table--condensed">
+  <thead class="govuk-table__head">
+    <tr class="govuk-table__row">
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Name</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Unique learner number (ULN)</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Date of birth</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Training dates</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Price</th>
+      <th scope="col" class="govuk-table__header govuk-!-width-one-quarter">Recognition of prior learning (RPL)</th>
+      <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
+    </tr>
+  </thead>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-label="Name">
+        <span class="das-table-cell--highlight das-breakable">Bernard McKelly</span>
+      </td>
+      <td class="govuk-table__cell" data-label="Unique learner number">7232486936</td>
+      <td class="govuk-table__cell" data-label="Date of birth">1 Oct 2004</td>
+      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
+      <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/recognise-prior-learning-details-2">
+          Add RPL
+          <span class="govuk-visually-hidden"> Bernard McKelly</span>
+        </a>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/check-details-bernard">
+          View
+          <span class="govuk-visually-hidden"> Bernard McKelly</span>
+        </a>
+        <br><br>
+        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+          Remove <span class="govuk-visually-hidden"> Bernard McKelly</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+  <tbody class="govuk-table__body">
+    <tr class="govuk-table__row">
+      <td class="govuk-table__cell" data-label="Name">
+        <span class="das-table-cell--highlight das-breakable">Carla Mendoza</span>
+      </td>
+      <td class="govuk-table__cell" data-label="Unique learner number">7232486937</td>
+      <td class="govuk-table__cell" data-label="Date of birth">19 May 2001</td>
+      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
+      <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+        <a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/recognise-prior-learning-details-3">
+          Add RPL
+          <span class="govuk-visually-hidden"> Carla Mendoza</span>
+        </a>
+      </td>
+      <td class="govuk-table__cell govuk-table__cell--numeric">
+        <a class="govuk-link govuk-link--no-visited-state" href="#">
+          View
+          <span class="govuk-visually-hidden"> Carla Mendoza</span>
+        </a>
+        <br><br>
+        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+          Remove <span class="govuk-visually-hidden"> Carla Mendoza</span>
+        </a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+
+
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-full">
     <dl class="govuk-summary-list">
@@ -145,7 +229,7 @@ href: "javascript:window.history.go(-1);"
           Total apprentices
         </dt>
         <dd class="govuk-summary-list__value">
-          1
+          3
         </dd>
       </div>
       <div class="govuk-summary-list__row">
@@ -153,7 +237,7 @@ href: "javascript:window.history.go(-1);"
           Total apprenticeship training price (excluding VAT)
         </dt>
         <dd class="govuk-summary-list__value">
-          £3,888
+          £17,888
         </dd>
       </div>
     </dl>
@@ -162,7 +246,7 @@ href: "javascript:window.history.go(-1);"
 
 
 <p>
-  <a href="/training-provider/{{version}}/approvals/add/select-apprentice-ILR-2-update"
+  <a href="/training-provider/{{version}}/approvals/add/select-apprentice-ILR-2"
     class="govuk-link add-apprentice govuk-link--no-visited-state">Add another
     apprentice</a>
   <a class="govuk-link delete-cohort govuk-link--no-visited-state" id="delete-cohort"
@@ -201,12 +285,24 @@ href: "javascript:window.history.go(-1);"
                 </div>
               </div>
             </div>
-            <!-- Second Radio Button (Without Conditional Reveal) -->
+            <!-- Second Radio Button -->
             <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no">
+              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no"
+                data-aria-controls="conditional-approve-details-2">
               <label class="govuk-label govuk-radios__label" for="approve-details-2">
                 No, send to employer to review or add details
               </label>
+
+              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
+                id="conditional-approve-details-2">
+                <div class="govuk-form-group">
+                  <label class="govuk-label" for="approve-message-no">
+                    Leave BAMBINOS DAY NURSERY LIMITED a message
+                  </label>
+                  <textarea class="govuk-textarea" id="approve-message-no" name="approve-message-no"
+                    rows="5">{{ data['approve-message'] or '' }}</textarea>
+                </div>
+              </div>
             </div>
           </div>
         </fieldset>
@@ -214,11 +310,11 @@ href: "javascript:window.history.go(-1);"
 
       <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
       <br>
+      <p><a class="govuk-link govuk-link--no-visited-state"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">
+          Save and exit
+        </a></p>
     </form>
-
-    <p><a class="govuk-link govuk-link--no-visited-state" href="#">
-        Save and exit
-      </a></p>
 
   </div>
 </div>

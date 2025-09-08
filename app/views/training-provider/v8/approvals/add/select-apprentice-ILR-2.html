@@ -241,7 +241,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-!-padding-bottom-5"></div>
 
       <!-- Start form -->
-      <form action="/training-provider/{{version}}/approvals/add/ilr-errors" method="post" id="addedLearnersForm">
+      <form action="/training-provider/{{version}}/approvals/review-apprentices-1" method="post" id="addedLearnersForm">
 
         <div id="addedTableContainer" class="govuk-!-padding-bottom-6">
           <table class="govuk-table">
@@ -255,7 +255,34 @@ href: "javascript:window.history.go(-1);"
               </tr>
             </thead>
             <tbody class="govuk-table__body" id="addedLearnersTableBody">
-              <!-- Added learners will appear here dynamically -->
+              <!-- Pre-added learners -->
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Alan Lightfoot</td>
+                <td class="govuk-table__cell">7232486935</td>
+                <td class="govuk-table__cell">Early years practitioner, Level 2</td>
+                <td class="govuk-table__cell">September 2025</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <button class="govuk-link remove-learner" type="button">Remove</button>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Bernard McKelly</td>
+                <td class="govuk-table__cell">7232487018</td>
+                <td class="govuk-table__cell">Early years educator, Level 3</td>
+                <td class="govuk-table__cell">September 2025</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <button class="govuk-link remove-learner" type="button">Remove</button>
+                </td>
+              </tr>
+              <tr class="govuk-table__row">
+                <td class="govuk-table__cell">Carla Mendoza</td>
+                <td class="govuk-table__cell">7447194694</td>
+                <td class="govuk-table__cell">Teaching assistant, Level 3</td>
+                <td class="govuk-table__cell">September 2025</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <button class="govuk-link remove-learner" type="button">Remove</button>
+                </td>
+              </tr>
             </tbody>
           </table>
 
