@@ -78,13 +78,10 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">Message</dt>
         <dd class="govuk-summary-list__value">
-          {% if data['approve-details'] == "yes" %}
-          {{ data['approvalMessage'] or 'No message added' }}
-          {% else %} {# This covers when data['approve-details'] == "no" #}
-          {{ data['requestChangesMessage'] or 'No message added' }}
-          {% endif %}
+          {{ data['approve-message'] or 'No message added' }}
         </dd>
       </div>
+
 
     </dl>
 
