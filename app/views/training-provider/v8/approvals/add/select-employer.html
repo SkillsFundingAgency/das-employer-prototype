@@ -52,18 +52,24 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
     <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
-    <p class="govuk-body">Choose the employer you want to add apprentice details for.</p>
+    <p class="govuk-body govuk-!-margin-bottom-4">
+      Choose the employer you want to add apprentice details for.
+    </p>
 
-    <p class="govuk-body">If you cannot find the employer, go to <a href="#" class="govuk-link">Manage your
-        employers</a>.</p>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      If you cannot find the employer, go to
+      <a href="#" class="govuk-link">Manage your employers</a>.
+    </p>
 
-    <form action="#" method="post">
+    <form action="#" method="post" class="govuk-!-margin-top-8">
       <div class="govuk-form-group">
-        <label class="govuk-label" for="searchTerm">Search by employer name, account name or agreement ID</label>
+        <label class="govuk-label" for="searchTerm">
+          Search by employer name, account name or agreement ID
+        </label>
         <div id="employer-container"></div>
       </div>
-
     </form>
+
 
     <table class="govuk-table" data-module="moj-sortable-table">
       <thead class="govuk-table__head">

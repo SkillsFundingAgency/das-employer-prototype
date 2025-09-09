@@ -1,0 +1,113 @@
+{% extends "layouts/main.html" %}
+{% set version = "v8" %}
+{% set pageTitle = "Add email" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l govuk-!-margin-bottom-1">Details for Alan Lightfoot</span>
+    <h1 class="govuk-heading-l govuk-!-margin-bottom-4">{{ pageTitle }}</h1>
+    <p class="govuk-body govuk-!-margin-bottom-6">
+      This is the email address we will use to contact the apprentice.
+    </p>
+
+
+    <form class="form" action="/training-provider/{{version}}/approvals/check-details-alan" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="first-name">
+          Email address
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="first-name" name="first-name" type="first"
+          value="{{ data['first-name'] or '' }}">
+      </div>
+
+      <details class="govuk-details govuk-!-margin-top-4" data-module="govuk-details">
+        <summary class="govuk-details__summary">
+          <span class="govuk-details__summary-text">
+            Why do we need an email address?
+          </span>
+        </summary>
+        <div class="govuk-details__text">
+          <p class="govuk-body">Your apprentice will receive an email alert inviting them to the My apprenticeship
+            service. On
+            the service, your apprentice will be able to:</p>
+          <ul class="govuk-list govuk-list--bullet">
+            <li>review and confirm their apprenticeship details</li>
+            <li>understand the roles and responsibilities of an apprentice, an employer and a training
+              provider
+            </li>
+            <li>find help and support during their apprenticeship</li>
+          </ul>
+        </div>
+      </details>
+
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button">
+          Continue
+        </button>
+        <a class="govuk-link" href="/training-provider/{{version}}/approvals/check-details-alan">Cancel</a>
+      </div>
+    </form>
+
+
+
+  </div>
+</div>
+
+
+
+
+
+
+
+
+{% endblock %}
