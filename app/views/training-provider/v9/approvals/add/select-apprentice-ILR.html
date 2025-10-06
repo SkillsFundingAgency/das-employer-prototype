@@ -221,8 +221,6 @@ href: "javascript:window.history.go(-1);"
     <div class="govuk-grid-column-two-thirds">
       <h1 class="govuk-heading-l">Select learners from ILR</h1>
 
-      <p class="govuk-body">Add all the learners you need from this list to a cohort.</p>
-
       <details class="govuk-details">
         <summary class="govuk-details__summary">
           <span class="govuk-details__summary-text">
@@ -249,7 +247,7 @@ href: "javascript:window.history.go(-1);"
     <div class="govuk-grid-column-full">
       <h2 class="govuk-heading-m">Learners in cohort (<span id="addedLearnersCount">0</span>)</h2>
       <span id="some-id-hint" class="govuk-hint">
-        Add all the learners you need on this page before you continue
+        Select all the learners you need from the list to add them to a cohort.
       </span>
       <div class="govuk-!-padding-bottom-5"></div>
 
@@ -411,547 +409,546 @@ href: "javascript:window.history.go(-1);"
     </div>
   </div>
 
-  <div id="resultsTableContainer">
-    <!-- Add All Learners Link -->
-    <p>
-      <a href="javascript:void(0)" id="addAllLearnersLink" class="govuk-link govuk-!-font-size-19">
-        Add all filtered learners (73)
-      </a>
-    </p>
-
-    <div class="govuk-grid-row">
-      <div class="govuk-grid-column-full">
-        <div id="resultsTableContainer">
-          <table class="govuk-table">
-            <thead class="govuk-table__head">
-              <tr class="govuk-table__row">
-                <th scope="col" class="govuk-table__header">Name</th>
-                <th scope="col" class="govuk-table__header">ULN</th>
-                <th scope="col" class="govuk-table__header">Course</th>
-                <th scope="col" class="govuk-table__header">Start date</th>
-                <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
-              </tr>
-            </thead>
-            <tbody class="govuk-table__body" id="recordsTableBody">
-              <!-- Table rows will be dynamically generated here by JavaScript -->
-            </tbody>
-          </table>
+  <div class="govuk-!-margin-bottom-3">
+    <button type="button" id="addAllFilteredButton" class="govuk-button govuk-button--secondary">
+      Add all filtered learners (<span id="filteredCount">73</span>)
+    </button>
+  </div>
 
 
-          <div class="govuk-grid-row govuk-!-margin-top-4" style="align-items: center;">
-            <!-- Pagination -->
-            <div class="govuk-grid-column-two-thirds">
-              <nav class="govuk-pagination" aria-label="Pagination">
-                <ul class="govuk-pagination__list" id="paginationList">
-                  <!-- Pagination links will be dynamically generated here -->
-                </ul>
-                <div class="govuk-pagination__next">
-                  <a class="govuk-link govuk-pagination__link" href="#" rel="next" id="nextPageLink">
-                    <span class="govuk-pagination__link-title">
-                      Next<span class="govuk-visually-hidden"> page</span>
-                    </span>
-                    <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
-                      height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                      <path
-                        d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
-                      </path>
-                    </svg>
-                  </a>
-                </div>
-              </nav>
-            </div>
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-full">
+      <div id="resultsTableContainer">
+        <table class="govuk-table">
+          <thead class="govuk-table__head">
+            <tr class="govuk-table__row">
+              <th scope="col" class="govuk-table__header">Name</th>
+              <th scope="col" class="govuk-table__header">ULN</th>
+              <th scope="col" class="govuk-table__header">Course</th>
+              <th scope="col" class="govuk-table__header">Start date</th>
+              <th scope="col" class="govuk-table__header govuk-table__header--numeric"></th>
+            </tr>
+          </thead>
+          <tbody class="govuk-table__body" id="recordsTableBody">
+            <!-- Table rows will be dynamically generated here by JavaScript -->
+          </tbody>
+        </table>
 
-            <!-- Results summary -->
-            <div class="govuk-grid-column-one-third" style="text-align: right;">
-              <p class="govuk-body govuk-!-margin-bottom-0" id="resultsSummary">
-                <!-- Summary will be dynamically updated here -->
-              </p>
-            </div>
+
+        <div class="govuk-grid-row govuk-!-margin-top-4" style="align-items: center;">
+          <!-- Pagination -->
+          <div class="govuk-grid-column-two-thirds">
+            <nav class="govuk-pagination" aria-label="Pagination">
+              <ul class="govuk-pagination__list" id="paginationList">
+                <!-- Pagination links will be dynamically generated here -->
+              </ul>
+              <div class="govuk-pagination__next">
+                <a class="govuk-link govuk-pagination__link" href="#" rel="next" id="nextPageLink">
+                  <span class="govuk-pagination__link-title">
+                    Next<span class="govuk-visually-hidden"> page</span>
+                  </span>
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--next" xmlns="http://www.w3.org/2000/svg"
+                    height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path
+                      d="m8.107-0.0078125-1.4136 1.414 4.2926 4.293h-12.986v2h12.896l-4.1855 3.9766 1.377 1.4492 6.7441-6.4062-6.7246-6.7266z">
+                    </path>
+                  </svg>
+                </a>
+              </div>
+            </nav>
+          </div>
+
+          <!-- Results summary -->
+          <div class="govuk-grid-column-one-third" style="text-align: right;">
+            <p class="govuk-body govuk-!-margin-bottom-0" id="resultsSummary">
+              <!-- Summary will be dynamically updated here -->
+            </p>
           </div>
         </div>
-        <!-- No results message container -->
-        <div id="noResultsMessage" style="display: none;">
-          <h2 class="govuk-heading-s">There are no matching results for 2026.</h2>
-          <p class="govuk-body">It can take up to 15 minutes for ILR updates to appear here.</p>
-          <p class="govuk-body">Try:</p>
-          <ul class="govuk-list govuk-list--bullet">
-            <li>checking the details you entered, such as ULN or name</li>
-            <li>changing or removing any filters</li>
-            <li>searching again after 15 minutes if you recently updated your ILR</li>
-          </ul>
-        </div>
+      </div>
+      <!-- No results message container -->
+      <div id="noResultsMessage" style="display: none;">
+        <h2 class="govuk-heading-s">There are no matching results for 2026.</h2>
+        <p class="govuk-body">It can take up to 15 minutes for ILR updates to appear here.</p>
+        <p class="govuk-body">Try:</p>
+        <ul class="govuk-list govuk-list--bullet">
+          <li>checking the details you entered, such as ULN or name</li>
+          <li>changing or removing any filters</li>
+          <li>searching again after 15 minutes if you recently updated your ILR</li>
+        </ul>
       </div>
     </div>
+  </div>
 
 
-    <script>
-      // Full dataset of 73 records
-      const learnersDataInitial = [{
-        name: "Alan Lightfoot",
-        uln: "7232486935",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Bernard McKelly",
-        uln: "7232487018",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Carla Mendoza",
-        uln: "7447194694",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Deepika Sharma",
-        uln: "7342365215",
-        course: "Early years practitioner, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Elijah Robinson",
-        uln: "7582483570",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Fatima Hussain",
-        uln: "7443068554",
-        course: "Early years practitioner, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Grace O’Connor",
-        uln: "7436562065",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mohammed Ali",
-        uln: "7502286029",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Sophia Williams",
-        uln: "7418298617",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Yusuf Ahmed",
-        uln: "7007543626",
-        course: "Early years practitioner, Level 2",
-        employer: "No employer"
-      }, {
-        name: "Emily Carter",
-        uln: "8237461839",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Thomas Reed",
-        uln: "9128746235",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Sophie Turner",
-        uln: "8756341902",
-        course: "HR support, Level 3",
-        employer: "No employer"
-      }, {
-        name: "Liam Johnson",
-        uln: "7348592034",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Olivia Harris",
-        uln: "6758219364",
-        course: "Teaching assistant, Level 3",
-        employer: "No employer"
-      }, {
-        name: "Jacob Knight",
-        uln: "8392047612",
-        course: "Team leader supervisor, Level 3",
-        employer: "No employer"
-      }, {
-        name: "Isla Mason",
-        uln: "9501726483",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Noah Davies",
-        uln: "7392041837",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Grace Patel",
-        uln: "8492037648",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Harvey Bell",
-        uln: "9301847562",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Zara Collins",
-        uln: "7819204736",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Oscar Bennett",
-        uln: "8021934756",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ella James",
-        uln: "7182049567",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Lucas Gray",
-        uln: "8937162840",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Amelia White",
-        uln: "8882049567",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Leo Miller",
-        uln: "9117162840",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Zoe Hall",
-        uln: "9021934756",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "David Kim",
-        uln: "8937162840",
-        course: "Teaching assistant, Level 3",
-        employer: "No employer"
-      }, {
-        name: "Nora Chen",
-        uln: "8002049567",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Felix Lee",
-        uln: "9117162840",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Chloe Evans",
-        uln: "9221934756",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mia King",
-        uln: "8737162840",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Alex Turner",
-        uln: "8552049567",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Sam White",
-        uln: "8667162840",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ryan Clark",
-        uln: "8972049567",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Eva Lewis",
-        uln: "9287162840",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ben Wright",
-        uln: "9492049567",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Lily Green",
-        uln: "9507162840",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Jack Hill",
-        uln: "9612049567",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mia Scott",
-        uln: "9727162840",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Noah Adams",
-        uln: "9832049567",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Chloe Baker",
-        uln: "9947162840",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Leo Cook",
-        uln: "1052049567",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Grace Gray",
-        uln: "1167162840",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Oscar Hall",
-        uln: "1272049567",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ella Jones",
-        uln: "1387162840",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ben King",
-        uln: "1492049567",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Lily Lee",
-        uln: "1507162840",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Jack Martin",
-        uln: "1612049567",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mia Nash",
-        uln: "1727162840",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Noah Perry",
-        uln: "1832049567",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Chloe Quinn",
-        uln: "1947162840",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Leo Reed",
-        uln: "2052049567",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Grace Scott",
-        uln: "2167162840",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Oscar Thompson",
-        uln: "2272049567",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ella Turner",
-        uln: "2387162840",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ben White",
-        uln: "2492049567",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Lily Wilson",
-        uln: "2507162840",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Jack Young",
-        uln: "2612049567",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mia Adams",
-        uln: "2727162840",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Noah Baker",
-        uln: "2832049567",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Chloe Cook",
-        uln: "2947162840",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Leo Davies",
-        uln: "3052049567",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Grace Evans",
-        uln: "3167162840",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Oscar Fisher",
-        uln: "3272049567",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ella Green",
-        uln: "3387162840",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Ben Hall",
-        uln: "3492049567",
-        course: "Business administrator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Lily Jones",
-        uln: "3507162840",
-        course: "Customer service practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Jack King",
-        uln: "3612049567",
-        course: "Early years educator, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Mia Lee",
-        uln: "3727162840",
-        course: "Teaching assistant, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Noah Martin",
-        uln: "3832049567",
-        course: "HR support, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Chloe Nash",
-        uln: "3947162840",
-        course: "Team leader supervisor, Level 3",
-        employer: "BAMBINOS DAY NURSERY"
-      }, {
-        name: "Leo Perry",
-        uln: "4052049567",
-        course: "Early years practitioner, Level 2",
-        employer: "BAMBINOS DAY NURSERY"
-      }];
+  <script>
+    // Full dataset of 73 records
+    const learnersDataInitial = [{
+      name: "Alan Lightfoot",
+      uln: "7232486935",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Bernard McKelly",
+      uln: "7232487018",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Carla Mendoza",
+      uln: "7447194694",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Deepika Sharma",
+      uln: "7342365215",
+      course: "Early years practitioner, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Elijah Robinson",
+      uln: "7582483570",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Fatima Hussain",
+      uln: "7443068554",
+      course: "Early years practitioner, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Grace O’Connor",
+      uln: "7436562065",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mohammed Ali",
+      uln: "7502286029",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Sophia Williams",
+      uln: "7418298617",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Yusuf Ahmed",
+      uln: "7007543626",
+      course: "Early years practitioner, Level 2",
+      employer: "No employer"
+    }, {
+      name: "Emily Carter",
+      uln: "8237461839",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Thomas Reed",
+      uln: "9128746235",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Sophie Turner",
+      uln: "8756341902",
+      course: "HR support, Level 3",
+      employer: "No employer"
+    }, {
+      name: "Liam Johnson",
+      uln: "7348592034",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Olivia Harris",
+      uln: "6758219364",
+      course: "Teaching assistant, Level 3",
+      employer: "No employer"
+    }, {
+      name: "Jacob Knight",
+      uln: "8392047612",
+      course: "Team leader supervisor, Level 3",
+      employer: "No employer"
+    }, {
+      name: "Isla Mason",
+      uln: "9501726483",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Noah Davies",
+      uln: "7392041837",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Grace Patel",
+      uln: "8492037648",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Harvey Bell",
+      uln: "9301847562",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Zara Collins",
+      uln: "7819204736",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Oscar Bennett",
+      uln: "8021934756",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ella James",
+      uln: "7182049567",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Lucas Gray",
+      uln: "8937162840",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Amelia White",
+      uln: "8882049567",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Leo Miller",
+      uln: "9117162840",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Zoe Hall",
+      uln: "9021934756",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "David Kim",
+      uln: "8937162840",
+      course: "Teaching assistant, Level 3",
+      employer: "No employer"
+    }, {
+      name: "Nora Chen",
+      uln: "8002049567",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Felix Lee",
+      uln: "9117162840",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Chloe Evans",
+      uln: "9221934756",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mia King",
+      uln: "8737162840",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Alex Turner",
+      uln: "8552049567",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Sam White",
+      uln: "8667162840",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ryan Clark",
+      uln: "8972049567",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Eva Lewis",
+      uln: "9287162840",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ben Wright",
+      uln: "9492049567",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Lily Green",
+      uln: "9507162840",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Jack Hill",
+      uln: "9612049567",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mia Scott",
+      uln: "9727162840",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Noah Adams",
+      uln: "9832049567",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Chloe Baker",
+      uln: "9947162840",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Leo Cook",
+      uln: "1052049567",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Grace Gray",
+      uln: "1167162840",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Oscar Hall",
+      uln: "1272049567",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ella Jones",
+      uln: "1387162840",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ben King",
+      uln: "1492049567",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Lily Lee",
+      uln: "1507162840",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Jack Martin",
+      uln: "1612049567",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mia Nash",
+      uln: "1727162840",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Noah Perry",
+      uln: "1832049567",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Chloe Quinn",
+      uln: "1947162840",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Leo Reed",
+      uln: "2052049567",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Grace Scott",
+      uln: "2167162840",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Oscar Thompson",
+      uln: "2272049567",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ella Turner",
+      uln: "2387162840",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ben White",
+      uln: "2492049567",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Lily Wilson",
+      uln: "2507162840",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Jack Young",
+      uln: "2612049567",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mia Adams",
+      uln: "2727162840",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Noah Baker",
+      uln: "2832049567",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Chloe Cook",
+      uln: "2947162840",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Leo Davies",
+      uln: "3052049567",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Grace Evans",
+      uln: "3167162840",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Oscar Fisher",
+      uln: "3272049567",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ella Green",
+      uln: "3387162840",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Ben Hall",
+      uln: "3492049567",
+      course: "Business administrator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Lily Jones",
+      uln: "3507162840",
+      course: "Customer service practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Jack King",
+      uln: "3612049567",
+      course: "Early years educator, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Mia Lee",
+      uln: "3727162840",
+      course: "Teaching assistant, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Noah Martin",
+      uln: "3832049567",
+      course: "HR support, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Chloe Nash",
+      uln: "3947162840",
+      course: "Team leader supervisor, Level 3",
+      employer: "BAMBINOS DAY NURSERY"
+    }, {
+      name: "Leo Perry",
+      uln: "4052049567",
+      course: "Early years practitioner, Level 2",
+      employer: "BAMBINOS DAY NURSERY"
+    }];
 
-      // Function to assign a random date in September, October, or November 2025 (month and year only)
-      function assignRandomStartDate() {
-        const months = ["September", "October", "November"];
-        const month = months[Math.floor(Math.random() * months.length)];
-        return `${month} 2025`;
+    // Function to assign a random date in September, October, or November 2025 (month and year only)
+    function assignRandomStartDate() {
+      const months = ["September", "October", "November"];
+      const month = months[Math.floor(Math.random() * months.length)];
+      return `${month} 2025`;
+    }
+
+    // Assign a random start date to each learner
+    learnersDataInitial.forEach(learner => {
+      learner.startDate = assignRandomStartDate();
+    });
+
+    // Manually override the start dates for the specified learners
+    learnersDataInitial[0].startDate = "September 2025"; // Alan Lightfoot
+    learnersDataInitial[1].startDate = "September 2025"; // Bernard McKelly
+    learnersDataInitial[2].startDate = "September 2025"; // Carlos Mendoza
+
+    // Sort learners alphabetically
+    learnersDataInitial.sort((a, b) => a.name.localeCompare(b.name));
+
+    // Data for the accessible autocomplete search box
+    const ILR = learnersDataInitial.map(l => `${l.name} ${l.uln}`);
+
+    // State variables for the two tables
+    let learnersData = [...learnersDataInitial]; // Main list
+    let addedLearnersData = []; // Learners in the group
+
+    // State variables for pagination
+    let currentPage = 1;
+    const pageSize = 25;
+
+    // Initialize the accessible autocomplete
+    accessibleAutocomplete({
+      autoselect: true,
+      element: document.querySelector('#ILR-container'),
+      id: 'searchTerm', // matches the label
+      name: 'ILR-autocomplete',
+      source: ILR,
+      defaultValue: '',
+      displayMenu: 'overlay',
+      minLength: 2,
+      tNoResults: function () {
+        return "Other";
+      },
+      onConfirm: function (selected) {
+        // When user selects a value or presses enter
+        searchTermInput.value = selected || '';
+        currentPage = 1; // Reset to page 1
+        applyFiltersAndPaginate();
       }
+    });
 
-      // Assign a random start date to each learner
-      learnersDataInitial.forEach(learner => {
-        learner.startDate = assignRandomStartDate();
-      });
 
-      // Manually override the start dates for the specified learners
-      learnersDataInitial[0].startDate = "September 2025"; // Alan Lightfoot
-      learnersDataInitial[1].startDate = "September 2025"; // Bernard McKelly
-      learnersDataInitial[2].startDate = "September 2025"; // Carlos Mendoza
+    // --- Dynamic Table and Pagination Logic ---
+    document.addEventListener("DOMContentLoaded", () => {
+      const filterForm = document.getElementById("filterForm");
+      const searchTermInput = document.getElementById("searchTerm");
+      const recordsTableBody = document.getElementById("recordsTableBody");
+      const addedLearnersTableBody = document.getElementById("addedLearnersTableBody");
+      const addedLearnersSection = document.getElementById("addedLearnersSection"); // New element reference
+      const recordCountDisplay = document.querySelector(".record-count");
+      const addedLearnersCount = document.getElementById("addedLearnersCount");
+      const resultsSummary = document.getElementById("resultsSummary");
+      const paginationList = document.getElementById("paginationList");
+      const nextPageLink = document.getElementById("nextPageLink");
+      const resultsTableContainer = document.getElementById("resultsTableContainer");
+      const noResultsMessage = document.getElementById("noResultsMessage");
+      const clearFiltersLink = document.getElementById('clearFiltersLink');
+      const saveButtonDiv = document.querySelector("#addedLearnersForm .govuk-button-group");
+      clearFiltersLink.addEventListener('click', (e) => {
+        e.preventDefault();
 
-      // Sort learners alphabetically
-      learnersDataInitial.sort((a, b) => a.name.localeCompare(b.name));
+        // Reset all selects
+        document.getElementById('courseTypeSelect').value = '';
+        document.getElementById('courseNameSelect').value = '';
+        document.getElementById('startMonthSelect').value = '';
+        document.getElementById('startYearSelect').value = '2025';
 
-      // Data for the accessible autocomplete search box
-      const ILR = learnersDataInitial.map(l => `${l.name} ${l.uln}`);
+        // Uncheck all employer checkboxes
+        document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
 
-      // State variables for the two tables
-      let learnersData = [...learnersDataInitial]; // Main list
-      let addedLearnersData = []; // Learners in the group
+        // Clear search input
+        searchTermInput.value = '';
 
-      // State variables for pagination
-      let currentPage = 1;
-      const pageSize = 25;
-
-      // Initialize the accessible autocomplete
-      accessibleAutocomplete({
-        autoselect: true,
-        element: document.querySelector('#ILR-container'),
-        id: 'searchTerm', // matches the label
-        name: 'ILR-autocomplete',
-        source: ILR,
-        defaultValue: '',
-        displayMenu: 'overlay',
-        minLength: 2,
-        tNoResults: function () {
-          return "Other";
-        },
-        onConfirm: function (selected) {
-          // When user selects a value or presses enter
-          searchTermInput.value = selected || '';
-          currentPage = 1; // Reset to page 1
-          applyFiltersAndPaginate();
-        }
+        // Reset page and update tables
+        currentPage = 1;
+        updateAllTables();
       });
 
 
-      // --- Dynamic Table and Pagination Logic ---
-      document.addEventListener("DOMContentLoaded", () => {
-        const filterForm = document.getElementById("filterForm");
-        const searchTermInput = document.getElementById("searchTerm");
-        const recordsTableBody = document.getElementById("recordsTableBody");
-        const addedLearnersTableBody = document.getElementById("addedLearnersTableBody");
-        const addedLearnersSection = document.getElementById("addedLearnersSection"); // New element reference
-        const recordCountDisplay = document.querySelector(".record-count");
-        const addedLearnersCount = document.getElementById("addedLearnersCount");
-        const resultsSummary = document.getElementById("resultsSummary");
-        const paginationList = document.getElementById("paginationList");
-        const nextPageLink = document.getElementById("nextPageLink");
-        const resultsTableContainer = document.getElementById("resultsTableContainer");
-        const noResultsMessage = document.getElementById("noResultsMessage");
-        const clearFiltersLink = document.getElementById('clearFiltersLink');
-        const saveButtonDiv = document.querySelector("#addedLearnersForm .govuk-button-group");
-        clearFiltersLink.addEventListener('click', (e) => {
-          e.preventDefault();
-
-          // Reset all selects
-          document.getElementById('courseTypeSelect').value = '';
-          document.getElementById('courseNameSelect').value = '';
-          document.getElementById('startMonthSelect').value = '';
-          document.getElementById('startYearSelect').value = '2025';
-
-          // Uncheck all employer checkboxes
-          document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
-
-          // Clear search input
-          searchTermInput.value = '';
-
-          // Reset page and update tables
-          currentPage = 1;
-          updateAllTables();
-        });
-
-
-        // Function to render a table given a dataset and a target tbody element
-        function renderTable(dataToRender, targetBody, isAddedTable = false) {
-          targetBody.innerHTML = '';
-          dataToRender.forEach(learner => {
-            const row = document.createElement('tr');
-            row.className = 'govuk-table__row';
-            row.dataset.uln = learner.uln; // Use data attribute for easy lookup
-            const actionText = isAddedTable ? 'Remove' : 'Add';
-            row.innerHTML = `
+      // Function to render a table given a dataset and a target tbody element
+      function renderTable(dataToRender, targetBody, isAddedTable = false) {
+        targetBody.innerHTML = '';
+        dataToRender.forEach(learner => {
+          const row = document.createElement('tr');
+          row.className = 'govuk-table__row';
+          row.dataset.uln = learner.uln; // Use data attribute for easy lookup
+          const actionText = isAddedTable ? 'Remove' : 'Add';
+          row.innerHTML = `
             <td class="govuk-table__cell" data-label="Name">${learner.name}</td>
             <td class="govuk-table__cell" data-label="ULN">${learner.uln}</td>
             <td class="govuk-table__cell" data-label="Course">${learner.course}</td>
@@ -962,242 +959,109 @@ href: "javascript:window.history.go(-1);"
               </a>
             </td>
           `;
-            targetBody.appendChild(row);
-          });
+          targetBody.appendChild(row);
+        });
+      }
+
+      // Function to update pagination controls
+      function updatePagination(filteredRecords) {
+        const totalPages = Math.ceil(filteredRecords.length / pageSize);
+        paginationList.innerHTML = '';
+
+        if (totalPages <= 1) {
+          nextPageLink.style.display = 'none';
+          return;
         }
 
-        // Function to update pagination controls
-        function updatePagination(filteredRecords) {
-          const totalPages = Math.ceil(filteredRecords.length / pageSize);
-          paginationList.innerHTML = '';
-
-          if (totalPages <= 1) {
-            nextPageLink.style.display = 'none';
-            return;
-          }
-
-          // Previous link
-          const prevLink = document.createElement('li');
-          prevLink.className = `govuk-pagination__item govuk-pagination__item--prev ${currentPage === 1 ? 'govuk-!-display-none' : ''}`;
-          prevLink.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" rel="prev">
+        // Previous link
+        const prevLink = document.createElement('li');
+        prevLink.className = `govuk-pagination__item govuk-pagination__item--prev ${currentPage === 1 ? 'govuk-!-display-none' : ''}`;
+        prevLink.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" rel="prev">
                                 <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
                                 <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
                                   <path d="M1.9 6.5L8.4 0l1.4 1.4-4.2 4.3h8.3v2H5.6l4.2 4.3-1.4 1.4L1.9 6.5z"></path>
                                 </svg>
                               </a>`;
-          prevLink.addEventListener('click', (e) => {
-            e.preventDefault();
-            if (currentPage > 1) {
-              currentPage--;
-              applyFiltersAndPaginate();
-            }
-          });
-          paginationList.appendChild(prevLink);
-
-          // Page links
-          for (let i = 1; i <= totalPages; i++) {
-            const pageItem = document.createElement('li');
-            pageItem.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
-            pageItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" aria-label="Page ${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>`;
-            pageItem.addEventListener('click', (e) => {
-              e.preventDefault();
-              currentPage = i;
-              applyFiltersAndPaginate();
-            });
-            paginationList.appendChild(pageItem);
+        prevLink.addEventListener('click', (e) => {
+          e.preventDefault();
+          if (currentPage > 1) {
+            currentPage--;
+            applyFiltersAndPaginate();
           }
+        });
+        paginationList.appendChild(prevLink);
 
-          // Next link
-          nextPageLink.style.display = currentPage < totalPages ? 'block' : 'none';
-
+        // Page links
+        for (let i = 1; i <= totalPages; i++) {
+          const pageItem = document.createElement('li');
+          pageItem.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
+          pageItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" aria-label="Page ${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>`;
+          pageItem.addEventListener('click', (e) => {
+            e.preventDefault();
+            currentPage = i;
+            applyFiltersAndPaginate();
+          });
+          paginationList.appendChild(pageItem);
         }
 
-        // Main function to update all UI elements
-        function updateAllTables() {
-          // Always show the section
-          addedLearnersSection.style.display = 'block';
+        // Next link
+        nextPageLink.style.display = currentPage < totalPages ? 'block' : 'none';
 
-          // Render the top table
-          renderTable(addedLearnersData, addedLearnersTableBody, true);
-          addedLearnersCount.textContent = addedLearnersData.length;
+      }
 
-          // Update count
-          addedLearnersCount.textContent = addedLearnersData.length;
+      // Main function to update all UI elements
+      function updateAllTables() {
+        // Always show the section
+        addedLearnersSection.style.display = 'block';
 
-          // Show/hide the "Save and continue" button
-          if (addedLearnersData.length > 0) {
-            saveButtonDiv.style.display = 'block';
-          } else {
-            saveButtonDiv.style.display = 'none';
-          }
+        // Render the top table
+        renderTable(addedLearnersData, addedLearnersTableBody, true);
+        addedLearnersCount.textContent = addedLearnersData.length;
 
-          // If there are no learners, show a message inside the table
-          if (addedLearnersData.length === 0) {
-            addedLearnersTableBody.innerHTML = `
+        // Update count
+        addedLearnersCount.textContent = addedLearnersData.length;
+
+        // Show/hide the "Save and continue" button
+        if (addedLearnersData.length > 0) {
+          saveButtonDiv.style.display = 'block';
+        } else {
+          saveButtonDiv.style.display = 'none';
+        }
+
+        // If there are no learners, show a message inside the table
+        if (addedLearnersData.length === 0) {
+          addedLearnersTableBody.innerHTML = `
         <tr>
             <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
         </tr>
     `;
-          }
+        }
 
 
-          // If there are no learners, show a message inside the table
-          if (addedLearnersData.length === 0) {
-            addedLearnersTableBody.innerHTML = `
+        // If there are no learners, show a message inside the table
+        if (addedLearnersData.length === 0) {
+          addedLearnersTableBody.innerHTML = `
       <tr>
         <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
       </tr>
     `;
-          }
-
-          // Render the main table
-          applyFiltersAndPaginate();
         }
 
-
-        // Main function to filter and paginate the main table
-        function applyFiltersAndPaginate() {
-          const searchTerm = (searchTermInput.value || "").toLowerCase().trim();
-          const courseType = document.getElementById("courseTypeSelect").value;
-          const courseName = document.getElementById("courseNameSelect").value;
-          const startMonth = document.getElementById("startMonthSelect").value;
-          const startYear = document.getElementById("startYearSelect").value;
-          const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
-
-          // Learners with no employer
-          const noEmployerLearners = new Set([
-            "Yusuf Ahmed",
-            "Sophie Turner",
-            "Olivia Harris",
-            "Jacob Knight",
-            "David Kim"
-          ]);
-
-          // Filter the dataset
-          const filteredRecords = learnersData.filter(learner => {
-            const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
-            const matchesCourseType = !courseType || learner.course.includes(courseType);
-            const matchesCourseName = !courseName || learner.course.includes(courseName);
-            const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
-            const matchesStartYear = !startYear || learner.startDate.includes(startYear);
-
-            let matchesEmployer = true;
-            if (employerCheckboxes.length > 0) {
-              matchesEmployer = employerCheckboxes.some(checkboxValue => {
-                if (checkboxValue === "No employer") {
-                  return noEmployerLearners.has(learner.name);
-                }
-                return learner.employer === checkboxValue;
-              });
-            }
-
-            return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
-          });
-
-          // Update the search term field to match the input
-          document.getElementById('searchTerm').value = searchTermInput.value;
-
-          // Pagination logic
-          const startIndex = (currentPage - 1) * pageSize;
-          const endIndex = startIndex + pageSize;
-          const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
-
-          // Show or hide results table based on filtered records
-          const recordCountDisplay = document.querySelector(".record-count");
-          const lastUpdatedDisplay = document.querySelector(".last-updated");
-
-          if (filteredRecords.length > 0) {
-            resultsTableContainer.style.display = 'block';
-            noResultsMessage.style.display = 'none';
-            recordCountDisplay.style.display = 'block';
-            lastUpdatedDisplay.style.display = 'block';
-          } else {
-            resultsTableContainer.style.display = 'none';
-            noResultsMessage.style.display = 'block';
-            recordCountDisplay.style.display = 'none';
-            lastUpdatedDisplay.style.display = 'none';
-          }
+        // Render the main table
+        applyFiltersAndPaginate();
+      }
 
 
-          // Render the main table
-          renderTable(paginatedRecords, recordsTableBody);
-
-          // Build the filter summary dynamically
-          const activeFilters = [];
-          if (startYear) activeFilters.push(`<b>${startYear}</b>`); // Default year always bold
-          if (courseType) activeFilters.push(`<b>${courseType}</b>`);
-          if (courseName) activeFilters.push(`<b>${courseName}</b>`);
-          if (startMonth) activeFilters.push(`<b>${startMonth}</b>`);
-          if (employerCheckboxes.length > 0) activeFilters.push(...employerCheckboxes.map(e => `<b>${e}</b>`));
-
-          const filterSummary = activeFilters.length > 0
-            ? activeFilters.join(', ')
-            : '<b>2025</b>'; // Default if nothing else is selected
-
-          // Update record count and results summary
-          recordCountDisplay.innerHTML = `${filteredRecords.length} learner records matching ${filterSummary}`;
-          resultsSummary.textContent = `Showing ${startIndex + 1} to ${Math.min(endIndex, filteredRecords.length)} of ${filteredRecords.length} results`;
-
-          // Update pagination controls
-          updatePagination(filteredRecords);
-        }
-
-
-        // Event listener for the filter form submission
-        filterForm.addEventListener('submit', (e) => {
-          e.preventDefault();
-          currentPage = 1; // Reset to page 1 on new filter
-          updateAllTables();
-        });
-
-        // Event listener for the Add and Remove links
-        document.body.addEventListener('click', (e) => {
-          const link = e.target.closest('.action-link');
-          if (!link) return;
-
-          e.preventDefault();
-
-          const uln = link.closest('tr').dataset.uln;
-          const action = link.dataset.action;
-
-          if (action === 'add') {
-            const learnerIndex = learnersData.findIndex(l => l.uln === uln);
-            if (learnerIndex !== -1) {
-              const learnerToAdd = learnersData.splice(learnerIndex, 1)[0];
-              addedLearnersData.push(learnerToAdd);
-              window.scrollTo(0, 0); // Scroll to top after adding a learner
-            }
-          } else if (action === 'remove') {
-            const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
-            if (learnerIndex !== -1) {
-              const learnerToRemove = addedLearnersData.splice(learnerIndex, 1)[0];
-              learnersData.push(learnerToRemove);
-            }
-          }
-
-          // Sort the main learners data alphabetically after a change
-          learnersData.sort((a, b) => a.name.localeCompare(b.name));
-
-          updateAllTables();
-        });
-
-        // Initial render on page load
-        updateAllTables();
-      });
-
-      // "Add all learners" functionality
-      const addAllLearnersLink = document.getElementById('addAllLearnersLink');
-      addAllLearnersLink.addEventListener('click', (e) => {
-        e.preventDefault();
-
-        // Grab current filters
-        const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
+      // Main function to filter and paginate the main table
+      function applyFiltersAndPaginate() {
+        const searchTerm = (searchTermInput.value || "").toLowerCase().trim();
         const courseType = document.getElementById("courseTypeSelect").value;
         const courseName = document.getElementById("courseNameSelect").value;
         const startMonth = document.getElementById("startMonthSelect").value;
         const startYear = document.getElementById("startYearSelect").value;
         const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
 
+        // Learners with no employer
         const noEmployerLearners = new Set([
           "Yusuf Ahmed",
           "Sophie Turner",
@@ -1206,8 +1070,8 @@ href: "javascript:window.history.go(-1);"
           "David Kim"
         ]);
 
-        // Filter learnersData based on current filters
-        const filteredLearners = learnersData.filter(learner => {
+        // Filter the dataset
+        const filteredRecords = learnersData.filter(learner => {
           const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
           const matchesCourseType = !courseType || learner.course.includes(courseType);
           const matchesCourseName = !courseName || learner.course.includes(courseName);
@@ -1227,21 +1091,213 @@ href: "javascript:window.history.go(-1);"
           return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
         });
 
-        // Move all filtered learners to addedLearnersData
-        filteredLearners.forEach(learner => {
-          const index = learnersData.findIndex(l => l.uln === learner.uln);
-          if (index !== -1) {
-            addedLearnersData.push(...learnersData.splice(index, 1));
-          }
-        });
+        // Update the search term field to match the input
+        document.getElementById('searchTerm').value = searchTermInput.value;
 
-        // Sort the main list alphabetically
+        // Pagination logic
+        const startIndex = (currentPage - 1) * pageSize;
+        const endIndex = startIndex + pageSize;
+        const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
+
+        // Show or hide results table based on filtered records
+        const recordCountDisplay = document.querySelector(".record-count");
+        const lastUpdatedDisplay = document.querySelector(".last-updated");
+
+        if (filteredRecords.length > 0) {
+          resultsTableContainer.style.display = 'block';
+          noResultsMessage.style.display = 'none';
+          recordCountDisplay.style.display = 'block';
+          lastUpdatedDisplay.style.display = 'block';
+        } else {
+          resultsTableContainer.style.display = 'none';
+          noResultsMessage.style.display = 'block';
+          recordCountDisplay.style.display = 'none';
+          lastUpdatedDisplay.style.display = 'none';
+        }
+
+
+        // Render the main table
+        renderTable(paginatedRecords, recordsTableBody);
+
+        // Build the filter summary dynamically
+        const activeFilters = [];
+        if (startYear) activeFilters.push(`<b>${startYear}</b>`); // Default year always bold
+        if (courseType) activeFilters.push(`<b>${courseType}</b>`);
+        if (courseName) activeFilters.push(`<b>${courseName}</b>`);
+        if (startMonth) activeFilters.push(`<b>${startMonth}</b>`);
+        if (employerCheckboxes.length > 0) activeFilters.push(...employerCheckboxes.map(e => `<b>${e}</b>`));
+
+        const filterSummary = activeFilters.length > 0
+          ? activeFilters.join(', ')
+          : '<b>2025</b>'; // Default if nothing else is selected
+
+        // Update record count and results summary
+        recordCountDisplay.innerHTML = `${filteredRecords.length} learner records matching ${filterSummary}`;
+        resultsSummary.textContent = `Showing ${startIndex + 1} to ${Math.min(endIndex, filteredRecords.length)} of ${filteredRecords.length} results`;
+
+        // Update pagination controls
+        updatePagination(filteredRecords);
+      }
+
+
+      // Event listener for the filter form submission
+      filterForm.addEventListener('submit', (e) => {
+        e.preventDefault();
+        currentPage = 1; // Reset to page 1 on new filter
+        updateAllTables();
+      });
+
+      // Event listener for the Add and Remove links
+      document.body.addEventListener('click', (e) => {
+        const link = e.target.closest('.action-link');
+        if (!link) return;
+
+        e.preventDefault();
+
+        const uln = link.closest('tr').dataset.uln;
+        const action = link.dataset.action;
+
+        if (action === 'add') {
+          const learnerIndex = learnersData.findIndex(l => l.uln === uln);
+          if (learnerIndex !== -1) {
+            const learnerToAdd = learnersData.splice(learnerIndex, 1)[0];
+            addedLearnersData.push(learnerToAdd);
+            window.scrollTo(0, 0); // Scroll to top after adding a learner
+          }
+        } else if (action === 'remove') {
+          const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
+          if (learnerIndex !== -1) {
+            const learnerToRemove = addedLearnersData.splice(learnerIndex, 1)[0];
+            learnersData.push(learnerToRemove);
+          }
+        }
+
+        // Sort the main learners data alphabetically after a change
         learnersData.sort((a, b) => a.name.localeCompare(b.name));
 
         updateAllTables();
       });
 
-    </script>
+      // Initial render on page load
+      updateAllTables();
+    });
+
+    // "Add all learners" functionality
+    const addAllLearnersLink = document.getElementById('addAllLearnersLink');
+    addAllLearnersLink.addEventListener('click', (e) => {
+      e.preventDefault();
+
+      // Grab current filters
+      const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
+      const courseType = document.getElementById("courseTypeSelect").value;
+      const courseName = document.getElementById("courseNameSelect").value;
+      const startMonth = document.getElementById("startMonthSelect").value;
+      const startYear = document.getElementById("startYearSelect").value;
+      const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
+
+      const noEmployerLearners = new Set([
+        "Yusuf Ahmed",
+        "Sophie Turner",
+        "Olivia Harris",
+        "Jacob Knight",
+        "David Kim"
+      ]);
+
+      // Filter learnersData based on current filters
+      const filteredLearners = learnersData.filter(learner => {
+        const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
+        const matchesCourseType = !courseType || learner.course.includes(courseType);
+        const matchesCourseName = !courseName || learner.course.includes(courseName);
+        const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
+        const matchesStartYear = !startYear || learner.startDate.includes(startYear);
+
+        let matchesEmployer = true;
+        if (employerCheckboxes.length > 0) {
+          matchesEmployer = employerCheckboxes.some(checkboxValue => {
+            if (checkboxValue === "No employer") {
+              return noEmployerLearners.has(learner.name);
+            }
+            return learner.employer === checkboxValue;
+          });
+        }
+
+        return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
+      });
+
+      // Move all filtered learners to addedLearnersData
+      filteredLearners.forEach(learner => {
+        const index = learnersData.findIndex(l => l.uln === learner.uln);
+        if (index !== -1) {
+          addedLearnersData.push(...learnersData.splice(index, 1));
+        }
+      });
+
+      // Sort the main list alphabetically
+      learnersData.sort((a, b) => a.name.localeCompare(b.name));
+
+      updateAllTables();
+    });
+
+    // --- Add All Filtered Learners ---
+    const addAllFilteredButton = document.getElementById("addAllFilteredButton");
+    const filteredCount = document.getElementById("filteredCount");
+
+    addAllFilteredButton.addEventListener("click", () => {
+      // Get the currently filtered learners (you should already have a filtered dataset)
+      const filteredLearners = getFilteredLearners(); // define or reuse your filtering logic
+
+      // Add them all to the added learners data array
+      filteredLearners.forEach((learner) => {
+        if (!addedLearnersData.some(l => l.id === learner.id)) {
+          addedLearnersData.push(learner);
+        }
+      });
+
+      // Update the UI
+      updateAllTables();
+    });
+
+    // Helper function to get currently filtered learners
+    function getFilteredLearners() {
+      const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
+      const courseType = document.getElementById("courseTypeSelect").value;
+      const courseName = document.getElementById("courseNameSelect").value;
+      const startMonth = document.getElementById("startMonthSelect").value;
+      const startYear = document.getElementById("startYearSelect").value;
+      const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
+
+      const noEmployerLearners = new Set([
+        "Yusuf Ahmed",
+        "Sophie Turner",
+        "Olivia Harris",
+        "Jacob Knight",
+        "David Kim"
+      ]);
+
+      return learnersData.filter(learner => {
+        const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
+        const matchesCourseType = !courseType || learner.course.includes(courseType);
+        const matchesCourseName = !courseName || learner.course.includes(courseName);
+        const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
+        const matchesStartYear = !startYear || learner.startDate.includes(startYear);
+
+        let matchesEmployer = true;
+        if (employerCheckboxes.length > 0) {
+          matchesEmployer = employerCheckboxes.some(checkboxValue => {
+            if (checkboxValue === "No employer") {
+              return noEmployerLearners.has(learner.name);
+            }
+            return learner.employer === checkboxValue;
+          });
+        }
+
+        return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
+      });
+    }
+
+
+
+  </script>
 </body>
 
 </html>
