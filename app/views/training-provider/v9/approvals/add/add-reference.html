@@ -1,0 +1,83 @@
+{% extends "layouts/main.html" %}
+{% set version = "v7" %}
+{% set pageTitle = "Add reference" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+  <div class="govuk-width-container">
+    <ul class="das-navigation__list ">
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/index">Home</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link das-navigation__link--current"
+          href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+          funding</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your apprentices</a>
+      </li>
+      <li class="das-navigation__list-item">
+        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+      </li>
+      <li class="das-navigation__priority-list-item" id="priority-list-menu"><a class="das-navigation__priority-button"
+          href="/training-provider/{{version}}/#">More</a>
+        <ul class="das-navigation__priority-list govuk-visually-hidden">
+          <li class="das-navigation__list-item">
+            <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and agreements</a>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+    <span class="govuk-caption-l">Details for Alan Lightfoot</span>
+    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
+
+    <p class="govuk-body">
+      Add a reference, such as employee number or location. This won’t be seen by the employer.
+    </p>
+
+    <form class="form" action="/training-provider/v7/approvals/check-details-alan" method="post">
+      <div class="govuk-form-group">
+        <label class="govuk-label" for="reference">
+          Reference
+        </label>
+        <input class="govuk-input govuk-!-width-two-thirds" id="reference" name="reference" type="text"
+          value="{{ data['reference'] or '' }}">
+      </div>
+
+      <div class="govuk-button-group">
+        <button class="govuk-button" data-module="govuk-button" type="submit">
+          Continue
+        </button>
+        <a class="govuk-link" href="/training-provider/v7/approvals/check-details-alan">Cancel</a>
+      </div>
+    </form>
+
+
+  </div>
+</div>
+
+
+{% endblock %}

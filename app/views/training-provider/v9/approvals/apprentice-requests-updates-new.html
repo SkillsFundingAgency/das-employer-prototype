@@ -1,0 +1,275 @@
+{% extends "layouts/main.html" %}
+{% set version = "v8" %}
+{% set pageTitle = "Apprentice requests" %}
+
+{% block header %}
+{% include "includes/header.html" %}
+{% include "includes/training-provider-account-header.html" %}
+<nav class="das-navigation">
+    <div class="govuk-width-container">
+        <ul class="das-navigation__list ">
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/approvals/add/homepage">Home</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link das-navigation__link--current"
+                    href="/training-provider/{{version}}/approvals/apprentice-requests">Apprentice requests</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link " href="/training-provider/{{version}}/reserve-reservations-pro">Manage
+                    funding</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/manage/index">Manage your
+                    apprentices</a>
+            </li>
+            <li class="das-navigation__list-item">
+                <a class="das-navigation__link" href="/training-provider/{{version}}/#">Recruit apprentices</a>
+            </li>
+            <li class="das-navigation__priority-list-item" id="priority-list-menu"><a
+                    class="das-navigation__priority-button" href="/training-provider/{{version}}/#">More</a>
+                <ul class="das-navigation__priority-list govuk-visually-hidden">
+                    <li class="das-navigation__list-item">
+                        <a class="das-navigation__link" href="/training-provider/{{version}}/#">Organisations and
+                            agreements</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </div>
+</nav>
+{% endblock %}
+
+{% block beforeContent %}
+
+{{ govukBackLink({
+text: "Back",
+href: "javascript:window.history.go(-1);"
+}) }}
+
+{% endblock %}
+
+{% block content %}
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-">
+        <div class="govuk-width-container">
+
+            <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
+
+            <div class="das-tabs-boxes">
+                <ul class="das-tabs-boxes__list">
+
+                    <li class="das-tabs-boxes__list-item  das-tabs-boxes__list-item--selected"
+                        style="border: 1px solid grey; color:black">
+                        <span class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/review" id="Review">
+                            <span class="das-tabs-boxes__figure">9</span>
+                            <span class="das-text-capitalise">Your drafts</span>
+                        </span>
+                    </li>
+
+
+
+                    <li class="das-tabs-boxes__list-item"
+                        style="border: 1px solid grey; color:black; background-color:white">
+                        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider"
+                            id="WithProvider">
+                            <span class="das-tabs-boxes__figure">20</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise"
+                                style="color:#1d70b8; font-weight:bold">Ready for your review</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="das-tabs-boxes__list-item"
+                        style="border: 1px solid grey; color:black; background-color:white">
+                        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider"
+                            id="WithProvider">
+                            <span class="das-tabs-boxes__figure">30</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise"
+                                style="color:#1d70b8; font-weight:bold">With
+                                employer to review</span>
+                        </a>
+                    </li>
+
+
+
+                    <li class="das-tabs-boxes__list-item"
+                        style="border: 1px solid grey; color:black; background-color:white">
+                        <a class="das-tabs-boxes__tab" href="/BB8W4N/unapproved/with-training-provider"
+                            id="WithProvider">
+                            <span class="das-tabs-boxes__figure">0</span>
+                            <span class="das-tabs-boxes__text das-text-capitalise"
+                                style="color:#1d70b8; font-weight:bold">With
+                                transfer
+                                sending employers</span>
+                        </a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<h3 class="govuk-heading-m">Your drafts (9)</h3>
+
+<div class="govuk-!-padding-bottom-5"></div>
+
+<div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+        <form action="#" method="post">
+            <div class="govuk-form-group">
+                <label class="govuk-label" for="searchTerm">Search employer name or cohort reference</label>
+                <div id="ILR-container"></div>
+            </div>
+        </form>
+    </div>
+</div>
+
+<table class="govuk-table" data-module="moj-sortable-table">
+    <thead class="govuk-table__head">
+        <tr class="govuk-table__row">
+            <th scope="col" class="govuk-table__header das-table-cell-width-25" aria-sort="none">
+                Employer
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-10" aria-sort="none">
+                Cohort reference
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15" aria-sort="none">
+                Date created
+            </th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15 govuk-table__header--numeric">Number of
+                apprentices</th>
+            <th scope="col" class="govuk-table__header das-table-cell-width-15 govuk-table__header--numeric"></th>
+        </tr>
+    </thead>
+    <tbody class="govuk-table__body">
+        <tr class="govuk-table__row" data-cohort="M9WWPJ">
+            <td class="govuk-table__cell" data-label="Employer">BAMBINOS DAY NURSERY</td>
+            <td class="govuk-table__cell" data-label="Reference">R4GBWP</td>
+            <td class="govuk-table__cell" data-label="DateReceived">5 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">3</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M9WWPJ" class="govuk-link cohort-details-link"
+                    href="/training-provider/v8/approvals/review-apprentices-updates">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="M7KJJK">
+            <td class="govuk-table__cell" data-label="Employer">BARRY & BARRY LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">M7KJJK</td>
+            <td class="govuk-table__cell" data-label="DateReceived">6 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M7KJJK" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details-pilot-pjf">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VK9PYP">
+            <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+            <td class="govuk-table__cell" data-label="Reference">VK9PYP</td>
+            <td class="govuk-table__cell" data-label="DateReceived">7 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VK9PYP" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details-pilot-non-pjf">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VRG4XP">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+            <td class="govuk-table__cell" data-label="Reference">VRG4XP</td>
+            <td class="govuk-table__cell" data-label="DateReceived">8 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VRG4XP" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MW747D">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MW747D</td>
+            <td class="govuk-table__cell" data-label="DateReceived">9 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MW747D" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="VYDB4D">
+            <td class="govuk-table__cell" data-label="Employer">Coventry City Council</td>
+            <td class="govuk-table__cell" data-label="Reference">VYDB4D</td>
+            <td class="govuk-table__cell" data-label="DateReceived">10 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_VYDB4D" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="M7XKYX">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">M7XKYX</td>
+            <td class="govuk-table__cell" data-label="DateReceived">11 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">2</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_M7XKYX" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MNJ4PY">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY ACCOUNTANTS LTD</td>
+            <td class="govuk-table__cell" data-label="Reference">MNJ4PY</td>
+            <td class="govuk-table__cell" data-label="DateReceived">12 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">0</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MNJ4PY" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+        <tr class="govuk-table__row" data-cohort="MK6YR9">
+            <td class="govuk-table__cell" data-label="Employer">COVENTRY &amp; WARWICKSHIRE CHAMBER OF COMMERCE</td>
+            <td class="govuk-table__cell" data-label="Reference">MK6YR9</td>
+            <td class="govuk-table__cell" data-label="DateReceived">13 July 2025</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Number of apprentices">1</td>
+            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="">
+                <a id="details_link_MK6YR9" class="govuk-link cohort-details-link"
+                    href="/training-provider/{{version}}/approvals/approve-details">Details</a>
+            </td>
+        </tr>
+    </tbody>
+</table>
+</div>
+</div>
+</div>
+
+<script type="text/javascript" src="/public/javascripts/accessible-autocomplete.min.js"></script>
+<script>
+    const ILR = [
+        "BAMBINOS DAY NURSERY M9WWPJ",
+        "BAMBINOS DAY NURSERY M7KJJK",
+        "Coventry City Council VK9PYP",
+        "COVENTRY & WARWICKSHIRE CHAMBER OF COMMERCE VRG4XP",
+        "COVENTRY ACCOUNTANTS LTD MW747D",
+        "Coventry City Council VYDB4D",
+        "COVENTRY ACCOUNTANTS LTD M7XKYX",
+        "COVENTRY ACCOUNTANTS LTD MNJ4PY",
+        "COVENTRY & WARWICKSHIRE CHAMBER OF COMMERCE MK6YR9"
+    ];
+
+    accessibleAutocomplete({
+        autoselect: true,
+        element: document.querySelector('#ILR-container'),
+        id: 'ILR',
+        name: 'ILR-autocomplete',
+        source: ILR,
+        defaultValue: '{{ data['
+    employer - autocomplete '] }}',
+        displayMenu: 'overlay',
+        minLength: 2,
+        tNoResults: function () {
+            return "Other"
+        }
+  });
+</script>
+
+{% endblock %}

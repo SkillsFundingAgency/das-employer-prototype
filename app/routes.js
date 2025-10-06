@@ -3478,3 +3478,30 @@ router.post('/training-provider/v8/approvals/add/action/confirm-employer', funct
     res.redirect('/training-provider/v8/approvals/add/select-employer')
   }
 })
+
+// Training provider update Iteration 5
+
+router.post('/training-provider/v9/approvals/add/action/entry-method', function (req, res) {
+  var addApprenticeDetails = req.session.data['add-apprentice-details']
+
+  if (addApprenticeDetails == "csv-file") {
+    res.redirect('/training-provider/v9/approvals/add/file-upload')
+  }
+  else if (addApprenticeDetails == "manually") {
+    res.redirect('/training-provider/v9/approvals/add/ilr-spec')
+  }
+  else if (addApprenticeDetails == "ILR") {
+    res.redirect('/training-provider/v9/approvals/add/ilr-spec')
+  }
+});
+
+router.post('/training-provider/v9/approvals/add/action/select-journey', function (req, res) {
+  var addApprenticeDetails2 = req.session.data['add-apprentice-details-2']
+
+  if (addApprenticeDetails2 == "existing-cohort") {
+    res.redirect('/training-provider/v9/approvals/choose-cohort')
+  }
+  else if (addApprenticeDetails2 == "new-cohort") {
+    res.redirect('/training-provider/v9/approvals/add/select-employer')
+  }
+})
