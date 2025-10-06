@@ -415,7 +415,7 @@ href: "javascript:window.history.go(-1);"
     <!-- Add All Learners Link -->
     <p>
       <a href="javascript:void(0)" id="addAllLearnersLink" class="govuk-link govuk-!-font-size-19">
-        Add all learners
+        Add all filtered learners (73)
       </a>
     </p>
 
@@ -1190,12 +1190,57 @@ href: "javascript:window.history.go(-1);"
       addAllLearnersLink.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Filtered records based on current filters
-        // ... (the full add-all code from my previous message) ...
+        // Grab current filters
+        const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
+        const courseType = document.getElementById("courseTypeSelect").value;
+        const courseName = document.getElementById("courseNameSelect").value;
+        const startMonth = document.getElementById("startMonthSelect").value;
+        const startYear = document.getElementById("startYearSelect").value;
+        const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
+
+        const noEmployerLearners = new Set([
+          "Yusuf Ahmed",
+          "Sophie Turner",
+          "Olivia Harris",
+          "Jacob Knight",
+          "David Kim"
+        ]);
+
+        // Filter learnersData based on current filters
+        const filteredLearners = learnersData.filter(learner => {
+          const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
+          const matchesCourseType = !courseType || learner.course.includes(courseType);
+          const matchesCourseName = !courseName || learner.course.includes(courseName);
+          const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
+          const matchesStartYear = !startYear || learner.startDate.includes(startYear);
+
+          let matchesEmployer = true;
+          if (employerCheckboxes.length > 0) {
+            matchesEmployer = employerCheckboxes.some(checkboxValue => {
+              if (checkboxValue === "No employer") {
+                return noEmployerLearners.has(learner.name);
+              }
+              return learner.employer === checkboxValue;
+            });
+          }
+
+          return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
+        });
+
+        // Move all filtered learners to addedLearnersData
+        filteredLearners.forEach(learner => {
+          const index = learnersData.findIndex(l => l.uln === learner.uln);
+          if (index !== -1) {
+            addedLearnersData.push(...learnersData.splice(index, 1));
+          }
+        });
+
+        // Sort the main list alphabetically
+        learnersData.sort((a, b) => a.name.localeCompare(b.name));
+
+        updateAllTables();
       });
 
-      // Initial render on page load
-      updateAllTables();
     </script>
 </body>
 
