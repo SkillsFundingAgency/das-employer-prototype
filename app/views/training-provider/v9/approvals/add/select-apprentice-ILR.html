@@ -56,9 +56,7 @@ href: "javascript:window.history.go(-1);"
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Select learner from ILR</title>
-  <!-- GovUK Frontend CSS from CDN (simplified for single-file use) -->
   <link href="https://cdnjs.cloudflare.com/ajax/libs/govuk-frontend/4.7.0/govuk/all.min.css" rel="stylesheet" />
-  <!-- Correct CDN for accessible-autocomplete to fix the "not defined" error -->
   <script src="https://cdn.jsdelivr.net/npm/accessible-autocomplete@2.0.4/dist/accessible-autocomplete.min.js"></script>
   <style>
     .autocomplete__wrapper {
@@ -251,7 +249,11 @@ href: "javascript:window.history.go(-1);"
       </span>
       <div class="govuk-!-padding-bottom-5"></div>
 
-      <!-- Start form -->
+      <a href="javascript:void(0)" id="removeAllLearnersLink" class="govuk-link govuk-body govuk-!-margin-right-5"
+        style="display: none;">
+        Remove all learners
+      </a>
+
       <form action="/training-provider/v9/approvals/review-apprentices-1" method="post" id="addedLearnersForm">
 
         <div id="addedTableContainer" class="govuk-!-padding-bottom-6">
@@ -266,11 +268,12 @@ href: "javascript:window.history.go(-1);"
               </tr>
             </thead>
             <tbody class="govuk-table__body" id="addedLearnersTableBody">
-              <!-- Added learners will appear here dynamically -->
+              <tr class="govuk-table__row" id="noLearnersRow">
+                <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
+              </tr>
             </tbody>
           </table>
 
-          <!-- Button group -->
           <div class="govuk-button-group govuk-!-margin-top-0">
             <button class="govuk-button" data-module="govuk-button" type="submit">
               Save and continue
@@ -278,8 +281,6 @@ href: "javascript:window.history.go(-1);"
           </div>
         </div>
       </form>
-      <!-- End form -->
-
     </div>
   </div>
 
@@ -295,16 +296,13 @@ href: "javascript:window.history.go(-1);"
     </div>
   </div>
 
-  <!-- New container for the filter section -->
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-full">
       <div style="background-color: #F4F2F0; padding: 15px; border: 0px solid #d3d3d3;">
         <form method="get" action="#" id="filterForm">
           <h2 class="govuk-heading-m">Filter</h2>
           <div class="govuk-grid-row">
-            <!-- 1/3 Column: Course type & Course name -->
             <div class="govuk-grid-column-one-third">
-              <!-- Course Type -->
               <div class="govuk-form-group">
                 <label class="govuk-label" for="courseTypeSelect">Learning type</label>
                 <select class="govuk-select govuk-!-width-full" id="courseTypeSelect" name="courseType">
@@ -315,7 +313,6 @@ href: "javascript:window.history.go(-1);"
                 </select>
               </div>
 
-              <!-- Course Name -->
               <div class="govuk-form-group">
                 <label class="govuk-label" for="courseNameSelect">Course name</label>
                 <select class="govuk-select govuk-!-width-full" id="courseNameSelect" name="courseName">
@@ -330,9 +327,7 @@ href: "javascript:window.history.go(-1);"
               </div>
             </div>
 
-            <!-- 2/3 Column: Start month & Start year -->
             <div class="govuk-grid-column-one-third">
-              <!-- Start Month -->
               <div class="govuk-form-group">
                 <label class="govuk-label" for="startMonthSelect">Start month</label>
                 <select class="govuk-select govuk-!-width-full" id="startMonthSelect" name="startMonth">
@@ -343,7 +338,6 @@ href: "javascript:window.history.go(-1);"
                 </select>
               </div>
 
-              <!-- Start Year -->
               <div class="govuk-form-group">
                 <label class="govuk-label" for="startYearSelect">Start year</label>
                 <select class="govuk-select govuk-!-width-full" id="startYearSelect" name="startYear">
@@ -353,7 +347,6 @@ href: "javascript:window.history.go(-1);"
               </div>
             </div>
 
-            <!-- 3/3 Column: Checkbox filter -->
             <div class="govuk-grid-column-one-third">
               <div class="govuk-form-group">
                 <label class="govuk-label">Show learners linked to</label>
@@ -375,8 +368,7 @@ href: "javascript:window.history.go(-1);"
                     </label>
                   </div>
                   <div class="govuk-form-group govuk-!-margin-top-0">
-                    <a href="/training-provider/v9/approvals/add/select-employer" id="changeEmployerLink"
-                      class="govuk-link govuk-body">
+                    <a href="#" id="changeEmployerLink" class="govuk-link govuk-body">
                       Change employer
                     </a>
                   </div>
@@ -385,7 +377,6 @@ href: "javascript:window.history.go(-1);"
             </div>
           </div>
 
-          <!-- Apply Filters Button and Clear Filters Link -->
           <div>
             <button class="govuk-button govuk-!-margin-top-1" id="applyFiltersButton" type="submit">
               Apply filters
@@ -438,17 +429,14 @@ href: "javascript:window.history.go(-1);"
             </tr>
           </thead>
           <tbody class="govuk-table__body" id="recordsTableBody">
-            <!-- Table rows will be dynamically generated here by JavaScript -->
           </tbody>
         </table>
 
 
         <div class="govuk-grid-row govuk-!-margin-top-4" style="align-items: center;">
-          <!-- Pagination -->
           <div class="govuk-grid-column-two-thirds">
             <nav class="govuk-pagination" aria-label="Pagination">
               <ul class="govuk-pagination__list" id="paginationList">
-                <!-- Pagination links will be dynamically generated here -->
               </ul>
               <div class="govuk-pagination__next">
                 <a class="govuk-link govuk-pagination__link" href="#" rel="next" id="nextPageLink">
@@ -466,15 +454,12 @@ href: "javascript:window.history.go(-1);"
             </nav>
           </div>
 
-          <!-- Results summary -->
           <div class="govuk-grid-column-one-third" style="text-align: right;">
             <p class="govuk-body govuk-!-margin-bottom-0" id="resultsSummary">
-              <!-- Summary will be dynamically updated here -->
             </p>
           </div>
         </div>
       </div>
-      <!-- No results message container -->
       <div id="noResultsMessage" style="display: none;">
         <h2 class="govuk-heading-s">There are no matching results for 2026.</h2>
         <p class="govuk-body">It can take up to 15 minutes for ILR updates to appear here.</p>
@@ -882,9 +867,9 @@ href: "javascript:window.history.go(-1);"
     const ILR = learnersDataInitial.map(l => `${l.name} ${l.uln}`);
 
     // State variables for the two tables
-    let learnersData = [...learnersDataInitial]; // Main list (all learners)
+    let learnersData = [...learnersDataInitial]; // Main list (all learners not in cohort)
     let addedLearnersData = []; // Learners in the cohort
-    let filteredLearners = [...learnersData]; // The list currently being displayed in the table
+    let filteredLearners = [...learnersData]; // The list currently being displayed in the main table
 
     // State variables for pagination
     let currentPage = 1;
@@ -905,7 +890,7 @@ href: "javascript:window.history.go(-1);"
       },
       onConfirm: function (selected) {
         // When user selects a value or presses enter
-        searchTermInput.value = selected || '';
+        document.querySelector('#searchTerm').value = selected || '';
         currentPage = 1; // Reset to page 1
         updateAllTables();
       }
@@ -918,7 +903,6 @@ href: "javascript:window.history.go(-1);"
       const searchTermInput = document.getElementById("searchTerm");
       const recordsTableBody = document.getElementById("recordsTableBody");
       const addedLearnersTableBody = document.getElementById("addedLearnersTableBody");
-      const addedLearnersSection = document.getElementById("addedLearnersSection");
       const recordCountDisplay = document.querySelector(".record-count");
       const addedLearnersCount = document.getElementById("addedLearnersCount");
       const resultsSummary = document.getElementById("resultsSummary");
@@ -930,10 +914,11 @@ href: "javascript:window.history.go(-1);"
       const addAllFilteredLink = document.getElementById('addAllFilteredLink');
       const filteredCountDisplay = document.getElementById('filteredCount');
       const saveButtonDiv = document.querySelector("#addedLearnersForm .govuk-button-group");
+      // This is now present in the HTML and can be referenced
+      const removeAllLearnersLink = document.getElementById('removeAllLearnersLink');
 
       // --- Filter Functions ---
 
-      // 1. Get the current active filters from the form
       function getActiveFilters() {
         const filters = {
           searchTerm: searchTermInput.value.trim().toLowerCase(),
@@ -951,12 +936,10 @@ href: "javascript:window.history.go(-1);"
         return filters;
       }
 
-      // 2. Filter the main dataset
       function filterLearners() {
         const filters = getActiveFilters();
-        let results = [...learnersData]; // Start with the list of NOT-added learners
+        let results = [...learnersData];
 
-        // Text search (Name or ULN)
         if (filters.searchTerm) {
           results = results.filter(learner =>
             learner.name.toLowerCase().includes(filters.searchTerm) ||
@@ -964,36 +947,22 @@ href: "javascript:window.history.go(-1);"
           );
         }
 
-        // Dropdown filters
-        if (filters.courseType === 'Apprenticeship') {
-          // All of the current mock data is considered 'Apprenticeship', so no filter needed.
-          // In a real system, you'd filter by an apprenticeship flag.
-        }
-
         if (filters.courseName) {
           results = results.filter(learner => learner.course === filters.courseName);
         }
 
-        if (filters.startMonth) {
-          // If the year is '2026', and the current data is '2025', it will correctly return 0 results.
-          if (filters.startYear !== '2025') {
-            results = []; // No records in 2026 in the mock data
-          } else {
-            results = results.filter(learner => learner.startDate.includes(filters.startMonth));
-          }
-        } else if (filters.startYear !== '2025') {
-          results = []; // No records in 2026 in the mock data
+        const isFilteredByYear = filters.startYear !== '2025';
+        if (isFilteredByYear) {
+          results = []; // All mock data is 2025, so any other year results in 0
+        } else if (filters.startMonth) {
+          results = results.filter(learner => learner.startDate.includes(filters.startMonth));
         }
 
-
-        // Checkbox filters (Employers)
         if (filters.employers.length > 0) {
           results = results.filter(learner => filters.employers.includes(learner.employer));
         }
 
-        // Sort the results alphabetically by name
         results.sort((a, b) => a.name.localeCompare(b.name));
-
         return results;
       }
 
@@ -1008,28 +977,28 @@ href: "javascript:window.history.go(-1);"
         // Previous link
         if (currentPage > 1) {
           paginationList.innerHTML += `
-                <li class="govuk-pagination__item govuk-pagination__item--prev">
-                  <a class="govuk-link govuk-pagination__link" href="#" data-page="${currentPage - 1}" rel="prev">
-                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.4492-4.1856-3.9766h12.896v-2h-12.986l4.2926-4.293-1.4136-1.414z"></path>
-                    </svg>
-                    <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
-                  </a>
-                </li>
-              `;
+              <li class="govuk-pagination__item govuk-pagination__item--prev">
+                <a class="govuk-link govuk-pagination__link" href="#" data-page="${currentPage - 1}" rel="prev">
+                  <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                    <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.4492-4.1856-3.9766h12.896v-2h-12.986l4.2926-4.293-1.4136-1.414z"></path>
+                  </svg>
+                  <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+                </a>
+              </li>
+            `;
         }
 
         // Page links
         for (let i = startPage; i <= endPage; i++) {
           const activeClass = i === currentPage ? ' govuk-pagination__item--current' : '';
           paginationList.innerHTML += `
-                <li class="govuk-pagination__item${activeClass}">
-                  <a class="govuk-link govuk-pagination__link" href="#" data-page="${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>
-                </li>
-              `;
+              <li class="govuk-pagination__item${activeClass}">
+                <a class="govuk-link govuk-pagination__link" href="#" data-page="${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>
+              </li>
+            `;
         }
 
-        // Next link (hidden here and shown as a separate element)
+        // Next link
         if (currentPage >= totalPages) {
           nextPageLink.classList.add('govuk-visually-hidden');
         } else {
@@ -1040,22 +1009,34 @@ href: "javascript:window.history.go(-1);"
 
       function renderTable(dataToRender, targetBody, isAddedTable = false) {
         targetBody.innerHTML = '';
+
+        // Render actual data rows
         dataToRender.forEach(learner => {
           const row = document.createElement('tr');
           row.className = 'govuk-table__row';
           row.dataset.uln = learner.uln;
           const actionText = isAddedTable ? 'Remove' : 'Add';
           row.innerHTML = `
-                <td class="govuk-table__cell">${learner.name}</td>
-                <td class="govuk-table__cell">${learner.uln}</td>
-                <td class="govuk-table__cell">${learner.course}</td>
-                <td class="govuk-table__cell">${learner.startDate}</td>
-                <td class="govuk-table__cell govuk-table__cell--numeric">
-                  <a href="#" class="govuk-link" data-uln="${learner.uln}" data-action="${actionText.toLowerCase()}">${actionText}</a>
-                </td>
-              `;
+              <td class="govuk-table__cell">${learner.name}</td>
+              <td class="govuk-table__cell">${learner.uln}</td>
+              <td class="govuk-table__cell">${learner.course}</td>
+              <td class="govuk-table__cell">${learner.startDate}</td>
+              <td class="govuk-table__cell govuk-table__cell--numeric">
+                <a href="#" class="govuk-link" data-uln="${learner.uln}" data-action="${actionText.toLowerCase()}">${actionText}</a>
+              </td>
+            `;
           targetBody.appendChild(row);
         });
+
+        // *** FIX: Show "No learners added yet" row only when the added table is empty ***
+        if (isAddedTable && dataToRender.length === 0) {
+          targetBody.innerHTML = `
+                <tr class="govuk-table__row" id="noLearnersRow">
+                    <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
+                </tr>
+            `;
+        }
+        // *** END FIX ***
 
         // Toggle visibility based on results for the main table
         if (!isAddedTable) {
@@ -1083,13 +1064,9 @@ href: "javascript:window.history.go(-1);"
       }
 
       function updateLearnerCounts(totalCount) {
-        // Update Added Learners count
         addedLearnersCount.textContent = addedLearnersData.length;
-
-        // Update Filtered Learners count for the 'Add all' link
         filteredCountDisplay.textContent = totalCount;
 
-        // Update the 'X learner records matching Y' message
         const year = document.getElementById('startYearSelect').value;
         const month = document.getElementById('startMonthSelect').value;
         const dateString = month ? `${month} ${year}` : year;
@@ -1102,33 +1079,30 @@ href: "javascript:window.history.go(-1);"
           recordCountDisplay.textContent = ``;
         }
 
-        // Toggle visibility of the "Learners in cohort" section
+        // *** FIX: Correctly control visibility of the Save button and Remove All link ***
         if (addedLearnersData.length > 0) {
-          addedLearnersSection.style.display = 'block';
-          // Make sure the "Save and continue" button is present
           saveButtonDiv.style.display = 'block';
+          removeAllLearnersLink.style.display = 'inline-block';
         } else {
-          addedLearnersSection.style.display = 'none';
+          saveButtonDiv.style.display = 'none';
+          removeAllLearnersLink.style.display = 'none';
         }
+        // *** END FIX ***
       }
 
 
       // --- Main Orchestration Function ---
 
       function updateAllTables() {
-        // 1. Filter the data based on current criteria
         filteredLearners = filterLearners();
         const totalCount = filteredLearners.length;
 
-        // 2. Paginate the filtered data
         const startIndex = (currentPage - 1) * pageSize;
         const paginatedData = filteredLearners.slice(startIndex, startIndex + pageSize);
 
-        // 3. Render the two tables
         renderTable(addedLearnersData, addedLearnersTableBody, true); // Added learners
         renderTable(paginatedData, recordsTableBody, false); // Main results
 
-        // 4. Update all counts and summaries
         updateLearnerCounts(totalCount);
         updateResultsSummary(totalCount);
         renderPagination();
@@ -1136,31 +1110,28 @@ href: "javascript:window.history.go(-1);"
 
       // --- Event Listeners ---
 
-      // 1. Filter Form Submission (Apply Filters)
       filterForm.addEventListener('submit', (e) => {
         e.preventDefault();
-        currentPage = 1; // Reset to page 1 on new filter
+        currentPage = 1;
         updateAllTables();
       });
 
-      // 2. Clear Filters Link
       clearFiltersLink.addEventListener('click', (e) => {
         e.preventDefault();
 
-        // Reset all form elements
+        // Reset filters
         document.getElementById('courseTypeSelect').value = '';
         document.getElementById('courseNameSelect').value = '';
         document.getElementById('startMonthSelect').value = '';
         document.getElementById('startYearSelect').value = '2025';
         document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
         searchTermInput.value = '';
-        document.getElementById('searchTerm').value = ''; // Update the hidden input as well for autocomplete
 
         currentPage = 1;
         updateAllTables();
       });
 
-      // 3. Main Table Actions (Add/Remove)
+      // Add/Remove learner from tables
       document.addEventListener('click', (e) => {
         if (e.target.tagName === 'A' && e.target.dataset.uln && ['add', 'remove'].includes(e.target.dataset.action)) {
           e.preventDefault();
@@ -1178,18 +1149,17 @@ href: "javascript:window.history.go(-1);"
             const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
             if (learnerIndex !== -1) {
               const learner = addedLearnersData.splice(learnerIndex, 1)[0];
-              // Add back to the main list and keep it sorted
               learnersData.push(learner);
               learnersData.sort((a, b) => a.name.localeCompare(b.name));
             }
           }
 
-          currentPage = 1; // Always reset pagination on any add/remove change
+          currentPage = 1;
           updateAllTables();
         }
       });
 
-      // 4. Pagination Click (handles previous/page number/next)
+      // Pagination Click
       document.addEventListener('click', (e) => {
         if (e.target.closest('.govuk-pagination__link') && e.target.closest('.govuk-pagination__link').dataset.page) {
           e.preventDefault();
@@ -1201,15 +1171,32 @@ href: "javascript:window.history.go(-1);"
         }
       });
 
-      // 5. 'Add all filtered learners' Link (***THIS IS THE CORRECTED BLOCK***)
+      // 'Remove all learners' Link Handler
+      removeAllLearnersLink.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        if (addedLearnersData.length === 0) return;
+
+        addedLearnersData.forEach(learnerToRemove => {
+          learnersData.push(learnerToRemove);
+        });
+
+        addedLearnersData = [];
+        learnersData.sort((a, b) => a.name.localeCompare(b.name));
+
+        currentPage = 1;
+        updateAllTables();
+
+        window.scrollTo(0, 0);
+      });
+
+      // 'Add all filtered learners' Link Handler
       addAllFilteredLink.addEventListener('click', (e) => {
         e.preventDefault();
 
-        if (filteredLearners.length === 0) return; // Do nothing if there are no filtered learners
+        if (filteredLearners.length === 0) return;
 
-        // 1. Move all currently filtered learners from the main list to the added list
         filteredLearners.forEach(learnerToAdd => {
-          // Only move if it's still in the main list
           const index = learnersData.findIndex(l => l.uln === learnerToAdd.uln);
           if (index !== -1) {
             const learner = learnersData.splice(index, 1)[0];
@@ -1217,24 +1204,17 @@ href: "javascript:window.history.go(-1);"
           }
         });
 
-        // 2. Sort the added list alphabetically (optional but good practice)
         addedLearnersData.sort((a, b) => a.name.localeCompare(b.name));
 
-        // 3. Reset pagination and update tables
         currentPage = 1;
         updateAllTables();
 
-        // 4. SCROLL TO THE TOP after adding and updating the UI
-        window.scrollTo(0, 0); // Scrolls the page to the very top (x=0, y=0)
+        window.scrollTo(0, 0);
       });
 
       // Initial call to populate the tables on load
       updateAllTables();
     });
   </script>
-</body>
 
-</html>
-
-
-{% endblock %}
+  {% endblock %}
