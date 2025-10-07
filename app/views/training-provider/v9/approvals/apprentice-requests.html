@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v8" %}
+{% set version = "v9" %}
 {% set pageTitle = "Apprentice requests" %}
 
 {% block header %}
@@ -56,10 +56,6 @@ href: "javascript:window.history.go(-1);"
         <div class="govuk-width-container">
 
             <h1 class="govuk-heading-xl">{{ pageTitle }}</h1>
-
-            <div class="govuk-inset-text">
-                It can take up to 15 minutes for apprentice details from the ILR to update<br>into your drafts.</p>
-            </div>
 
             <div class="das-tabs-boxes">
                 <ul class="das-tabs-boxes__list">
@@ -118,19 +114,6 @@ href: "javascript:window.history.go(-1);"
     </div>
 </div>
 <h3 class="govuk-heading-m">Your drafts (9)</h3>
-
-<div class="govuk-!-padding-bottom-5"></div>
-
-<div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
-        <form action="#" method="post">
-            <div class="govuk-form-group">
-                <label class="govuk-label" for="searchTerm">Search employer name or cohort reference</label>
-                <div id="ILR-container"></div>
-            </div>
-        </form>
-    </div>
-</div>
 
 <table class="govuk-table" data-module="moj-sortable-table">
     <thead class="govuk-table__head">

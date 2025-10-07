@@ -252,7 +252,7 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-!-padding-bottom-5"></div>
 
       <!-- Start form -->
-      <form action="/training-provider/{{version}}/approvals/add/ilr-errors" method="post" id="addedLearnersForm">
+      <form action="/training-provider/v9/approvals/review-apprentices-1" method="post" id="addedLearnersForm">
 
         <div id="addedTableContainer" class="govuk-!-padding-bottom-6">
           <table class="govuk-table">
@@ -375,7 +375,8 @@ href: "javascript:window.history.go(-1);"
                     </label>
                   </div>
                   <div class="govuk-form-group govuk-!-margin-top-0">
-                    <a href="#" id="changeEmployerLink" class="govuk-link govuk-body">
+                    <a href="/training-provider/v9/approvals/add/select-employer" id="changeEmployerLink"
+                      class="govuk-link govuk-body">
                       Change employer
                     </a>
                   </div>
@@ -872,7 +873,7 @@ href: "javascript:window.history.go(-1);"
     // Manually override the start dates for the specified learners
     learnersDataInitial[0].startDate = "September 2025"; // Alan Lightfoot
     learnersDataInitial[1].startDate = "September 2025"; // Bernard McKelly
-    learnersDataInitial[2].startDate = "September 2025"; // Carlos Mendoza
+    learnersDataInitial[2].startDate = "September 2025"; // Carla Mendoza
 
     // Sort learners alphabetically
     learnersDataInitial.sort((a, b) => a.name.localeCompare(b.name));
@@ -881,8 +882,9 @@ href: "javascript:window.history.go(-1);"
     const ILR = learnersDataInitial.map(l => `${l.name} ${l.uln}`);
 
     // State variables for the two tables
-    let learnersData = [...learnersDataInitial]; // Main list
-    let addedLearnersData = []; // Learners in the group
+    let learnersData = [...learnersDataInitial]; // Main list (all learners)
+    let addedLearnersData = []; // Learners in the cohort
+    let filteredLearners = [...learnersData]; // The list currently being displayed in the table
 
     // State variables for pagination
     let currentPage = 1;
@@ -905,7 +907,7 @@ href: "javascript:window.history.go(-1);"
         // When user selects a value or presses enter
         searchTermInput.value = selected || '';
         currentPage = 1; // Reset to page 1
-        applyFiltersAndPaginate();
+        updateAllTables();
       }
     });
 
@@ -916,7 +918,7 @@ href: "javascript:window.history.go(-1);"
       const searchTermInput = document.getElementById("searchTerm");
       const recordsTableBody = document.getElementById("recordsTableBody");
       const addedLearnersTableBody = document.getElementById("addedLearnersTableBody");
-      const addedLearnersSection = document.getElementById("addedLearnersSection"); // New element reference
+      const addedLearnersSection = document.getElementById("addedLearnersSection");
       const recordCountDisplay = document.querySelector(".record-count");
       const addedLearnersCount = document.getElementById("addedLearnersCount");
       const resultsSummary = document.getElementById("resultsSummary");
@@ -925,385 +927,310 @@ href: "javascript:window.history.go(-1);"
       const resultsTableContainer = document.getElementById("resultsTableContainer");
       const noResultsMessage = document.getElementById("noResultsMessage");
       const clearFiltersLink = document.getElementById('clearFiltersLink');
+      const addAllFilteredLink = document.getElementById('addAllFilteredLink');
+      const filteredCountDisplay = document.getElementById('filteredCount');
       const saveButtonDiv = document.querySelector("#addedLearnersForm .govuk-button-group");
-      clearFiltersLink.addEventListener('click', (e) => {
-        e.preventDefault();
 
-        // Reset all selects
-        document.getElementById('courseTypeSelect').value = '';
-        document.getElementById('courseNameSelect').value = '';
-        document.getElementById('startMonthSelect').value = '';
-        document.getElementById('startYearSelect').value = '2025';
+      // --- Filter Functions ---
 
-        // Uncheck all employer checkboxes
-        document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
+      // 1. Get the current active filters from the form
+      function getActiveFilters() {
+        const filters = {
+          searchTerm: searchTermInput.value.trim().toLowerCase(),
+          courseType: document.getElementById('courseTypeSelect').value,
+          courseName: document.getElementById('courseNameSelect').value,
+          startMonth: document.getElementById('startMonthSelect').value,
+          startYear: document.getElementById('startYearSelect').value,
+          employers: []
+        };
 
-        // Clear search input
-        searchTermInput.value = '';
+        document.querySelectorAll("input[name='employers']:checked").forEach(cb => {
+          filters.employers.push(cb.value);
+        });
 
-        // Reset page and update tables
-        currentPage = 1;
-        updateAllTables();
-      });
+        return filters;
+      }
+
+      // 2. Filter the main dataset
+      function filterLearners() {
+        const filters = getActiveFilters();
+        let results = [...learnersData]; // Start with the list of NOT-added learners
+
+        // Text search (Name or ULN)
+        if (filters.searchTerm) {
+          results = results.filter(learner =>
+            learner.name.toLowerCase().includes(filters.searchTerm) ||
+            learner.uln.includes(filters.searchTerm)
+          );
+        }
+
+        // Dropdown filters
+        if (filters.courseType === 'Apprenticeship') {
+          // All of the current mock data is considered 'Apprenticeship', so no filter needed.
+          // In a real system, you'd filter by an apprenticeship flag.
+        }
+
+        if (filters.courseName) {
+          results = results.filter(learner => learner.course === filters.courseName);
+        }
+
+        if (filters.startMonth) {
+          // If the year is '2026', and the current data is '2025', it will correctly return 0 results.
+          if (filters.startYear !== '2025') {
+            results = []; // No records in 2026 in the mock data
+          } else {
+            results = results.filter(learner => learner.startDate.includes(filters.startMonth));
+          }
+        } else if (filters.startYear !== '2025') {
+          results = []; // No records in 2026 in the mock data
+        }
 
 
-      // Function to render a table given a dataset and a target tbody element
+        // Checkbox filters (Employers)
+        if (filters.employers.length > 0) {
+          results = results.filter(learner => filters.employers.includes(learner.employer));
+        }
+
+        // Sort the results alphabetically by name
+        results.sort((a, b) => a.name.localeCompare(b.name));
+
+        return results;
+      }
+
+      // --- Pagination and Rendering Functions ---
+
+      function renderPagination() {
+        paginationList.innerHTML = '';
+        const totalPages = Math.ceil(filteredLearners.length / pageSize);
+        const startPage = Math.max(1, currentPage - 2);
+        const endPage = Math.min(totalPages, currentPage + 2);
+
+        // Previous link
+        if (currentPage > 1) {
+          paginationList.innerHTML += `
+                <li class="govuk-pagination__item govuk-pagination__item--prev">
+                  <a class="govuk-link govuk-pagination__link" href="#" data-page="${currentPage - 1}" rel="prev">
+                    <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
+                      <path d="m6.5938-0.0078125-6.7266 6.7266 6.7441 6.4062 1.377-1.4492-4.1856-3.9766h12.896v-2h-12.986l4.2926-4.293-1.4136-1.414z"></path>
+                    </svg>
+                    <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
+                  </a>
+                </li>
+              `;
+        }
+
+        // Page links
+        for (let i = startPage; i <= endPage; i++) {
+          const activeClass = i === currentPage ? ' govuk-pagination__item--current' : '';
+          paginationList.innerHTML += `
+                <li class="govuk-pagination__item${activeClass}">
+                  <a class="govuk-link govuk-pagination__link" href="#" data-page="${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>
+                </li>
+              `;
+        }
+
+        // Next link (hidden here and shown as a separate element)
+        if (currentPage >= totalPages) {
+          nextPageLink.classList.add('govuk-visually-hidden');
+        } else {
+          nextPageLink.classList.remove('govuk-visually-hidden');
+          nextPageLink.querySelector('a').dataset.page = currentPage + 1;
+        }
+      }
+
       function renderTable(dataToRender, targetBody, isAddedTable = false) {
         targetBody.innerHTML = '';
         dataToRender.forEach(learner => {
           const row = document.createElement('tr');
           row.className = 'govuk-table__row';
-          row.dataset.uln = learner.uln; // Use data attribute for easy lookup
+          row.dataset.uln = learner.uln;
           const actionText = isAddedTable ? 'Remove' : 'Add';
           row.innerHTML = `
-            <td class="govuk-table__cell" data-label="Name">${learner.name}</td>
-            <td class="govuk-table__cell" data-label="ULN">${learner.uln}</td>
-            <td class="govuk-table__cell" data-label="Course">${learner.course}</td>
-            <td class="govuk-table__cell" data-label="Start date">${learner.startDate}</td>
-            <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Link">
-              <a href="javascript:void(0)" class="govuk-link govuk-link--no-visited-state action-link" data-action="${actionText.toLowerCase()}">
-                ${actionText} <span class="govuk-visually-hidden">${learner.name}</span>
-              </a>
-            </td>
-          `;
+                <td class="govuk-table__cell">${learner.name}</td>
+                <td class="govuk-table__cell">${learner.uln}</td>
+                <td class="govuk-table__cell">${learner.course}</td>
+                <td class="govuk-table__cell">${learner.startDate}</td>
+                <td class="govuk-table__cell govuk-table__cell--numeric">
+                  <a href="#" class="govuk-link" data-uln="${learner.uln}" data-action="${actionText.toLowerCase()}">${actionText}</a>
+                </td>
+              `;
           targetBody.appendChild(row);
         });
-      }
 
-      // Function to update pagination controls
-      function updatePagination(filteredRecords) {
-        const totalPages = Math.ceil(filteredRecords.length / pageSize);
-        paginationList.innerHTML = '';
-
-        if (totalPages <= 1) {
-          nextPageLink.style.display = 'none';
-          return;
-        }
-
-        // Previous link
-        const prevLink = document.createElement('li');
-        prevLink.className = `govuk-pagination__item govuk-pagination__item--prev ${currentPage === 1 ? 'govuk-!-display-none' : ''}`;
-        prevLink.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" rel="prev">
-                                <span class="govuk-pagination__link-title">Previous<span class="govuk-visually-hidden"> page</span></span>
-                                <svg class="govuk-pagination__icon govuk-pagination__icon--prev" xmlns="http://www.w3.org/2000/svg" height="13" width="15" aria-hidden="true" focusable="false" viewBox="0 0 15 13">
-                                  <path d="M1.9 6.5L8.4 0l1.4 1.4-4.2 4.3h8.3v2H5.6l4.2 4.3-1.4 1.4L1.9 6.5z"></path>
-                                </svg>
-                              </a>`;
-        prevLink.addEventListener('click', (e) => {
-          e.preventDefault();
-          if (currentPage > 1) {
-            currentPage--;
-            applyFiltersAndPaginate();
+        // Toggle visibility based on results for the main table
+        if (!isAddedTable) {
+          if (dataToRender.length === 0 && filteredLearners.length === 0) {
+            resultsTableContainer.style.display = 'none';
+            noResultsMessage.style.display = 'block';
+          } else {
+            resultsTableContainer.style.display = 'block';
+            noResultsMessage.style.display = 'none';
           }
-        });
-        paginationList.appendChild(prevLink);
-
-        // Page links
-        for (let i = 1; i <= totalPages; i++) {
-          const pageItem = document.createElement('li');
-          pageItem.className = `govuk-pagination__item ${i === currentPage ? 'govuk-pagination__item--current' : ''}`;
-          pageItem.innerHTML = `<a class="govuk-link govuk-pagination__link" href="javascript:void(0)" aria-label="Page ${i}" ${i === currentPage ? 'aria-current="page"' : ''}>${i}</a>`;
-          pageItem.addEventListener('click', (e) => {
-            e.preventDefault();
-            currentPage = i;
-            applyFiltersAndPaginate();
-          });
-          paginationList.appendChild(pageItem);
         }
-
-        // Next link
-        nextPageLink.style.display = currentPage < totalPages ? 'block' : 'none';
-
       }
 
-      // Main function to update all UI elements
-      function updateAllTables() {
-        // Always show the section
-        addedLearnersSection.style.display = 'block';
+      function updateResultsSummary(totalCount) {
+        const start = (currentPage - 1) * pageSize + 1;
+        const end = Math.min(currentPage * pageSize, totalCount);
 
-        // Render the top table
-        renderTable(addedLearnersData, addedLearnersTableBody, true);
+        if (totalCount === 0) {
+          resultsSummary.textContent = '';
+        } else if (totalCount <= pageSize) {
+          resultsSummary.textContent = `Showing all ${totalCount} results`;
+        } else {
+          resultsSummary.textContent = `Showing ${start} to ${end} of ${totalCount} results`;
+        }
+      }
+
+      function updateLearnerCounts(totalCount) {
+        // Update Added Learners count
         addedLearnersCount.textContent = addedLearnersData.length;
 
-        // Update count
-        addedLearnersCount.textContent = addedLearnersData.length;
+        // Update Filtered Learners count for the 'Add all' link
+        filteredCountDisplay.textContent = totalCount;
 
-        // Show/hide the "Save and continue" button
+        // Update the 'X learner records matching Y' message
+        const year = document.getElementById('startYearSelect').value;
+        const month = document.getElementById('startMonthSelect').value;
+        const dateString = month ? `${month} ${year}` : year;
+
+        if (totalCount === 1) {
+          recordCountDisplay.textContent = `1 learner record matching ${dateString}`;
+        } else if (totalCount > 1) {
+          recordCountDisplay.textContent = `${totalCount} learner records matching ${dateString}`;
+        } else {
+          recordCountDisplay.textContent = ``;
+        }
+
+        // Toggle visibility of the "Learners in cohort" section
         if (addedLearnersData.length > 0) {
+          addedLearnersSection.style.display = 'block';
+          // Make sure the "Save and continue" button is present
           saveButtonDiv.style.display = 'block';
         } else {
-          saveButtonDiv.style.display = 'none';
+          addedLearnersSection.style.display = 'none';
         }
-
-        // If there are no learners, show a message inside the table
-        if (addedLearnersData.length === 0) {
-          addedLearnersTableBody.innerHTML = `
-        <tr>
-            <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
-        </tr>
-    `;
-        }
-
-
-        // If there are no learners, show a message inside the table
-        if (addedLearnersData.length === 0) {
-          addedLearnersTableBody.innerHTML = `
-      <tr>
-        <td class="govuk-table__cell" colspan="5">No learners added yet.</td>
-      </tr>
-    `;
-        }
-
-        // Render the main table
-        applyFiltersAndPaginate();
       }
 
 
-      // Main function to filter and paginate the main table
-      function applyFiltersAndPaginate() {
-        const searchTerm = (searchTermInput.value || "").toLowerCase().trim();
-        const courseType = document.getElementById("courseTypeSelect").value;
-        const courseName = document.getElementById("courseNameSelect").value;
-        const startMonth = document.getElementById("startMonthSelect").value;
-        const startYear = document.getElementById("startYearSelect").value;
-        const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
+      // --- Main Orchestration Function ---
 
-        // Learners with no employer
-        const noEmployerLearners = new Set([
-          "Yusuf Ahmed",
-          "Sophie Turner",
-          "Olivia Harris",
-          "Jacob Knight",
-          "David Kim"
-        ]);
+      function updateAllTables() {
+        // 1. Filter the data based on current criteria
+        filteredLearners = filterLearners();
+        const totalCount = filteredLearners.length;
 
-        // Filter the dataset
-        const filteredRecords = learnersData.filter(learner => {
-          const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
-          const matchesCourseType = !courseType || learner.course.includes(courseType);
-          const matchesCourseName = !courseName || learner.course.includes(courseName);
-          const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
-          const matchesStartYear = !startYear || learner.startDate.includes(startYear);
-
-          let matchesEmployer = true;
-          if (employerCheckboxes.length > 0) {
-            matchesEmployer = employerCheckboxes.some(checkboxValue => {
-              if (checkboxValue === "No employer") {
-                return noEmployerLearners.has(learner.name);
-              }
-              return learner.employer === checkboxValue;
-            });
-          }
-
-          return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
-        });
-
-        // Update the search term field to match the input
-        document.getElementById('searchTerm').value = searchTermInput.value;
-
-        // Pagination logic
+        // 2. Paginate the filtered data
         const startIndex = (currentPage - 1) * pageSize;
-        const endIndex = startIndex + pageSize;
-        const paginatedRecords = filteredRecords.slice(startIndex, endIndex);
+        const paginatedData = filteredLearners.slice(startIndex, startIndex + pageSize);
 
-        // Show or hide results table based on filtered records
-        const recordCountDisplay = document.querySelector(".record-count");
-        const lastUpdatedDisplay = document.querySelector(".last-updated");
+        // 3. Render the two tables
+        renderTable(addedLearnersData, addedLearnersTableBody, true); // Added learners
+        renderTable(paginatedData, recordsTableBody, false); // Main results
 
-        if (filteredRecords.length > 0) {
-          resultsTableContainer.style.display = 'block';
-          noResultsMessage.style.display = 'none';
-          recordCountDisplay.style.display = 'block';
-          lastUpdatedDisplay.style.display = 'block';
-        } else {
-          resultsTableContainer.style.display = 'none';
-          noResultsMessage.style.display = 'block';
-          recordCountDisplay.style.display = 'none';
-          lastUpdatedDisplay.style.display = 'none';
-        }
-
-
-        // Render the main table
-        renderTable(paginatedRecords, recordsTableBody);
-
-        // Build the filter summary dynamically
-        const activeFilters = [];
-        if (startYear) activeFilters.push(`<b>${startYear}</b>`); // Default year always bold
-        if (courseType) activeFilters.push(`<b>${courseType}</b>`);
-        if (courseName) activeFilters.push(`<b>${courseName}</b>`);
-        if (startMonth) activeFilters.push(`<b>${startMonth}</b>`);
-        if (employerCheckboxes.length > 0) activeFilters.push(...employerCheckboxes.map(e => `<b>${e}</b>`));
-
-        const filterSummary = activeFilters.length > 0
-          ? activeFilters.join(', ')
-          : '<b>2025</b>'; // Default if nothing else is selected
-
-        // Update record count and results summary
-        recordCountDisplay.innerHTML = `${filteredRecords.length} learner records matching ${filterSummary}`;
-        resultsSummary.textContent = `Showing ${startIndex + 1} to ${Math.min(endIndex, filteredRecords.length)} of ${filteredRecords.length} results`;
-
-        // Update pagination controls
-        updatePagination(filteredRecords);
+        // 4. Update all counts and summaries
+        updateLearnerCounts(totalCount);
+        updateResultsSummary(totalCount);
+        renderPagination();
       }
 
+      // --- Event Listeners ---
 
-      // Event listener for the filter form submission
+      // 1. Filter Form Submission (Apply Filters)
       filterForm.addEventListener('submit', (e) => {
         e.preventDefault();
         currentPage = 1; // Reset to page 1 on new filter
         updateAllTables();
       });
 
-      // Event listener for the Add and Remove links
-      document.body.addEventListener('click', (e) => {
-        const link = e.target.closest('.action-link');
-        if (!link) return;
-
+      // 2. Clear Filters Link
+      clearFiltersLink.addEventListener('click', (e) => {
         e.preventDefault();
 
-        const uln = link.closest('tr').dataset.uln;
-        const action = link.dataset.action;
+        // Reset all form elements
+        document.getElementById('courseTypeSelect').value = '';
+        document.getElementById('courseNameSelect').value = '';
+        document.getElementById('startMonthSelect').value = '';
+        document.getElementById('startYearSelect').value = '2025';
+        document.querySelectorAll("input[name='employers']").forEach(cb => cb.checked = false);
+        searchTermInput.value = '';
+        document.getElementById('searchTerm').value = ''; // Update the hidden input as well for autocomplete
 
-        if (action === 'add') {
-          const learnerIndex = learnersData.findIndex(l => l.uln === uln);
-          if (learnerIndex !== -1) {
-            const learnerToAdd = learnersData.splice(learnerIndex, 1)[0];
-            addedLearnersData.push(learnerToAdd);
-            window.scrollTo(0, 0); // Scroll to top after adding a learner
-          }
-        } else if (action === 'remove') {
-          const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
-          if (learnerIndex !== -1) {
-            const learnerToRemove = addedLearnersData.splice(learnerIndex, 1)[0];
-            learnersData.push(learnerToRemove);
-          }
-        }
-
-        // Sort the main learners data alphabetically after a change
-        learnersData.sort((a, b) => a.name.localeCompare(b.name));
-
+        currentPage = 1;
         updateAllTables();
       });
 
-      // Initial render on page load
-      updateAllTables();
-    });
+      // 3. Main Table Actions (Add/Remove)
+      document.addEventListener('click', (e) => {
+        if (e.target.tagName === 'A' && e.target.dataset.uln && ['add', 'remove'].includes(e.target.dataset.action)) {
+          e.preventDefault();
 
-    // "Add all learners" functionality
-    const addAllLearnersLink = document.getElementById('addAllLearnersLink');
-    addAllLearnersLink.addEventListener('click', (e) => {
-      e.preventDefault();
+          const uln = e.target.dataset.uln;
+          const action = e.target.dataset.action;
 
-      // Grab current filters
-      const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
-      const courseType = document.getElementById("courseTypeSelect").value;
-      const courseName = document.getElementById("courseNameSelect").value;
-      const startMonth = document.getElementById("startMonthSelect").value;
-      const startYear = document.getElementById("startYearSelect").value;
-      const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
-
-      const noEmployerLearners = new Set([
-        "Yusuf Ahmed",
-        "Sophie Turner",
-        "Olivia Harris",
-        "Jacob Knight",
-        "David Kim"
-      ]);
-
-      // Filter learnersData based on current filters
-      const filteredLearners = learnersData.filter(learner => {
-        const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
-        const matchesCourseType = !courseType || learner.course.includes(courseType);
-        const matchesCourseName = !courseName || learner.course.includes(courseName);
-        const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
-        const matchesStartYear = !startYear || learner.startDate.includes(startYear);
-
-        let matchesEmployer = true;
-        if (employerCheckboxes.length > 0) {
-          matchesEmployer = employerCheckboxes.some(checkboxValue => {
-            if (checkboxValue === "No employer") {
-              return noEmployerLearners.has(learner.name);
+          if (action === 'add') {
+            const learnerIndex = learnersData.findIndex(l => l.uln === uln);
+            if (learnerIndex !== -1) {
+              const learner = learnersData.splice(learnerIndex, 1)[0];
+              addedLearnersData.push(learner);
             }
-            return learner.employer === checkboxValue;
-          });
-        }
-
-        return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
-      });
-
-      // Move all filtered learners to addedLearnersData
-      filteredLearners.forEach(learner => {
-        const index = learnersData.findIndex(l => l.uln === learner.uln);
-        if (index !== -1) {
-          addedLearnersData.push(...learnersData.splice(index, 1));
-        }
-      });
-
-      // Sort the main list alphabetically
-      learnersData.sort((a, b) => a.name.localeCompare(b.name));
-
-      updateAllTables();
-    });
-
-    // --- Add All Filtered Learners ---
-    const addAllFilteredButton = document.getElementById("addAllFilteredButton");
-    const filteredCount = document.getElementById("filteredCount");
-
-    addAllFilteredButton.addEventListener("click", () => {
-      // Get the currently filtered learners (you should already have a filtered dataset)
-      const filteredLearners = getFilteredLearners(); // define or reuse your filtering logic
-
-      // Add them all to the added learners data array
-      filteredLearners.forEach((learner) => {
-        if (!addedLearnersData.some(l => l.id === learner.id)) {
-          addedLearnersData.push(learner);
-        }
-      });
-
-      // Update the UI
-      updateAllTables();
-    });
-
-    // Helper function to get currently filtered learners
-    function getFilteredLearners() {
-      const searchTerm = (document.getElementById('searchTerm').value || "").toLowerCase().trim();
-      const courseType = document.getElementById("courseTypeSelect").value;
-      const courseName = document.getElementById("courseNameSelect").value;
-      const startMonth = document.getElementById("startMonthSelect").value;
-      const startYear = document.getElementById("startYearSelect").value;
-      const employerCheckboxes = Array.from(document.querySelectorAll("input[name='employers']:checked")).map(cb => cb.value);
-
-      const noEmployerLearners = new Set([
-        "Yusuf Ahmed",
-        "Sophie Turner",
-        "Olivia Harris",
-        "Jacob Knight",
-        "David Kim"
-      ]);
-
-      return learnersData.filter(learner => {
-        const matchesSearch = !searchTerm || learner.name.toLowerCase().includes(searchTerm) || learner.uln.includes(searchTerm);
-        const matchesCourseType = !courseType || learner.course.includes(courseType);
-        const matchesCourseName = !courseName || learner.course.includes(courseName);
-        const matchesStartMonth = !startMonth || learner.startDate.includes(startMonth);
-        const matchesStartYear = !startYear || learner.startDate.includes(startYear);
-
-        let matchesEmployer = true;
-        if (employerCheckboxes.length > 0) {
-          matchesEmployer = employerCheckboxes.some(checkboxValue => {
-            if (checkboxValue === "No employer") {
-              return noEmployerLearners.has(learner.name);
+          } else if (action === 'remove') {
+            const learnerIndex = addedLearnersData.findIndex(l => l.uln === uln);
+            if (learnerIndex !== -1) {
+              const learner = addedLearnersData.splice(learnerIndex, 1)[0];
+              // Add back to the main list and keep it sorted
+              learnersData.push(learner);
+              learnersData.sort((a, b) => a.name.localeCompare(b.name));
             }
-            return learner.employer === checkboxValue;
-          });
+          }
+
+          currentPage = 1; // Always reset pagination on any add/remove change
+          updateAllTables();
         }
-
-        return matchesSearch && matchesCourseType && matchesCourseName && matchesStartMonth && matchesStartYear && matchesEmployer;
       });
-    }
 
+      // 4. Pagination Click (handles previous/page number/next)
+      document.addEventListener('click', (e) => {
+        if (e.target.closest('.govuk-pagination__link') && e.target.closest('.govuk-pagination__link').dataset.page) {
+          e.preventDefault();
+          const targetPage = parseInt(e.target.closest('.govuk-pagination__link').dataset.page);
+          if (targetPage > 0 && targetPage <= Math.ceil(filteredLearners.length / pageSize)) {
+            currentPage = targetPage;
+            updateAllTables();
+          }
+        }
+      });
 
+      // 5. 'Add all filtered learners' Link (***THIS IS THE CORRECTED BLOCK***)
+      addAllFilteredLink.addEventListener('click', (e) => {
+        e.preventDefault();
 
+        if (filteredLearners.length === 0) return; // Do nothing if there are no filtered learners
+
+        // 1. Move all currently filtered learners from the main list to the added list
+        filteredLearners.forEach(learnerToAdd => {
+          // Only move if it's still in the main list
+          const index = learnersData.findIndex(l => l.uln === learnerToAdd.uln);
+          if (index !== -1) {
+            const learner = learnersData.splice(index, 1)[0];
+            addedLearnersData.push(learner);
+          }
+        });
+
+        // 2. Sort the added list alphabetically (optional but good practice)
+        addedLearnersData.sort((a, b) => a.name.localeCompare(b.name));
+
+        // 3. Reset pagination and update tables
+        currentPage = 1;
+        updateAllTables();
+
+        // 4. SCROLL TO THE TOP after adding and updating the UI
+        window.scrollTo(0, 0); // Scrolls the page to the very top (x=0, y=0)
+      });
+
+      // Initial call to populate the tables on load
+      updateAllTables();
+    });
   </script>
 </body>
 

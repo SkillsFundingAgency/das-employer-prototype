@@ -1,6 +1,6 @@
 {% extends "layouts/main.html" %}
-{% set version = "v8" %}
-{% set pageTitle = "Approve apprentice details" %}
+{% set version = "v9" %}
+{% set pageTitle = "Check apprentice details" %}
 
 {% block header %}
 {% include "includes/header.html" %}
@@ -265,16 +265,16 @@ href: "javascript:window.history.go(-1);"
       <div class="govuk-form-group">
         <fieldset class="govuk-fieldset">
           <legend class="govuk-fieldset__legend govuk-fieldset__legend--m">
-            <h3 class="govuk-fieldset__heading">Approve these details?</h3>
+            <h3 class="govuk-fieldset__heading">Do you want to send these details to the employer?</h3>
           </legend>
 
           <div class="govuk-radios" data-module="govuk-radios">
-            <!-- First Radio Button -->
+            <!-- First Radio Button with conditional reveal -->
             <div class="govuk-radios__item">
               <input class="govuk-radios__input" id="approve-details" name="approve-details" type="radio" value="yes"
                 data-aria-controls="conditional-approve-details">
               <label class="govuk-label govuk-radios__label" for="approve-details">
-                Yes, approve and notify employer
+                Yes, send to employer for approval
               </label>
 
               <div class="govuk-radios__conditional govuk-radios__conditional--hidden" id="conditional-approve-details">
@@ -287,39 +287,24 @@ href: "javascript:window.history.go(-1);"
                 </div>
               </div>
             </div>
-            <!-- Second Radio Button -->
-            <div class="govuk-radios__item">
-              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no"
-                data-aria-controls="conditional-approve-details-2">
-              <label class="govuk-label govuk-radios__label" for="approve-details-2">
-                No, send to employer to review or add details
-              </label>
 
-              <div class="govuk-radios__conditional govuk-radios__conditional--hidden"
-                id="conditional-approve-details-2">
-                <div class="govuk-form-group">
-                  <label class="govuk-label" for="approve-message-no">
-                    Leave BAMBINOS DAY NURSERY LIMITED a message
-                  </label>
-                  <textarea class="govuk-textarea" id="approve-message-no" name="approve-message-no"
-                    rows="5">{{ data['approve-message'] or '' }}</textarea>
-                </div>
-              </div>
+            <!-- Second Radio Button without conditional reveal -->
+            <div class="govuk-radios__item">
+              <input class="govuk-radios__input" id="approve-details-2" name="approve-details" type="radio" value="no">
+              <label class="govuk-label govuk-radios__label" for="approve-details-2">
+                No, save as a draft
+              </label>
             </div>
           </div>
         </fieldset>
       </div>
 
-      <button type="submit" id="continue-button" class="govuk-button">Save and submit</button>
+      <button type="submit" id="continue-button" class="govuk-button">Save and continue</button>
       <br>
-      <p><a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/apprentice-requests">
-          Save and exit
-        </a></p>
     </form>
-
   </div>
 </div>
+
 
 </div>
 </div>
