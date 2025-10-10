@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v8" %}
+{% set version = "v9" %}
 {% set pageTitle = "Approve apprentice details" %}
 
 {% block header %}
@@ -52,19 +52,30 @@ href: "javascript:window.history.go(-1);"
 <div class="govuk-grid-row">
   <div class="govuk-grid-column-two-thirds">
 
-    <div class="govuk-error-summary" data-module="govuk-error-summary">
-      <div role="alert">
-        <h2 class="govuk-error-summary__title">
-          Record needs updating
+    <!-- Notification banner -->
+    <div class="govuk-notification-banner govuk-notification-banner--info" role="region"
+      aria-labelledby="ilr-banner-title">
+      <div class="govuk-notification-banner__header">
+        <h2 class="govuk-notification-banner__title" id="ilr-banner-title">
+          Action required: ILR updates available
         </h2>
-        <div class="govuk-error-summary__body">
-          <p class="govuk-body">Select ‘View’ to update details for the following apprentices:</p>
-          <ul class="govuk-list govuk-error-summary__list">
-            <li>
-              <a href="#">Alan Lightfoot</a>
-            </li>
-          </ul>
-        </div>
+      </div>
+      <div class="govuk-notification-banner__content">
+        <p class="govuk-body">
+          You need to review and update apprentice details before you can continue.
+        </p>
+        <p class="govuk-body">
+          Select ‘View’ to check and update the following apprentices:
+        </p>
+        <ul class="govuk-list govuk-summary__list">
+          <li>
+            <a href="/training-provider/v9/approvals/check-details-alan-updates" class="govuk-link">
+              <span class="govuk-!-font-weight-bold">Alan Lightfoot — ILR details changed</span>
+            </a>
+          </li>
+        </ul>
+
+
       </div>
     </div>
 
@@ -131,38 +142,33 @@ href: "javascript:window.history.go(-1);"
       <th scope="col" class="govuk-table__header"><span class="govuk-visually-hidden">Action</span></th>
     </tr>
   </thead>
-  <tbody class="govuk-table__body">
-    <tr class="govuk-table__row das-table-row--error">
-      <td class="govuk-table__cell" data-label="Name" style="padding-left: 0.5em;">
-        <span class="govuk-error-message govuk-!-margin-bottom-0">
-          <span class="govuk-visually-hidden">Error:</span>
-        </span>
-        <span class="das-table-cell--highlight das-breakable" style="padding-left: 0.25em;">Alan Lightfoot</span>
-      </td>
-      <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
-      <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
-      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
-      <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,000</td>
-      <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/recognise-prior-learning-details">
-          Add RPL
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
-        </a>
-      </td>
-      <td class="govuk-table__cell govuk-table__cell--numeric">
-        <a class="govuk-link govuk-link--no-visited-state"
-          href="/training-provider/{{version}}/approvals/check-details-alan-updates">
-          View
-          <span class="govuk-visually-hidden"> Alan Lightfoot</span>
-        </a>
-        <br><br>
-        <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
-          Remove <span class="govuk-visually-hidden"> Alan Lightfoot</span>
-        </a>
-      </td>
-    </tr>
-  </tbody>
+  <tr class="govuk-table__row" style="border-left: 10px solid #1d70b8;">
+    <td class="govuk-table__cell" data-label="Name" style="padding-left: 0.5em;">
+      <span class="das-table-cell--highlight das-breakable" style="padding-left: 0.25em;">Alan Lightfoot</span>
+    </td>
+    <td class="govuk-table__cell" data-label="Unique learner number">7232486935</td>
+    <td class="govuk-table__cell" data-label="Date of birth">22 Jun 2003</td>
+    <td class="govuk-table__cell" data-label="Training dates">June 2025 to June 2026</td>
+    <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£4,000</td>
+    <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
+      <a class="govuk-link govuk-link--no-visited-state"
+        href="/training-provider/{{version}}/approvals/recognise-prior-learning-details">
+        Add RPL
+        <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+      </a>
+    </td>
+    <td class="govuk-table__cell govuk-table__cell--numeric">
+      <a class="govuk-link govuk-link--no-visited-state"
+        href="/training-provider/{{version}}/approvals/check-details-alan-updates">
+        View
+        <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+      </a>
+      <br><br>
+      <a class="govuk-link govuk-link--no-visited-state" href="/training-provider/{{version}}/#">
+        Remove <span class="govuk-visually-hidden"> Alan Lightfoot</span>
+      </a>
+    </td>
+  </tr>
 
   </tbody>
 </table>
@@ -190,7 +196,7 @@ href: "javascript:window.history.go(-1);"
       </td>
       <td class="govuk-table__cell" data-label="Unique learner number">7232486936</td>
       <td class="govuk-table__cell" data-label="Date of birth">1 Oct 2004</td>
-      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+      <td class="govuk-table__cell" data-label="Training dates">June 2025 to June 2026</td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
       <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
         <a class="govuk-link govuk-link--no-visited-state"
@@ -219,7 +225,7 @@ href: "javascript:window.history.go(-1);"
       </td>
       <td class="govuk-table__cell" data-label="Unique learner number">7232486937</td>
       <td class="govuk-table__cell" data-label="Date of birth">19 May 2001</td>
-      <td class="govuk-table__cell" data-label="Training dates">12 June 2025 to 12 June 2026</td>
+      <td class="govuk-table__cell" data-label="Training dates">June 2025 to June 2026</td>
       <td class="govuk-table__cell govuk-table__cell--numeric" data-label="Price">£7,000</td>
       <td class="govuk-table__cell" data-label="Recognition of prior learning">No<br>
         <a class="govuk-link govuk-link--no-visited-state"

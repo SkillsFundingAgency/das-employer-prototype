@@ -1,5 +1,5 @@
 {% extends "layouts/main.html" %}
-{% set version = "v8" %}
+{% set version = "v9" %}
 {% set pageTitle = "View details for Alan Lightfoot" %}
 
 {% block header %}
@@ -50,42 +50,35 @@ href: "javascript:window.history.go(-1);"
 {% block content %}
 
 
+<!-- Summary tables/cards: full width -->
 
-<div class="govuk-grid-row">
-  <!-- Error summary: two-thirds width -->
-  <div class="govuk-grid-column-two-thirds">
-    <div class="govuk-notification-banner govuk-notification-banner--important" role="region"
-      aria-labelledby="govuk-notification-banner-title" data-module="govuk-notification-banner">
+<div class="govuk-grid-row govuk-!-margin-bottom-4">
+  <!-- Full width H1 and tag -->
+  <div class="govuk-grid-column-full">
+    <h1 class="govuk-heading-l govuk-!-display-inline">{{ pageTitle }}</h1>
+    <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-2 govuk-!-display-inline-block">
+      Pending update
+    </strong>
+  </div>
 
-      <div class="govuk-notification-banner__header">
-        <h2 class="govuk-notification-banner__title" id="govuk-notification-banner-title">
-          Important
-        </h2>
-      </div>
-
-      <div class="govuk-notification-banner__content">
-        <h3 class="govuk-notification-banner__heading">
-          Details for this apprentice have changed in the ILR.
-        </h3>
-        <p class="govuk-body">
-          To make sure your records are up to date,
-          <a class="govuk-link govuk-notification-banner__link"
-            href="/training-provider/{{version}}/approvals/check-details-alan-updates-success">
-            update the latest details
-          </a>.
-        </p>
-      </div>
+  <!-- Inset text in 2/3 column -->
+  <div class="govuk-grid-column-two-thirds govuk-!-margin-top-4">
+    <div class="govuk-inset-text">
+      <h2 class="govuk-heading-m">New ILR updates available</h2>
+      <p>
+        Some apprentice details have changed in the latest ILR submission. Review the updated information before you
+        save and submit.
+      </p>
+      <a href="/training-provider/v9/approvals/check-details-alan-updates-success" class="govuk-button">Review latest
+        ILR details</a>
     </div>
 
-  </div>
-</div>
 
-<!-- Summary tables/cards: full width -->
-<div class="govuk-grid-row">
-  <div class="govuk-grid-column-full">
 
-    <h1 class="govuk-heading-l">{{ pageTitle }}</h1>
 
+
+
+    <!-- Details -->
     <details class="govuk-details">
       <summary class="govuk-details__summary">
         <span class="govuk-details__summary-text">I need to change some apprentice details</span>
@@ -96,127 +89,128 @@ href: "javascript:window.history.go(-1);"
       </div>
     </details>
 
-
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Apprentice details
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              Alan Lightfoot
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Email address
-            </dt>
-            <dd class="govuk-summary-list__value">
-              <a href="/training-provider/{{version}}/approvals/add/add-email" class="govuk-link">Add email
-                address</a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Date of birth
-            </dt>
-            <dd class="govuk-summary-list__value">
-              22 Jun 2003
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Unique learner number
-            </dt>
-            <dd class="govuk-summary-list__value">
-              7232486935
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Unique learner number</span></a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Employer
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Name
-            </dt>
-            <dd class="govuk-summary-list__value">
-              BAMBINOS DAY NURSERY LIMITED
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> employer name</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Agreement ID
-            </dt>
-            <dd class="govuk-summary-list__value">
-              754ZJE
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> agreement ID</span></a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
-    <div class="govuk-summary-card">
-      <div class="govuk-summary-card__title-wrapper">
-        <h2 class="govuk-summary-card__title">
-          Training dates
-        </h2>
-      </div>
-      <div class="govuk-summary-card__content">
-        <dl class="govuk-summary-list">
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Start date
-            </dt>
-            <dd class="govuk-summary-list__value">
-              September 2025
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> start date</span></a>
-            </dd>
-          </div>
-          <div class="govuk-summary-list__row">
-            <dt class="govuk-summary-list__key">
-              Planned end date (not including end-point assessment)
-            </dt>
-            <dd class="govuk-summary-list__value">
-              September 2026
-            </dd>
-            <dd class="govuk-summary-list__actions">
-              <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> planned end date</span></a>
-            </dd>
-          </div>
-        </dl>
-      </div>
-    </div>
   </div>
+</div>
+
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Apprentice details
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Alan Lightfoot
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Email address
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Update required
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Date of birth
+        </dt>
+        <dd class="govuk-summary-list__value">
+          Update required
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Unique learner number
+        </dt>
+        <dd class="govuk-summary-list__value">
+          7232486935
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> Unique learner
+              number</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Employer
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Name
+        </dt>
+        <dd class="govuk-summary-list__value">
+          BAMBINOS DAY NURSERY LIMITED
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> employer name</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Agreement ID
+        </dt>
+        <dd class="govuk-summary-list__value">
+          754ZJE
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> agreement ID</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+</div>
+<div class="govuk-summary-card">
+  <div class="govuk-summary-card__title-wrapper">
+    <h2 class="govuk-summary-card__title">
+      Training dates
+    </h2>
+  </div>
+  <div class="govuk-summary-card__content">
+    <dl class="govuk-summary-list">
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Start date
+        </dt>
+        <dd class="govuk-summary-list__value">
+          September 2025
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> start date</span></a>
+        </dd>
+      </div>
+      <div class="govuk-summary-list__row">
+        <dt class="govuk-summary-list__key">
+          Planned end date (not including end-point assessment)
+        </dt>
+        <dd class="govuk-summary-list__value">
+          September 2026
+        </dd>
+        <dd class="govuk-summary-list__actions">
+          <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> planned end date</span></a>
+        </dd>
+      </div>
+    </dl>
+  </div>
+
 </div>
 <div class="govuk-summary-card">
   <div class="govuk-summary-card__title-wrapper">
