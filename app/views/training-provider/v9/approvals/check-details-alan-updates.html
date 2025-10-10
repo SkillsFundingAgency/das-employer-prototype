@@ -56,9 +56,6 @@ href: "javascript:window.history.go(-1);"
   <!-- Full width H1 and tag -->
   <div class="govuk-grid-column-full">
     <h1 class="govuk-heading-l govuk-!-display-inline">{{ pageTitle }}</h1>
-    <strong class="govuk-tag govuk-tag--red govuk-!-margin-left-2 govuk-!-display-inline-block">
-      Pending update
-    </strong>
   </div>
 
   <!-- Inset text in 2/3 column -->
@@ -116,15 +113,17 @@ href: "javascript:window.history.go(-1);"
           Email address
         </dt>
         <dd class="govuk-summary-list__value">
-          Update required
+          <a href="/training-provider/{{version}}/approvals/add/add-email" class="govuk-link">Add email
+            address</a><span class="govuk-tag govuk-tag--red govuk-!-margin-left-2">Pending update</span>
         </dd>
+
       </div>
       <div class="govuk-summary-list__row">
         <dt class="govuk-summary-list__key">
           Date of birth
         </dt>
         <dd class="govuk-summary-list__value">
-          Update required
+          22 Jun 2003<span class="govuk-tag govuk-tag--red govuk-!-margin-left-2">Pending update</span>
         </dd>
         <dd class="govuk-summary-list__actions">
           <a class="govuk-link" href="#"><span class="govuk-visually-hidden"> date of birth</span></a>
